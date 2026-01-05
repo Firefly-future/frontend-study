@@ -1,0 +1,85 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #686060;
+    padding: 20px;
+}
+.logo{
+    background: #adc;
+    padding: 5px 10px;
+}
+.info {
+    display: flex;
+    align-items: center;
+}
+.user{
+    font-size: 16px;
+    color: white;
+}
+.logout{
+    padding: 5px 10px;
+    background: rgb(174, 55, 55);
+    margin-left: 10px;
+}
+nav{
+    background: rgb(128, 138, 135);
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+}
+nav div{
+    margin: 0 10px;
+    padding: 5px 10px;
+}
+.active{
+    background: rgb(39, 179, 179);
+}
+.tab-content:hover{
+    background: rgb(39, 179, 179);
+    cursor: pointer;
+}
+main{
+    padding: 30px;
+    margin: 20px auto 0;
+    width: 1000px;
+    display: flex;
+    flex-direction: column;
+}
+main .article{
+    display: none;
+}
+main .publish{
+    display: none;
+    width: 100%;
+    border: 1px solid royalblue;
+}
+main .publish span{
+    margin: 0 20px;
+}
+main .publish{
+    padding: 5px 10px;
+}   
+main .publish input{
+    width: 100%;
+    display: block;
+    height: 40px;
+}
+main .publish textarea{
+    width: 100%;
+    display: block;
+    word-break: break-all;
+    resize: none;
+    height: 300px;
+}
+
+
+.show{
+    display: block!important;
+}

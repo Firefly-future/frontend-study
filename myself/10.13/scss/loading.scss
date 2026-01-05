@@ -1,0 +1,14 @@
+@import './common.scss';
+
+.circle{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    // border: 1px solid black;
+    margin: 50px auto 0;
+    animation: scale 1s linear infinite;
+}
+
+@keyframes scale{
+    to {transform: rotate(360deg);}
+}

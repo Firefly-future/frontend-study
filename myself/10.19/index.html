@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+    <div class="bigBox">
+        <div class="title">单选题（每题3分）
+            <div class="limit">
+                <span class="card">答题卡</span>
+                <ol class="cardList"></ol>
+                <span class="time"></span>
+                <!-- <input type="radio" name="" id="1"><label for="1">hhh</label> -->
+            </div>
+        </div>
+        <div class="box"></div>
+        <button class="submit">交卷</button>
+        <div class="tip">
+            <div class="tip1">
+                <div class="tip2">
+                    <img src="./img/1.png" alt="">
+                    <p>您的分数为</p>
+                    <span class="fen">0</span>
+                    <button class="ok">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/request.js"></script>
+    <script src="./js/data.js"></script>
+    <script>
+        const $=(el,parent=document)=>{
+            return  parent.querySelector(el)
+        }
+        const gets=(el,parent=document)=>{
+            return [...parent.querySelectorAll(el)]
+        }
+        document.querySelector('.cardList').addEventListener('click', (e) => {
+            let target = e.target || window.event.srcElement
+            // const id=target.getAttribute('data-id')
+            if(target.nodeName==='LI'){
+                const allList=gets('li')
+                allList.forEach(item=>item.classList.remove('active'))
+                target.classList.add('active')
+            }
+        })
+        let totalTime = 2 * 60 * 60
+        const TotalTime = document.querySelector('.time')
+        function updateTime() {
+                if (totalTime <= 0) {
+                    clearInterval(interval)
+                    TotalTime.innerText = '00:00:00'
+                    $('.tip').classList.add('show')
+                    return;
+                }
+                let hours=time(Math.floor(totalTime/3600))
+                let minutes=time(Math.floor(totalTime%3600/60))
+                let seconds=time(Math.floor(totalTime%60))
+                TotalTime.innerText=`${hours}:${minutes}:${seconds}`
+                totalTime--
+        }
+        updateTime()
+        const interval=setInterval(updateTime,1000)
+        function time(n){
+            return n>=10?n:'0'+n
+        }
+        $('.submit').addEventListener('click',(e)=>{
+            e.target.style.backgroundColor='red'
+            $('.tip').classList.add('show')
+            clearInterval(interval)
+            e.target.innerHTML='已交卷'
+        })
+
+        $('.ok').addEventListener('click',e=>{
+            $('.tip').classList.remove('show')
+        })
+    </script>
+</body>
+
+</html>

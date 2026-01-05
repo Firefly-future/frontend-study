@@ -1,0 +1,19 @@
+{
+  "name": "10.29",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "commander": "^14.0.2",
+    "mockjs": "^1.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "mock": "node ./data/createData.js",
+    "dev": "node-dev ./app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}

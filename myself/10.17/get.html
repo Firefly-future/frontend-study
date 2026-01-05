@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul></ul>
+    <div class="box">
+        
+    </div>
+    <script src="./js/发送 接收 函数 封装.js"></script>
+    <script>
+        // request(
+        //     `http://39.96.210.90:5001/banner`,
+        //     {   method:'post',
+        //         data:JSON.stringify({keywords:'张杰',a:200}),
+        //         headers:{
+        //             'content-type':'application/json'
+        //         },
+        //         onSuccess:res=>{
+        //             console.log('成功后调用此函数',res)
+        //             document.querySelector('ul').innerHTML=res.banners.map(item=>{
+        //                 return `<li><img src='${item.imageUrl}' /></li>`
+        //             }).join('')
+        //         },
+        //         onFail:()=>{
+        //             console.log('失败后调用此函数')
+        //             alert('请求错误，请稍后重试')
+        //         }
+        //     }
+        // )
+
+        // 随机截取url?后面的并转为对象
+        function getQuery(){
+            return location.search.slice(1).split('&').reduce((prev,item)=>{
+                const[key,val]=item.split('=')
+                prev[key]=decodeURIComponent(val)
+                return prev
+            },{})
+        }
+
+
+
+
+
+
+
+
+
+
+        const query=getQuery()
+
+        request(`http://39.96.210.90:5001/playlist/detail?id=${query.id}`,
+        {
+            onSuccess:res=>{
+                console.log('操作成功',res)
+                document.querySelector('.box').innerHTML=`
+                <h3>${res.playlist.name}<h3>
+                <p>${res.playlist.description}</p>
+                <img src='${res.playlist.coverImgUrl}' />
+                `
+                document.querySelector('ul').innerHTML=res.playlist.tracks.map(item=>{
+                  return   `<li>${item.name}</li>`
+                }).join('')
+            }
+        })
+    </script>
+</body>
+</html>

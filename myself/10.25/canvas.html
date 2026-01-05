@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: #ddd;
+            /*  width: 100vw; 
+            height: 100vh; */
+        }
+/* 
+        .box {
+            width: 800px;
+            height: 600px;
+            border: 1px solid black;
+            background: #fff;
+            margin: 30px auto;
+        } */
+            canvas{
+                background: #fff;
+                /* margin: 30px auto 0; */
+            }
+    </style>
+</head>
+
+<body>
+    <!-- <div class="box"> -->
+        <canvas width="800" height="600"></canvas>
+    <!-- </div> -->
+    <script>
+        // canvas  画布 创建此标签时 一并设置宽高  css设置有bug
+
+        // 可以通过js设置canvas的宽和高
+        // var canvas = document.querySelector('canvas')
+        // canvas.width = 1000
+        // canvas.heigh = 800
+
+        // 获取画笔
+        // var cxt=canvas.getContext('2d')
+
+        // 方法   绘制线条
+        // cxt.beginPath()   //开启路径
+        // cxt.moveTo(x,y)   //起始点
+        // cxt.lineTo(x,y)   //下一个点
+        // cxt.closePath()   //闭合路径
+        // cxt.stroke()      //描边绘制
+        // cxt.fill()        //填充绘制
+
+        // 属性 
+        // cxt.strokeStyle=    描边颜色
+        // cxt.fillStyle=      填充颜色
+        // cxt.lineWidth=      粗细
+        // cxt.font=           字体大小
+        // cxt.textAlign=      文本对齐方式
+        // cxt.textBaseline=   基线对齐方式
+        // cxt.lineCap=        线条端点样式  butt 默认平直边缘  round 圆形线帽 square 正方形线帽
+        // cxt.lineJoin=       设置两条相交线的拐角  miter 默认尖角  round 圆角 bevel斜角
+
+        // 绘制矩形
+        // cxt.rect(x,y,width,height) 要配合stroke()和fill()方法绘制矩形
+        // cxt.fillRect(x,y,width,height) 绘制填充矩形
+        // cxt.strokeRect(x,y,w,h)绘制矩形边框
+        // cxt.clearRect(x,y,w,h)清楚指定矩形区域
+
+        // 绘制圆弧
+        // cxt.arc(x,y,r,sAngle,eAngle,counterclockwise)
+        // x,y 圆心坐标
+        // r   圆的半径
+        // sAngle 起始弧度
+        // eAngle 结束弧度
+        // counterclockwise  可选 true逆时针  false 顺时针
+
+        // 两切线之间的弧线
+        // cxt.arcTo(x1,y1,x2,y2,r)
+        // x1,y1 弧的起点坐标
+        // x2,y2 弧的终点坐标
+        //  r    半径
+
+        // 绘制扇形
+        // cxt.moveTo(x,y)
+        // cxt.arc(x,y...)
+        // cxt.closePath()
+
+        // 绘制文本
+        // cxt.fillText(text,x,y) 绘制填充文本
+        // cxt.strokeText()       绘制描边文本
+
+        // 绘制图像
+        // cxt.drawImage(img,x,y,w,h)
+        // img 要使用的图 视频
+        // x,y  绘制的起始位置x,y坐标
+        // w,h  可选 宽  高 
+    </script>
+    <script src="./js/canvas.js"></script>
+</body>
+
+</html>

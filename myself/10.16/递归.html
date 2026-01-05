@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const arr = [1, 2, [3, [1, 4, [5, 6, 4], 5, [8, 9, [7, 8], 56], 1], 52], 6]
+        function flat(array) {
+            const res = []
+            array.forEach((item) => {
+                if (Array.isArray(item)) {
+                    res.push(...flat(item))
+                } else {
+                    res.push(item)
+                }
+            })
+            return res
+        }
+        console.log(flat(arr))
+        function reduceFlat(array) {
+            return array.reduce((prev, cur) => {
+                return prev.concat(Array.isArray(cur) ? flat(cur) : cur)
+            }, [])
+        }
+        console.log(reduceFlat(arr))
+        function whileFlat(array) {
+            let res = [...array]
+            while (res.some(v => Array.isArray(v))) {
+                res = [].concat(...res)
+            }
+            return res
+        }
+        console.log(whileFlat(arr))
+
+        // 冒泡排序
+        const arr2 = [1, 2, 6, 4, 5, 489, 4, 9, , 49, 4, 8, 78, 4, 9, 56, 56, 3, 2, 65, 46, 46, 465, 46, 456, 6, 454, 54, 5, 451, 153, 6]
+        function sort(array) {
+            // if(array.length===1){return array}
+            for (let i = 0; i < array.length; i++) {
+                for (let j = i + 1; j < array.length; j++) {
+                    if (array[i] < array[j]) {
+                        let empty = array[i]
+                        array[i] = array[j]
+                        array[j] = empty
+                    }
+                }
+            }
+            return array
+        }
+        console.log(sort(arr2))
+        // 快速排序
+        const arr3 = [9, 1, 5, 6, 48, 9, 49, 47, 4, 4948, 616, 5, 451, 3, 13, 46]
+        function quickSort(array) {
+            if (array.length <= 1) return array
+            const left = []
+            const right = []
+            const mid = array[0]
+            for (let i = 1; i < array.length; i++) {
+                if (array[i] < mid) {
+                    left.push(array[i])
+                } else { right.push(array[i]) }
+            }
+            return quickSort(left).concat(mid, quickSort(right))
+        }
+        console.log(quickSort(arr3))
+    </script>
+</body>
+
+</html>

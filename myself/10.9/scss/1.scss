@@ -1,0 +1,60 @@
+/** @format */
+
+@import "./common.scss";
+
+.tabs {
+    margin: 50px auto 0;
+    width: 500px;
+    border: 1px solid rebeccapurple;
+    padding: 14px;
+
+}
+
+nav {
+    height: 50px;
+    border-bottom: 1px solid orangered;
+    display: flex;
+
+    span {
+        flex: 1;
+        text-align: center;
+        line-height: 49px;
+        font-size: 18px;
+
+        &:not(:last-child) {
+            border-right: 1px solid gainsboro;
+        }
+    }
+}
+
+.active {
+    background: orange;
+    font-weight: bold;
+    font-family: '宋体';
+    color: gray
+}
+
+main {
+    min-height: 260px;
+    padding: 15px;
+
+    section {
+        display: none;
+
+        ul>li {
+            line-height: 40px;
+            font-size: 14px;
+            color: grey;
+
+            span {
+                margin-right: 10px;
+            }
+
+            &:hover {
+                color: blue;
+                cursor: pointer;
+            }
+        }
+    }
+}
+.show{display: block!important;}

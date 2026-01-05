@@ -1,0 +1,77 @@
+@import './common.scss';
+
+header {
+    display: flex;
+    align-items: center;
+    border: 1px solid #000;
+    background: white;
+
+    .box1 {
+        width: 80px;
+        height: 80px;
+        color: aqua;
+        background-color: #ccc;
+        border: 1px solid #000;
+        margin: 5px 10px;
+    }
+
+    .box2 {
+        width: 80px;
+        height: 80px;
+        color: aqua;
+        background-color: #ccc;
+        border: 1px solid #000;
+        margin: 5px 10px;
+    }
+
+    img {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+main {
+    min-height: 360px;
+    margin-top: 5px;
+    border: 1px solid #000;
+
+    ul {
+        padding: 5px;
+
+        li {
+            // width: 80px;
+            height: 30px;
+            color: aqua;
+            background-color: #ccc;
+            border: 1px solid #000;
+            margin: 5px 10px;
+            font-size: 20px;
+            padding: 0 6px;
+        }
+    }
+}
+
+footer {
+    .del {
+        position: fixed;
+        right: 0;
+        top: 0;
+        width: 200px;
+        height: 100vh;
+        // height: 80px;
+        // background-size: cover;
+        line-height: 100vh;
+        font-size: 30px;
+        text-align: center;
+        background-color: red;
+        transform: translateX(200px);
+        transition: transform 0.5s linear;
+        &.show {
+            transform: translateX(0);
+        }
+    }
+}
+
+.tomato{
+    background: tomato;
+}

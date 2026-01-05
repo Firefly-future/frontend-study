@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.递归
+        // 冒泡排序 
+        const arr = [1, 23, 56, 9, 898, 84, 466, 564, 54, 41, 48, 94, 93, 6, 156, 16, 54, 6]
+        function sort(array) {
+            for (let i = 0; i < array.length; i++) {
+                for (let j = i + 1; j < array.length; j++) {
+                    if (array[i] < array[j]) {
+                        const empty = array[i]
+                        array[i] = array[j]
+                        array[j] = empty
+                    }
+                }
+            }
+            return array
+        }
+        console.log(sort(arr))
+        console.log(arr.length)
+        console.log(sort(arr).length)
+        // 快速排序
+        const arr1 = [1, 2, 6, 5, 4, 7, 8, 9, 8, 515, 6, 16, 12]
+        function quickSort(array) {
+            if (array.length <= 1) return array
+            const mid = array[0]
+            const left = []
+            const right = []
+            for (let i = 1; i < array.length; i++) {
+                if (array[i] < mid) {
+                    left.push(array[i])
+                } else { right.push(array[i]) }
+            }
+            return quickSort(left).concat(mid, quickSort(right))
+        }
+        console.log(quickSort(arr1))
+        console.log(quickSort(arr1).length)
+        // 2.扁平化递归
+        const array=[1,[5,56,9,8,7,456],6,[1,5],6,[15,[14],[2,35],56],78]
+        function flap(arr){
+            const res=[]
+            arr.forEach(item=>{
+                if(Array.isArray(item)){
+                    res.push(...flap(item))
+                }else{
+                    res.push(item)
+                }
+            })
+            return res
+        }
+        console.log(flap(array))
+
+        function flapD(arr){
+            let res=[...arr]
+            while(res.some(v=>Array.isArray(v))){
+                res=[].concat(...res)
+            }
+            return res
+        }
+        console.log(flapD(array))
+
+        function reduceFlap(arr){
+            return arr.reduce((prev,item)=>{
+                return prev.concat(Array.isArray(item)?reduceFlap(item):item)
+            },[])
+        }
+        console.log(reduceFlap(array))
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+@function px2vw($px) {
+    @return 100vw / 375 * $px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.box1 {
+    width: px2vw(20);
+    height: px2vw(20);
+    background: red;
+    float: left;
+}
+
+.box2 {
+    width: px2vw(20);
+    height: px2vw(20);
+    background: green;
+    float: right;
+}

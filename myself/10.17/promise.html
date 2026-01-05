@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        const p1=new Promise((resolve,reject)=>{
+            console.log('执行Promise的参数')
+            setTimeout(()=>{
+                resolve({msg:'成功'})
+            },1000)
+        })
+         const p2=new Promise((resolve,reject)=>{
+            console.log('执行Promise的参数')
+            setTimeout(()=>{
+                reject({msg:'失败'})
+            },2000)
+        })
+
+        console.log('p1',p1)
+        console.log('p2',p2)
+
+        p1
+          .then(res=>{
+            console.log('成功',res)
+            return 'aaaaaa'
+          })
+          .then(res=>{
+            console.log('33行',res)
+            return 'bbbbbbb'
+          })
+          .then(res=>{
+            console.log('37行',res)
+          })
+          .catch(e=>{
+            console.log(e)
+          })
+          .finally(()=>{
+            console.log('finally')
+          })
+
+    </script>
+</body>
+</html>

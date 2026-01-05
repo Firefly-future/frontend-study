@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text">
+    <button class="submit">提交</button>
+    <button class="del">删除</button>
+    <button class="clear">清空</button>
+    <div class="box"></div>
+    <a href="./detail.html">本页打开详情页面</a>
+    <a href="./detail.html" target="_blank">新页面打开详情页面</a>
+    <script>
+        // 同源：协议域名端口与当前页面的协议域名端口一致
+        // webStorage本地储存 
+        // localStorage
+        // 永久存储，除非手动删除
+        // 多个标签页面之间可以共享数据
+        // 存储空间一般为5MB
+        // 共享数据的页面必须同源
+
+        // sessionStorage
+        // 会话存储，关闭页面时自动删除
+        // 多个标签页之间不共享数据，在当前窗口内跳转可共享数据
+        // 存储空间一般为5MB
+        // 共享数据的页面必须同源
+
+        // 方法
+        // localStorage.setItem('key','value')    设置数据
+        // localStorage.getItem('key')            获取数据
+        // localStorage.removeItem('key')         删除数据 （一个一个的删除）
+        // localStorage.clear()                   清空数据
+        const $=(el,parent=document)=>parent.querySelector(el)
+        const $all=(el,parent=document)=>[...parent.querySelectorall(el)]
+        const con=JSON.parse(localStorage.getItem('list'))||[]
+        $('.submit').addEventListener('click',()=>{
+            // localStorage.setItem('abc',$('input').value.trim())
+            const text=$('input').value.trim()
+            con.push({
+                id:Date.now(),
+                text
+            })
+            localStorage.setItem('input-text',text)
+            localStorage.setItem('list',JSON.stringify(con))
+             render()
+        })
+        $('.del').addEventListener('click',()=>{
+            localStorage.removeItem('input-text')
+        })
+        $('.clear').addEventListener('click',()=>{
+            localStorage.clear()
+        })
+        function render(){
+            // console.log(localStorage.getItem('input-text'))
+            // console.log(localStorage.getItem('list'))
+            // $('.box').innerHTML=localStorage.getItem('input-text')
+            $('.box').innerHTML=con.map(item=>{
+                return `<li>${item.text}</li>`
+            }).join('')
+        }
+        render()
+    </script>
+</body>
+</html>

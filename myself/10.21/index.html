@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- axios的使用方法 -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        axios.get('http://39.96.210.90:5001/search?keywords=刘德华')
+            .then(res => {
+                console.log('yes', res)
+            })
+            .catch(e => {
+                console.log('no', e)
+            })
+            .finally(() => {
+                console.log('finish');
+            })
+
+        axios.get('http://39.96.210.90:5001/search', {
+            params: {
+                keywords: '李荣浩',
+                a: 100
+            }
+        })
+            .then(res => {
+                console.log('yes', res)
+            })
+            .catch(e => {
+                console.log('no', e)
+            })
+            .finally(() => {
+                console.log('finish');
+            })
+
+
+        axios.post('http://39.96.210.90:5001/search',
+            {
+                keywords: '张杰',
+                a: 200
+            }
+        )
+            .then(res => {
+                console.log('yes', res)
+            })
+            .catch(e => {
+                console.log('no', e)
+            })
+            .finally(() => {
+                console.log('执行完成')
+            })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function b(){}
+            var b;
+            console.log(typeof b)
+        function superFn(){
+            var x=0;
+            return function(){
+                x++
+                console.log(x)
+            }
+        }
+        var s1=superFn()
+        var s2=superFn()
+        s1()
+        s1()
+        s2()
+        s2()
+
+        var name='A'
+        var object={
+            name:'B',
+            getNameFunc:function(){
+                console.log(this.name)
+                return function(){
+                    return this.name
+                }
+            }
+        }
+
+        console.log(object.getNameFunc()())
+
+
+        function A(){}
+        A.prototype.n=1
+        var b=new A()
+        A.prototype.n=2
+        A.prototype.m=3
+        var c=new A()
+        console.log(b.n,b.m,c.n,c.m)
+
+        var tmp=1
+        function f(){
+            console.log(tmp)
+            if(false){
+                var tmp='hello world'
+            }
+        }
+        f()
+
+
+        var age=30
+        var obj={
+            age:20,
+            say:()=>{
+                console.log(this.age)
+            }
+        }
+        obj.say()
+
+
+        var radius=20
+        const shape={
+            radius:10,
+            diameter(){
+                return this.radius*2
+            },
+            perimeter:()=>2*this.radius
+        }
+        console.log(shape.diameter())
+        console.log(shape.perimeter())
+
+
+        var number=0
+        console.log(number++)
+        console.log(++number)
+        console.log(number)
+
+</script>
+</body>
+</html>

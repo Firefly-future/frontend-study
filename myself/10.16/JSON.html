@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 拷贝
+        // 浅拷贝  只拷贝第一层的属性，内部中如果有引用类型的数据，不会拷贝， 会直接使用原地址， 如果改变深层数据则也会改变原数据
+        const obj1={
+            name:'小白',
+            age:22,
+            info:{
+                gender:'男'
+            },
+            do:['sleep']
+        }
+
+        // const obj2={...obj1}
+        const obj2=Object.assign({},obj1)
+        // obj2.info.gender='女'
+        // obj2.do.push('work')
+        console.log(obj1)
+        console.log(obj2)
+
+        // 深拷贝 所有层的数据都拷贝,不会互相影响
+        //       转json实现深拷贝
+        // 缺点：只能拷贝 json 支持的类型 不能拷贝正则，日期，set，map...
+        const obj3=JSON.parse(JSON.stringify(obj1))
+        obj3.info.gender='女'
+        obj3.do.push('work')
+        console.log(obj3)
+
+        // 递归深拷贝
+        const obj4=deepClone(obj1)
+
+        function deepClone(target){
+            // 目标值不是空对象或者对象 返回原值
+            if(target===null||typeof target !=='object'){
+                return target
+            }
+            // 判断目标是 对象或者数组 创建对应的数组或者对象
+            const res=Array.isArray(target)?[]:{}
+            for(let key in target){
+                res[key]=deepClone(target[key])
+            }
+            return res
+        }
+        obj4.info.gender='hhh'
+        console.log(obj4)
+    </script>
+</body>
+</html>

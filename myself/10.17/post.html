@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box"></div>
+    <ul></ul>
+    <script src="./js/request.js"></script>
+    <script>
+        function getQuery() {
+            return location.search.slice(1).split('&').reduce((prev, item) => {
+                const [key, val] = item.split('=')
+                prev[key] = decodeURIComponent(val)
+                return prev
+            }, {})
+        }
+        const query = getQuery()
+
+        request(`http://39.96.210.90:5001/mv/all?id=${query.id}`, {
+            // method:'post',
+            onSuccess: res => {
+                // console.log(JSON.parse(res))
+                // document.querySelector('.box').innerHTML=`
+                // <h3>${res[i].data}</h3>
+                // <p>${res[i].data}</p>
+                // `
+                console.log(res)
+                document.querySelector('ul').innerHTML = res.data.slice(0, 6).map((item) => {
+                    return `<li>${item.name}</li>`
+                })
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,147 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+h2 {
+    padding: 15px;
+    background: rgba($color: #000000, $alpha: .3);
+}
+
+.head1 {
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    button {
+        width: 300px;
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+}
+
+.head {
+    display: flex;
+    align-items: center;
+    width: 300px;
+
+    .card {
+        flex: 1;
+        padding: 10px 20px;
+        background-color: rgba($color: blue, $alpha: .6);
+        text-align: center;
+    }
+
+    .times {
+        flex: 1;
+        padding: 10px 15px;
+        background-color: white;
+        text-align: center;
+    }
+}
+
+.btns {
+    display: flex;
+    flex-wrap: wrap;
+    width: 300px;
+
+    span {
+        width: 50px;
+        height: 50px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        text-align: center;
+        line-height: 50px;
+        background: rgba($color: #000000, $alpha: .3);
+
+        &:hover {
+            color: rgba($color: blue, $alpha: .7);
+            background-color: rgba($color: blue, $alpha: .6);
+            cursor: pointer;
+        }
+    }
+}
+
+.questions {
+    padding: 15px;
+}
+
+.question-item {
+    h3 {
+        border-bottom: 1px solid #726f6f;
+        padding: 15px 0;
+    }
+
+    ul li {
+        padding: 10px 20px;
+    }
+
+}
+
+.answer {
+    display: none;
+    color: green;
+}
+
+.show {
+    display: block !important;
+}
+.active1 {
+    background: green !important;
+}
+.active {
+    background: red !important;
+}
+
+
+
+.tip {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: rgba($color: #000000, $alpha: .3);
+    display: none;
+
+    div {
+        display: flex;
+        flex-direction: column;
+        width: 400px;
+        height: 400px;
+        position: relative;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+
+        img {
+            width: 400px;
+            height: 260px;
+            flex: 1;
+        }
+
+        p {
+            flex: 1;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        span {
+            flex: 1;
+            font-size: 30px;
+            color: red;
+            text-align: center;
+        }
+
+        button {
+            flex: 1;
+            font-size: 30px;
+        }
+    }
+}

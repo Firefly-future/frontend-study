@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="Class"></div>
+    <script src="./js/Base.js"></script>
+    <script src="./js/Data.js"></script>
+    <script src="./js/Class.js"></script>
+    <script>
+        const Cla = new Table(
+            {
+                el: document.querySelector('.Class'),
+                columns: [
+                    { title: '名字' ,dataIndex:'name'},
+                    { title: '年龄' ,dataIndex:'age'},
+                    { title: 'ID' ,dataIndex:'id'},
+                    { title: 'UID' ,dataIndex:'UID'},
+                    { title: '性别' ,dataIndex:'gender',
+                        info:row=>row.gender===0?'男':'女'
+                    },
+                    { title: '成绩' ,dataIndex:'score'},
+                    {title:'操作',info:row=>{
+                        return `
+                        <button class='edit' data-id='${row.id}'>编辑</button>
+                        <button class='del' data-id='${row.id}'>删除</button>
+                        `
+                    }}
+
+                ],
+                data
+            }
+        )
+
+    </script>
+</body>
+
+</html>

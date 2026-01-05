@@ -1,0 +1,179 @@
+:root {
+  --music-theme: #d43c33;
+  --default-font-color: #333;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+img {
+  vertical-align: middle;
+}
+
+html,
+body {
+  height: 100vh;
+  width: 100vw;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-size: 14px;
+  color: var(--default-font-color);
+}
+
+header {
+  height: 84px;
+  padding: 0 10px;
+  background: var(--music-theme);
+}
+
+.head {
+  height: 84px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.head .head-left {
+  height: 25px;
+  width: 142px;
+}
+
+.head .head-right {
+  width: 100px;
+  height: 36px;
+  background-color: #fff;
+  border-radius: 20px;
+  text-align: center;
+  line-height: 26px;
+  padding: 5px;
+  color: var(--music-theme);
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+nav .nav-item {
+  height: 40px;
+  line-height: 40px;
+  border-bottom: 1px solid transparent;
+}
+
+nav .nav-item.active {
+  color: var(--music-theme);
+  border-bottom-color: var(--music-theme);
+}
+
+section img {
+  width: 100vw;
+  height: 16vw;
+}
+
+.tab {
+  display: none;
+}
+
+.tab.show {
+  display: block;
+}
+
+.recommend {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.recommend .title {
+  padding: 15px 0;
+}
+
+.recommend .title h2 {
+  padding: 0 20px;
+  height: 40px;
+  border-left: 3px solid var(--music-theme);
+  line-height: 40px;
+}
+
+.edit {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.edit .edit-item {
+  width: calc((100vw - 6px) / 3);
+  margin-right: 3px;
+  padding-bottom: 10px;
+  position: relative;
+}
+
+.edit .edit-item .playCount {
+  position: absolute;
+  right: 20px;
+  top: 5px;
+  color: white;
+}
+
+.edit .edit-item img {
+  width: 100%;
+}
+
+.edit .edit-item p {
+  padding: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.edit .edit-item:nth-child(3n) {
+  margin-right: 0;
+}
+
+.edit-list .new-song-item {
+  padding: 10px 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.edit-list .new-song-item .song-info {
+  flex: 1;
+}
+
+.edit-list .new-song-item .bg {
+  background: url(https://s3.music.126.net/mobile-new/img/index_icon_2x.png?5207a28c3767992ca4bb6d4887c74880=) no-repeat;
+  background-size: 166px 97px;
+  background-position: -24px 0;
+  width: 22px;
+  height: 22px;
+}
+
+.edit-list .new-song-item .artist {
+  font-size: 10px;
+  padding: 10px 0;
+  margin-left: 5px;
+}
+
+.edit-list .new-song-item .new-song-name {
+  font-size: 15px;
+  padding: 10px 0;
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/检测.css">
+</head>
+
+<body>
+    <div class="box">
+        <h1>网抑云登录页面</h1>
+        <div class="section">
+        <div>姓名：<input type="text" class="name" placeholder="请输入汉字" required><span class="nameTip"></span></div>
+        <div>性别：<select name="" id="" class="gender" required>
+            <option value="0">男</option>
+            <option value="1">女</option>
+        </select></div>
+        <div>年龄：<input type="text" class="age" placeholder="请输入年龄数字"><span class="ageTip"></span></div>
+        <div>密码：<input type="text" class="password" placeholder="请输入6-8位数字密码" required><span class="pass"></span></div>
+        <div>手机号：<input type="text" class="tel" placeholder="请输入11位数字的手机号" required><span class="phone"></span></div>
+        <div>邮箱：<input type="text" class="email" placeholder="请输入有效邮箱" required><span class="emailTip"></span></div>
+        </div>
+        <div class="btns">
+            <button class="ok">确定</button>
+            <button class="no">取消</button>
+        </div>
+    </div>
+    <script>
+        const $=el=>document.querySelector(el)
+        $('.box').addEventListener('click',(e)=>{
+            let target=e.target||window.event.srcElement
+            if(target.classList.contains('name')){
+                const reg=/^[\u4e00-\u9fa5]+$/
+                const str=$('.name').value.trim()
+                if(reg.test(str)){
+                    $('.nameTip').innerHTML=`格式通过`
+                }else{
+                    $('.nameTip').innerHTML=`格式不通过，请重新输入`
+                }
+            }
+             if(target.classList.contains('age')){
+                const reg=/^\d+$/
+                const str=$('.age').value.trim()
+                if(reg.test(str)){
+                    $('.ageTip').innerHTML=`格式通过`
+                }else{
+                    $('.ageTip').innerHTML=`格式不通过，请重新输入`
+                }
+            }
+             if(target.classList.contains('password')){
+                const reg=/^\w{6,8}$/
+                const str=$('.password').value.trim()
+                if(reg.test(str)){
+                    $('.pass').innerHTML=`格式通过`
+                }else{
+                    $('.pass').innerHTML=`格式不通过，请重新输入`
+                }
+            }
+             if(target.classList.contains('tel')){
+                const reg=/^1[3-9][0-9]{9}$/
+                const str=$('.tel').value.trim()
+                if(reg.test(str)){
+                    $('.phone').innerHTML=`格式通过`
+                }else{
+                    $('.phone').innerHTML=`格式不通过，请重新输入`
+                }
+            }
+             if(target.classList.contains('email')){
+                const reg=/^\w+@\w{2,}\.(com|cn|net)$/
+                const str=$('.email').value.trim()
+                if(reg.test(str)){
+                    $('.emailTip').innerHTML=`格式通过`
+                }else{
+                    $('.emailTip').innerHTML=`格式不通过，请重新输入`
+                }
+            }
+            if(target.classList.contains('ok')){
+                location.assign('blank.com')
+            }
+        })
+    </script>
+</body>
+
+</html>

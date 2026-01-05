@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function delay(ms){
+            return new Promise((resolve,reject)=>{
+                setTimeout(()=>{
+                    resolve({value:Math.random()})
+                },ms)
+            })
+        }
+
+
+        delay(2000)
+        .then(res1=>{
+            console.log('res1',res1)
+            return delay(3000)
+        })
+        .then(res2=>{
+            console.log('res2',res2)
+            return delay(4000)
+        })
+        .then(res3=>{
+            console.log('res3',res3)
+        })
+
+
+
+
+        async function fn(){
+            console.log(1)
+            const res1=await delay(2000)
+
+            console.log('res1',res1)
+            const res2=await delay(3000)
+
+            console.log('res2',res2)
+            const res3=await delay(5000)
+            
+            console.log('res3',res3)
+            console.log(2)
+            return 100
+        }
+        fn()
+           .then(res=>{
+            console.log(res)
+           })
+
+
+    </script>
+</body>
+</html>

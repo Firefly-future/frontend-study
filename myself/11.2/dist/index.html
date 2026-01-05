@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <div class="box">
+        <header>
+            <h1>智能答题卡系统</h1>
+            <h4>测试你的技术知识水平</h4>
+            <div class="scoreCount">
+                <!-- <p>满分：100分</p>|
+                <p>共10题</p> -->
+            </div>
+            <div class="line">
+                <div class="line-scroll"></div>
+            </div>
+            <div class="line-progress">
+                <!-- <p class="current">进度：<span>0</span>/10</p>
+                <p class="completed">已完成：<span>0%</span></p> -->
+            </div>
+        </header>
+        <main>
+            <div class="page">
+                <div class="questions">
+                    <div class="questions-item">
+                        <!-- 第<span>1</span>题 -->
+                    </div>
+                    <div class="score">
+                        <!-- 分值：<span>10分</span> -->
+                    </div>
+                </div>
+                <div class="question">
+                    <div class="title">
+                        <p>
+                            <!-- 问题？ -->
+                        </p>
+                        <ul>
+                            <!-- <li class="option-item"></li> -->
+                    </div>
+                    <div class="answer">正确答案：<span></span></div>
+                </div>
+            </div>
+            <div class="btnes">
+                <button class="btn prev">&larr;上一题</button>
+                <div class="right">
+                    <button class="btn next">下一题&rarr;</button>
+                    <button class="btn submit hide">✅提交答案</button>
+                    <button class="btn retest hide">🔃重新测试</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div class="tip">
+        <div class="tip-message">
+            <h2>答题结果</h2>
+            <h1><span>0分</span></h1>
+            <h4><span>0</span>&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;100&nbsp;&nbsp;分</h4>
+            <p>正确题数：<span>0</span>/10</p>
+            <ul>
+                <li>
+                    <div>第<span>1</span>题<p>你的答案：<span>1</span>|正确答案：<span>A</span></p>
+                    </div>
+                    <p><span>10</span>/10</p>
+                </li>
+                <li>
+                    <div>第<span>1</span>题<p>你的答案：<span>1</span>|正确答案：<span>A</span></p>
+                    </div>
+                    <p><span>10</span>/10</p>
+                </li>
+                <li>
+                    <div>第<span>1</span>题<p>你的答案：<span>1</span>|正确答案：<span>A</span></p>
+                    </div>
+                    <p><span>10</span>/10</p>
+                </li>
+                <li>
+                    <div>第<span>1</span>题<p>你的答案：<span>1</span>|正确答案：<span>A</span></p>
+                    </div>
+                    <p><span>10</span>/10</p>
+                </li>
+                <li>
+                    <div>第<span>1</span>题<p>你的答案：<span>1</span>|正确答案：<span>A</span></p>
+                    </div>
+                    <p><span>10</span>/10</p>
+                </li>
+                <li>
+                    <div>第<span>1</span>题<p>你的答案：<span>1</span>|正确答案：<span>A</span></p>
+                    </div>
+                    <p><span>10</span>/10</p>
+                </li>
+            </ul>
+            <div class="btns">
+                <button class="close">关闭</button>
+                <button class="btns-retest">重新测试</button>
+            </div>
+        </div>
+    </div>
+    <script src="./index.js"></script>
+</body>
+
+</html>

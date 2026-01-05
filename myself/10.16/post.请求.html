@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" placeholder="请输入歌手 或者歌名">
+    <ul></ul>
+    <script>
+        document.querySelector('input').addEventListener('keydown', e => {
+            if (e.keyCode === 13) {
+                const xhr = new XMLHttpRequest()
+                xhr.open('post', `http://39.96.210.90:5001/search?item=` + Date.now())
+                xhr.onreadystatechange = () => {
+                    if (xhr.readyState === 4) {
+                        if (xhr.status === 200) {
+                            const data=JSON.parse(xhr.responseText)
+                            document.querySelector('ul').innerHTML=data.result.songs.map(item=>{
+                                return `<li>${item.name}</li>`
+                            }).join('')
+                        } else {
+                            alert('请稍后重试')
+                        }
+                    }
+                }
+                xhr.setRequestHeader('content-type','application/json')
+                xhr.send(JSON.stringify({
+                    keywords:e.target.value,
+                    limit:30
+                }))
+            }
+        })
+    </script>
+</body>
+
+</html>

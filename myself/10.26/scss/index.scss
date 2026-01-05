@@ -1,0 +1,164 @@
+@import './common.scss';
+
+.box {
+    margin: 150px auto 0;
+    border: 10px solid #DBB05D;
+    width: 900px;
+    height: 400px;
+    background-color: #B3B3B3;
+
+    .title {
+        display: flex;
+        justify-content: flex-end;
+        font-size: 25px;
+        font-weight: 900;
+        font-style: italic;
+        padding: 3px 10px 0 0;
+    }
+}
+
+
+
+@keyframes translate{
+    to 100%{
+        transform: translateX(35px);
+    }
+}
+
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    .left ul {
+        display: flex;
+        flex-wrap: wrap;
+        // justify-content: flex-start;
+        width: 530px;
+
+        // border:1px solid black;
+        li {
+            width: 130px;
+            font-size: 20px;
+            color: #181818;
+            font-weight: 600;
+            padding: 30px 60px;
+            // border: 1px solid;
+            // width: calc((100% - 170) / 3);
+            margin: 5px 10px 5px 10px;
+            background-color: #808080;
+            box-shadow: 3px 3px 2px #474747;
+            border-radius: 10px;
+            user-select: none;
+            cursor: pointer;
+            &.show{
+                background: yellow;
+            }
+            &.active{
+                box-shadow: none;
+            }
+        }
+    }
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    // justify-content: space-around;
+    align-items: center;
+
+    .head {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        // justify-content: center;
+        align-items: center;
+        height: 70px;
+        margin: 10px 0;
+
+        .btn1 {
+            background: black;
+            width: 70px;
+            height: 30px;
+            border: 1px solid black;
+            position: relative;
+            cursor: pointer;
+
+            .btn {
+                position: absolute;
+                right: 0;
+                top: 0;
+                width: 35px;
+                height: 28px;
+                background: blue;
+                transition: 0.2s linear;
+                // cursor: pointer;
+                &.active{
+                    transform: translateX(-35px);
+                }
+            }
+        }
+    }
+
+    .content {
+        background: #808080;
+        width: 230px;
+        height: 50px;
+        margin: 10px 0;
+        text-align: center;
+        line-height: 50px;
+    }
+
+    .line {
+        width: 300px;
+        background-color: #454545;
+        border: 1px solid black;
+        height: 10px;
+        position: relative;
+        margin: 10px 0;
+        cursor: pointer;
+
+        .line-light {
+            width: 6px;
+            height: 40px;
+            position: absolute;
+            left: -3px;
+            top: -15px;
+            background-color: blue;
+        }
+    }
+
+    .foot {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        // justify-content: center;
+        align-items: center;
+        height: 70px;
+        margin: 10px 0;
+
+        .btn1 {
+            background: black;
+            width: 70px;
+            height: 30px;
+            border: 1px solid black;
+            position: relative;
+            cursor: pointer;
+
+            .btn {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 35px;
+                height: 28px;
+                background: blue;
+                transition: 0.2s linear;
+                // cursor: pointer;
+                &.active{
+                    transform: translateX(35px);
+                }
+            }
+        }
+    }
+}

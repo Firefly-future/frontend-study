@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text">
+    <button class="submit">提交</button>
+    <button class="del">删除</button>
+    <button class="clear">清空</button>
+    <div class="box"></div>
+    <a href="./detail.html">本页打开详情页面</a>
+    <a href="./detail.html" target="_blank">新页面打开详情页面</a>
+    <script>
+        // cookie
+        // 必须是同源的
+        // 存储空间4kb
+        // 可以设置过期时间，expires字段设置
+        // 可设置指定的路径或域名访问 path=xxxx;domain=xxxx
+        // 发送同源的请求时，会在请求头中自动把cookie发送给服务端
+        // 服务端响应数据时可设置cookie，当服务端设置httpOnly=true 时，js无法读取词条cookie
+        const $=(el,parent=document)=>parent.querySelector(el)
+        $('.submit').addEventListener('click',()=>{
+            console.log(document.cookie)
+            const expiresTime=new Date('2025-10-20 22:50:00').toGMTString()
+            document.cookie=`username:朱小明;expires=${expiresTime}`
+            document.cookie=`age=33;path=/`
+            document.cookie=`gender=男;path=/bbb`
+        })
+        console.log(document.cookie)
+        $('.del').addEventListener('click',()=>{
+            const expiresTime=new Date('2025-10-20 22:45:00').toGMTString()
+            document.cookie=`user=朱晓明;expires=${expiresTime}`
+        })
+        const xhr=new XMLHttpRequest()
+        xhr.open('get','/api/list')
+        xhr.onreadystatechange=()=>{
+
+        }
+        xhr.send()
+    </script>
+</body>
+</html>

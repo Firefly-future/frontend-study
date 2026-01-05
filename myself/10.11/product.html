@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/product.css">
+</head>
+<body>
+    <div class="box">
+        <div class="header">
+            <select name="" id="pageSize">
+                <option value="4">每页4条</option>
+                <option value="8">每页8条</option>
+                <option value="12">每页12条</option>
+                <option value="16">每页16条</option>
+                <option value="20">每页20条</option>
+            </select>
+            <input type="text" placeholder="请输入搜索的商品名称" class="inp">
+            <button class="searchBtn">搜索</button>
+            <button class="nameBtn">按商品名称排序</button>
+            <button class="priceBtn">按商品价格排序</button>
+        </div>
+        <div class="con">
+            <!-- <dl>
+                <dt><img src="" alt=""></dt>
+                <dd class="name">商品名称</dd>
+                <dd class="price">商品价格</dd>
+                <dd class="des">标签</dd>
+            </dl> -->
+        </div>
+        <div class="footer">
+            <button class="first">首页</button>
+            <button class="prev">上一页</button>
+            <div class="page">
+                <!-- <span>1</span><span>2</span><span>3</span> -->
+            </div>
+            <button class="next">下一页</button>
+            <button class="last">尾页</button>
+        </div>
+    </div>
+    <script src="./js/productData.js"></script>
+    <script src="./js/product.js"></script>
+</body>
+</html>

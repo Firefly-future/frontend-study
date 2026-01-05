@@ -1,0 +1,255 @@
+@import './common.scss';
+
+@function px2vw($px) {
+    @return 100vw/375*$px
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.bg {
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: rgba($color: #000000, $alpha: .3);
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+
+.player-wrap {
+    padding: px2vw(80) 0 px2vw(40);
+
+    .player {
+        width: px2vw(240);
+        height: px2vw(240);
+        margin: 0 auto;
+        position: relative;
+
+        &::after {
+            content: '';
+            background: url(https://p5.music.126.net/obj/wonDlsKUwrLClGjCm8Kx/28513977227/139b/06a3/e1e3/929b3b4b49bf5c6ef05c795e9e1f2516.png) no-repeat;
+            background-size: contain;
+            position: absolute;
+            width: px2vw(98);
+            height: px2vw(109);
+            top: px2vw(-40);
+            left: px2vw(70);
+        }
+
+        .mask {
+            background: url(https://p6.music.126.net/obj/wonDlsKUwrLClGjCm8Kx/28513831157/e8e9/beeb/912c/468bcb523668065ccf6f853c4a084e31.png) no-repeat;
+            background-size: contain;
+            // position: absolute;
+            width: 100%;
+            height: 100%;
+            // left: px2vw(10);
+            // top: px2vw(30);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: rotate 5s linear infinite;
+
+            &.play {
+                animation-play-state: paused;
+            }
+
+            img {
+                width: px2vw(151);
+                height: px2vw(151);
+                border-radius: 50%;
+            }
+
+            &::after {
+                background: url(https://s3.music.126.net/mobile-new/img/disc_light.png?2bb24f3fd11569809b817b4988f12bc7=) no-repeat;
+                content: '';
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                left: 0;
+                top: 0;
+                background-size: contain;
+            }
+        }
+
+        .pause {
+            img {
+                width: px2vw(36);
+                height: px2vw(36);
+                // background: url(https://p6.music.126.net/obj/wonDlsKUwrLClGjCm8Kx/34207669669/f020/7908/a749/34315097c835773c4e003e72fbbae607.png) no-repeat;
+                position: absolute;
+                left: px2vw(105);
+                top: px2vw(100);
+                // background-size: contain;
+                // filter: blur(1px);
+            }
+        }
+    }
+}
+
+.name-box {
+    display: flex;
+    padding: 20px 20px;
+    align-items: center;
+
+    .names {
+        flex: 6;
+        display: flex;
+        flex-direction: column;
+        // justify-content: center;
+        height: 46px;
+
+        .song-name {
+            flex: 1;
+            font: 600 16px/16px '微软雅黑';
+            padding: 3px 0;
+            margin-right: 10px;
+        }
+
+        span {
+            display: inline;
+            font-size: 14px;
+            margin-left: 5px;
+            font-weight: lighter;
+        }
+
+        // span{
+        //         background: url(https://p6.music.126.net/obj/wonDlsKUwrLClGjCm8Kx/28481389006/9d00/ac44/f208/6ac5d9357cdfb74abb7fd7f80646c0a0.png) no-repeat;
+        //         width: 25px;
+        //         height: 16px;
+        //         background-size: contain;
+        //         position: absolute;
+        //         left: 40px;
+        //         top: 4px;
+        //     }
+        .name {
+            flex: 1;
+            padding: 3px 0;
+            font: 100 10px/10px '宋体';
+            line-height: 23px;
+        }
+    }
+
+    .like {
+        height: 46px;
+        text-align: center;
+        flex: 3;
+        line-height: 46px;
+        position: relative;
+
+        img {
+            width: 28px;
+            height: 28px;
+        }
+
+        span {
+            position: absolute;
+            font-size: 8px;
+            left: 53px;
+            top: -6px;
+        }
+    }
+
+    .comment {
+        height: 46px;
+        text-align: center;
+        flex: 1;
+        line-height: 46px;
+        position: relative;
+        padding: 0 8px;
+
+        img {
+            width: 28px;
+            height: 28px;
+        }
+
+        span {
+            position: absolute;
+            font-size: 8px;
+            left: 28px;
+            top: -6px;
+        }
+    }
+}
+
+.lyric {
+    padding: 20px 0;
+    // display: flex;
+    // align-items: center;
+    // flex-direction: column;
+    max-height: 75px;
+    overflow: auto;
+
+    .lyric-item {
+        padding: 2px 0;
+        text-align: center;
+        overflow: hidden;
+
+        p {
+            transition: .5s linear;
+        }
+    }
+
+    .active {
+        color: red;
+
+        p {
+            transform: scale(1.6);
+        }
+    }
+}
+
+.progress {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    justify-content: space-around;
+
+    .progress-item {
+        height: 10px;
+        background-color: rgba($color: #da89d9, $alpha: .3);
+        width: px2vw(240);
+        border-radius: 10px;
+        // position: relative;
+        .line{
+            // position: absolute;
+            background-color: red;
+            height: 100%;
+            border-radius: 10px;
+            width: 0px;
+            position: relative;
+        }
+        .heiht-line{
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: red;
+            &.idDown{
+                transform: scale(1.5);
+            }
+        }
+    }
+}
+
+section {
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+
+    .tab {
+        height: 48px;
+        line-height: 48px;
+        flex: 1;
+        text-align: center;
+    }
+}

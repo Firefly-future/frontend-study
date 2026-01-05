@@ -1,0 +1,39 @@
+@import './common.scss';
+.box{
+    margin: 50px auto 0;
+    width: 600px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 5px 10px;
+    h1{
+        flex: 1;
+        border-bottom: 1px solid black;
+    }
+    .section{
+        flex: 1;
+        padding:5px 0;
+        // display: flex;
+        // justify-content: space-between;
+        // flex-direction: column;
+        align-items: center;
+        border-bottom: 1px solid black;
+    }
+    .name,.gender,.age,.password,.tel,.email{
+        width: 50%;
+        height: 30px;
+        margin: 5px 0;
+    }
+    .btns{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        .ok,.no{
+            height: 30px;
+            margin-left: 5px;
+            margin-top: 5px;
+            padding: 0 10px;
+        }
+    }
+}

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/Table.css">
+    <link rel="stylesheet" href="./css/Page.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+    <div class="table"></div>
+    <div class="pagination"></div>
+    <div class="tips">
+        <div class="tip">
+            <div class="header">
+                <p>修改编辑</p> <span class="close">&times;</span>
+            </div>
+            <div>姓名：<input type="text" placeholder="请输入姓名" class="name"></div>
+            <div>年龄：<input type="text" placeholder="请输入年龄" class="age"></div>
+            <div>性别：<select name="" id=""  class="gender">
+                    <option value="2">请选择</option>
+                    <option value="0">男</option>
+                    <option value="1">女</option>
+                </select></div>
+            <div>成绩：<input type="text" placeholder="请输入成绩"  class="score"></div>
+            <div class="btns">
+                <div>
+                    <button class="ok">确定</button>
+                    <button class="no">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/Data.js"></script>
+    <script src='./js/Base.js'></script>
+    <script src="./js/Table.js"></script>
+    <script src="./js/Pagination.js"></script>
+    <script>
+
+        const $ = el => document.querySelector(el)
+
+
+        let config = {
+            page: 1,
+            pagesize: 10
+        }
+        const pagination = new Pagination({
+            el: document.querySelector('.pagination'),
+            page: config.page,
+            pagesize: config.pagesize,
+            total: data.length,
+            onChange: (page, pagesize) => {
+                config = {
+                    page,
+                    pagesize
+                }
+                const newData = data.slice((config.page - 1) * config.pagesize, config.page * config.pagesize)
+                table.update(newData)
+            }
+        })
+
+
+
+        const table = new Table({
+            el: document.querySelector('.table'),
+            columns: [
+                { title: '用户标识', dataIndex: 'num' },
+                { title: 'id', dataIndex: 'id' },
+                { title: '年龄', dataIndex: 'age' },
+                { title: '用户名字', dataIndex: 'name' },
+                {
+                    title: '性别',
+                    dataIndex: 'gender',
+                    getInfo: row => row.gender === 0 ? '男' : '女'
+                },
+                { title: '成绩', dataIndex: 'score' },
+                {
+                    title: '操作',
+                    getInfo: (row) => {
+                        return `
+                        <button class='edit' data-id='${row.id}'>编辑</button>
+                        <button class='del' data-id='${row.id}'>删除</button>`
+                    }
+                }
+            ],
+            data: data.slice((config.page - 1) * config.pagesize, config.page * config.pagesize)
+        })
+
+        document.querySelector('.table').addEventListener('click', e => {
+
+            let target = e.target || window.event.srcElement
+            // console.log(target)
+            if (target.classList.contains('del')) {
+                console.log(target)
+                const id = target.getAttribute('data-id')
+                const index = data.findIndex(item => item.id === Number(id))
+                if (index > -1) {
+                    // console.log(id)
+                    // console.log(index)
+                    data.splice(index, 1)
+                    const newData = data.slice((config.page - 1) * config.pagesize, config.page * config.pagesize)
+                    table.update(newData)
+                    pagination.updateTotal(data.length)
+                }
+            }
+            else if (target.classList.contains('edit')) {
+                const id = target.getAttribute('data-id')
+                const index = data.findIndex(item => item.id === Number(id))
+                if (index > -1) {
+                    // console.log(id)
+                    // console.log(index)
+                    showDialog(data[index], index)
+                }
+            }
+        })
+        let editIndex = -1//编辑的数据下标 
+        $('.no').addEventListener('click', () => {
+            $('.tips').classList.remove('show')
+            editIndex = -1
+        })
+        $('.close').addEventListener('click', () => {
+            $('.tips').classList.remove('show')
+            editIndex = -1
+        })
+        const showDialog = (row, index) => {
+            editIndex = index
+            // console.log(row)
+            $('.tips').classList.add('show')
+            $('.tip .name').value = row.name
+            $('.tip .age').value = row.age
+            $('.tip .gender').value = row.gender
+            $('.tip .score').value = row.score
+        }
+        $('.ok').addEventListener('click',()=>{
+            const info={
+                name:$('.tip .name').value,
+                age:$('.tip .age').value*1,
+                gender:$('.tip .gender').value*1 ,
+                score:$('.tip .score').value*1 
+            }
+            data.splice(editIndex,1,{
+                ...data[editIndex],
+                ...info}
+            )
+            const newData=data.slice((config.page-1)*config.pagesize,config.page*config.pagesize)
+            table.update(newData)
+            $('.tips').classList.remove('show')
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "after_server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node-dev ./app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "axios": "^1.13.1",
+    "express": "^5.1.0",
+    "http-proxy-middleware": "^3.0.5",
+    "ip": "^2.0.1"
+  }
+}

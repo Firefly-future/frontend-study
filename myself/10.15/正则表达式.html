@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 正则表达式规则
+        // reg=/\a/i
+        const reg=/^a/
+        // const r=/^/
+        const str='acsfdss46ssbbfojofoi1356444497afsf15asd156fsfds65sfda15SDSFEFFSA'
+        console.log(reg.test(str))
+        console.log(reg.exec(str))
+        // 修饰符
+        // i                                      忽略大小写
+        // g                                       全局匹配
+
+        // 元字符
+        // \d                                        匹配数字
+        // \D                                        匹配非数字
+        // \w                                        匹配字母数字下划线
+        // \W                                        匹配非字母数字下划线
+        // \s                                        匹配空字符
+        // \S                                        匹配非空字符
+        // [\u4e00-\u9fa5]                           匹配中文
+        
+        // 特殊字符
+        // \                                        转义字符，将正则中有特殊含义的字符转化为普通字符
+        // ^                                        从什么开始
+        // $                                        到什么结束
+        // [^]                                      取反，除了中括号里以外的任意字符
+        // .                                        除了换行以外的任意字符  
+        // |                                        或
+        // ()                                       分组
+        // []                                       中括号中的字符匹配任意一个
+
+        // 字符集合与范围
+        // [abc]                                    匹配'a'  'b'  'c'中的一个
+        // [a-z]                                    匹配任意小写字母
+        // [A-Z]                                    匹配任意大写字母
+        // [0-9]                                    匹配任意数字
+        // [^abc]                                   匹配除了字符'a' 'b' 'c'以外的字符
+
+        // 限定符                                    
+        // {n,m}                                    匹配n-m个
+        // {n}                                      匹配n个
+        // {n,}                                     匹配最少n个
+        // +                                        匹配最少一个
+        // *                                        匹配最少0个
+        // ?                                        匹配0个或者1个
+
+    </script>
+</body>
+</html>

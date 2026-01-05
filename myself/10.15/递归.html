@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr = [1, 2, [3, [4, 5, [6, 7, 8, 9], 10], 11], 12]
+        function fn(arr) {
+            const res = []
+            arr.forEach(item => {
+                if (Array.isArray(item)) {
+                    const ar = fn(item)
+                    res.push(...ar)
+                }
+                else {
+                    res.push(item)
+                }
+            }
+            )
+            return res
+        }
+        console.log(fn(arr))
+        console.log(arr.flat(Infinity))//扁平化数组
+
+
+        // 闭包
+        function fn() {
+            let num = 0
+            return function(){
+                num++
+                console.log(num)
+            }
+           
+        }
+        const add=fn()
+        add()
+        add()
+
+        // 自执行函数
+        for(var i=0;i<5;i++){
+        (function(j){
+            setTimeout(()=>{
+                console.log(j)
+            })
+            }
+        )(i)}
+
+        for(let i=0;i<5;i++){
+                setTimeout(()=>{
+                    console.log(i)
+                })
+        }
+    </script>
+</body>
+
+</html>

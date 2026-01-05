@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/1.css">
+</head>
+<body>
+    <div class="box">
+        <h2>学生成绩列表</h2>
+        <div class="top">
+        <div>每页显示条数: <select name="" id="pageList">
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+        </select></div>
+        <div>排序: <select name="" id="">
+            <option value="name">名字</option>
+            <option value="age">年龄</option>
+            <option value="grade">得分</option>
+            <option value="class">等级</option>
+        </select></div>
+        <div><input type="text" placeholder="搜索" class="inp"></div>
+    </div>
+    <div class="tab">
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>名字</th>
+                    <th>年龄</th>
+                    <th>得分</th>
+                    <th>等级</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- <tr>
+                    <td>老大</td>
+                    <td>17</td>
+                    <td>95</td>
+                    <td>A</td>
+                </tr> -->
+            </tbody>
+        </table>
+        <div class="footer">
+            <button class="prev">上一页</button>
+            <div class="page">
+                <!-- <span>1</span>
+                <span>2</span>
+                <span>3</span> -->
+            </div>
+            <button class="next">下一页</button>
+        </div>
+    </div>
+    </div>
+    <script src="./js/1Data.js"></script>
+    <script src="./js/1.js"></script>
+</body>
+</html>

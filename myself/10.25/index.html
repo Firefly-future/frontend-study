@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <header>
+        <div class="box1" draggable="true">这是盒子一</div>
+        <div class="box2" draggable="true">这是盒子二</div>
+        <img src="./img/爱如此刻永恒.webp" alt="">
+        <a href="http://baidu.com">百度</a>
+    </header>
+    <main>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>10</li>
+        </ul>
+    </main>
+    <footer>
+        <div class="del">删除</div>
+    </footer>
+    <script>
+        const $ = el => document.querySelector(el)
+        const $all = el => [...document.querySelectorAll(el)]
+
+        // 源对象中的事件
+        // dragstart   开始拖动
+        // drag        拖动中
+        // dragend     拖动结束
+
+        // draggable=true 表示可以拖拽  标签中的属性
+        // 一般都是默认 draggable=false
+        // img和a除外
+
+        // 过程对象中的事件
+        // dragenter   进入对象
+        // dragover    在对象中移动
+        // dragleave   离开对象
+
+        // 目标对象
+        // drop        源对象进入到目标对象中
+
+
+        // ==dataTransfer==
+        // 拖放事件对象中的属性，该属性用于源对象和目标对象之间的数据传输
+        // 在源对象中存储数据 e.dataTransfer.setData('数据类型','值')
+        // 在目标对象中获取数据 e.dataTransfer.getData('数据类型')
+        // 在源对象中清除数据  e.dataTransfer.clearData('数据类型')（不写表清楚所有）
+        // e.dataTransfer.setDragImage(img,x,y)     图片对象的x,y偏移量
+    </script>
+    <script src="./js/index.js"></script>
+</body>
+</html>

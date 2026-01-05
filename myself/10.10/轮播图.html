@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/1.css">
+</head>
+
+<body>
+    <!-- 插件 swiper 
+    装整个内容的大盒子 swiper-container
+    装图片的盒子  swiper-wrapper
+                  swiper-slide
+    分页器   swiper-pagination
+    上下按钮 swiper-button-prev
+            swiper-button-next
+    -->
+    <!-- swiper-container 整个盒子 -->
+    <div class="swiper-container banner1">
+        <!--  swiper-wrapper 装图片的盒子 -->
+        <div class="swiper-wrapper">
+            <!--   swiper-slide  放每个小图片的盒子 -->
+            <div class="swiper-slide"><img src="../1010(1)/img/ban1.webp" alt=""></div>
+            <div class="swiper-slide"><img src="../1010(1)/img/ban2.webp" alt=""></div>
+            <div class="swiper-slide"><img src="../1010(1)/img/ban3.webp" alt=""></div>
+            <div class="swiper-slide"><img src="../1010(1)/img/ban4.webp" alt=""></div>
+            <div class="swiper-slide"><img src="../1010(1)/img/ban5.webp" alt=""></div>
+            <div class="swiper-slide"><img src="../1010(1)/img/ban6.webp" alt=""></div>
+        </div>
+        <!-- swiper-pagination 分页器 -->
+        <div class="swiper-pagination"></div>
+        <!-- swiper-button-prev 上按钮 -->
+        <div class="swiper-button-prev">&lt;</div>
+        <!-- swiper-button-next 下按钮 -->
+        <div class="swiper-button-next">&gt;</div>
+    </div>
+    <script src="./js/1.js"></script>
+    <script>
+        new Swiper({
+            el:document.querySelector('.banner1'),
+            autoplay:true,
+            wait:4000,
+            speed:2000
+        })
+    </script>
+</body>
+
+</html>
