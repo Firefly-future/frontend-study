@@ -1,0 +1,1 @@
+{"version":3,"file":"detail-fde8bb09.css","mappings":"AAGA,KACI,YACA,aACA,mB","sources":["webpack://webpack2/./src/detail/detail.scss"],"sourcesContent":["\r\n\r\n\r\nhtml{\r\n    width: 100vw;\r\n    height: 100vh;\r\n    background: #cfb16c;\r\n}"],"names":[],"sourceRoot":""}
