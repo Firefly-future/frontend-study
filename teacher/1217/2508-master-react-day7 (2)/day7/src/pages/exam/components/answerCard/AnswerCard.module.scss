@@ -1,0 +1,16 @@
+.card_wrap {
+  width: 300px;
+  padding-top: 70px;
+}
+.card {
+  position: sticky;
+  top: 0;
+}
+.btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  .btn {
+    width: 42px;
+  }
+}

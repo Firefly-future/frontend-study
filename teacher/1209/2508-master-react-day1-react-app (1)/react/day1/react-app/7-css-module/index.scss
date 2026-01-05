@@ -1,0 +1,27 @@
+.title {
+  color: red;
+}
+nav {
+  width: 300px;
+  display: flex;
+  border: 1px solid;
+  .item {
+    flex: 1;
+    text-align: center;
+    line-height: 45px;
+  }
+  .active {
+    background: red;
+    color: #fff;
+  }
+  .large {
+    font-size: 30px;
+  }
+  .small {
+    font-size: 12px;
+  }
+}
+.btn {
+  height: 40px;
+  padding: 0 15px;
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Math数学对象
+            // 提供了一系列数学常数和函数，不需要 new， 可以直接使用。
+
+            // 数学对象常用方法
+                // Math.ceil()  向上取整
+                    console.log( "-----Math.ceil()向上取整-----" )
+                    console.log( Math.ceil( 5.8 ) )   // 6 
+                    console.log( Math.ceil( 3.1 ) )   // 4
+                    console.log( Math.ceil( -1.8 ) )  // -1
+                    console.log( Math.ceil( true ) )  // 1 
+
+                // Math.floor()  向下取整
+                    console.log( "-----Math.floor()向下取整-----" )
+                    console.log( Math.floor( 5.8 ) )   // 5
+                    console.log( Math.floor( 3.1 ) )   // 3
+                    console.log( Math.floor( -1.8 ) )  // -2
+                    console.log( Math.floor( true ) )  // 1 
+
+                // Math.abs()  取绝对值
+                    console.log( "-----Math.abs()取绝对值-----" ) 
+                    console.log( Math.abs( 5.8 ) )   // 5.8
+                    console.log( Math.abs( 3.1 ) )   // 3.1
+                    console.log( Math.abs( -1.8 ) )  // 1.8
+                    console.log( Math.abs( true ) )  // 1 
+
+                // Math.round() 四舍五入,看小数的后一位
+                    // 正数: 满五向上取整，否则向下取整
+                    // 负数: 满五向下取整，否则向上取整
+                    console.log( "-----Math.round()四舍五入-----" )
+                    console.log( Math.round( 5.8 ) )   // 6
+                    console.log( Math.round( 3.1 ) )   // 3
+                    console.log( Math.round( -1.8 ) )  // -2
+                    console.log( Math.round( -1.4 ) )  // -1
+                    console.log( Math.round( true ) )  // 1 
+
+                // Math.pow(n,m) 求n的m次方
+                    console.log("-----Math.pow()-----开次方")
+                    console.log( Math.pow(3,3) )
+                    console.log( Math.pow(5,4) ) 
+
+                // Math.max()  找最大值
+                    console.log( "-----Math.max()找最大值-----" )
+                    console.log( Math.max( 59,12,56,15,6,80,54,5,1,'98' ) )
+
+                // Math.min()  找最小值
+                    console.log( "-----Math.min()找最小值-----" )
+                    console.log( Math.min( 59,12,56,15,6,null,80,54,5,1,undefined ) )
+                    // 注意: 找大值 或 小值时，会隐式转换数字，若出现了NaN 结果一定是NaN
+
+                // Math.PI 圆周率  注意: 这个是属性
+                    console.log( "-----Math.PI圆周率-----" )
+                    console.log( Math.PI )
+
+                // Math.random() 求0-1之间的随机数  包含0 不包含1
+                    console.log( "-----Math.random()-----0-1之间的随机数" )
+                    console.log( Math.random() )
+
+                // 求10 - 100 之间的随机数
+                // Math.floor( Math.random() * (max - min + 1) + min) 随机整数公式:
+                //                 0                           + 10   -> 10
+                //                0.99       *  91             + 10   -> 100
+                //                0.54       *  91             + 10   -> 59
+                console.log( Math.floor( Math.random() * ( 100 - 10 + 1 ) + 10) )
+
+                // 再长字符串中 找随机字符
+                var str = "ctyhwjks";
+                //         01234567
+                var index1 = Math.floor( Math.random() * ( str.length - 1 - 0 + 1) + 0) 
+                var index2 = Math.floor( Math.random() * str.length ) 
+                console.log( index1 + "下标对应的字符是" + str[index1] )
+                console.log( index2 + "下标对应的字符是" + str[index2] )
+
+                // 总结; 根据随机整数的公式 套入字符串或数组中，可得出随机下标，根据下标可以找到对应的内容，即随机内容
+    
+                // demo 随机一个实参
+                function printFn(  ){
+                    // 不确定参数 arguments
+                    var index = Math.floor( Math.random() * arguments.length );
+                    console.log( index )
+                    console.log( arguments )
+                    console.log( arguments[index] )
+                }
+                printFn( 14 , true, 1, "hello" ,2000, null,"china" )
+    </script>
+</body>
+</html>

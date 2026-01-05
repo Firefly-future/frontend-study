@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var user = "全局"
+        // var obj = {
+        //     user : "随便吧",
+        //     age : 18 , 
+        //     say : function(){
+        //         console.log(this , this.user)
+        //         // obj     obj.user -> 随便
+        //         // window  window.user -> 全局
+        //     },
+        //     talk : () => {
+        //         console.log(this , this.user)
+        //         // window  window.user -> 全局
+        //         // window  window.user -> 全局
+        //     }
+        // }
+        // obj.say()
+        // var fn = obj.say;
+        // fn()
+
+        // obj.talk()
+        // var f = obj.talk;
+        // f()
+
+        // var user = "小花";
+        // function a () {
+        //     // a 函数内部的this是window
+        //     var user = "笑话";
+        //     var obj = {
+        //         user : "哈哈哈",
+        //         dothing : () => {
+        //             console.log(this , this.user)
+        //             // window     小花
+        //             // window     小花
+        //         } ,
+        //         eating : function(){
+        //             console.log(this , this.user)
+        //             //   obj    哈哈哈
+        //             // window   小花
+        //         }
+        //     }
+        //     obj.dothing()
+        //     var fn1 = obj.dothing;
+        //     fn1()
+
+        //     obj.eating()
+        //     var fn2 = obj.eating;
+        //     fn2()
+        // }
+        // a()
+
+
+
+
+
+        // var user = "超级玛丽";
+        // function test( a,b,c ){
+        //     console.log( this )
+        //     console.log( a,b,c )
+        //     console.log( this.user )
+        // }
+        // test()  // window.test()
+        //     // this -> window
+        //     // undefined * 3
+        //     // 超级玛丽
+
+        // var obj = {
+        //     user : "赛亚人",
+        //     fn1 : function(){
+        //         console.log( this )
+        //         console.log( this.user )
+        //     } ,
+        //     fn2 : test
+        // }
+        // obj.fn1()
+        // // this -> obj  obj.user ->  赛亚人
+
+        // var f1 = obj.fn1;
+        // f1() // window.f1()
+        // // this -> window   window.user -> 超级玛丽
+
+        // obj.fn2()
+        // //   this -> obj   undeifned*3  obj.user -> 赛亚人
+        // var f2 = obj.fn2;
+        // f2()
+        // // this -> window   undefined*3   window.user -> 超级玛丽
+
+
+
+        var user = "老赖";
+        var obj = {
+            user : "老狗" ,
+            // say : () => {
+            //     console.log( this )   // window
+            //     setTimeout(() => {  // window.setTimeout()
+            //         console.log(this , this.user , user)
+            //         //         window    老赖       老赖
+            //     })
+            // },
+            // eat : function(){
+            //     console.log( this )  // obj
+            //     var user = "癞皮狗"
+            //     setTimeout(() => {   // setTimeout()
+            //         console.log(this , this.user , user)
+            //         //        obj       老狗      癞皮狗
+            //     })
+            // },
+            // abc : () => {
+            //     console.log( this )  // window
+            //     setTimeout(function(){  
+            //         var user = "沙皮狗"
+            //         console.log(this , this.user , user)
+            //         //        window     老赖     沙皮狗
+            //     })
+            // } ,
+            def : function(){
+                console.log(this)    // obj
+                setTimeout(function(){
+                    var user = "小魔王"
+                    console.log(this , this.user , user)
+                    //          window     老赖      小魔王
+                })
+            }
+        }
+        // obj.say()
+        // obj.eat()
+        // obj.abc()
+        obj.def()
+    </script>
+</body>
+</html>

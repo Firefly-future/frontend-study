@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册页</title>
+    <style>
+        * {padding:0; margin: 0; box-sizing: border-box;}
+
+        .register{width: 350px; min-height: 300px; padding: 10px; 
+            border-radius: 10px; border:1px  solid #CCC; margin: 30px auto 0;}
+
+        .register h3{ font: 900 20px/40px "楷体"; color: #666; }
+        .register p{ height: 40px; margin-top: 10px; }
+        .register label , .register input , .register strong , .register span{ float: left; height: 40px; }
+        .register label{ width: 50px; font-size: 14px; text-align: right; margin-right: 10px; line-height: 38px;}
+        .register input{ width: 268px; border:1px solid #CCC; border-radius: 6px; padding-left: 15px;outline: 0; }
+        /* 350 - 20 - 50 - 10 - 2 = 268 -130 = 138 - 90 = 48 */
+        #userCode{ width: 130px; }
+        #code{ width: 70px; text-align: center; line-height: 38px; letter-spacing: 3px; background: #EEE;
+                border-radius: 5px; margin: 0 10px; }
+        #change{ width: 48px; font-size: 14px; color: blue; text-align: center; line-height: 38px; }
+
+        .btns{ text-align: center; margin-top: 30px; }
+        .btns button{ padding: 10px 15px; margin:  0 15px; }
+    </style>
+</head>
+<body>
+    <div class="register">
+        <h3>欢迎进入注册页</h3>
+        <p>
+            <label for="">用户名:</label>
+            <input type="text" placeholder="请输入用户名" id="userName">
+        </p>
+        <p>
+            <label for="">密码:</label>
+            <input type="text" placeholder="请输入密码" id="userPwd">
+        </p>
+        <p>
+            <label for="">邮箱:</label>
+            <input type="text" placeholder="请输入邮箱" id="userEmail">
+        </p>
+        <p>
+            <label for="">验证码:</label>
+            <input type="text" placeholder="请输入验证码" id="userCode">
+            <strong id="code">D4fa</strong>
+            <span id="change">换一换</span>
+        </p>
+        <div class="btns">
+            <button id="back">上一步</button>
+            <button id="regBtn">注册</button>
+        </div>
+    </div>
+
+    <script src="./js/getEl.js"></script>
+    <script src="./js/register.js"></script>
+</body>
+</html>

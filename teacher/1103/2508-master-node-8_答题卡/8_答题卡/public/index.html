@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./axios.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h2>智能答题卡系统</h2>
+      <p>测试你的技术知识水平</p>
+      <div class="score-info">
+        满分: <span class="total-score"></span>分 | 共<span class="total-question"></span>题
+      </div>
+      <div class="progress-container">
+        <div class="progress-bar">
+          <div class="progress"></div>
+        </div>
+        <div class="progress-info">
+          <p>进度：<span class="current-progress">0</span>/<span class="total-progress">10</span></p>
+          <p>已完成：<span class="progress-percent">0</span>%</p>
+        </div>
+      </div>
+    </div>
+    <div class="content">
+      <div class="question"></div>
+      <div class="controller">
+        <button class="prev">上一题</button>
+        <div class="right">
+          <button class="next">下一题</button>
+          <button class="submit hide">提交答案</button>
+          <button class="restart hide">重新测试</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./index.js"></script>
+</body>
+</html>

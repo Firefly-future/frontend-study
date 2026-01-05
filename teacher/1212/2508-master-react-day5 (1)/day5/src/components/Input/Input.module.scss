@@ -1,0 +1,28 @@
+.input_wrap {
+  display: inline-block;
+  border: 1px solid #dddd;
+  padding: 3px 30px 3px 15px;
+  border-radius: 5px;
+  position: relative;
+  height: 36px;
+  width: 300px;
+  margin: 0 10px;
+  input {
+    border: none;
+    outline: none;
+    flex: 1;
+    height: 30px;
+  }
+  span {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #ccc;
+    font-size: 10px;
+    text-align: center;
+    cursor: pointer;
+  }
+}

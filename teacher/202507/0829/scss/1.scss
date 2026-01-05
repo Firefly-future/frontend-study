@@ -1,0 +1,61 @@
+
+// 补充笔记
+// @import 导入外部文件
+// 若引入的是sass文件 可省略url 和 后缀名称，且导入的文件与从当前文件进行合并
+// 若引入的是其他类型文件 需要书写url(路径)
+
+// @import "./common.scss"
+@import "./common";
+
+// @import url(../css/common.css);
+
+.nav{
+    margin: 150px 150px 0;
+    height: 50px;
+    background: #EEE;
+    li{
+        float: left;
+        width: 150px;
+        height: 50px;
+        margin: 0 10px;
+        background: pink;
+        // 父元素 开启透视  子元素开启3d效果
+        perspective: 500px;
+    }
+}
+
+.box {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    // 开启3D效果
+    transform-style: preserve-3d;
+    transition: transform .3s linear;
+    div{
+        position: absolute;
+        left: 0;
+        top:0;
+        width: 100%;
+        height: 100%;
+        line-height: 50px;
+        text-align: center;
+        color: #FFF;
+        font-weight: 900;
+        font-size: 20px;
+    }
+    &:hover{
+        transform: rotateX(90deg);
+    }
+}
+
+.front{
+    background: #ff4500;
+    z-index: 1;
+    transform: translateZ(25px);
+    // opacity: .5;
+}
+
+.bottom{
+    background: purple;
+    transform: rotateX(-90deg) translateZ(25px);
+}

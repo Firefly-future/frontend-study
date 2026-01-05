@@ -1,0 +1,11 @@
+<view class="box">
+  <slot name="aa"></slot>
+  <view>名称：{{title}}</view>
+  <view>价格：{{price}}</view>
+  <view class="btns">
+    <button class="btn" size="mini" type="warn" bind:tap="handlClick" data-num="{{-1}}">-</button>
+    {{count}}
+    <button class="btn" size="mini" type="primary" bind:tap="handlClick" data-num="{{1}}">+</button>
+  </view>
+  <slot name="bb"></slot>
+</view>

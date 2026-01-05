@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./axios.min.js"></script>
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  header {
+    background: #343a40;
+    color: white;
+    padding: 16px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo {
+    font-size: 26px;
+  }
+  .info button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    background: #dc3545;
+    color: #fff;
+    margin-left: 16px;
+  }
+  .info {
+    display: flex;
+    align-items: center;
+  }
+</style>
+<body>
+  <header>
+    <div class="logo">文章管理系统</div>
+    <div class="info">
+      <div class="user">欢迎，<span></span></div>
+      <button class="logout">退出登陆</button>
+    </div>
+  </header>
+
+
+  <script>
+    const $ = el => document.querySelector(el)
+    function checkAuth() {
+      const token = localStorage.getItem('token')
+      if (!token) {
+        alert('登陆信息失效，请重新登陆！')
+        location.href = './login.html'
+      }
+    }
+    checkAuth()
+
+    $('.logout').addEventListener('click', () => {
+      localStorage.removeItem('token')
+      location.href = './login.html'
+      alert('退出成功')
+    })
+
+    // 获取用户信息
+    async function getUserInfo() {
+      try {
+        // 把 token 通过请求头传给接口
+        const res = await axios.get('/api/user/info', {
+          headers: {
+            authorization: `Bearer ${localStorage.getItem('token')}`
+          }
+        })
+        console.log(res.data)
+        if (res.data.code === 200) {
+          $('.user span').innerHTML = res.data.info.username
+        }
+      } catch(e) {
+        if (e.status === 401) {
+          localStorage.removeItem('token')
+          alert('登陆信息失效，请重新登陆！')
+          location.href = './login.html'
+        }
+      }      
+    }
+    getUserInfo()
+
+
+  </script>
+</body>
+</html>

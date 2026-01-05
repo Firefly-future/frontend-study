@@ -1,0 +1,47 @@
+.header {
+  height: 120px;
+  border-bottom: 1px solid #ccc;
+}
+.user_info {
+  height: 70px;
+  border-bottom: 1px solid #ccc;
+  text-align: right;
+  padding: 0 15px;
+  line-height: 70px;
+  span {
+    margin: 0 10px;
+    cursor: pointer;
+  }
+}
+.nav {
+  height: 50px;
+  padding: 10px 15px 0 15px;
+  display: flex;
+  a {
+    height: 40px;
+    display: block;
+    line-height: 40px;
+    color: #333;
+    padding: 0 20px;
+    border-radius: 3px;
+    margin: 0 5px;
+    text-decoration: none;
+    span {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #ccc;
+      font-size: 10px;
+      text-align: center;
+      line-height: 16px;
+      margin-left: 10px;
+      vertical-align: middle;
+    }
+  }
+  :global {
+    a.active {
+      background: #f0f2f5;
+    }
+  }
+}
