@@ -1,0 +1,40 @@
+/**index.wxss**/
+page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.scrollarea {
+  flex: 1;
+  overflow-y: hidden;
+}
+.list{
+  overflow: auto;
+  height: 100rpx;
+  padding: 10px;
+  border: 2px solid #f00;
+}
+.scroll-list{
+  height: 100px;
+  padding: 10px;
+  border: 2px solid tomato;
+}
+
+.btns {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+button{
+  margin:0;
+}
+
+.item{
+  padding: 5px;
+  border:#f00 2px solid;
+}
+
+.obj{
+  border: 3px solid gold;
+  padding: 10px;
+}

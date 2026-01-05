@@ -1,0 +1,11 @@
+<!--pages/test/test.wxml-->
+<view>测试</view>
+<button-counter 
+title="{{apple.name}}"
+price="{{apple.price}}"
+count="{{apple.count}}"
+bind:changeCount="changCount"
+>
+<view slot="aa">aaa</view>
+<view slot="bb">bbbbbbb</view>
+</button-counter>

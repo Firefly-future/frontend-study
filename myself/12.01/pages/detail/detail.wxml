@@ -1,0 +1,6 @@
+<view>{{info.name}}</view>
+<view>{{info.description}}</view>
+<image src="{{info.coverImgUrl}}" mode="widthFix" />
+<view>
+<view wx:for="{{list}}">{{item.name}}</view>
+</view>

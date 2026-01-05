@@ -1,0 +1,12 @@
+/* components/button-counter/button-counter.wxss */
+.box{
+  padding: 20px;
+  border: 2px solid blue;
+}
+.btns{
+  display: flex;
+  align-items: center;
+}
+button{
+  margin: 0;
+}
