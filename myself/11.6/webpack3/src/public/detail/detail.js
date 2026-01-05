@@ -1,0 +1,97 @@
+
+import axios from 'axios'
+import './detail.scss'
+import {
+  $,
+  $all,
+  getQuery
+} from "@/util/utils.js"
+
+import {
+    getPlayListDetailApi,
+    getCommentListApi
+} from "@/serve/serve.js"
+
+const query = getQuery()
+console.log(query)
+
+
+// 歌单数据
+async function getPlayList() {
+  try {
+    const res = await getPlayListDetailApi(query.id)
+    console.log(res.data.playlist)
+
+    // const time = new Date(res.data.playlist.updateTime)
+    // $('.update-time').innerHTML = `更新日期：${time.getMonth() + 1}月${time.getDate()}日`
+    $('.img-box img').src = res.data.playlist.coverImgUrl
+    $('.list-info h3').innerHTML = res.data.playlist.name
+    $('.user').innerHTML = `
+          <img src="${res.data.playlist.creator.avatarUrl}" />
+          <span>${res.data.playlist.creator.nickname}</span>
+        `
+    $('.bg').style.backgroundImage = `url(${res.data.playlist.coverImgUrl})`
+    $('.desc').innerHTML = res.data.playlist.description
+
+
+    // 渲染歌单列表
+    const hot = res.data.playlist.tracks.slice(0, 20)
+    $('.song-list').innerHTML = hot.map((item, index) => {
+      const artists = item.ar.map(v => v.name).join('/')
+      return `
+            <div class="song" data-id="${item.id}">
+              <div class="num">${index + 1}</div>
+              <div class="song-info">
+                <div class="song-name">${item.name}</div>
+                <div class="song-desc">
+                  ${artists} - ${item.al.name}
+                </div>
+              </div>
+              <div class="play-icon"></div>
+            </div>
+          `
+    }).join('')
+    $all('.song').forEach(item => {
+      item.addEventListener('click', e => {
+        const id = e.currentTarget.getAttribute('data-id')
+        location.href = `./player.html?id=${id}`
+      })
+    })
+  } catch (e) {
+    alert('请求失败，请稍后重试！')
+  }
+}
+getPlayList()
+
+
+function renderComment(listEl, comments) {
+  listEl.innerHTML = comments.map((item, index) => {
+    const beReplied = item.beReplied.length > 0 ? `回复<span style="color: blue">@${item.beReplied[0].user.nickname}</span>：` : ''
+    const content = item.beReplied.length > 0 ? `<div style="border: 1px solid #ddd; padding: 5px">${item.beReplied[0].user.nickname}：${item.beReplied[0].content}</div>` : ''
+    return `
+          <div class="comment-item">
+            <img src="${item.user.avatarUrl}" />
+            <div class="comment-content">
+              <h3>${item.user.nickname} <span>${item.likedCount}</span></h3>
+              <p>${item.timeStr}</p>
+              <p>${beReplied}${item.content}</p>
+              ${content}
+            </div>
+          </div>
+        `
+  }).join('')
+}
+
+async function getCommentList() {
+  try {
+    const res = await getCommentListApi(query.id)
+    console.log(res.data)
+
+    renderComment($('.comment-list'), res.data.comments)
+    renderComment($('.hot-comment-list'), res.data.hotComments)
+
+  } catch (e) {
+    alert('请求失败，请稍后重试！')
+  }
+}
+getCommentList()
