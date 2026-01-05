@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .box {
+      width: 300px;
+      height: 300px;
+    }
+    .red {
+      background-color: red;
+    }
+    .blue {
+      background-color: aquamarine;
+    }
+    .green {
+      background-color: limegreen;
+    }
+  </style>
+  <body>
+    <a class="link" href="/home">首页</a>
+    <a class="link" href="/detail">详情</a>
+    <a class="link" href="/list">列表</a>
+
+    <div class="router-view"></div>
+
+    <script>
+      class Router {
+        constructor({ routerView, routes }) {
+          this.routerView = routerView
+          this.routes = routes
+          this.init()
+        }
+        init() {
+          window.addEventListener('popstate', (e) => {
+            console.log(e.state)
+            this.render(e.state.path)
+          })
+        }
+        render(path) {
+          const curRoute = this.routes.find((item) => item.path === path)
+          this.routerView.innerHTML = curRoute?.element
+        }
+        push(path) {
+          // 通过history对象修改url和历史记录
+          history.pushState({ path, a: 100 }, null, path)
+          this.render(path)
+        }
+      }
+      const router = new Router({
+        routerView: document.querySelector('.router-view'),
+        routes: [
+          {
+            path: '/home',
+            element: '<div class="box red">我是首页</div>',
+          },
+          {
+            path: '/detail',
+            element: '<div class="box blue">我是详情</div>',
+          },
+          {
+            path: '/list',
+            element: '<div class="box green">我是列表</div>',
+          },
+        ],
+      })
+      const links = [...document.querySelectorAll('.link')]
+      links.forEach((a) => {
+        a.addEventListener('click', (e) => {
+          e.preventDefault()
+          const path = a.getAttribute('href')
+          router.push(path)
+        })
+      })
+    </script>
+  </body>
+</html>
