@@ -1,0 +1,121 @@
+@import "./common.scss";
+
+.header {
+  height: 174px;
+  padding: 30px 10px 30px 15px;
+  overflow: hidden;
+  position: relative;
+}
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  filter: blur(20px);
+  transform: scale(1.5);
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba($color: #000000, $alpha: .25);
+  }
+}
+.list-wrap {
+  display: flex;
+  position: relative;
+  z-index: 10;
+  color: #ffffff;
+  .img-box {
+    width: 114px;
+    height: 114px;
+    margin-right: 14px;
+    img {
+      width: 100%;
+    }
+  }
+  .list-info {
+    flex: 1;
+  }
+  .user {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    img {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+    }
+    span {
+      margin-left: 10px;
+    }
+  }
+}
+
+
+h4 {
+  background: #ccc;
+  padding: 3px 10px;
+}
+.song-list {
+  padding-left: 10px;
+}
+.song-list .song {
+  display: flex;
+  align-items: center;
+  padding-right: 15px;
+  border-bottom: 1px solid #ccc;
+  .song-info {
+    flex: 1;
+    padding: 10px 0;
+    margin-right: 10px;
+    overflow: hidden;
+  }
+  .num {
+    font-size: 20px;
+    width: 30px;
+  }
+  .song-name {
+    font-size: 16px;
+    font-weight: 400;
+  }
+  .song-desc {
+    font-size: 12px;
+    color: #888;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .play-icon {
+    width: 22px;
+    height: 22px;
+    background: url(https://s3.music.126.net/mobile-new/img/index_icon_2x.png?5207a28c3767992ca4bb6d4887c74880=) no-repeat;
+    background-position: -24px 0;
+    background-size: 166px 97px;
+  }
+}
+
+
+.comment-item {
+  display: flex;
+  padding: 15px;
+  img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    border-radius: 50%;
+  }
+  .comment-content {
+    flex: 1;
+  }
+  h3 {
+    display: flex;
+    justify-content: space-between;
+  }
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 算数运算符
+            // +加 -减 *乘 /除 %余/模 ++递增 --递减
+            
+            // + 规则: 
+            //        1 加号两端有一端是字符串 直接拼接
+            //        2 隐式转换成数字 再求和
+                // console.log( 123 + "abc" )         // '123abc'
+                // console.log( '45' + 12 )           // '4512'
+                // console.log( true + undefined )    // NaN   -> Number(true) + Number(undefined) => 1 + NaN => NaN
+                // console.log( false + 5 )           // 5     -> Number(false) + 5 => 0 + 5 => 5
+                // console.log( null + false )        // 0     -> Number(null) + Number(false) => 0 + 0 => 0
+                // console.log( true + '1' )          // true1 
+                // console.log( undefined + NaN )     // NaN   -> Number(undefined) + NaN => NaN + NaN => NaN
+                // console.log( false + '' )          // 'false'
+
+            // - * / % ++ -- 都将隐式转换数字 再运算
+                // console.log( true - false )   // 1   -> Number(true) - Number(false) => 1 - 0 => 1  
+                // console.log( undefined * 5 )  // NaN -> Number(undefined) * 5 => NaN * 5 => NaN
+                // console.log( '5' - true )     // 4   -> Number('5') - Number(true) => 5 - 1 => 4
+                // console.log( 'true' * 8 )     // NaN -> Number('true') => NaN * 8 => NaN
+                // console.log( null * '23' )    // 0   -> Number(null) * Number('23') => 0 * 23 => 0
+                // console.log( 8 / '4' )        // 2   -> 8 / Number('4') => 8 / 4 => 2
+                // console.log( 99 % 100 )       // 99  -> 小 % 大 永远是小
+                // console.log( '100' % 30 )     // 10 
+
+
+            // 一元运算符: 都会隐式转换数字，再运算，且会修改原值
+                // ++ 递增   前置: ++val   后置: val++
+                // -- 递减   前置: --val   后置: val--
+                // 前置: 直接 加1  或 减1 之后，重新赋值给该变量
+                // 后置: 先返回原值，再加1 或 -1，下次访问该变量就是+1或-1后的结果
+
+                // var a = 10;
+                // console.log( a++ )   // 10  a = 10 + 1 = 11
+                // console.log( ++a )   // 12  a = 1 + 11 = 12
+
+                // var x = true;
+                // console.log( ++x )   // 2 => Number(true) => 1 => ++1 => 2
+                // console.log( x-- )   // 2 => 2 => x = 2 - 1 = 1
+                // console.log( --x )   // 0 => --1 => 0
+
+                // var a = 5 , b = 8 , c = 3 ;
+                // //      6       9       4ss
+                // console.log( a++ - --b + b++ + ++c - a-- + ++a + b++ - c-- + ++c  )
+                // //           5   -  7  + 7   +  4  - 6   + 6   + 8   - 4   +  4
+                // //           5     +  4     + 8   => 9 + 8 => 17
+                // console.log( a , b , c )
+                // // 问以上表达式的结果是多少？ 变量a b c 的值分别是多少
+                // // 17      6 9 4
+                
+
+
+                // 混合运算的优先级 :  有小括号 先算小阔，
+                //                     ++ -- 大于 * / %  大于  + -
+                // var x = true , y = 8 , c = 4;
+                // //      3          9       4
+                // console.log( x * y % 4 + ++x - c % y * x - ++y + ++x  - c++ + x * c-- )
+                // //           1 * 8 % 4 + 2   - 4 % 8 * 2 - 9   + 3    - 4   + 3 * 5
+                // //           8 % 4 + 2 - 4 * 2 - 9 + 3 - 4 + 15
+                // //           0     + 2 - 8 - 9 + 3 - 4 + 15
+                // //           2 - 8 - 9 - 1 + 15
+                // //           2 - 18 => -16 + 15 => -1s
+                // console.log( x , y , c )
+                // -1   3 9 4
+            
+    </script>
+</body>
+</html>

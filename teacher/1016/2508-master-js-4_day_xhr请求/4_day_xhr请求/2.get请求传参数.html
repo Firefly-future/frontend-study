@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./index.js"></script>
+</head>
+<body>
+  <h1>这是前端页面</h1>
+  <input type="text" placeholder="搜索音乐/歌手" >
+  <ul>
+  </ul>
+
+  <script>
+    // 前后端通过 url 传输数据
+    // https://www.baidu.com/xxx/api/userinfo
+    // link、script、img、a 标签，get请求
+    // xhr/fetch
+
+    document.querySelector('input').addEventListener('keydown', e => {
+      if (e.keyCode === 13) {
+        // 点击回车开始搜索
+        const xhr = new XMLHttpRequest()
+        // get 请求传参数通过 url ？后拼接
+        xhr.open('get', `http://39.96.210.90:5001/search?keywords=${e.target.value}&limit=10&a=100&b=ABCDEFG`)
+        xhr.onreadystatechange = () => {
+          if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+              const data = JSON.parse(xhr.responseText)
+              console.log(data.result.songs)
+              document.querySelector('ul').innerHTML = data.result.songs.map(item => {
+                return `
+                  <li>${item.name}</li>
+                `
+              }).join('')
+            } else {
+              alert('请稍后重试')
+            }
+          }
+        }
+        xhr.send()
+      }
+    })
+
+    
+    
+    
+
+    
+  </script>
+</body>
+</html>

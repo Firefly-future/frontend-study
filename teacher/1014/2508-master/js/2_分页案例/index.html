@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./Table.css">
+  <script src="./Base.js"></script>
+  <script src="./Table.js"></script>
+  <script src="./createData.js"></script>
+</head>
+<body>
+  <div class="table"></div>
+
+
+  <div class="table2"></div>
+
+  <script>
+
+    const table = new Table({
+      el: document.querySelector('.table'),
+      columns: [
+        { title: '用户序号', dataIndex: 'num' },
+        { title: '用户id', dataIndex: 'id' },
+        { title: '年龄', dataIndex: 'age' },
+        { title: '用户名称', dataIndex: 'username' },
+        {
+          title: '性别',
+          dataIndex: 'gender',
+          render: row => row.gender === 0 ? '男' : '女'
+        },
+        { title: '成绩', dataIndex: 'score' },
+        {
+          title: '操作',
+          render: (row) => {
+            return `
+              <button class="edit-btn" data-id="${row.id}">编辑 ${row.username}</button>
+              <button class="del-btn" data-id="${row.id}">删除</button>
+            `
+          }
+        }
+      ], // 表头数据
+      data // 每一行数据
+    })
+
+    document.querySelector('.table').addEventListener('click', e => {
+      if (e.target.classList.contains('del-btn')) {
+        const id = e.target.getAttribute('data-id')
+        // 根据点击按钮的id去数据中查找下标
+        const index = data.findIndex(v => v.id === Number(id))
+        if (index > -1) {
+          console.log('要删除的id', id)
+          console.log('删除下标', index)
+          // 删除下标数据，更新table
+          data.splice(index, 1)
+          table.update(data)
+        }
+      } else if (e.target.classList.contains('edit-btn')) {
+        // const id = e.target.getAttribute('data-id')
+        // const index = data.findIndex(v => v.id === Number(id))
+        // if (index > -1) {
+
+        // }
+      }
+    })
+
+
+
+
+
+
+    const table2 = new Table({
+      el: document.querySelector('.table2'),
+      columns: [
+        { title: '星期一', dataIndex: 'monday' },
+        { title: '星期二', dataIndex: 'tuesday' },
+        { title: '星期三', dataIndex: 'wednesday' },
+        { title: '星期四', dataIndex: 'thursday' },
+        { title: '星期五', dataIndex: 'friday' },
+        { title: '星期六', dataIndex: 'saturday' },
+        { title: '星期日', dataIndex: 'sunday' }
+      ],
+      data: [
+        { monday: '油条', tuesday: '黄焖鸡' },
+        { monday: '包子', tuesday: '关东煮' }
+      ]
+    })
+
+  </script>
+</body>
+</html>

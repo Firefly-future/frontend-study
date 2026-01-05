@@ -1,0 +1,9 @@
+.buttonCountBox{
+  padding: 20px;
+  border: 1px solid tomato;
+  :global{
+    .btn{
+      background-color: tomato;
+    }
+  }
+}

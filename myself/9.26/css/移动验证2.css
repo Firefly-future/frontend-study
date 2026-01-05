@@ -1,0 +1,84 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+body{
+    background-color: rgb(210, 228, 222);
+    padding: 50px 0 0;
+}
+.box{
+    width: 450px;
+    height: 400px;
+    position: relative;
+    border:1px solid grey;
+    margin: 0 auto 0;
+}
+.pic{
+    margin: 10px 25px 0;
+    width: 400px ;
+    height: 360px ;
+    border: 1px solid rgb(99, 95, 95);
+    position: absolute;
+}
+span{
+    position: absolute;
+    bottom: 5px;
+    left: 25px;
+    cursor: pointer;
+}
+span:hover{
+    color: red;
+    text-decoration: underline;
+}
+.moveBox,.target{
+    width: 50px ;
+    height: 50px;
+    position: absolute;
+    border: 1px solid hotpink;
+    background: rgba(232, 229, 229, 0.3);
+    left: 180px;
+    bottom: 35px;
+}
+.moveBox{
+    left: 35px;
+    bottom: 35px;
+    box-shadow: 0 0 8px 2px goldenrod;
+}
+.bar{
+    margin: 30px auto 0;
+    border: 1px solid mediumpurple;
+    width: 400px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 25px;
+    position: relative;
+    user-select: none;
+}
+.moveBtn{
+    position: absolute;
+    border: 1px solid mediumspringgreen;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    top:0;
+    left: 0;
+}
+.tip{
+    width:400px;height: 35px;
+    border: 1px solid slategray;
+    bottom: 25px;
+    position: absolute;
+    left: 25px;
+    opacity: 0;
+}
+.show{opacity: 1;
+transition: 2.5s linear;
+}
+.success{color: green;}
+.false{color: red;}

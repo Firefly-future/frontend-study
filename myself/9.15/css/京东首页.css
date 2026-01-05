@@ -1,0 +1,26 @@
+*{
+    margin: 0;padding: 0;box-sizing: border-box;
+}
+.box{
+    width: 400px;
+    height: 600px;
+    margin: 100px  0 0 60px;
+    padding-left: 50px;
+    border: 1px solid rgb(211, 205, 205);
+    background-color: rgb(228, 221, 221);
+    font: bold 20px/40px '宋体';
+}
+.box1,.box2,.box3,.box4,.box5,.box6{
+float: left;
+height: 30px;
+width: 350px;
+line-height: 30px;
+}
+h5{
+    float: left;
+}
+h5:hover{
+    color:red;
+    text-decoration: underline;
+    cursor: pointer;
+}

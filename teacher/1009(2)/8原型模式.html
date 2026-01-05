@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 原型模式  -> 主打共享 -> 解决了重复创建相同代码
+        // 构造函数.prototype.方法 = function(){}
+        function Facktoy( user , age , color , year  ){
+            this.user = user
+            this.age =  age
+            this.color = color
+            this.year = year
+            console.log( this )
+        }
+        Facktoy.prototype.smile = function(){
+            console.log(`逗孩子哈哈哈乐`)
+        }
+        Facktoy.prototype.sleep = function(){
+            console.log(`哄睡小孩`)
+        }
+        const tom = new Facktoy( "汤姆和杰瑞" , 5 , "#666" , 2025 )
+        const lpz = new Facktoy( "蓝胖子" , 3 , "blue" , 2020  )
+
+        tom.smile()
+        lpz.smile()
+
+        tom.sleep()
+        lpz.sleep()
+    </script>
+</body>
+</html>

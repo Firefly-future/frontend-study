@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>时间间隔<input type="text" name="" id="time" placeholder="默认1000毫秒" value="1000"></div>
+    <div>打印内容<input type="text" name="" id="str" placeholder="请输入打印内容"></div>
+    <button id="start">开始打印</button>
+    <button id="pause">暂停</button>
+    <button id="continue">继续打印</button>
+    <div id="text"></div>
+    <script>
+        // 获取元素
+        function $(el){
+            return document.getElementById(el)
+        }
+        var time1=null;//预设一个定时器
+         var index=0;//开始打印的下标
+        // 给开始打印绑定点击事件
+        $('start').onclick=function(){
+            var time=$('time').value;
+            var str=$('str').value.trim();
+            if(!str)return alert('输入的内容不能为空')
+            // 设置定时器开始打印
+        if(index===str.length-1){
+            index=0;
+            $('text').innerHTML=''
+        }
+        // 打印的时候开始打印按钮不可用
+        this.disabled=true
+        $('text').innerHTML+=index>0?'':str[index]
+         time1=setInterval(function(){
+            index++
+            // 如果index出界，将停止打印,同时开始打印按钮可用
+            if(index>=str.length-1){
+                clearInterval(time1)
+                $('start').disabled=false
+            }
+            $('text').innerHTML+=str[index];
+        },time)
+        }
+        // 暂停按钮绑定点击事件
+        $('pause').onclick=function(){
+            clearInterval(time1)
+            // 同时开始打印按钮可继续打印
+            $('start').disabled=false;
+        }
+        //继续打印按钮绑定点击事件
+        $('continue').onclick=function(){
+            var time = $('time').value;
+            var str = $('str').value.trim(); 
+            // 检查是否有内容可以继续打印
+            if(!str || index >= str.length) {
+                return;
+            }
+            // 检查是否有定时器正在运行
+            if(time1) {
+                clearInterval(time1);
+            }  
+            // 从当前位置继续打印
+            time1 = setInterval(function(){
+                //判断是否已经打完字，打完字停止
+                if(index >= str.length - 1){
+                    clearInterval(time1);
+                    $('start').disabled = false;
+                    return;
+                }
+                //未打完字则继续打字
+                index++;
+                $('text').innerHTML += str[index];
+            }, time);
+            // 开始打印按钮不可用
+            $('start').disabled = true;
+        }
+    </script>
+</body>
+</html>

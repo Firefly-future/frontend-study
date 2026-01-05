@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>标题</h1>
+
+  <script>
+    function Base(name, gender) {
+      this.typeName = name
+      this.gender = gender
+    }
+    Base.prototype.$ = function(el, parent = document) {
+      return parent.querySelector(el)
+    }
+    Base.prototype.$all = function(el, parent = document) {
+      return [...parent.querySelectorAll(el)]
+    }
+
+    // 借用构造函数继承
+    // 缺点：只能继承父类本身的属性，无法继承父类的原型
+    function Person(name, age, gender) {
+      this.name = name
+      this.age = age
+      // 在子类构造函数中调用父类的构造函数，把父类的 this 指向子类
+      Base.call(this, '我是Person类', gender)
+    }
+
+    Person.prototype.getInfo = function() {
+      console.log(`用户信息: 姓名: ${this.name},年龄：${this.age}`)
+    }
+
+    // 实例对象
+    const xm = new Person('小明', 22, '男')
+    const xh = new Person('小明', 22, '女')
+
+    console.log(xm)
+
+
+
+
+  </script>
+</body>
+</html>

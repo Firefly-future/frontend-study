@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  .header {
+    height: 150px;
+    border: 1px solid;
+    display: flex;
+  }
+  .box {
+    width: 100px;
+    height: 100px;
+    background: green;
+    margin: 10px;
+  }
+  ul {
+    background: #ccc;
+    padding: 10px;
+  }
+  li {
+    list-style-type: none;
+    border: 1px solid;
+    line-height: 40px;
+    margin: 10px;
+    background: #fff;
+    border-radius: 5px;
+    padding: 0 15px;
+  }
+  .tomato {
+    background: tomato;
+  }
+  .del {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 100vh;
+    background: red;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    transform: translateX(100%);
+    transition: transform 0.4s linear;
+  }
+  .show-del {
+    transform: translateX(0);
+  }
+  .footer {
+    height: 100px;
+    background: orange;
+    display: flex;
+  }
+</style>
+<body>
+  <div class="header">
+    <div class="box" draggable="true">box1</div>
+    <div class="box" draggable="true">box2</div>
+    <img src="./img1.webp" width="100" height="100" alt="">
+    <a href="https://baidu.com">跳转百度</a>
+  </div>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+    <li>8</li>
+    <li>9</li>
+    <li>10</li>
+  </ul>
+  <div class="del">删除</div>
+  <div class="footer"></div>
+
+
+  <script>
+    const $ = el => document.querySelector(el)
+    const $all = el => [...document.querySelectorAll(el)]
+    
+    let currentEl = null
+
+    ;[...$('.header').children].forEach((item, index) => {
+      item.addEventListener('dragstart', e => {
+        console.log('开始拖动', e)
+        $('.del').classList.add('show-del')
+        currentEl = item
+        // 开始拖动时存数据
+        e.dataTransfer.setData('item-index', index)
+      })
+      // item.addEventListener('drag', e => {
+      //   console.log('拖动中', e.clientX)
+      // })
+      item.addEventListener('dragend', () => {
+        console.log('拖动结束')
+        $('.del').classList.remove('show-del')
+        currentEl = null
+      })
+    })
+    
+
+    $all('li').forEach(li => {
+      li.addEventListener('dragenter', () => {
+        console.log('进入li')
+        li.classList.add('tomato')
+      })
+      // li.addEventListener('dragover', (e) => {
+      //   console.log('在li中移动', e)
+      //   li.innerHTML = e.clientX
+      // })
+      li.addEventListener('dragleave', () => {
+        console.log('离开li')
+        li.classList.remove('tomato')
+      })
+    })
+
+
+    // 元素想要绑定 drop 事件就必须组织 dragover 的默认行为
+    $('.del').addEventListener('dragover', e => {
+      e.preventDefault()
+    })
+    $('.del').addEventListener('drop', () => {
+      console.log('========== 放进del', currentEl)
+      currentEl.remove()
+    })
+
+
+    $('.footer').addEventListener('dragover', e => {
+      e.preventDefault()
+    })
+    $('.footer').addEventListener('drop', e => {
+      // console.log('========== 放进footer', currentEl)
+      // drop 时获取存的数据
+      console.log(e.dataTransfer.getData('item-index'))
+      const index = e.dataTransfer.getData('item-index')
+      alert(`拖动的是下标为 ${index} 的元素`)
+      
+      $('.footer').appendChild(currentEl)
+      currentEl = null
+    })
+
+  </script>
+</body>
+</html>

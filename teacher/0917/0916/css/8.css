@@ -1,0 +1,86 @@
+*{
+    padding:0;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+img{
+    display: block;
+}
+.banner{
+    width: 600px;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+    margin:  50px auto 0;
+    background: #eee;
+}
+.pics{
+    height: 400px;
+    position: relative;
+}
+
+.pics li{
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    /* transition 平滑过渡动画属性    */
+    transition:opacity 1.2s linear;
+        /* transition-property 属性 参与过渡的属性 默认值 all*/
+                    /* transition-duration 属性  设置动画的执行时间/完成时间  默认值0  单位:s ms*/
+                          /* transition-timing-function 属性 设置动画的运动方式   linear匀速 */
+                          /* transition-delay 属性 设置动画的延迟时间  默认值0  单位:s ms */
+        /* 总结: transition 是一个复合属性, 值与值之间 空格 隔开 
+           注意: 动画时长是必须的,其他都是可选的; 第一个出现的时间永远是执行时间 */
+}
+.opacity{
+    opacity: 1!important;
+    z-index: 1;
+}
+.pics li p{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 45px;
+    background: rgba(0,0,0,.5);
+    width: 100%;
+    text-align: center;
+    line-height: 45px;
+    color: #FFF;
+}
+
+.tabs{
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 2;
+}
+.tabs span{
+    float: left;
+    width: 10px;
+    height: 10px;
+    background: red;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+.active{
+    background: #000!important;
+}
+
+.btn{
+    position: absolute;
+    top: 180px;
+    width: 50px;
+    height: 40px;
+    background: rgba(255,0,0,.5);
+    line-height: 40px;
+    text-align: center;
+    z-index:2;
+    transition: .3s linear;
+}
+.prev{ left: -50px; }
+.next{ right: -50px; }
+
+.banner:hover .prev{ left: 0; }
+.banner:hover .next{ right: 0; }

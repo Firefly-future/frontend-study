@@ -1,0 +1,33 @@
+*{
+    padding:0;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+.menu{
+    width: 260px;
+    margin: 40px auto 0;
+}
+
+.menu > div h3{
+    height: 45px;
+    line-height: 45px;
+    background: #444359;
+    padding-left: 15px;
+    font-size: 16px;
+    color: #fff;
+}
+.list{ display: none; }
+.list p{
+    height: 40px;
+    border-bottom: 1px solid #444359;
+    background:#636272;
+    font-size: 14px;
+    color: #FFF;
+    padding-left: 35px;
+    line-height: 39px;
+}
+.show{
+    display: block;
+}

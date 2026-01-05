@@ -1,0 +1,16 @@
+.home{
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  display: flex;
+}
+main{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  .router{
+    padding: 20px;
+    flex: 1;
+    background: #0961af;
+  }
+}

@@ -1,0 +1,25 @@
+@import "./common";
+
+.box{
+    width: 150px;
+    height: 150px;
+    background: red;
+    
+    // 鼠标滑过box时  背景色为绿色  大小300 正圆
+    // transition-property: all;   // 设置参与过渡的属性 默认值all ; 多个属性之间 逗号 隔开
+    // transition-duration: 5s;              // 设置参与过渡的时间/执行时间/完成时间   默认值0  单位s  ms
+    // // transition-delay: 2s;      // 设置动画的延迟时间  默认值0  单位s  ms
+    // transition-timing-function: linear; // 运动的运动方式 linear匀速
+
+    // transition 是一个复合属性 属性值与值之间 空格 隔开 
+    transition: 10s linear;
+    
+    &:hover{
+        background: green;
+        width: 800px;
+        // height: 300px;
+        // border-radius: 50%;
+    }
+}
+
+

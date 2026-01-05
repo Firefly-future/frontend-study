@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{ background: #eee; }
+        #box h3{ color: red; }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <a href="">超链接</a>
+        <p>段落</p>
+        <span>特殊文本</span>
+        <h3>3号标题</h3>
+        <ul>
+            <li>我是无序列表</li>
+            <li>我是无序列表</li>
+            <li>我是无序列表</li>
+        </ul>
+    </div>
+    <script>
+        var box = document.getElementById("box");
+        // 节点操作
+            // ● 节点操作是DOM编程的核心部分，允许开发者动态地添加、删除或修改页面的元素。
+
+        // 增 -> 创建添加 
+                // -> 创建元素节点           document.createElement("elName") 
+                // -> 创建文本节点           document.createTextNode("text")
+                // -> 克隆节点               el.cloneNode() 浅克隆->最外一层  (true)深克隆->从里到外，含样式
+                // -> 添加在末尾             parent.appendChild(son)
+                // -> 在...之前插入节点      parent.insertBefore(who , where)
+
+
+                // 需求 在id为box的最后增加一个div元素,且内容为"我是动态创建的"
+                // var div = document.createElement("div");  // 创建元素
+                // var divCon = document.createTextNode("我是动态创建的") // 创建内容
+                // div.appendChild(divCon)  // 将内容追加在div中
+                // box.appendChild(div)     // 将div追加在box中
+                // console.log( div )
+
+                // 需求 在h3的后面增加一个4号标题,且内容为"标题4号,我是3号的弟弟"
+                // var h4 = document.createElement("h4");  // 创建元素
+                // h4.innerHTML = `标题4号,我是3号的弟弟`;  // 给元素赋值
+                // console.log( h4 )
+                // box.insertBefore( h4 , box.lastElementChild )
+
+
+                // 需求: 拷贝一个box在页面
+                var copyBox = box.cloneNode(true);
+                document.body.appendChild( copyBox )
+                console.log( copyBox )
+
+        // 删 -> 删除节点   parent.removeChild(son)
+                // 需求   删除 box下的span
+                // box.removeChild( box.firstElementChild.nextElementSibling.nextElementSibling )
+                // var span = box.querySelector("span");
+                // box.removeChild(span)
+                
+        // 改 -> 替换修改   parent.replaceChild(new , old)
+                // 需求   将标题h3 替换成 <nav>我是语义化导航</nav>
+                // var nav = document.createElement("nav"); // 创建nav
+                // nav.innerHTML = `我是语义化导航` ; // 赋值内容
+                // box.replaceChild( nav, box.lastElementChild.previousElementSibling )
+
+
+        // 查-> 查找获取
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>标题</h1>
+  <script>
+    function newFn(Fn, ...args) {
+      const res = Object.create(Fn.prototype)
+      const fnResult = Fn.apply(res, args)
+      if ((fnResult && typeof fnResult === 'object') || typeof fnResult === 'function') {
+        return fnResult
+      } else {
+        return res
+      }
+    }
+
+    function Person(name, age, gender) {
+      this.name = name
+      this.age = age
+      return 1111
+    }
+    Person.prototype.getInfo = function() {
+      console.log(`用户信息: 姓名: ${this.name},年龄：${this.age}`)
+    }
+    const xm1 = new Person('小明', 22)
+    const xm2 = newFn(Person, '小明', 22)
+    console.log(xm1)
+    console.log(xm2)
+
+    // new 的过程
+    // 1. 创建空对象
+    // 2. 把构造函数的 this 指向空对象
+    // 3. 把空对象的原型指向构造函数的 prototype
+    // 4. 调用构造函数
+    // 5. 判断构造函数return的结果，如果结果是基础类型就返回新对象，如果是引用类型直接返回此结果
+
+
+    // Object.create：把传入的参数当成原型，返回新对象
+    // const obj = Object.create({ a: 1 })
+
+    // console.log(obj)
+
+
+  </script>
+</body>
+</html>

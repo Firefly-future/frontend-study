@@ -1,0 +1,67 @@
+*{
+    padding:0;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+.wrap{
+    width: 1000px;
+    margin: 30px auto 0;
+}
+
+.ups{
+    height: 60px;
+    border: 1px solid #ccc;
+    padding:9px 10px;
+}
+
+.ups ul{
+    float: left;
+    
+}
+.ups ul li , .downs ul li{
+    height: 40px;
+    border:1px solid #CCC;
+    padding: 0 8px;
+    font-size: 14px;
+    margin-right: 10px;
+    float: left;
+    line-height: 38px;
+}
+
+.ups button{
+    float: right;
+    height: 100%;
+    padding: 0 8px;
+    background: seagreen;
+    color: #FFF;
+    border: 0;
+}
+.downs{
+    padding: 15px;
+    margin-top: 15px;
+    border:1px solid #CCC;
+    overflow: hidden;
+    display: none;
+}
+.show{
+    display: block;
+}
+.downs ul{
+    overflow: hidden;
+}
+.downs ul li{
+    margin-bottom: 10px;
+}
+.changeBox{
+    text-align: right;
+}
+.changeBox span{
+    color: blue;
+    font-size: 12px;
+}
+
+.selected {
+    opacity: 0.3;
+}

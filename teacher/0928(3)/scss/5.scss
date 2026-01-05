@@ -1,0 +1,13 @@
+@import "./common.scss";
+
+.box{
+    width: 150px;
+    height: 150px;
+    background: red;
+    transition: 3s linear;
+    // 设置鼠标滑过时  背景色绿色  边旋转边位移
+    &:hover{
+        background: green;
+        transform: translate(300px , 200px) rotate(360deg) scale(1.5);
+    }
+}

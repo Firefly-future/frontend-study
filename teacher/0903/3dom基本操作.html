@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>重中之重: DOM基本操作</title>
+</head>
+<body>
+    <h1 id="tit" class="subHeading">这是网页的一号大标题</h1>
+    <ul>
+        <li>这是列表项目1</li>
+        <li>这是列表项目22</li>
+        <li>这是列表项目333</li>
+        <li>这是列表项目4444</li>
+        <li>这是列表项目55555</li>
+    </ul>
+
+    <a href="" style="font-size: 28px; color: red;">1250米</a>
+    <script>
+        // 获取元素的方法:
+            // 1 document.getElementById("id名") 通过id名称来获取元素
+            //      返回值: 元素对象本身
+
+            // 2 document.getElementsByTagName("标签名")  通过标签名称获取
+            //      返回值: HTMLCollection 伪数组对象
+
+            // 下午
+
+
+
+        // 元素的基本操作如下:
+            // el.innerHTML 可以访问元素的内容  即 获取元素内容
+            // el.innerHTML = "值" 设置修改元素的内容
+
+            // el.attribute 获取元素的属性值
+            // el.attribute = "val" 设置元素的属性值
+            // 注意: class属性必须是 className
+
+            // el.style.attribute = "值" 设置元素的css样式
+            // 注意: 复合属性需要写成驼峰式
+            // 如: font-size  -->  fontSize
+
+
+        // 伪数组的基本操作:
+            // 伪数组[下标] 可以访问数组内容   最小下标0   最大下标length - 1
+            // length 属性可以访问长度  语法: 伪数组.length
+
+
+
+
+
+        // 练习手册 2-1-5
+            // 需求描述
+            // （1）页面中添加一个a标签，内容为“1250米“。并添加行内样式 字体大小：28px;字体颜色为红色；
+            // （2）获取页面中的1250、28这两个数字，以弹窗的形式显示；
+            // （3）修改a标签的字体颜色为蓝色，背景颜色为页面中数字拼接后的16进制颜色（这里为“#125028”）
+            // 1 获取页面中的a元素
+            var a = document.getElementsByTagName("a");
+            console.log( a[0] )
+            // 2 获取a元素的1250 和 28 这两个数字
+            // 思考: 1250在哪?   答:在元素的内容里面   el.innerHTML
+            //       28在哪?     答:在元素的样式里面   el.style.属性
+            var num1 = parseInt( a[0].innerHTML );
+            var num2 = parseInt( a[0].style.fontSize )
+            alert( num1 )
+            alert( num2 )
+            // 3 修改a元素的样式
+            a[0].style.color = "blue"
+            a[0].style.backgroundColor = "#" + num1 + num2
+
+        // 需求: 声明五个变量 分别存储五个数据类型的值,然后将每个变量的值 和 数据类型分别存入li
+            // var user = "张三" ,
+            //     age = 25 ,
+            //     sex = true ,   // 男 false   女 true
+            //     und ,   // 声明未赋值就是undefined
+            //     n = null ;
+            // var lis = document.getElementsByTagName("li");
+            //     // console.log( lis )
+            //     // console.log( lis.length )
+            //     // console.log( lis[2] )
+            //     // lis[2].style.fontSize = "30px"
+
+            // lis[0].innerHTML =  user + "的数据类型是" + typeof user;
+            // lis[1].innerHTML =  age + "的数据类型是" + typeof age;
+            // lis[2].innerHTML =  sex + "的数据类型是" + typeof sex;
+            // lis[3].innerHTML =  und + "的数据类型是" + typeof und;
+            // lis[4].innerHTML =  n + "的数据类型是" + typeof n;
+
+
+
+
+
+
+        // 需求:  
+            // 对页面中的标题进行如下操作:  注意: 操作之前一定要先获取元素
+                
+                    // var tit = document.getElementById("tit");
+                    // console.log( tit )
+
+            // // 1 将标题内容打印在控制台
+            //         console.log( tit.innerHTML )
+            // // 2 将标题内容修改为 "我是js动态修改"
+            //         tit.innerHTML = "我是js动态修改"
+            // // 3 将标题的class属性 进行弹出
+            //         alert( tit.className )
+            // // 4 将标题的class属性值 修改为wrap
+            //         tit.className = "wrap"
+            // // 5
+            // // 6
+            // // 7 给标题设置 红色背景 白色文字
+            //         tit.style.backgroundColor = "red"
+            //         tit.style.color = "whites"
+    </script>
+</body>
+</html>

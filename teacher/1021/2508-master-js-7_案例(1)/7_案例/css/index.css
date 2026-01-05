@@ -1,0 +1,273 @@
+@charset "UTF-8";
+:root {
+  --music-theme: #d43c33;
+  --default-font-color: #333333;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style-type: none;
+}
+
+img {
+  vertical-align: middle;
+}
+
+body {
+  font-size: 14px;
+  color: var(--default-font-color);
+}
+
+/* 0.5px边框通用工具类 */
+.border-0_5px,
+.border-t-0_5px,
+.border-r-0_5px,
+.border-b-0_5px,
+.border-l-0_5px {
+  position: relative;
+  /* 防止内容被边框遮挡 */
+  box-sizing: border-box;
+  --border-color: #e5e5e5;
+}
+
+/* 清除默认边框影响 */
+.border-0_5px {
+  border: none !important;
+}
+
+/* 全边框实现 */
+.border-0_5px::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  border: 1px solid var(--border-color);
+  border-radius: inherit;
+  /* 继承父元素圆角 */
+  transform: scale(0.5);
+  transform-origin: 0 0;
+  pointer-events: none;
+  box-sizing: border-box;
+}
+
+/* 上边框 */
+.border-t-0_5px::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--border-color);
+  transform: scaleY(0.5);
+  transform-origin: top center;
+  pointer-events: none;
+}
+
+/* 右边框 */
+.border-r-0_5px::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1px;
+  height: 100%;
+  background-color: var(--border-color);
+  transform: scaleX(0.5);
+  transform-origin: right center;
+  pointer-events: none;
+}
+
+/* 下边框 */
+.border-b-0_5px::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--border-color);
+  transform: scaleY(0.5);
+  transform-origin: bottom center;
+  pointer-events: none;
+}
+
+/* 左边框 */
+.border-l-0_5px::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 100%;
+  background-color: var(--border-color);
+  transform: scaleX(0.5);
+  transform-origin: left center;
+  pointer-events: none;
+}
+
+.bar {
+  height: 84px;
+  padding: 0 10px;
+  background: var(--music-theme);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bar .topsvg {
+  width: 142px;
+}
+
+.bar .download {
+  width: 100px;
+  height: 32px;
+  background: #ffffff;
+  border-radius: 20px;
+  text-align: center;
+  line-height: 32px;
+  color: var(--music-theme);
+}
+
+.page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page nav {
+  height: 40px;
+  display: flex;
+  position: relative;
+}
+
+.page nav .nav-item {
+  flex: 1;
+  text-align: center;
+  line-height: 40px;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.page nav .nav-item span {
+  padding: 7px 5px;
+  border-bottom: 2px solid transparent;
+}
+
+.page nav .nav-item.active {
+  color: var(--music-theme);
+}
+
+.page nav .nav-item.active span {
+  border-bottom-color: var(--music-theme);
+}
+
+.page main {
+  flex: 1;
+  overflow: auto;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.show {
+  display: block;
+}
+
+.recommend .title {
+  padding: 15px 0;
+}
+
+.recommend .title h3 {
+  padding: 0 15px;
+  border-left: 3px solid var(--music-theme);
+  font-weight: normal;
+}
+
+.recommend .recommend-song {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.recommend .recommend-item {
+  width: calc((100% - 6px) / 3);
+  margin-right: 3px;
+  padding-bottom: 10px;
+  position: relative;
+}
+
+.recommend .recommend-item .play-count {
+  position: absolute;
+  right: 3px;
+  top: 3px;
+  font-size: 12px;
+  color: #fff;
+}
+
+.recommend .recommend-item img {
+  width: 100%;
+}
+
+.recommend .recommend-item p {
+  padding-top: 10px;
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.recommend .recommend-item:nth-child(3n) {
+  margin-right: 0;
+}
+
+.newsong, .hot-list {
+  padding-left: 10px;
+}
+
+.newsong .song, .hot-list .song {
+  display: flex;
+  align-items: center;
+  padding-right: 15px;
+  border-bottom: 1px solid #ccc;
+}
+
+.newsong .song .song-info, .hot-list .song .song-info {
+  flex: 1;
+  padding: 10px 0;
+  margin-right: 10px;
+}
+
+.newsong .song .song-name, .hot-list .song .song-name {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.newsong .song .song-desc, .hot-list .song .song-desc {
+  font-size: 12px;
+  color: #888;
+}
+
+.newsong .song .play-icon, .hot-list .song .play-icon {
+  width: 22px;
+  height: 22px;
+  background: url(https://s3.music.126.net/mobile-new/img/index_icon_2x.png?5207a28c3767992ca4bb6d4887c74880=) no-repeat;
+  background-position: -24px 0;
+  background-size: 166px 97px;
+}
+
+.box {
+  width: 100px;
+  height: 30px;
+  border-radius: 40px;
+  --border-color: #ff4d4f;
+}

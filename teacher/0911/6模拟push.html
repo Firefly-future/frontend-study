@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=s, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 模拟push
+            // push()  再数组后添加一项或多项
+        var arr = [15,56,12,23,54,32,15,13]
+        //         0  1  2  3  4  5  6  7  8
+        function myPush(){
+            // 不确定参数,因为添加几项未知  引出arguments
+            // 实参第一项 是操作的数组  之后的没一项是添加的内容项
+            var arr = arguments[0] ; // 存储操作的数组
+            // 从下标1开始循环遍历 拿到要添加的内容项
+            for( var i = 1 ; i < arguments.length; i++ ){
+                // 核心: 当前数组的长度 是要添加的位置下标
+                arr[ arr.length ] = arguments[i]
+            }
+            return arr
+        }
+        console.log( myPush( arr , "a","x","b","y" ) )
+    </script>
+</body>
+</html>

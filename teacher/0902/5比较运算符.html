@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 比较运算符: 返回布尔值，true / false
+            // 规则: 使用 ==、!=、>、>=、<、<= 比较时如果两边的数据类型不同，
+            //       JavaScript会进行隐式类型转换成相同类型然后进行比较
+            // ● 大于（>）、小于（<）：数值大小比较。
+            // ● 大于等于（>=）、小于等于（<=）：数值大小或等值比较。
+           
+            
+                // console.log( 5 > 3 )              //  true
+                // console.log( '123' >= 456 )       //  false  =>  Number('123') -> 123 >= 456
+                // console.log( true >= null )       //  true  => Number(true) >= Number(null) -> 1 >= 0 
+                // console.log( undefined < 'abc' )  //  false  => Number(undefined) < Number('abc') -> NaN < NaN
+                // console.log( false <= '' )        //  true  => Number(false) <= Number('') -> 0 <= 0 
+                // console.log( '54' > '23' )        //  true  => 53 > 50
+                // console.log( '5' > '23' )         //  true  => 53 > 50
+                // console.log( "Z" < "a" )          //  true
+                // console.log( "15" < "13" )        //  false   49 < 49    53 < 51
+
+                // 注意: 在比较大小的过程中，若两端都出现字符串，将不再隐式转换,按照字符串的方式进行比较
+                //       即 -> 将字符串转为ASCII码值依次比较    
+                //             0 的ASCII码值是48 ，
+                //             A 的ASCII码值是65，   
+                //             a 的ASCII码值是97
+
+            // ● 等于（==）：检查两个值是否相等，类型不同会自动转换类型在比较，大部分是转换成 number。
+            // ● 不等于（!=）：检查两个值是否不相等，== 的反操作
+                // console.log( '5' == 5 )  // true  => Number('5') -> 5 == 5
+                // console.log( true == '1' ) // true  => Number(true) == Number('1') -> 1 == 1
+
+                // console.log( "abc" == "hello" ) // false
+                // console.log( "abc" == "abc" ) // true
+                // console.log( null == undefined  , '疑问？？？？？？？？？？') // true
+                // // 注意: 在比较值相等的过程中，只有 null 和 undefined 为真， 一律为假
+                // console.log( false == null , '疑问？？？？？？？？？？')  // false
+                // console.log( NaN == undefined )  // false
+                // console.log( null == NaN )  // false
+                // console.log( "hello" == undefined ) // false
+                // console.log( null == true - 1 )    // false
+
+
+                // console.log( false != null )  // true
+                // console.log( NaN != undefined )  // true
+                // console.log( null != NaN )  // true
+                // console.log( "hello" != undefined ) // true
+                // console.log( null != true - 1 )    // true
+
+
+            // ● 全等（===）：检查值和类型是否完全相同，类型不同直接返回false，不会转换类型。
+            // ● 不全等（!==）：检查值或类型是否不完全相同，=== 的反操作
+                // console.log( 5 === 5 )  // true
+                // console.log( '5' === 5 ) // false
+                // console.log( true === false )  // false
+                // console.log( '5' === '5' )  // true
+
+            // 注意: 对象与原始类型：对象会通过调用其toString()或valueOf()方法转换为原始类型（字符串或数字），然后进行比较。
+                // 解析:   []数组对象
+            // console.log( [1] > 5 )   // [1].toString() => "1" > 5 => Number('1') => 1 > 5
+            // console.log( [1] == '1' )  // [1].toString() => "1" == "1"
+            // console.log( [1] === '1' ) // 类型不同直接false    [1] -> 'object'  '1' -> 'string'
+
+
+            
+            
+
+
+
+    </script>
+</body>
+</html>

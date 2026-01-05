@@ -1,0 +1,24 @@
+ul{
+  list-style: none;
+}
+.title{
+  color: red;
+}
+nav{
+  width: 300px;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  display: flex;
+  .item{
+    flex: 1;
+  }
+  .active{
+    background: tomato;
+  }
+  .large{
+    font-size: 30px;
+  }.small{
+    font-size: 12px;
+  }
+}

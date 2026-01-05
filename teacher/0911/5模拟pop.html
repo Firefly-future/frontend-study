@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 模拟pop
+            // pop()  删除数组的最后一项
+        
+        var arr = [15, 56, 12, 23, 54, 32, 15, 13, 'a', 'x', 'b', 'y'];
+        function myPop( arr ){
+            // 核心 借助length属性修改
+            // 即 将数组的长度 设置为原长度 - 1
+            arr.length = arr.length - 1
+            return arr
+        }
+        console.log( myPop( arr ) )
+    </script>
+</body>
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./Table.css">
+  <link rel="stylesheet" href="./Pagination.css">
+  <link rel="stylesheet" href="./index.css">
+  <script src="./js/Base.js"></script>
+  <script src="./js/Table.js"></script>
+  <script src="./js/createData.js"></script>
+  <script src="./js/Pagination.js"></script>
+</head>
+<body>
+  
+  <div class="table"></div>
+  <div class="pagination"></div>
+
+  <div class="edit-dialog">
+    <div class="edit-dialog-content">
+      <div class="edit-dialog-header">
+        <b>修改信息</b>
+        <span class="close">x</span>
+      </div>
+      <div class="edit-dialog-form">
+        <div class="row">
+          <span>姓名: </span>
+          <input type="text" class="username">
+        </div>
+        <div class="row">
+          <span>年龄: </span>
+          <input type="text" class="age">
+        </div>
+        <div class="row">
+          <span>性别: </span>
+          <select class="gender">
+            <option value="">请选择</option>
+            <option value="1">女</option>
+            <option value="0">男</option>
+          </select>
+        </div>
+        <div class="row">
+          <span>分数: </span>
+          <input type="text" class="score">
+        </div>
+      </div>
+      <div class="edit-dialog-footer">
+        <button class="ok">确定</button>
+        <button class="cancel">取消</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="table2"></div> -->
+
+  <script>
+    const $ = el => document.querySelector(el)
+
+
+
+    let config = {
+      page: 1,
+      pagesize: 10
+    }
+    // // page: 1. pagesize: 10
+    // data.slice(0, 10)
+    // // page: 2. pagesize: 10
+    // data.slice(10, 20)
+    // // page: 3. pagesize: 10
+    // data.slice(20, 30)
+
+    const pagination = new Pagination({
+      el: $('.pagination'),
+      total: data.length, // 总条数
+      page: config.page, // 当前第几页
+      pagesize: config.pagesize, // 每页多少条
+      onChange: (page, pagesize) => {
+        // 切换分页时执行此回调函数
+        config = {
+          page,
+          pagesize
+        }
+        console.log(config)
+        const newData = data.slice((config.page - 1) * config.pagesize, config.page * config.pagesize)
+        table.update(newData)
+      }
+    })
+
+    const table = new Table({
+      el: $('.table'),
+      columns: [
+        { title: '用户序号', dataIndex: 'num' },
+        { title: '用户id', dataIndex: 'id' },
+        { title: '年龄', dataIndex: 'age' },
+        { title: '用户名称', dataIndex: 'username' },
+        {
+          title: '性别',
+          dataIndex: 'gender',
+          render: row => row.gender === 0 ? '男' : '女'
+        },
+        { title: '成绩', dataIndex: 'score' },
+        {
+          title: '操作',
+          render: (row) => {
+            return `
+              <button class="edit-btn" data-id="${row.id}">编辑 ${row.username}</button>
+              <button class="del-btn" data-id="${row.id}">删除</button>
+            `
+          }
+        }
+      ], // 表头数据
+      data: data.slice((config.page - 1) * config.pagesize, config.page * config.pagesize)
+    })
+
+    // 编辑的数据下标
+    let editIndex = -1
+
+    $('.table').addEventListener('click', e => {
+      if (e.target.classList.contains('del-btn')) {
+        const id = e.target.getAttribute('data-id')
+        // 根据点击按钮的id去数据中查找下标
+        const index = data.findIndex(v => v.id === Number(id))
+        if (index > -1) {
+          console.log('要删除的id', id)
+          console.log('删除下标', index)
+          // 删除对应下标的数据
+          data.splice(index, 1)
+          // 重新截取数据，更新table
+          const newData = data.slice((config.page - 1) * config.pagesize, config.page * config.pagesize)
+          table.update(newData)
+          // 更新分页
+          pagination.updateTotal(data.length)
+        }
+      } else if (e.target.classList.contains('edit-btn')) {
+        const id = e.target.getAttribute('data-id')
+        const index = data.findIndex(v => v.id === Number(id))
+        if (index > -1) {
+          // 展示编辑弹窗，反显数据
+          showDialog(data[index], index)
+        }
+      }
+    })
+
+    // 关闭弹窗
+    $('.edit-dialog .close').addEventListener('click', () => {
+      $('.edit-dialog').classList.remove('show')
+      editIndex = -1
+    })
+    $('.edit-dialog .cancel').addEventListener('click', () => {
+      $('.edit-dialog').classList.remove('show')
+      editIndex = -1
+    })
+
+    // 展示编辑弹窗
+    const showDialog = (row, index) => {
+      // 存要编辑的数据下标
+      editIndex = index
+      // 展示弹窗
+      $('.edit-dialog').classList.add('show')
+      // 反显内容
+      $('.edit-dialog .username').value = row.username
+      $('.edit-dialog .age').value = row.age
+      $('.edit-dialog .gender').value = row.gender
+      $('.edit-dialog .score').value = row.score
+    }
+
+    // 点击弹窗确定按钮
+    $('.edit-dialog .ok').addEventListener('click', () => {
+      const info = {
+        username: $('.edit-dialog .username').value,
+        age: Number($('.edit-dialog .age').value),
+        gender: Number($('.edit-dialog .gender').value),
+        score: Number($('.edit-dialog .score').value),
+      }
+      // 根据存的下标修改数据
+      data.splice(editIndex, 1, {
+        ...data[editIndex],
+        ...info
+      })
+      // 重新截取数据，更新table
+      const newData = data.slice((config.page - 1) * config.pagesize, config.page * config.pagesize)
+      table.update(newData)
+      // 关闭弹窗
+      $('.edit-dialog').classList.remove('show')
+      editIndex = -1
+    })
+
+
+
+    // const table2 = new Table({
+    //   el: document.querySelector('.table2'),
+    //   columns: [
+    //     { title: '星期一', dataIndex: 'monday' },
+    //     { title: '星期二', dataIndex: 'tuesday' },
+    //     { title: '星期三', dataIndex: 'wednesday' },
+    //     { title: '星期四', dataIndex: 'thursday' },
+    //     { title: '星期五', dataIndex: 'friday' },
+    //     { title: '星期六', dataIndex: 'saturday' },
+    //     { title: '星期日', dataIndex: 'sunday' }
+    //   ],
+    //   data: [
+    //     { monday: '油条', tuesday: '黄焖鸡' },
+    //     { monday: '包子', tuesday: '关东煮' }
+    //   ]
+    // })
+
+    // const obj1 = {
+    //   name: '小明',
+    //   age: 33
+    // }
+
+    // const obj2 = {
+    //   name: '小红',
+    //   gender: '男',
+    // }
+
+
+    // const a = {
+    //   ...obj1,
+    //   ...obj2
+    // }
+    // console.log(a)
+  </script>
+</body>
+</html>

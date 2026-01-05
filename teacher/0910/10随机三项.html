@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 在给定的长数组中   随机 n 项  且不重复[即去重]  且升序
+        var arr = [1,2,3,4,5,6];  // 
+        // 随机3项  [1,5,4] -> [1,4,5]
+        //          [5,3,6] -> [3,5,6]
+        function fn( arr , n ){
+            // 由于去重   所以不确定循环次数
+            var resArr = []; // 存储结果 
+            var count = 0; // 记录循环次数
+            while( resArr.length < n ){
+                // 生成下标
+                var index = random( 0 , arr.length - 1 );  // 0 -> arr[0] -> 1
+
+                count++
+
+                // 判断当前值 是否在 结果数组中出现过   要的是未出现 -1
+                if( resArr.indexOf( arr[index] ) === -1 ){
+                    resArr.push( arr[index] )
+                }
+            }
+            console.log( count )
+            return resArr.sort(function( a,b ){ return a - b })
+        }
+        console.log( fn( arr , 3 ) )
+
+
+        // 封装随机数函数
+        function random( min , max ){
+            return Math.floor( Math.random() * ( max - min + 1 ) + min )
+        }
+    </script>
+</body>
+</html>

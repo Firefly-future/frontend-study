@@ -1,0 +1,82 @@
+.home {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.home_title {
+  width: 100%;
+  height: 100px;
+  background-color: #fff;
+}
+.home_title_content {
+  width: 100%;
+  height: 44px;
+  line-height: 44px;
+}
+.home_title_content_span {
+  position: absolute;
+  left: 10px;
+  top: 2px;
+}
+h3 {
+  text-align: center;
+}
+.progress {
+  width: 100%;
+  padding: 0 14px 10px;
+  position: relative;
+  .progress_span {
+    position: absolute;
+    left: 50%;
+    top: 32%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+    color: #000; // 与条颜色反差即可
+    line-height: 1;
+    pointer-events: none;
+  }
+}
+.product {
+  width: 100%;
+  height: 20px;
+  line-height: 20px;
+  padding: 6px 15px;
+  border-left: 5px solid #f9e72c;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 700;
+  color: #000;
+  span {
+    color: #fff;
+    background: linear-gradient(90deg, #ff7a14, #fa3200);
+    padding: 0.5px 6px;
+    margin-right: 10px;
+    border-radius: 8px 8px 8px 0;
+    font-size: 9px;
+    height: 20px;
+  }
+}
+main {
+  width: 100%;
+  flex: 1;
+  background: #f2f3f7;
+  padding: 10px;
+  overflow: auto;
+}
+footer {
+  width: 100%;
+  min-height: 50px;
+  padding:10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  img {
+    width: 100%;
+    height: 36px;
+  }
+}

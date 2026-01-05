@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // indexOf('val' , index) 从指定的位置开始向后查找val,找到返回下标，找不到-1
+            // 'val' 查找的值
+            // 'index' 开始查找的位置下标 ， 默认是0
+
+            // var str = "我是中国人,我爱中国和中国红";
+            // //         0 1 2 3 4 56 7 8 9 0 1 2 3
+            // var index = str.indexOf("我" , 10);   // -1
+            // console.log( index )
+
+
+            function myIndexOf(where , who , index){
+                // 判断index 是否传参  若有参数 按照指定的参数开始  否则0开始
+                index = index || 0;   
+
+                // 循环遍历拿到每个字符
+                for( var i = index; i < where.length; i++ ){
+                    // 判断每个字符where[i] 与 查找的字符who一致
+                    if( where[i] === who ) return i
+                }
+                // 循环结束 没有找到 -1
+                return -1
+            }
+            //                       01234567
+            console.log( myIndexOf( "vchdbvjc" , "v" ) ) // 0
+            console.log( myIndexOf( "vchdbvjc" , "v" , 5 ) ) // 5
+            console.log( myIndexOf( "vchdbvjc" , "v" , 6 ) ) // -1
+
+
+            // 实现字符串的去重
+            // var str = "a12a23a3"   // "a123"
+            // var resStr = "" ; // 结果字符串
+            // // 核心: 判断每个字符是否再新字符串中出现过  未出现  把当前字符拼接
+            // // 循环遍历拿到每个字符
+            // for( var i = 0 ; i < str.length; i++ ){
+            //     // 判断 当前字符再新字符串中 未出现
+            //     if( resStr.indexOf( str[i] ) === -1 ){
+            //         resStr += str[i]
+            //     }
+            // }
+            // console.log( resStr )
+
+
+            // 借助自己封装的myIndexOf方法实现去重
+            var str = "a124a234a34"   // "a123"
+            var resStr = "" ; // 结果字符串
+            // 核心: 判断每个字符是否再新字符串中出现过  未出现  把当前字符拼接
+            // 循环遍历拿到每个字符
+            for( var i = 0 ; i < str.length; i++ ){
+                // 判断 当前字符再新字符串中 未出现
+                if( myIndexOf(resStr , str[i]) === -1 ){
+                    resStr += str[i]
+                }
+            }
+            console.log( resStr )
+
+    </script>
+</body>
+</html>

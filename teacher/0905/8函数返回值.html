@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>重中之重: 函数的返回值</title>
+</head>
+<body>
+    <h1 id="h1"></h1>
+    <script>
+        // 函数的返回值
+            // return 
+            // 注意: return 后面写什么 将返回什么
+            // 注意: 省略return 或 return 后面没有写内容 都将返回undefined
+            // 注意: return 后的代码将不再执行
+            
+        // function 饭店餐馆( 接收1 , 接收2 ){
+        //      厨房 一顿 劈里啪啦一顿操作猛如虎
+        //      厨房 热火朝天
+        //      厨房 忙的 不亦乐乎 真上头啊
+        //      
+        // }
+        // 饭店餐馆(点餐1,点餐2)
+
+        // 让餐品1 2 宿舍吃 -> alert()
+        // 让餐品8 9 教室吃 -> console.log()
+        // 让餐品5 6 路上吃 -> document.write()
+        // 让餐品3 3 屋顶吃 -> el.innerHTML
+
+        function hotel( a,b ){
+        
+            return "China"
+
+            console.log("哈哈")  // 废话 不执行
+        }
+        alert( hotel( 1,2 ) )
+        console.log( hotel( 8,9 ) )
+        document.write( hotel( 5,6 ) )
+        document.getElementById("h1").innerHTML = hotel(3,3)
+    </script> 
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Set对象
+        //     ● 存一组数据，set对象中存的值都是唯一的，没有重复的值，会自动去重
+        //     ● 可以利用 set 对数组去重
+        // const o1 = { a : 1 , b : 2 }
+        const obj = new Set();   // {}
+            // 添加 add
+        obj.add("hello")
+        obj.add("china")
+        obj.add(5)
+        obj.add(true)
+        // obj.add( o1 )
+        obj.add("hello")
+        obj.add("china")
+        //     // 删除 delete
+        // obj.delete( o1 )
+        // obj.delete( "china" )
+        console.log( obj )
+        //     // 检测有没有  has
+        // console.log( obj.has(5) )
+        // console.log( obj.has('5') )
+        //     // 遍历对象 forEach
+        // obj.forEach(item => console.log(item))
+        //     // 获取个数长度 size
+        // console.log( obj.size )
+
+        // 实现对数组的去重
+        const arr = [1,1,1,5,2,1,3,3,1,5,6,7,6,6,4,8,9,5,9,94,15,15,41,52,58,5]
+        //           0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9  0  1  2  3  4  5s
+        console.log( arr.length )
+        // 原始操作 循环遍历拿到每一项  检测当前值没有出现indexOf为-1  则push添加即可
+            // let resArr = [];
+            // arr.forEach(item => {
+            //     if( resArr.indexOf(item) === -1 ) resArr.push( item )
+            // }) 
+            // console.log( resArr )
+
+        // 原始操作 循环遍历拿到每一项   判断当前项前查找 和 后查返回的下标一致  不删除   否则后删
+
+        // 借助Set()唯一值的特点去重
+        console.log([...new Set(arr)])
+        console.log( [...new Set( arr )].sort((a,b) => a - b) )
+
+
+
+    </script>
+</body>
+</html>

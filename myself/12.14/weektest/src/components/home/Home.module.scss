@@ -1,0 +1,94 @@
+.home {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+.leftItem {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin: 20px 0;
+}
+.username {
+  display: flex;
+  align-items: center;
+  height: 130px;
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  .title {
+    width: 100px;
+    text-align: center;
+    height: 130px;
+    line-height: 130px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #061d47;
+    border-bottom: 1px solid #3e84d1;
+  }
+  .usernameContainer {
+    flex: 1;
+    height: 120px;
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    .usernameInfo {
+      height: 70px;
+      line-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      border-bottom: 1px solid #ccc;
+      padding: 0 20px 0 0;
+    }
+    .curTitle {
+      height: 50px;
+      line-height: 50px;
+      display: flex;
+      align-items: center;
+      .currentPage{
+        display: flex;
+        align-items: center;
+        height: 40px;
+        width: 100px;
+        margin: 0 10px;
+        background-color: #94aeca;
+        border-radius: 5px;
+        div{
+          margin: 0 5px;
+        }
+      }
+    }
+  }
+}
+.NavLink {
+  display: flex;
+  flex-direction: column;
+  background-color: #001135;
+  color: #fff;
+  width: 100px;
+  a {
+    padding: 10px 0;
+    width: 80px;
+    text-decoration: none;
+    text-align: center;
+    color: #ccc;
+  }
+  :global(.active) {
+    border-left: 3px solid #fff;
+    color: #fff;
+  }
+}
+
+.rightItem {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.outlet {
+  flex: 1;
+  display: flex;
+}

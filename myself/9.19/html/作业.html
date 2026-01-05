@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            list-style: none;
+        }
+        .box{width:100px;}
+        .on{width: 150px ; height: 20px ;float: left;}
+        #check{width:150px;display: none;float: left;}
+        .in{width: 150px;height: 20px;display: none;float: left;}
+        .show{display: block!important;}
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <input type="text" class="on">
+        <input type="text" class="in">
+            <select name="" id="check">
+            <option value="cow">cow</option>
+            <option value="bull">bull</option>
+            <option value="ASD">ASD</option>
+            <option value="Bla" selected="selected">Bla</option>
+            <option value="Ble">Ble</option>
+        </select>
+    </div>
+    <script>
+        function $(el,parent=document){
+            return parent.querySelector(el)
+        }
+        function gets(el,parent=document){
+            return [...parentn.querySelectorAll(el)]
+        }
+        var box=$('.box')
+        console.log(box)
+        var input=$('.in')
+        var inp=$('.on')
+        var sel=$('#check')
+        // console.log(input)
+        // 给on输入框绑定聚焦事件
+        inp.onfocus=function(){
+            // 点击会显示出两个隐藏的in check
+            input.classList.add('show')
+            sel.classList.add('show')
+        }
+        // 取消整理的聚焦再次隐藏
+        box.onblur=function(){
+            input.classList.remove('show')
+            sel.classList.remove('show')
+        }
+    </script>
+</body>
+
+</html>

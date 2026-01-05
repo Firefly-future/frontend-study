@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/增删改查.css">
+</head>
+
+<body>
+    <div class="box">
+        <div class="header">姓名<input type="text" placeholder="请输入姓名" class="inp"><button class="search">搜索</button><button class="reset">重置</button></div>
+        <h3 class="add">新增</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>收货人</th>
+                    <th>所在地</th>
+                    <th>详细地址</th>
+                    <th>邮编</th>
+                    <th>电话/手机</th>
+                    <th>操作</th>
+                    <th>设置</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- <tr>
+                    <td>曾小贤</td>
+                    <td>珠江</td>
+                    <td>海口</td>
+                    <td>051101</td>
+                    <td>15063123014</td>
+                    <td><span class="change">编辑</span>|<span class="up">上移</span>|<span class="del">删除</span>|<span
+                            class="down">下移</span></td>
+                    <td><span class='mo'>默认地址</span></td>
+                </tr> -->
+            </tbody>
+        </table>
+    </div>
+      <div class="new">
+        <h3 class="tit">添加/编辑</h3>
+            <span class="close">&times;</span>
+            <div>姓名：<input type="text" class="user"></div>
+            <div>所在地：<input type="text" class="area"></div>
+            <div>详细地址：<input type="text" class="address"></div>
+            <div>邮编：<input type="text" class="cord"></div>
+            <div>电话/手机：<input type="text" class="tel"></div>
+            <div><button class="no">取消</button><button class="ok">确认</button></div>
+        </div>
+    <script src="../js/data.js"></script>
+</body>
+
+</html>

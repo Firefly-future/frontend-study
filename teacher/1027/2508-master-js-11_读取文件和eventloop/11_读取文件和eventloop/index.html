@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    padding: 30px;
+  }
+  .upload-wrap {
+    border: 2px dashed #ccc;
+    height: 300px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  .upload-wrap:hover {
+    border-color: #03a9f4;
+    background: #eee;
+  }
+  .upload-wrap input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+  }
+  li {
+    list-style-type: none;
+    padding: 15px;
+    margin-bottom: 15px;
+    background: #ddd;
+  }
+</style>
+<body>
+  <div class="upload-wrap">
+    <p style="font-size: 60px;">📁</p>
+    <p>点击或把文件拖拽到此处上传</p>
+    <input type="file" multiple>
+  </div>
+  <ul>
+  </ul>
+
+  <script>
+    const $all = el => [...document.querySelectorAll(el)]
+    const fileInp = document.querySelector('input')
+
+
+    fileInp.addEventListener('change', e => {
+      const files = [...e.target.files]
+      renderList(files)
+      
+      Promise.all(files.map(getImgUrl))
+        .then(res => {
+          console.log(res)
+          $all('li img').forEach((img, i) => {
+            img.src = res[i]
+          })
+        })
+      
+
+      // const xhr = new XMLHttpRequest()
+      // xhr.open('post', '/aaa/bb')
+      // xhr.onreadystatechange = () => {}
+      // const formData = new FormData()
+      // formData.append('file', e.target.files[0])
+      // xhr.send(formData)
+    })
+
+
+    function renderList(files) {
+      document.querySelector('ul').innerHTML = files.map((item, index) => {
+        // getImgUrl(item)
+        //   .then(res => {
+        //     $all('li img')[index].src = res
+        //   })
+
+        return `
+          <li>
+            <img src="" height="300" />
+            <h3>文件名称：${item.name}</h3>
+            <p>文件大小：${item.size}</p>
+            <p>文件类型：${item.type}</p>
+            <p>最后修改时间：${new Date(item.lastModified).toLocaleString()}</p>
+          </li>
+        `
+      }).join('')
+    }
+    
+    function getImgUrl(file) {
+      return new Promise((resolve, reject) => {
+        const f = new FileReader()
+        // 把文件转成 base64
+        f.readAsDataURL(file)
+        f.onload = () => {
+          resolve(f.result)
+        }
+      })
+    }
+
+
+  </script>
+</body>
+</html>

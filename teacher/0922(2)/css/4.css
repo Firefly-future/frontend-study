@@ -1,0 +1,80 @@
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+.box{
+    padding: 20px 150px 0;
+}
+
+.tit{
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+    text-align: center;
+    background: #3EA2EE;
+    color: #FFF;
+}
+.header{
+    line-height: 30px;
+}
+
+.addBtn{
+    color: #3EA2EE;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+thead{
+    height: 45px;
+    background: #EEE;
+    border-bottom: 1px solid #CCC;
+}
+
+tbody tr {
+    height: 39px;
+    font-size: 14px;
+    color: #666;
+    border-bottom: 1px solid #CCC;
+}
+tbody tr:hover{
+    background: #EBECF0;
+}
+tbody tr span{
+    margin: 0 5px;
+}
+
+.mark{
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: rgba(0,0,0,.5);
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+.show{
+    display: block;
+}
+.con{
+    width: 300px;
+    padding: 15px;
+    background: #FFF;
+    border-radius: 10px;
+    margin: 120px auto 0;
+}
+
+.head{
+    height: 40px;
+    line-height: 39px;
+    border-bottom: 1px solid #CCC;
+}
+.subhead {
+    float: left;
+}
+.close{
+    float: right;
+}

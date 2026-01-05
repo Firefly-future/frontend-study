@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">
+        <p class="title">标题</p>
+        <ul class="list">
+            <li id="item" class="item on">娱乐-yl</li>
+            <li>体育-ty</li>
+            <li>金融-jr</li>
+            </ul>
+        <nav class="title goback">返回</nav>
+        </div>
+    <!-- 针对以上结构做如下操作：
+    1、console.log(document.getElementById("item").className)打印结果是什么？
+
+    2、给class为title的元素绑定点击事件，点击时做以下操作：如果该元素上有goback这样一个类，则将其隐藏。
+
+    3、为class为list下的所有li定义data - type属性, 值为 - 后面的字符，如：
+    <li data-type=“ yl”>娱乐</li> -->
+    <script>
+        console.log(document.getElementById("item").className)
+        var title=document.querySelectorAll('.title')
+        title.forEach(function(){title.onclick=function(){
+            if(title.classList.contains('goback')){
+                title.classList.remove('goback')
+            }
+        }})
+        
+    </script>
+</body>
+
+</html>

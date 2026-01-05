@@ -1,0 +1,53 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+.box {
+    margin: 50px auto 0;
+    border: 1px solid greenyellow;
+    width: 650px;
+}
+
+.con {
+    text-align: center;
+    width: 150px;
+    border: 1px solid rgb(200, 194, 194);
+    float: left;
+    margin: 30px 30px 0;
+}
+
+.con ul {
+    width: 149px;
+    height: 200px;
+    border: 1px solid rgb(154, 151, 151);
+    overflow: hidden;
+    overflow-y: auto;
+    display: none;
+}
+
+ul li {
+    border: 1px solid rgb(147, 143, 143);
+    width: 149px;
+    height: 30px;
+    line-height: 30px;
+
+    /* display: none; */
+}
+
+ul li:hover {
+    background: gray;
+}
+
+.show {
+    display: block!important;
+}
+
+h3 {
+    width: 149px;
+    height: 30px;
+    font: bolder 14px/30px '宋体';
+    border: 1px solid rgb(147, 142, 142);
+}

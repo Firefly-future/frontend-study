@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h2>promise</h2>
+  <script>
+    // Promise 静态方法
+    // 1. Promise.resolve() 参数是 Promise 对象就直接返回，不是 Promise 就创建一个 fulfilled 状态的 Promise
+    // 2. Promise.reject()  返回一个失败状态的 Promise
+    // 3. Promise.all([]) 
+    //    接收数组作为参数，数组内是 Promise 对象
+    //    等待所有 Promise 对象的状态都变成 fulfilled, Promise.all 变成 fulfilled
+    //    如果其中一个失败就只接变成 rejected
+    // 4. Promise.allSettled
+    //    接收多个 Promise 作为参数，所有Promise都改变状态之后执行then
+    //    then 中的结果可以查看每一个 Promise 的状态
+    // 5. Promise.race
+    //    接收多个 Promise 作为参数，Promise.race 的状态是最快返回的参数的状态
+
+
+    // let p1 = new Promise((resolve, reject) => {
+    //   resolve(100)
+    // })
+    // let p2 = Promise.reject(222)
+    // console.log('p1', p1)
+    // console.log('p2', p2)
+    // console.log(p1 === p2)
+
+
+    function delay(ms, desc) {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          const n = Math.random()
+          console.log(n, desc)
+          if (n >= 0.5) {
+            resolve({ value: n, desc })
+          } else {
+            reject({ msg: '失败', desc })
+          }
+        }, ms)
+      })
+    } 
+
+    Promise.race([
+      delay(3000, '第一个'),
+      delay(2000, '第三个'),
+      delay(1000, '第二个'),
+    ])
+      .then(res => {
+        console.log(res)
+      })
+      .catch(e => {
+        console.log(e)
+      })
+    
+    
+    
+  </script>
+</body>
+</html>

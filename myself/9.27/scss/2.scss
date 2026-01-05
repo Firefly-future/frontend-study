@@ -1,0 +1,56 @@
+@import './3common.scss';
+
+
+$colors: red, rgb(53, 5, 135), blue, purple, pink, green;
+
+.box {
+    width: 84px;
+    height: 420px;
+    margin: 30px auto 0;
+
+    // border: 1px solid #38414C;
+    dl {
+        width: 84px;
+        height: 70px;
+        border: 1px solid #38414C;
+        text-align: center;
+        background-color: #38414C;
+        padding-top: 10px;
+        color: white;
+
+        // &:hover{
+        //     background: white;
+        //     color: rgb(4, 250, 103);
+        // }
+        dt {
+            width: 20px;
+            height: 20px;
+            margin: 0 auto;
+            background: url(../img/tuniu.png);
+        }
+
+        // 这里的滑过是每个dl都是一致的
+        // 都是白色背景 绿色字
+        // &:hover{
+        //     background: #FFF;
+        //     color: green;
+        // }
+        @for $i from 1 to 7 {
+
+            // 根据值列表 每个dl的背景颜色都不一样
+            &:nth-child(#{$i}):hover {
+                background: nth($colors, $i);
+            }
+
+            &:nth-child(#{$i}) dt {
+                @if($i>=2) {
+                    background-position: $i*-20px -25px;
+                }
+
+                @else {
+                    background-position: ($i - 1)*-20px -25px;
+                }
+            }
+        }
+    }
+}

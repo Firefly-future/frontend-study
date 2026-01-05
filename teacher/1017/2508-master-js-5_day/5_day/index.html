@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h2>详情页面</h2>
+  <script>
+    // Promise: es6 新增的处理异步的语法
+    // 1. Promise 对象有三种状态：pending、fulfilled、rejected，状态只能改变一次，pending ==> fulfilled ｜ pending ==> rejected
+    // 2. new Promise 需要接收一个函数作为参数，此函数时同步执行，此函数有俩个参数：resolve, reject
+    // 3. 调用 resolve 会把 Promise 的状态变成 fulfilled，调用 then 的第一个参数
+    // 4. 调用 reject 会把 Promise 的状态变成 rejected，调用 then 的第二个参数
+    // 5. 实例对象.then 接收两个函数作为参数，在状态改变时执行，then会返回一个新的 Promise，可以实现链式调用
+    // 6. .catch 方法可以捕获报错，可以处理兜底逻辑
+    
+
+    const p = new Promise((resolve, reject) => {
+      console.log('执行 Promise 的参数') // 此函数时同步执行
+      // resolve： 把 Promise 的状态变成 fulfilled
+      // reject：把 Promise 的状态变成 rejected
+      setTimeout(() => {
+        // resolve({ msg: '成功' })
+        reject(Error('我失败了'))
+      }, 2000)
+    })
+
+    console.log('28行', p)
+
+    // p.then(
+    //   res => {
+    //     console.log('成功状态执行此函数', res)
+    //   },
+    //   err => {
+    //     console.log('失败状态执行此函数', err)
+    //   }
+    // )
+
+    p
+      .then(res => {
+        console.log('成功状态执行此函数', res)
+        return 'aaaaaaa'
+      })
+      .then(res => {
+        console.log('39行', res)
+        return 'bbbb'
+      })
+      .then(res => {
+        console.log('42行', res)
+      })
+      .catch(e => {
+        console.log(e)
+      })
+      .finally(() => {
+        console.log('执行完毕')
+      })
+
+
+
+
+
+
+
+  </script>
+</body>
+</html>

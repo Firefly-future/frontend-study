@@ -1,0 +1,54 @@
+.side {
+  width: 260px;
+  height: 100%;
+  background-color: #0b1d45;
+  display: flex;
+}
+.title {
+  width: 110px;
+  text-align: center;
+  padding-top: 150px;
+  color: #4b5154;
+  background-color: #031133;
+  .title_bar {
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    &.active {
+      color: #fff;
+      background-color: #0b1d45;
+      border-left: 3px solid #fff;
+      svg path {
+        fill: #ffffff;
+      }
+    }
+  }
+}
+.nav {
+  width: 150px;
+  text-align: center;
+  h3 {
+    height: 130px;
+    line-height: 130px;
+    color: #fff;
+    border-bottom: 1px solid #ccc;
+  }
+  li {
+    height: 50px;
+    line-height: 50px;
+    a {
+      display: block;
+      text-decoration: none;
+      color: #4b5154;
+    }
+    :global {
+      a.active {
+        color: #fff;
+        border-right: 2px solid #4090f7;
+      }
+    }
+  }
+}

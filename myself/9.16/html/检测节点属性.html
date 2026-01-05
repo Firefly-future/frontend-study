@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="aad" class="box1" style="width:80px;height:30px;padding: 0;" >aaaa
+        <!-- 这里是注释部分 -->
+        <div class="box">
+            <p>add </p>
+            <p>dadad</p>
+            <!-- 注释部分 -->
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <div class="bb"></div>
+        </div>
+    </div>
+    <script>
+        // 获取一个元素
+        function $(el){
+            return document.querySelector(el)
+        }
+        function gets(el){
+            return document.querySelectorAll(el)
+        }
+        var box1=$('.box1')
+        console.log(box1)
+        console.log(`box1的属性名称是:${box1.nodeName};节点类型是${box1.nodeType};节点值是${box1.nodeValue}`)
+        var box2=box1.firstChild
+        console.log(box2)
+        console.log(`box2的属性名称是${box2.nodeName};节点类型是${box2.nodeType};节点值是${box2.nodeValue}`)
+        var box3=box2.nextSibling
+        console.log(`box3的属性名称是${box3.nodeName};节点类型是${box3.nodeType};节点值是${box3.nodeValue}`)
+        var box4=box1.attributes[0]
+        // 这里获取属性需要 下标 否则undefined
+        console.log(`box4的属性名称是${box4.nodeName};节点类型是${box4.nodeType};节点值是${box4.nodeValue}`)
+        
+        console.log(`文档的属性名称是${document.nodeName};节点类型是${document.nodeType};节点值是${document.nodeValue}`)
+    </script>
+</body>
+</html>

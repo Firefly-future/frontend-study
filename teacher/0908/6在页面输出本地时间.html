@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="h1"></h1>
+    <script>
+        // 需求 在页面标题h1输出本地时间日期
+        // 今天是x年x月x日 星期x    上午 or 下午 xx:xx:xx
+        // 拓展: 若 月 日 时分秒 不满足两位 进行补零操作
+        // 补充: setInterval(function(){} , time【毫秒数】)  设置定时器 即 按照指定的time间隔时间 执行function
+
+        // 获取元素
+        var tit = document.getElementById("h1");
+
+        // 添加定时器
+        setInterval( function(){
+            // 1 创建日期对象 
+            var date = new Date() ;
+            console.log(date)
+            // 2 获取年 月 日 时分秒 星期
+            var year = date.getFullYear() ,  // 获取年  返回四位数的年份
+                month = addZero( date.getMonth() + 1 ),    // 获取月  返回值0-11   0-1月  月+1是当前月
+                day = addZero( date.getDate() ) ,        // 获取日
+                week = date.getDay() ,        // 获取星期   返回值0-6   0->日 
+                hour = addZero( date.getHours() ) ,     // 获取小时    返回值0-23
+                minute = addZero( date.getMinutes() ) , // 获取分钟    返回值0-59
+                second = addZero( date.getSeconds() ) ; // 获取秒数    返回值0-59
+            var type = hour >= 12 ? '下午' : '上午';
+
+            tit.innerHTML = "今天是" + year + "年" + month + "月" + day + "日, 星期" + week + ";<br>"+ type + hour + ":" + minute + ":" + second
+
+        } , 1000 )
+
+
+        // 封装补零函数
+        function addZero( n ){
+            // return n < 10 ? '0' + n : n
+            // return String(n).length >= 2 ? n : '0' + n
+            return String(n)[1] ?  n :  '0' +n
+        }
+        // console.log( addZero( 9 ) )
+        // console.log( addZero( 8 ) )
+        // console.log( addZero( 15 ) )
+    </script>
+</body>
+</html>

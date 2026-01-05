@@ -1,0 +1,86 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.box {
+    width: 1204px;
+    background: rgb(239, 232, 232);
+    color: black;
+    border: 1px solid red;
+    margin: 50px 0 0 20%;
+    overflow: hidden;
+}
+
+.box1 {
+    width: 1200px;
+    height: 50px;
+    background: white;
+    line-height: 50px;
+    float: left;
+    text-align: center;
+}
+
+.box2 {
+    float: left;
+}
+
+.box2 div {
+
+    height: 50px;
+    line-height: 50px;
+    margin-right: 5px;
+    float: left;
+    background: goldenrod;
+    border: 1px solid burlywood;
+}
+
+.box3 {
+    float: right;
+    background: greenyellow;
+}
+
+.con div {
+    float: left;
+    /* overflow: hidden; */
+    margin-right: 8px;
+    border: 1px solid rgb(221, 163, 93);
+}
+.btn {
+    float: right;
+    margin: 5px;
+    background: rgb(4, 239, 247);
+    width: 150px;
+}
+.box::after {
+    display: block;
+    content: '';
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    clear: both;
+}
+
+.tip {
+    height: 60px;
+    width: 160px;
+    font: 20px/60px '宋体';
+    border: 1px solid red;
+    background: red;
+    color: blue;
+    margin: 100px auto 0;
+    text-align: center;
+    display: none;
+}
+
+.show {
+    display: none;
+}
+.shower{
+    display: block;
+}
+
+.selected {
+    opacity: .3;
+}

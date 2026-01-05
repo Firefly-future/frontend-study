@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h2>详情页面</h2>
+  <div class="box"></div>
+  <ul></ul>
+  <script>
+
+    const request = (
+      url,
+      {
+        method = 'GET',
+        data = null,
+        headers = {},
+        onSuccess,
+        onFail
+      } = {}
+    ) => {
+      const xhr = new XMLHttpRequest()
+      xhr.open(method, url)
+      xhr.onreadystatechange = () => {
+        if (xhr.readyState === 4) {
+          if (xhr.status === 200) {
+            const data = JSON.parse(xhr.responseText)
+            onSuccess && onSuccess(data)
+          } else {
+            onFail && onFail()
+          }
+        }
+      }
+      if (headers) {
+        Object.keys(headers).forEach(key => {
+          xhr.setRequestHeader(key, headers[key])
+        })
+      }
+      xhr.send(data)
+    }
+
+
+    // 回调函数：嵌套多层会有回调地狱的问题
+    request(`http://39.96.210.90:5001/login`, {
+      onSuccess: loginRes => {
+        console.log('登陆成功')
+        console.log('登陆成功')
+        console.log('登陆成功')
+        console.log('登陆成功')
+        console.log('登陆成功')
+        console.log('登陆成功')
+        console.log('登陆成功')
+
+        request(`http://39.96.210.90:5001/user/info`, {
+          onSuccess: userRes => {
+            console.log('获取个人信息')
+            console.log('获取个人信息')
+            console.log('获取个人信息')
+            console.log('获取个人信息')
+            console.log('获取个人信息')
+            console.log('获取个人信息')
+
+            request(`http://39.96.210.90:5001/user/like/playlist?userId=${userRes.id}`, {
+              onSuccess: likeRes => {
+                console.log('获取个人收藏的歌单')
+                console.log(likeRes)
+                document.querySelector('.playlist').innerHTML = likeRes.list.map(item => {
+                  return `
+                    <li>${item.name}</li>
+                  `
+                }).join('')
+              }
+            })
+
+          }
+        })
+
+      }
+    })
+
+
+
+    
+
+
+
+
+
+
+
+
+
+  </script>
+</body>
+</html>

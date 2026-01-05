@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .box {
+            background: white;
+            margin: 50px 0 0 100px;
+        }
+        .btn1 {
+            background: aquamarine;
+            font: bold 20px/30px '宋体';
+            color: wheat;
+            margin-left: 5px;
+        }
+        .btn2 {
+            background: burlywood;
+            font: bold 20px/30px '微软雅黑';
+            color: wheat;
+            margin-left: 5px;
+        }
+        .tex {
+            height: 30px;
+        }
+        .con {
+            width: 1000px;
+            height: 600px;
+            background: rgb(247, 248, 245);
+            text-align: center;
+        }
+        .con div {
+            width: 280px;
+            height: 30px;
+            margin-right: 20px;
+            float: left;
+            line-height: 30px;
+        }
+        .con div p {
+            width: 240px;
+            height: 30px;
+            margin-right: 10px;
+            border: 1px solid brown;
+            float: left;
+            line-height: 30px;
+            border-radius: 8px;
+        }
+        .qd {
+            width: 28px;
+            height: 30px;
+            border: 1px solid rgb(54, 24, 24);
+            float: left;
+            line-height: 30px;
+            border-radius: 50%;
+        }
+        .con div p {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <h1>待办事项如下:</h1>
+        <div><input type="text" placeholder="请输入文字" class="tex"><button class="btn1">添加</button>
+            <button class="btn2">全部删除</button>
+        </div>
+        <div class="con">
+            <!-- <div>
+                <p>输入的内容将显示在这里</p><span class="qd">&times;</span>
+            </div> -->
+        </div>
+    </div>
+    <script>
+        // 获取元素
+        function $(el) {
+            return document.querySelector(el)
+        }
+        function gets(el, parent) {
+            parent = parent || document
+            return Array.from(parent.querySelectorAll(el))
+        }
+        // 给添加绑定点击事件
+        $('.btn1').onclick = function () {
+            var tex = $('.tex').value.trim()
+            //判断输入框内容是否为空
+            if (!tex) return alert('输入内容不能为空')
+            // 创建div元素
+            var div = document.createElement('div')
+            // 给div元素添加内容
+            div.innerHTML = `<p>${tex}</p><span class="qd">&times;</span>`
+            // 将添加内容后的div追加入类名为con的div中
+            $('.con').appendChild(div)
+            // 清空输入框的值
+            $('.tex').value = ''
+
+            // 给p绑定点击事件，以查看输入文本的详细内容
+            var p = div.firstElementChild
+            p.onclick = function () {
+                var div = document.createElement('div')
+                Object.assign(div.style,
+                    {
+                        width: "500px",
+                        height: "300px",
+                        background: "grey",
+                        position: "blue",
+                        color: 'red',
+                        left: "300px",
+                        top: 0,
+                        padding: "50px auto 0"
+                    })
+                div.innerHTML = p.innerHTML
+                document.body.appendChild(div)
+                setTimeout(function () {
+                    document.body.removeChild(div)
+                }, 3000)
+            }
+            // 给每个删除按钮设置点击事件
+            var span = div.lastElementChild
+            span.onclick = function () {
+                $('.con').removeChild(span.parentNode)
+            }
+        }
+
+        // 给全部删除绑定点击事件
+        $('.btn2').onclick = function () {
+            $('.con').innerHTML='';
+            //获取所有的子元素div 然后 一个一个删除
+            // gets("div", $('.con')).forEach(function (tagdiv) {
+            //     $('.con').removeChild(tagdiv)
+            // })
+        }
+    </script>
+</body>
+
+</html>

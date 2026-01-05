@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+img {
+  display: block;
+}
+
+.box {
+  margin: 120px auto;
+  width: 350px;
+  height: 350px;
+  position: relative;
+  box-shadow: 0 0 5px 1px red;
+}
+
+.box:hover .bg {
+  transform: rotate(120deg);
+}
+
+.box .bg {
+  background-color: black;
+  width: 350px;
+  height: 350px;
+  color: white;
+  text-align: center;
+  line-height: 350px;
+  font-size: 30px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: 1s linear;
+  transform-origin: 10px 10px;
+}
+
+.box .bg::after {
+  content: '';
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  background: white;
+  border-radius: 50%;
+}

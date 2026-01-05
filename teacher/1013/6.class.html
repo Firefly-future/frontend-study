@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>标题</h1>
+  <script>
+    class Base {
+      constructor(gender) {
+        this.gender = gender
+        console.log('我是base的构造函数')
+      }
+      $(el) {
+        return document.querySelector(el)
+      }
+
+      $all(el) {
+        return document.querySelectorAll(el)
+      }
+    }
+
+    // class Person {
+    //   // 构造函数
+    //   constructor(name, age) {
+    //     this.name = name
+    //     this.age = age
+    //     console.log('执行了构造函数')
+    //   }
+
+    //   getInfo() {
+    //     console.log('我是一个原型方法')
+    //   }
+    // }
+
+    // 继承
+    // 1. 通过 extends 继承父类
+    // 2. 在子类的构造函数中通过 super 调用父类的构造函数
+
+
+    // 通过 extends 继承父类
+    class Person extends Base {
+      // 构造函数
+      constructor(name, age, gender) {
+        // super: 父类的构造函数
+        super(gender)
+        this.name = name
+        this.age = age
+        console.log('执行了构造函数')
+      }
+
+      getInfo() {
+        console.log('我是一个原型方法')
+      }
+
+      // 静态方法：构造函数本身的方法
+      static isPerson(obj) {
+        return obj instanceof Person
+      }
+    }
+
+    // Person.isPerson = function(obj) {
+    //   return obj instanceof Person
+    // }
+
+    // 静态方法 Array.isArray()
+    // 实例方法 [].push()
+
+    const xm = new Person('小明', 22, '男')
+
+    console.log(xm)
+    xm.getInfo()
+
+    console.log(Person.isPerson(xm))
+
+
+
+  </script>
+</body>
+</html>

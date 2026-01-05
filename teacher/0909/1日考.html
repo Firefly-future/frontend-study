@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 填空:
+        // 1  function getSum(n) {
+        //     var index = 10;
+        //     if (typeof(n) === "number") {
+        //         index = n;
+        //     } else {
+        //         index = index + n * 1;
+        //     }
+        //     console.log(index);
+        // }
+        // getSum("+1");
+        // 打印结果是(  )。
+
+        // 2  function myFun( a,b,c ){
+        // console.log( a );
+        // console.log( b );
+        // console.log( c );
+        // }
+        // myFun( 10,20 );
+        // 以上代码执行的结果依次是（）（）（） 10 20 undefined
+
+        // 3  下列程序的输出是：（）    2
+        // var a = 1;
+        // function foo() {
+        //     var a = 2;
+        //     console.log(a);
+        // }
+        // foo();
+
+        // 4  var now = new Date(2018,6,35);   // 2018,8,4
+        // console.log(now.getDate());打印结果是（   ）  4
+
+        // 5 下列程序的输出是：（）
+        // console.log(+new Date('foo-bar'));   NaN
+
+        // 6  下列程序的输出是：（）
+        // var d = new Date();
+        // console.log(typeof d);   'object'
+
+        // 7  var date=new Date(2015,13,25,0,0,0);
+        // console.log(date.getFullYear()+','+date.getMonth())的返回结果是（   ）;： 2016 ， 2
+
+        // 8 new Date(2017,9,1).getMonth()的返回值是（） 当前为（）月 9   10
+
+        // 9  function addZero(num){
+        //     ____________;  return num < 10 ? '0' + n : n
+        // }
+        // var num = addZero(6);
+        // addZero()函数实现对num的判断，如果num是一位数，则前面补0返回，否则直接返回，如传入6返回06，传入15，返回15,补全横线处的代码(最少两种方法)
+
+        // 10  new Date()*1 与 （   ）的作用一致,都是用于获取1970年到 当前的毫秒数
+
+        // 11  function checkVal(val){
+        //     if(val!="" && typeof(val)==="number"){
+        //             return true;
+        //     }
+        //     return false;
+        //     }
+        // console.log(checkVal("58"))的结果是（）  false
+
+        // 12  var date = new Date();  
+        //     date.setFullYear(2017);
+        //     date.setMonth(9);
+        //     date.setDate(32);
+        // 以上代码创建的日期是（）  2017.11.1
+
+        // 13  
+        // var eat = function(){console.log('eating')}
+        // eat = 'eat';
+        // eat();
+        // 以上程序会不会报错？为什么？
+            // 会   eat is not a function
+            // 先给eat变量赋值为一个函数，接着给变量eat赋值为字符串，当再去访问eat时，它一定是字符串而非函数，
+            // 因为变量允许重新赋值，后设覆盖先设
+
+            // var a ;
+            // a = "hello"
+            // console.log( a )
+
+
+        // 14  
+        // var fun = function() {
+        //         alert(x);
+        //     },
+        // x = 10;
+        // fun();   // 10
+
+        // var fun = function() {
+        //         alert(x);
+        //     };
+        // x = 10;
+        // fun();   // 10
+
+        // var fun = function() {
+        //         alert(x);
+        //     };
+        // var x = 10;
+        // fun();   // 10
+
+
+        // 执行以上代码的结果是(  )。
+
+
+        // 15  function getNum(num){
+        // return typeof(num)==="string"?parseInt(num):num;
+        // }
+        // console.log(getNum("9F"));打印结果是_______9
+
+
+        // 16  设置一个日期时间对象，将2020年的1月1号设为当前日期，正确的实现方式是var date = _new Date(‘2020,1,1’)    (2020,0,1)___
+
+
+        // 17  var data = new Date(2016,9,38,0,0,0);
+        //     console.log(data.getMonth()+','+data.getDate());打印结果是（    ）：
+                // 10 , 7
+        // 18  var sum = function(a,b){
+        // a+b;
+        // }
+        // var ab = sum(2,3);console.log(ab);打印结果是_________。   undefined
+
+
+        // 19  var time = new Date(“2017,5,1”);var m = time.getMonth(),则m的值为____   4
+
+
+        // 20  下列程序的输出是（  ）
+        // var s = 'abcdef';
+        // console.log(s.indexOf('x'));   // -1
+            // 在字符串中 查找 x这个字符。找到返回下标 ， 找不到-1
+        // console.log( s.indexOf("d") )  3
+    </script>
+</body>
+</html>

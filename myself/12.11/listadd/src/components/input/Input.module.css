@@ -1,0 +1,16 @@
+.inp {
+  width: 500px;
+  padding: 10px 0 10px 40px;
+  outline: none;
+}
+
+.input {
+  position: relative;
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 10px;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 找某字符串中的某个字符的数量
+        function num(str,x){
+            var count=0;
+            for(var i=0;i<str.length;i++){
+                if(str[i]===x){
+                    count++
+                }
+            }
+            return count
+        }
+        var str='asjoigoiamgoisfigoadsa'
+        console.log(num(str,'a'))
+
+
+        // 找某字符串中每个字符的数量
+        function every(){
+            var res={};//存储每个字符次数的结果对象
+            for(var i=0;i<str.length;i++){
+                if(res[str[i]]){//
+                   res[str[i]]++
+                }else{
+                    res[str[i]]=1
+                }
+            }return  res
+        }
+        console.log(every(str))
+
+        
+        // 找某个字符串中出现次数最多的字符
+        // 结合上面的每个字符出现的次数  
+        // 循环比较每个字符次数的大小，大的替换小的，从而找到最大次数的
+        function max(obj){
+            var count=0;
+            var res=null;
+            for(var key in obj){
+                if(obj[key]>count){//obj[key]即objece[属性]打印的结果是'值'
+                    count=obj[key]
+                    res=[key,obj[key]]
+                }
+            }
+            return '出现字数最多的是'+res[0]+',出现了'+res[1]+'次'
+        }
+        console.log(max(every(str)))
+    </script>
+</body>
+</html>

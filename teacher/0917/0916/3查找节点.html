@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box" title="title" id="box" abc="123" 123="abc">"a"
+        <a href="#">超链接</a>"b"
+        <p>段落</p>"c"
+        <span>特殊文本</span>"d"
+        <h2>2号标题</h2>"e"
+        <ul>
+            <li>无序列表项</li>
+            <li>无序列表项</li>
+            <li>无序列表项</li>
+        </ul>"f"
+    </div>
+    <div id="container"></div>
+    <script>
+        // 查找节点，会识别空白文本节点【元素之间的换行等】
+            // 1. 元素.firstChild  第一个子节点
+            // 2. 元素.lastChild   最后一个子节点
+            // 3. 元素.childNodes  获取所有的子节点
+            // 4. 元素.attributes  获取某个元素的所有属性节点
+            // 5. 元素.nextSibling  获取下一个兄弟节点
+            // 6. 元素.previousSibling  获取上一个兄弟节点
+
+        // 查找元素节点，不识别空白文本节点
+            // 1. 元素.children   获取所有的元素子节点
+            // 2. 元素.firstElementChild   获取第一个元素子节点
+            // 3. 元素.lastElementChild   获取最后一个元素子节点
+            // 4. 元素.nextElementSibling  获取下一个元素兄弟节点
+            // 5. 元素.previousElementSibling  获取上一个元素兄弟节点
+            // 6. 元素.parentNode  父节点，最顶部是document，在找就是null
+
+        var box = document.querySelector(".box");
+        var container = document.querySelector("#container");
+        // 1.1 获取box元素下的所有子节点
+            var all = box.childNodes;
+            console.log( all )
+            console.log( all.length )
+        // 1.2 获取box元素下的所有元素子节点
+            var allEl = box.children;
+            console.log( allEl )
+            console.log( allEl.length )
+
+        // 2.1 获取box下的第一个子节点
+            var first = box.firstChild;
+            console.log( first , typeof first )
+            // 注意; 将box下的第一个子节点 作为id为container元素的值
+            // container.innerHTML = first
+        // 2.2 获取box下的第一个元素子节点
+            var firstEl = box.firstElementChild;
+            console.log( firstEl )
+
+        // 3.1 获取box下的第一个子节点的下一个兄弟节点
+            var aEl = box.firstChild.nextSibling;
+            console.log( aEl )
+        // 3.2 获取box下的第一个元素子节点的下一个兄弟元素节点
+            var pEl = box.firstElementChild.nextElementSibling;
+            console.log( pEl )
+            
+        // 4 获取box的父节点
+            var parent = box.parentNode.parentNode.parentNode.parentNode;
+            //              body          html       document    null
+            console.log( parent )
+
+        // 5 获取box的所有属性节点
+            var attrs = box.attributes;
+            console.log( attrs )
+            console.log( attrs[2] )
+    </script>
+</body>
+</html>

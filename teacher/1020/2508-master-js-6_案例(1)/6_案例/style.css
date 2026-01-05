@@ -1,0 +1,145 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #333;
+}
+
+li {
+  list-style-type: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+main {
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+main h3 {
+  background: #eee;
+  padding: 10px 20px;
+}
+
+.questions {
+  padding: 20px;
+}
+
+.question-item {
+  margin-bottom: 20px;
+}
+
+.question-item h4 {
+  margin-bottom: 10px;
+}
+
+.question-item li {
+  padding: 5px 10px;
+  border-radius: 3px;
+}
+
+.question-item li:hover {
+  background: #eee;
+}
+
+.question-item .answer {
+  display: none;
+  color: green;
+  padding-top: 10px;
+}
+
+.question-item .answer span {
+  color: green;
+}
+
+.question-item .answer.show {
+  display: block;
+}
+
+.card {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background: #fff;
+}
+
+.card .card-header {
+  display: flex;
+  height: 60px;
+  border-bottom: 1px solid #ddd;
+}
+
+.card .card-header p {
+  flex: 1;
+  line-height: 60px;
+  text-align: center;
+}
+
+.card .btns {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card .btns button {
+  margin-right: 8px;
+  margin-bottom: 8px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 5px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+}
+
+.card .btns button:nth-child(7n) {
+  margin-right: 0;
+}
+
+.card .btns button:hover {
+  border-color: #2196f3;
+  color: #2196f3;
+}
+
+.card .btns button.active {
+  background: #2196f3;
+  color: #fff;
+  border-color: #2196f3;
+}
+
+.card .btns button.active:hover {
+  background: #0577d3;
+}
+
+.card .btns button.err {
+  background: red !important;
+}
+
+.card .card-footer {
+  border-top: 1px solid #ddd;
+  height: 60px;
+  padding: 10px 20px;
+}
+
+.card .card-footer button {
+  height: 40px;
+  width: 100%;
+  background: #2196f3;
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.card .card-footer button:hover {
+  background: #0577d3;
+}
+
+.card .card-footer button:disabled {
+  background: #ddd !important;
+}

@@ -1,0 +1,114 @@
+@charset "UTF-8";
+:root {
+  --music-theme: #d43c33;
+  --default-font-color: #333333;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style-type: none;
+}
+
+img {
+  vertical-align: middle;
+}
+
+body {
+  font-size: 14px;
+  color: var(--default-font-color);
+}
+
+/* 0.5px边框通用工具类 */
+.border-0_5px,
+.border-t-0_5px,
+.border-r-0_5px,
+.border-b-0_5px,
+.border-l-0_5px {
+  position: relative;
+  /* 防止内容被边框遮挡 */
+  box-sizing: border-box;
+  --border-color: #d3d4da;
+}
+
+/* 清除默认边框影响 */
+.border-0_5px {
+  border: none !important;
+}
+
+/* 全边框实现 */
+.border-0_5px::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  border: 1px solid var(--border-color);
+  border-radius: inherit;
+  /* 继承父元素圆角 */
+  transform: scale(0.5);
+  transform-origin: 0 0;
+  pointer-events: none;
+  box-sizing: border-box;
+}
+
+/* 上边框 */
+.border-t-0_5px::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--border-color);
+  transform: scaleY(0.5);
+  transform-origin: top center;
+  pointer-events: none;
+}
+
+/* 右边框 */
+.border-r-0_5px::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1px;
+  height: 100%;
+  background-color: var(--border-color);
+  transform: scaleX(0.5);
+  transform-origin: right center;
+  pointer-events: none;
+}
+
+/* 下边框 */
+.border-b-0_5px::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--border-color);
+  transform: scaleY(0.5);
+  transform-origin: bottom center;
+  pointer-events: none;
+}
+
+/* 左边框 */
+.border-l-0_5px::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 100%;
+  background-color: var(--border-color);
+  transform: scaleX(0.5);
+  transform-origin: left center;
+  pointer-events: none;
+}

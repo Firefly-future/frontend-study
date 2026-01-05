@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 递归：函数内部调用自己本身，必须有停止条件
+
+    // 阶乘
+    // 1 * 2 * 3 * 4 * 5
+    function fn1(n) {
+      if (n <= 1) return 1
+      return n * fn1(n - 1)
+    }
+    // console.log(fn1(5)) // 5 * 4 * 3 * 2 * 1
+    // 5 * fn1(4)
+    // 5 * 4 * fn1(3)
+    // 5 * 4 * 3 * fn1(2)
+    // 5 * 4 * 3 * 2 * 1
+
+    // 求和
+    // 1 + 2 + 3 + 4 + 5
+    function fn2(n) {
+      if (n <= 1) return 1
+      return n + fn2(n - 1)
+    }
+    // console.log(fn2(5))
+
+
+    // 数组扁平化
+    const arr = [
+      0,
+      [1, [2, [3, [4, [5], 6], 7], 8], 89],
+      100
+    ]
+    // 递归版本
+    // function flat(array) {
+    //   const res = []
+    //   array.forEach(item => {
+    //     if (Array.isArray(item)) {
+    //       res.push(...flat(item))
+    //       console.log(res)
+    //     } else {
+    //       res.push(item)
+    //     }
+    //   })
+    //   return res
+    // }
+    // function flat(array) {
+    //   return array.reduce((prev, item) => {
+    //     return prev.concat(Array.isArray(item) ? flat(item) : item)
+    //   }, [])
+    // }
+
+    // while循环版本
+    // function flat(array) {
+    //   let res = [...array]
+    //   while(res.some(v => Array.isArray(v))) {
+    //     res = [].concat(...res)
+    //     console.log(res)
+    //   }
+    //   return res
+    // }
+    // flat(arr)
+    // console.log(flat(arr))
+
+
+    // 快速排序
+    const arr1 = [2, 1, 6, 0, 3, -1, 2, -5, 7, 4]
+    // function quickSort(arr) {
+    //   if (arr.length <= 1) return arr
+    //   const mid = arr[0]
+    //   const left = []
+    //   const right = []
+    //   for (let i = 1; i < arr.length; i++) {
+    //     if (arr[i] < mid) {
+    //       left.push(arr[i])
+    //     } else {
+    //       right.push(arr[i])
+    //     }
+    //   }
+    //   return quickSort(left).concat(mid, quickSort(right))
+    // }
+    // console.log(quickSort(arr1))
+
+    // 冒泡排序
+    // function bubbleSort(arr) {
+    //   for(let i = 0; i < arr.length; i++) {
+    //     for (let j = i + 1; j < arr.length; j ++) {
+    //       if (arr[j] < arr[i]) {
+    //         const temp = arr[i]
+    //         arr[i] = arr[j]
+    //         arr[j] = temp
+    //       }
+    //     }
+    //   }
+
+    //   return arr
+    // }
+    // console.log(bubbleSort(arr1))
+
+
+
+  </script>
+</body>
+</html>

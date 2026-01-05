@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 水仙花数 -> 三位数
+        //          -> 条件: 每位上的数字开立方求和 与 当前数一致   即为水仙花
+        // 最小的水仙花 153
+        // 百位1开立方:  1*1*1 = 1
+        // 十位5开立方:  5*5*5 = 125
+        // 个位3开立方:  3*3*3 = 27
+        // 求和:         1 + 125 + 27 = 153s
+
+
+        // 需求 求100 - 1000 之间的水仙花数
+
+        // 1 循环遍历拿到100-1000之间的所有数
+        for( var i = 100 ; i < 1000 ; i++ ){
+            // 判断 当前数i 是不是 水仙花
+            // 先拿到该数字 每位上的数字
+            var b = parseInt( i / 100 ) ,  // 153 / 100 = 1.53
+                s = parseInt( i % 100 / 10 ) ,//153 % 100 = 53    53 / 10 = 5.3 , // 153 / 10 = 15.3   15.3 % 10 = 5.3
+                g = i % 10 ; // 153 % 10 = 3 
+                // 判断开立方求和 与自身一致
+                if( b*b*b + s*s*s + g*g*g === i ){
+                    console.log( i )
+                }
+            }
+    </script>
+</body>
+</html>

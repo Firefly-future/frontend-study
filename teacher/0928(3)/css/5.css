@@ -1,0 +1,27 @@
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #212121;
+}
+
+img {
+  display: block;
+}
+
+.box {
+  width: 150px;
+  height: 150px;
+  background: red;
+  transition: 3s linear;
+}
+
+.box:hover {
+  background: green;
+  transform: translate(300px, 200px) rotate(360deg) scale(1.5);
+}

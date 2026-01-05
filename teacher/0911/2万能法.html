@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // splice 万能法   添加    删除    替换   会改变原数组
+            // splice( sI , count ) 删除   从指定位置开始删除几个      返回删除项组成的数组
+
+            // splice( sI , 0 , v1 , v2... )  添加  从指定位置开始添加  返回空数组[]
+
+            // splice( sI , count , v1 , v2... ) 替换  从指定位置开始 替换几个 替换成什么   返回被替换项组成的数组
+
+            var arr = [6,9,5,1,2,3,8];
+            //         0 1 2 3 4 5 6 
+            // var del = arr.splice( 2 , 3 )  //[5,1,2]
+            // console.log( del )
+            // console.log( arr )
+
+            // var add = arr.splice( 3 , 0 , "a","b","c","d","e" )
+            // console.log( add )
+            // console.log( arr )
+
+            var replace = arr.splice( 1 , 5 , "a" )
+            console.log( replace )
+            console.log( arr )
+
+
+    </script>
+</body>
+</html>

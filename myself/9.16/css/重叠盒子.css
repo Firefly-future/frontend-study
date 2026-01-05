@@ -1,0 +1,11 @@
+*{margin: 0;padding:0;box-sizing: border-box;}
+.box{width: 200px;margin: 60px auto 0;border: 1px solid grey;
+text-align: center;line-height: 28px;background: rgb(127, 126, 126);}
+.box>div{width: 100%;border: 1px solid grey;background: bisque;}
+div p{width: 100%;border: 1px solid blanchedalmond;background:bisque;
+cursor:pointer}
+h3{cursor: pointer;}
+.active{background: rgb(94, 92, 89);}
+/* 隐藏属性 */
+.list{display: none;}
+.show{display: block;}

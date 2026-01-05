@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 对象   是一组键值对儿的无序集合
+        // 注意:  对象只能通过key去访问
+
+        const obj = {
+            age : 15 , 
+            user : "小红" , 
+            sex : "女" ,
+            say : function(){
+                console.log( ` hello 小红 ` )
+            }
+        }
+
+        // let { age : nl , sex : xb} = obj ;
+        // 注意: 模式一致,通过key去查找  真正赋值的是后者
+        // console.log( nl , xb )
+
+        // let { age : age , sex : sex} = obj ; // 查找的key与赋值的变量名一致 可如下:
+        // console.log( age , sex )
+
+        // let { age  , sex } = obj ;  
+        // console.log( age , sex )
+
+
+        // 允许默认值
+        // let { user : name = "莉莉" , address : path = "北京" } = obj ;
+        // console.log( name , path )
+
+
+        // ... 剩余运算符
+        let {user , ...orther } = obj;
+        console.log( user , orther)
+
+
+        // let = { c : {a} } = { a : 1 , b : 2 , c : { a:11,b:22 } }
+        // console.log(a)
+
+        // let = { c : [,x] } = { a : 1 , b : 2 , c : [true , false] }
+        // console.log(x)
+    </script>
+</body>
+</html>

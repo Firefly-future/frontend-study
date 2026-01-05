@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var data = [ 
+                { key : "牛奶" , val : [10,54,92] },
+                { key : "烟草" , val : [1000,55,91] },
+                { key : "出行" , val : [12,53,90] }
+            ]
+            // function add(arr){
+            //     var res=[];
+            //     var sum=0;
+            //     for(var i=0;i<arr.length;i++){
+            //         //   console.log(arr[i])
+            //         for(var key in arr[i]){
+            //            res+=(arr[i][key])
+            //         }for(var j=0;j<res.length;j++){
+            //             if(isNaN(res[j])){continue}else{sum++}
+            //         }
+            //     }
+            //     return res
+            // }
+            // console.log(add(data))
+            var sums=data.map(function(item){
+                return{
+                    key:item.key,
+                    sum:item.val.reduce(function(prev,cur){return prev+cur})
+                }
+            })
+            
+            console.log(sums)
+            var sumz=[];
+            for(var i=0;i<sums.length;i++){
+                sumz.push(sums[i].sum)
+            }
+            console.log(sumz)
+            console.log(Math.max(sumz[0],sumz[1],sumz[2]))
+
+            // 求 每个信息的val的和   找出最大值
+    </script>
+</body>
+</html>

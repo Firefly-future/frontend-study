@@ -1,0 +1,121 @@
+@import "./common.scss";
+.load1{
+    width: 41px;
+    height: 30px;
+    margin: 30px auto;
+    span{
+        width: 5px;;
+        height: 30px;
+        background: #ADD8E5;
+        float: left;
+        border-radius: 3px;
+        &:not(:last-child){
+            margin-right: 4px;
+        }
+        animation: ScaleY .6s linear infinite;
+        @for $i from 2 through 5{
+            &:nth-child(#{$i}){
+                animation-delay: .12s * ($i - 1);
+            }
+        }
+    }
+}
+
+@keyframes ScaleY{
+    0% , 100%{ transform:scaleY(1) }
+    50% { transform: scaleY(.5); }
+}
+
+
+
+
+.load2{
+    width: 50px;
+    height: 50px;
+    margin: 50px auto;
+    position: relative;
+    // animation: RotateZ  1.5s linear infinite;
+    span{
+        width: 12px;
+        height: 12px;
+        background: #000;
+        display: block;
+        position: absolute;
+        transform-origin: 25px 25px;
+        left: 0;
+        top: 0;
+        border-radius: 50%;
+        animation: opacity 1s linear infinite;
+        @for $i from 1 through 9{
+            &:nth-child(#{$i}){
+                transform: rotate($i * 40deg);
+                // opacity: 1 - $i * 0.1;
+                animation-delay: $i * 0.1s;
+            }
+        }
+    }
+}
+
+@keyframes RotateZ{
+    to { transform: rotate(360deg); }
+}
+
+
+@keyframes opacity{
+    to{ opacity: .1; }
+}
+
+
+
+
+
+
+
+
+
+
+.menuList{
+    width: 80px;
+    height: 80px;
+    margin: 100px auto ;
+    position: relative;
+    h3{
+        height: 80px;
+        background: red;
+        font: 700 22px/80px "楷体";
+        color:#FFF;
+        border-radius: 50%;
+        text-align: center;
+        position: relative;
+        z-index:1;
+    }
+    p{
+        width: 40px;
+        height: 40px;
+        background: green;
+        position: absolute;
+        line-height: 40px;
+        text-align: center;
+        border-radius: 50%;
+        left: 20px;
+        top: 10px;
+        transform-origin: 20px 110px;
+        span{display: block;}
+        transition: .3s linear ;
+    }
+    &:hover{
+        p{
+            top: -70px;
+            @for $i from 1 through 9{
+                // :nth-of-type(n) 匹配父元素下同兄弟 同类型给的第n个
+                // :nth-child(n)  匹配父元素下的第n个子元素【与类型无关】
+                &:nth-of-type(#{$i}){
+                    transform: rotate($i * 40deg);
+                    span{
+                        transform: rotate($i * -40deg);
+                    }
+                }
+            }
+        }
+    }
+}

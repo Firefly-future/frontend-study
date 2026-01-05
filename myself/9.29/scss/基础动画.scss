@@ -1,0 +1,136 @@
+@import './common.scss';
+
+.box1 {
+    width: 99px;
+    height: 100px;
+    // background: rgb(116, 83, 161);
+    margin: 50px auto 0;
+
+    span {
+        width: 15px;
+        height: 100px;
+        border: 8px;
+        background: blue;
+        float: left;
+
+        &:not(:last-child) {
+            margin-right: 6px;
+        }
+
+        animation: floata .6s linear infinite;
+
+        @for $i from 2 through 5 {
+            &:nth-child(#{$i}) {
+                animation-delay: .12s *($i - 1);
+            }
+        }
+    }
+}
+
+@keyframes floata {
+
+    0%,
+    100% {
+        transform: scale(.5);
+    }
+
+    50% {
+        transform: scale(1);
+    }
+}
+
+
+.box2 {
+    width: 200px;
+    height: 200px;
+    // background: rgb(137, 137, 147);
+    margin: 200px auto 0;
+    position: relative;
+
+    // animation: toto 1.2s linear infinite;
+    span {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        position: absolute;
+        display: block;
+        left: 0;
+        top: 0;
+        transform-origin: 100px 100px;
+        background: black;
+        animation: round 1.2s linear infinite;
+
+        @for $i from 1 to 13 {
+            &:nth-child(#{$i}) {
+                transform: rotate($i * 30deg);
+                opacity: 0.1;
+                animation-delay: ($i - 1) * 0.1s;
+            }
+        }
+    }
+}
+
+@keyframes toto {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes round {
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+
+.menu {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: rgb(215, 92, 92);
+    margin:150px auto;
+    position: relative;
+    text-align: center;
+    line-height: 100px;
+
+    h2 {
+        // width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        position: relative;
+        color: white;
+        background: red;
+        z-index: 10;
+    }
+    p{
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: rgb(77, 77, 153);
+        position: absolute;
+        line-height: 50px;
+        text-align: center;
+        top: 25px;
+        left: 25px;
+        transform-origin: 25px 100px;
+        span { display: block;}
+        transition: .3s linear;
+        z-index: 1;
+    }
+    
+    &:hover {
+        p{top: -50px;
+            @for $i from 1 to 13 {
+                &:nth-of-type(#{$i}) {
+                    transform: rotate($i * 30deg);
+
+                    span {
+                        transform: rotate($i* -30deg);
+                    }
+                }
+            }
+        }
+    }
+}

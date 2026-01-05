@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 需求: 求所有数字的和
+        // function getNumAdd(){
+        //     var res = 0;
+        //     //  循环遍历拿到每个实参
+        //     for( var i = 0 ; i < arguments.length; i++ ){
+        //         // console.log( arguments[i] )  // 每个实参
+        //         // 注意: 不能使用isNaN 根据需求给出的结果 若使用isNaN 会隐式转换数字 即把不是数字类型也进行了转换求和
+        //         // if( !isNaN( arguments[i] ) ){
+        //         //     res += arguments[i]
+        //         // }
+
+        //         if( typeof arguments[i] === "number" ){  // 检测类型是number的一定是数字 即可求和
+        //             res += arguments[i]
+        //         }
+        //     }
+        //     console.log(res)
+        // }
+        // getNumAdd( "20" , true , 45 , "China" , null , 2025 , 30 ) //  2100 
+
+
+        // 改造: 求 所有非NaN数字的和 [排除NaN 是因为任何与NaN计算的结果都是NaN 没意义]
+        // function getNumAdd(){
+        //     var res = 0;
+        //     //  循环遍历拿到每个实参
+        //     for( var i = 0 ; i < arguments.length; i++ ){
+        //         // console.log( arguments[i] )  // 每个实参
+        //         // 检测类型是number的一定是数字  但是这个数字不能是NaN 即可求和
+        //         // 错误排除 NaN !== arguments[i]  因为NaN 本来就 与自身不等
+        //         // 正确排除 变成字符串 判断不全等NaN -> String(arguments[i]) !== "NaN" ->  // "NaN" === "NaN" -> true
+        //         // if( typeof arguments[i] === "number" && String(arguments[i]) !== "NaN" ){  
+        //         if( typeof arguments[i] === "number" && !isNaN( arguments[i]) ){  
+        //             res += arguments[i]
+        //         }
+        //     }
+        //     console.log( res )
+        // }
+
+        // getNumAdd( "20" , true , 45 , "China" , null , 2025 , 30 , NaN ) //  2100 
+
+
+    </script>
+</body>
+</html>

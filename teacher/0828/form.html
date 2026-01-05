@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表单-用于收集用户信息 做数据交互</title>
+</head>
+<body>
+    <form action="./register.html">
+        <p>
+            <label for="names">姓名:</label>
+            <input id="names" type="text" value="张胜男" name="userName" required>
+        </p>
+
+        <p>
+            <label for="">密码:</label>
+            <input type="password" name="userPwd" required>
+        </p>
+
+        <p>
+            <label for="">性别:</label>
+
+            <input id="boy" type="radio" name="userSex" value="boy">
+            <label for="boy">boy</label>
+            <input id="girl" type="radio" checked name="userSex" value="girl">
+            <label for="girl">girl</label>
+        </p>
+
+        <p>
+            <label for="">爱好:</label>
+
+            <input id="ppq" type="checkbox">
+            <label for="ppq">乒乓球</label>
+            <input id="hj" type="checkbox">
+            <label for="hj">话剧</label>
+            <input id="tkx" type="checkbox">
+            <label for="tkx">脱口秀</label>
+            <input id="zy" type="checkbox">
+            <label for="zy">综艺</label>
+            <input id="yymf" type="checkbox">
+            <label for="yymf">音乐模仿</label>
+        </p>
+
+        <p>
+            <input id="ok" type="checkbox" checked>
+            <label for="ok">我已阅读并同意以上协议</label>
+        </p>
+
+        <p>
+            <label for="">请上传一张头像:</label>
+            <input type="file">
+        </p>
+
+
+        <!-- 新增类型开始 -->
+
+        <p>
+            <label for="">请输入手机号:</label>
+            <input type="tel" value="185*****123">
+        </p>
+
+        <p>
+            <label for="">请输入邮箱:</label>
+            <input type="email" placeholder="xxxxx@qq/yahoo/163.com" required name="userEmail">
+        </p>
+
+        <p>
+            <label for="">请输入上课网址:</label>
+            <input type="url">
+        </p>
+
+        <p>
+            <label for="">请选择上课日期:</label>
+            <input type="date">
+        </p>
+
+        <p>
+            <label for="">请选择上课时间:</label>
+            <input type="time">
+        </p>
+
+        <p>
+            <label for="">请输入上课次数:</label>
+            <input type="number" min="0" max="10" step="3">
+        </p>
+
+        <!-- 新增类型结束 -->
+
+        <p>
+            <label for="">请选择课程名称:</label>
+            <select name="" id="">
+                <option value="请选择">请选择</option>
+                <option value="语文">语文</option>
+                <option value="数学">数学</option>
+                <option value="体育">体育</option>
+                <option value="短期培训" selected>短期培训</option>
+                <option value="ai">ai</option>
+                <option value="视频剪辑">视频剪辑</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="">请留下您宝贵的建议,让我们做的更好:</label>
+            <textarea name="" id="" cols="60" rows="2"></textarea>
+        </p>
+
+        <p>
+            <input type="submit" value="注册">
+            <input type="button" value="搜索">
+            <input type="reset" value="一键清空" disabled>
+            <input type="image" src="./img/btn.png">
+        </p>
+    </form>
+
+
+   
+</body>
+</html>

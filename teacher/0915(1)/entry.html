@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>启动页</title>
+    <style>
+        * {padding:0; margin: 0; box-sizing: border-box;}
+
+        .entry{ width:280px; font:900 40px/80px "楷体"; color: #f00; margin: 30px auto 0; cursor: pointer;}
+        .entry:hover{ color: blue; text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="entry" id="entry">点击进入注册页</div>
+
+    <script src="./js/getEl.js"></script>
+    <script>
+        $("entry").onclick = function(){
+            // 借助浏览器窗口打开  window.open(url , target)
+            // window.open( "./register.html" )   // 注意: 新窗口  没有历史记录
+            // 借助location.href = url 重新设置url地址
+            location.href = "./register.html"
+            // 借助location.replace("url") 替换当前url 不会产生历史记录
+            // location.replace("./register.html")
+            // 借助 location.assign()   
+        }
+    </script>
+</body>
+</html>

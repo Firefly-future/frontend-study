@@ -1,0 +1,45 @@
+
+
+*{
+    padding:0;
+    margin: 0;
+    list-style-type: none;
+    box-sizing: border-box;
+}
+
+.box{
+    width: 400px;
+    margin: 50px auto 0;
+}
+
+.title{
+    height: 45px;
+    background: #e5e5e5;
+    border:1px  solid #CCC;
+    text-align: center;
+    font:900 18px/43px "楷体";
+    color: red;
+}
+
+.users > div , 
+.users > button {
+    float: left;
+    width: 90px;
+    height: 90px;
+    line-height: 88px;
+    text-align: center;
+    margin: 5px;
+}
+
+.users > div{
+    background: #EEE;
+    font-size: 20px;
+}
+
+.users button{
+    border: 0;
+    background: blue;
+    color: #FFF;
+    font-size: 30px;
+    
+}

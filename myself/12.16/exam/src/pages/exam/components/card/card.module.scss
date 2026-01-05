@@ -1,0 +1,20 @@
+.Answercard {
+  width: 300px;
+  padding-top: 85px;
+}
+.card {
+  position: sticky;
+  top: 0;
+}
+.btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.btn {
+  width: 42px;
+  text-align: center;
+  height: 32px;
+  border-radius: 5px;
+  line-height: 32px;
+}

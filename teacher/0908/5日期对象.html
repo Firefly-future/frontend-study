@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Date日期对象【可获取 可设置 都需要创建日期对象】
+            // 用于处理日期和时间
+
+        // 1 创建日期对象
+        var date = new Date();
+        // console.log( date )
+        // 2 获取方法如下:
+        var year = date.getFullYear() ,  // 获取年  返回四位数的年份
+            month = date.getMonth() + 1,    // 获取月  返回值0-11   0-1月  注意; 月+1是当前月
+            day = date.getDate() ,        // 获取日
+            week = date.getDay() ,        // 获取星期   返回值0-6   0->日 
+            hour = date.getHours() ,     // 获取小时    返回值0-23
+            minute = date.getMinutes() , // 获取分钟    返回值0-59
+            second = date.getSeconds() , // 获取秒数    返回值0-59
+            millSecond = date.getMilliseconds() ;  // 获取毫秒数   返回值0-999
+        console.log( year , month , day , week )
+        console.log( hour , minute , second , millSecond )
+
+        // 设置方法如下:
+        var nowDate = new Date();
+        nowDate.setFullYear( 2030 )
+        nowDate.setMonth( 9 )
+        // 设置 日期 等 依次类推
+        console.log( nowDate )
+        console.log( typeof nowDate )  // "object"
+    </script>
+</body>
+</html>

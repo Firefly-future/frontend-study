@@ -1,0 +1,20 @@
+@import './common.scss';
+body{
+    background-color: black;
+    padding-top: 200px;
+}
+.bear{
+    width: 200px;
+    height: 100px;
+    background:url(../img/bear.png);
+    animation: bear 1s steps(8) infinite,run 1s forwards
+    // steps() 表示走了几步 知道步数即不需要匀速 否则冲突 出错
+}
+@keyframes bear{
+    from{background-position-x: 0;}
+    to{background-position-x: -1600px;}
+    // 从哪里到哪里
+}
+@keyframes run{
+    to{margin-left: 600px;}
+}

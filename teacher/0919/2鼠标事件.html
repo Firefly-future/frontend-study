@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{ background: #EEE; }
+    </style>
+</head>
+<body>
+    <div id="box">初始化</div>
+
+    <script>
+        // 鼠标事件
+            // mousedown 鼠标摁下
+            // mouseup   鼠标抬起
+            // click     单机
+            // dblclick  双击
+            // mouseover 鼠标滑过
+            // mousemove 鼠标移动
+            // mouseout  鼠标离开
+
+        var box = document.querySelector("#box");
+        // 需求: 给页面中id为box的元素作如下操作
+        //       在元素上滑过 内容为进入    颜色是棕色
+                        box.onmouseover = function() {
+                            this.innerHTML = "进入"
+                            this.style.color = "brown"
+                        }
+        //       在元素上移动 内容为move    颜色是绿色
+                        box.onmousemove = function() {
+                            this.innerHTML = "move"
+                            this.style.color = "green"
+                        }
+        //       在元素上离开 内容为下次再来 颜色是金子
+                        box.onmouseout = function() {
+                            this.innerHTML = "下次再来"
+                            this.style.color = "gold"
+                        }
+        //       在元素上摁下 内容为摁住你  颜色是灰色
+                        box.onmousedown = function(){
+                            this.innerHTML = "摁住你"
+                            this.style.color = "grey"
+                        }
+        //       在元素上抬起 内容为松口气  颜色是蓝色
+                        box.onmouseup = function(){
+                            this.innerHTML = "松口气"
+                            this.style.color = "blue"
+                        }
+        //       在元素单机后 内容为单机    颜色是紫色
+                        box.onclick = function(e){
+                            console.log(e)
+                            this.innerHTML = "单机"
+                            this.style.color = "purple"
+                        }
+        //       在元素上双击 内容为双击    颜色是红色
+                        box.ondblclick = function(){
+                            this.innerHTML = "双击"
+                            this.style.color = "red"
+                        }
+
+
+                        box.oncontextmenu = function(){
+                            this.innerHTML = "弹出菜单栏"
+                            this.style.color = "hotpink"
+                        }
+    </script>
+</body>
+</html>

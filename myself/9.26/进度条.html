@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;box-sizing: border-box;}
+        html,body{width: 100%;height: 100%;background-color: rgb(209, 202, 166);}
+        .box{width:700px;height: 45px;background-color: dimgray;text-align: center;line-height: 45px;border: 1px solid rgb(216, 213, 213);margin: 50px auto 0;position: relative;}
+        .bj{width: 45px;height: 45px;background-color: green;position: absolute;left: 0;top: 0;}
+        .hk{width: 45px;height: 45px;position: absolute;background-color: white;left: 0;top: 0;user-select: none;}
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h3>请点击滑块并滑动至最右侧</h3>
+        <div class="bj"></div>
+        <div class="hk">>></div>
+    </div>
+    <script>
+        function $(el,parent=document){
+            return parent.querySelector(el)
+        }
+        // 拖拽三步走 摁 移动 抬
+        // flag 作开关 判定是否按住 按住方可移动
+        var flag=false
+        var pos=null//作空对象 储存鼠标点击时距离自身的位置距离
+        var l=0;
+        var maxl=0;
+        var box=$('.box')
+        box.addEventListener('mousedown',function(e){
+            flag=true
+            pos={
+                x:e.offsetX,y:e.offsetY
+            }
+        })
+        box.addEventListener('mousemove',function(e){
+            if(flag){
+                // 打开开关了 进行移动
+                l=e.pageX-pos.x-box.offsetLeft
+                maxl=box.offsetWidth-$('.hk').offsetWidth
+                if(l<=0)l=0
+                if(l>=maxl)l=maxl
+                $('.hk').style.left=$('.bj').style.width=l+'px'
+            }
+        })
+        box.addEventListener('mouseup',function(e){
+            flag=false
+            if(l<maxl){
+                $('.bj').style.width=0
+                $('.hk').style.left=0
+            }if(l>=maxl){
+                $('.hk').innerText='√'
+                $('.bj').innerText='验证通过'
+            }
+        })
+
+
+
+
+// 渲染数字数据
+// var dataArr=new Array(9).fill(0).concat(['a','b',c])
+// 
+    </script>
+</body>
+</html>

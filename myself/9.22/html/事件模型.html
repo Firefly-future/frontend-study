@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="box">
+        <li>泡面</li>
+        <li>辣条</li>
+        <li>挂面</li>
+        <li>鸡蛋面</li>
+        <li>西红柿面</li>
+    </ul>
+    <script>
+        var box=document.getElementById('box')
+        box.addEventListener('click',function(e){
+            if(e.target.nodeName==='LI'){
+                alert(e.target.innerText)
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">China</div>
+    <script>
+        // in 检查某个属性是否在对象中存在
+            // 通常与for...in循环一起使用;
+            // 或 直接测试某个属性是否存在于对象中
+            var boyFriend = {
+                    user : "小明" ,
+                    age : 18 , 
+                    sex : "男" ,
+                    address : "深圳" ,
+                    say : function(){
+                        console.log("情绪值拉满")
+                    },
+                    date : new Date('2020,5,1'),
+                    0 : "abc" ,
+                    "skin-color" : "yellow"
+                }
+                // console.log( boyFriend )
+                // console.log( "say" in boyFriend )  // true
+                // console.log( "abc" in boyFriend )  // false
+
+        // delete 删除对象中的某个属性
+                // var res1 = delete boyFriend.date  // 删除已存在的属性  成功 true
+                // var res2 = delete boyFriend["0"]  // true
+                // var res3 = delete boyFriend.abc   // 删除不存在的属性  也是true 因为该操作是成功的
+                // console.log( res1 , res2 , res3 )
+                // console.log( boyFriend )
+
+                // var res4 = delete Math.PI  // (如内置对象的属性)
+                // console.log( res4 )  // false  删除不可配置的对象属性 返回false
+                // console.log( Math )
+
+                // 对象的静态方法
+                    // Object.freeze( obj ) // 冻结对象
+                    var objjjj = Object.freeze( boyFriend )
+                    console.log( objjjj[0] )
+                    var ressss = delete objjjj[0];  // 属性不可配置
+                    console.log( ressss )   // fasle
+                    console.log( objjjj )
+
+                    //如用var声明的全局变量也不可以删除
+                        var a = "hello-china" // 挂靠window成了window的属性
+                        console.log( delete window.a ) // false
+                        console.log( window )
+
+        // 删除用户指定的对象的key
+            // var obj = {
+            //     user : "张三" , 
+            //     age : 18 , 
+            //     sex : "男" ,
+            //     tel : 18563548910 ,
+            //     email : "gcd@qq.com"
+            // }
+
+            // function deleteKey(){
+            //     // 不确定参数 arguments 上场
+            //     var obj = arguments[0] ; // 存储操作的对象
+            //     // 从下标1开始 循环遍历拿到要删除的每个属性
+            //     for( var i = 0 ; i < arguments.length; i++){
+            //         // console.log( arguments[i] )
+            //         delete obj[ arguments[i] ]
+            //     }
+            //     return obj
+            // }
+            // console.log( deleteKey( obj , 'sex' , 'email' ) )
+
+
+        // Object.assign() 合并对象, 把后边的所有对象内容合并到第一个对象中，会改变第一个对象的内容
+        // 注意: 若每一个对象的内容都不被改变，第一个值可放一个空对象{}，来实现复制对象，返回一个新对象
+                // var a = { a : 1 }
+                // var b = { b : 2 }
+                // var c = { c : 3 , a : "hello" };
+                // // Object.assign( a , b , c )  // 将b和c两个对象 合并在a对象中
+                // // console.log( a , b , c ) 
+
+                // var d = Object.assign( {} , a , b , c )  // 将a和b和c三个对象 合并在新对象中
+                // console.log( d )
+                // console.log( a , b , c ) 
+
+
+        // 给页面中的 id 为box的元素 设置宽度100 高度150 背景色红色  字体大小30
+        // var box = document.getElementById("box");
+        // // box.style.width = "100px"
+        // // boxs.height = "150px"
+        // // box.style.background = "red"
+        // // console.log( box.style )
+        // Object.assign( box.style , {
+        //     width : "100px" ,
+        //     height : "150px" ,
+        //     background : "gold" ,
+        //     fontSize : "30px" ,
+        //     textAlign : "center"
+        // } )
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/购物车.css">
+</head>
+
+<body>
+    <div class="box">
+        <table>
+            <thead>
+                <tr>
+                    <th><input type="checkbox">全选</th>
+                    <th>商品信息</th>
+                    <th>单价(元)</th>
+                    <th>数量</th>
+                    <th>金额(元)</th>
+                    <th>操作</th>
+                </tr>
+                <tr>
+                    <td colspan="6"><input type="checkbox">当当自营</td>
+                </tr>
+            </thead>
+            <tbody>
+                <!--  <tr>
+               <td><input type="checkbox" name="" id=""></td>
+                    <td><img src="${data.img}" alt=""><a href="${data.link}">${data.name}</a></td>
+                    <td>￥<b class='price'>${data.price}</b></td>
+                    <td><span class="decrease">-</span>
+                        <input type="text" class="inp" value='1' data-max=${data.max}>
+                        <span class="add">+</span>
+                    </td>
+                    <td>￥<b class='tota'>${data.price}</b></td>
+                 <td><em class="cang">移入收藏</em>|<em class="del" data-id=${idx}>删除</em></td>
+            </tr> -->
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3">店铺合计</td>
+                    <td colspan="3">￥<em class="total">0.00</em></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="" id="" class="checkall">全选</td>
+                    <td><b class="dels">批量删除</b>已选择<span class="num">0</span>个商品</td>
+                    <td colspan="2">总计(不含运费):￥<em class="tot">rrf</em></td>
+                    <td colspan="2"><button class="btn">结算</button></td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    <script src="../0924(1)/0924/js/data.js"></script>
+    <!-- <script src="./js/购物车.js"></script> -->
+    <script src="./js//gouwuche.js"></script>
+</body>
+
+</html>

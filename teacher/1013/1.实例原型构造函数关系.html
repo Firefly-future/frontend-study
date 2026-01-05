@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+    // 构造函数
+    function Person(name, age, gender) {
+      this.name = name
+      this.age = age
+      this.gender = gender
+    }
+    // 原型：共享方法
+    Person.prototype.getInfo = function() {
+      console.log(`用户信息: 姓名: ${this.name},年龄：${this.age}`)
+    }
+
+    // 实例对象
+    const xm = new Person('小明', 22, '男')
+    // xm.getInfo()
+    console.log(xm)
+    console.log(xm.__proto__ === Person.prototype)
+    console.log(Person.prototype.constructor === Person)
+
+
+
+
+    // const xh = new Person('小红', 25, '女')
+    // xh.getInfo()
+    // console.log(xm.getInfo === xh.getInfo)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // function Animal(name, age, type) {
+    //   this.name = name
+    //   this.age = age
+    //   this.type = type
+    // }
+
+    // const tom = new Animal('汤姆', 5, '猫')
+    // console.log(tom)
+
+
+    // instanceof: 判断实例对象是否由此构造函数创建
+    //   缺点：只要原型链上存在此类，都会返回 true
+    // console.log(xm instanceof Person)
+    // console.log(xm instanceof Object)
+    // if (tom instanceof Person) {
+    //   console.log('这是一个person')
+    // }
+
+
+    // console.log({} instanceof Array)
+
+  </script>
+</body>
+</html>

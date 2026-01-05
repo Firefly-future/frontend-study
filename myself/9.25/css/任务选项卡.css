@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    padding-top: 50px;
+    background-color: lightblue;
+}
+
+.box {
+    width: 600px;
+    min-height: 200px;
+    background-color: aliceblue;
+    margin: 0 auto;
+    border: 1px solid rgb(160, 155, 155);
+    border-radius: 15px;
+    padding: 8px;
+}
+
+b {
+    font-weight: normal;
+    margin-left: 8px;
+}
+
+.task {
+    margin-left: 18px;
+}
+
+.tasks {
+    float: left;
+}
+
+.state {
+    float: right;
+}
+
+.state span {
+    margin: 5px;
+    padding: 1px 3px;
+    border-radius: 10px;
+}
+.state span:hover{
+    cursor: pointer;
+}
+/* .All{
+    border: 1px solid #7996A5;
+    background: #7996A5;
+} */
+
+.active {
+    background: #7996A5;
+    color: white;
+}
+
+.Add {
+    width: 100%;
+    height: 20px;
+    border: none;
+    border-bottom: 1px solid rgb(155, 156, 155);
+    padding: 2px 10px;
+    outline: none;
+}
+
+.box p {
+    width: 100%;
+    height: 25px;
+    border-bottom:1px dotted rgb(143, 133, 133);
+    font-size: 14px;
+}
+.addTask p input{
+appearance:none ;
+width:20px;
+height: 20px;
+color: white;
+background-color: white;
+border:1px solid rgb(63, 60, 60);
+border-radius: 50%;}
+.addTask p input:checked{
+background-color: red;}
+.box p:hover{
+    background-color:#F6FBFF ;
+    
+}
+.box p span{
+    cursor: pointer;
+    display: block;
+    width: 20px;
+    height: 20px;
+    float: right;
+    border: 1px solid rgb(161, 156, 156);
+    border-radius: 50%;
+    line-height: 20px;
+    margin: 2px;
+    padding: 0 auto;
+    /* display: none; */
+}
+.box p span:hover{
+    color: red;
+    border-color: red;
+}
+.show{
+    display: block!important;
+}
+.daydate{
+    margin-left: 20px;
+}
+.checked{
+    background: aquamarine;
+}

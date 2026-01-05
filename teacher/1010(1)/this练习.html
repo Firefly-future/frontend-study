@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var x = 5;  // 40   // 200   // 1600
+        // var user = "李华";
+        // var obj = {
+        //     x : 8 ,  // 40
+        //     user : "李四" ,
+        //     say : function(){
+        //         console.log(this) // obj   // window
+        //         this.x *= 5;      // window.x = 40 * 5
+        //         console.log(x) // 5   // 200
+        //         setTimeout(function(){
+        //             console.log(this) // window    // window
+        //             this.x *= 8 // window.x = 5 * 8   // window.x = 200 * 8
+        //             console.log(x) // 40 // 1600
+        //         })
+        //     }
+        // }
+        // obj.say()  // this -> obj  obj.x = 8 * 5
+        // var say = obj.say;
+        // say()
+        // console.log(x)  // 1600
+        // console.log(obj.x) // 40
+        // console.log(this.x) // 1600
+
+
+        // 箭头函数没有this 若出现了this,查看父级挂靠的环境对象【注意:不能修改this】
+        // var obj = {
+        //     x : 8 ,  
+        //     user : "李四" ,
+        //     say : () => {
+        //         console.log(this) // window
+        //         this.x *= 5;      // window.x -> undefined * 5 => NaN
+        //         console.log(x)    // NaN
+        //         console.log(this)
+        //     }
+        // }
+        // obj.say()
+
+
+
+        // var user = "小黑";
+        // var people = {
+        //     user : "小红",
+        //     age : 14 , 
+        //     say : function(){
+        //         var _this = this; // people
+        //         // console.log( _this === people ) // true
+        //         setTimeout(function(){
+        //             console.log(this) // window
+        //             console.log(_this)// people
+        //             console.log(this.user , this.age) //小黑  undefined
+        //             console.log(_this.user , _this.age) // 小红  14
+        //         },1000)
+
+        //         setTimeout(function(){
+        //             console.log(this , _this) //people  people
+        //             console.log( this.user , _this.user )
+        //             console.log( this.age , _this.age )
+        //         }.bind(this),3000)
+        //     }
+        // }
+        // people.say()
+
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h2>promise</h2>
+  <ul></ul>
+  <script>
+    function delay(ms) {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve({ value: Math.random() })
+        }, ms)
+      })
+    } 
+
+    // delay(2000)
+    //   .then(res1 => {  
+    //     console.log('res1', res1)
+    //     return delay(3000)
+    //   })
+    //   .then(res2 => {  
+    //     console.log('res2', res2)
+    //     return delay(4000)
+    //   })
+    //   .then(res3 => {  
+    //     console.log('res3', res3)
+    //   })
+
+
+
+
+
+
+    // 1. async 函数、await，异步的终极解决方案
+    // 2. 在 async 函数中配合 await 使用，可以让异步代码按照同步的顺序执行
+    // 3. async 函数内部遇到 await 时会暂停执行，等待 Promise 对象状态改变
+    // 4. await 后需要配合 Promise 使用，promise 状态改变时会如果状态会继续执行函数，
+    //    如果失败会报错，可以使用 tyr{} catch(e) {} 捕获
+    // 5. async 函数会返回一个 Promise 对象，等待 async 函数内的代码都执行完成之后执行 then
+
+    async function fn() {
+      console.log(1)
+
+      const res1 = await delay(2000)
+      console.log('res1', res1)
+
+      const res2 = await delay(3000)
+      console.log('res2', res2)
+
+      const res3 = await delay(4000)
+      console.log('res3', res3)
+
+      console.log(2)
+      return 100
+    }
+
+    fn()
+      .then(res => {
+        console.log(res)
+      })
+    
+
+
+
+    const request = (
+      url,
+      {
+        method = 'GET',
+        data = null,
+        headers = {},
+      } = {}
+    ) => {
+      return new Promise((resolve, reject) => {
+        const xhr = new XMLHttpRequest()
+        xhr.open(method, url)
+        xhr.onreadystatechange = () => {
+          if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+              const data = JSON.parse(xhr.responseText)
+              resolve(data)
+            } else {
+              reject({ msg: '请求失败', status: xhr.status})
+            }
+          }
+        }
+        if (headers) {
+          Object.keys(headers).forEach(key => {
+            xhr.setRequestHeader(key, headers[key])
+          })
+        }
+        xhr.send(data)
+      })
+    }
+
+
+    async function getTopList() {
+      try {
+        // 展示loading
+        const res = await request('http://39.96.210.90:5001/toplist')
+        document.querySelector('ul').innerHTML = res.list.map(item => `
+          <li>${item.name}</li>
+        `).join('')
+      } catch(e) {
+        console.log(e)
+      } finally {
+        console.log('执行结束，不论结果如何都会执行此函数') 
+        // 关闭loading
+      }
+    }
+    getTopList()
+
+  </script>
+</body>
+</html>

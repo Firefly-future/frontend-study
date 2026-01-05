@@ -1,0 +1,681 @@
+/* 1 借助 * 通配符选择器  匹配页面中所有的元素  即 将页面中所有元素的内外间距取消 */
+* {
+    /* margin 属性  设置盒子之间的距离  外间距 */
+    margin: 0;
+    /* padding 属性 设置内容距离盒子边界的距离  即 内间距 */
+    padding:0;
+
+    /* 给页面中所有的元素 设置盒模型 */
+    /* box-sizing: border-box; */
+}
+/* 2 借助标签选择器 将页面中超链接a元素的 修饰下划线取消 */
+a {
+    /* text-decoration 属性  设置文本的修饰     */
+    text-decoration: none;
+    color: #212121;
+}
+/* 3 借助群组选择器  将有序 无序列表的列表符号取消 */
+ol , ul {
+    /* list-style 属性  设置列表的样式风格   none取消  如123和黑点 */
+    list-style: none;
+}
+
+/* 4 注意: 图片本身具有3-5px的兼容问题 
+        解决: display:block 将图片的特性转换成块元素
+*/
+img {
+    display:block
+}
+
+/* 注意  a元素不会继承父元素的color  若想设置  必须单独给每一个设置 */
+
+
+/* 定义一个雪碧图的公共类   谁需要直接引入类名  避免重复加载--减少http的请求次数 */
+.iconSprites{
+    background: url(../img/icon.png);
+}
+
+/* 定义一个浮动类   谁需要直接引入类名即可 */
+.fl{
+    float: left;
+}
+
+.fr{
+    float: right;
+}
+
+
+
+
+
+.header{
+    height: 41px;
+    border-top: 3px solid #FF8500;
+    border-bottom: 1px solid #EDEEF0;
+    background: #FCFCFC;
+    width:100%;
+}
+
+
+.head{
+    width: 1000px;
+    height: 41px;
+    margin: 0 auto;
+    /* background: lime; */
+}
+
+
+.head ul ,
+.head ul li , 
+.head ol li ,
+.logo ,
+.search ,
+.hxjzg , 
+.selectInp ,
+.seaBtn ,
+.selectList , 
+.seaCon {
+    float: left;
+}
+.head ul li ,
+.head ol li {
+    font-size: 12px;
+    font-family: "微软雅黑";
+    line-height: 41px;
+    padding: 0 18px;
+}
+.head ul li:hover ,
+.head ol li:hover {
+    background: #EDEEF0
+}
+/* 注意:
+        .head ul li:hover a  这是鼠标滑过li的时候a就要改变   即 鼠标进入灰色区 a就是橘色
+        .head ul li a:hover  这是只有滑过内容a的时候才变
+*/
+.head ul li:hover a , 
+.head ol li:hover a {
+    color: #FF8500;
+}
+
+
+
+.head ol ,
+.logoRigPic ,
+.jbzq {
+    float: right;
+}
+
+.head span{
+    width: 9px;
+    height: 5px;
+    background-position: 0 -355px;
+    float: right;
+    margin: 18px 0 0 7px;
+}
+
+
+
+
+
+
+
+
+
+.logoSea{
+    height: 73px;
+    width: 1000px;
+    margin: 0 auto;
+    /* background: gold; */
+}
+
+.logo{
+    margin: 15px 24px 0 20px;
+}
+
+.search{
+    width: 401px;
+    height: 35px;
+    margin-top: 24px;
+    /* background: hotpink; */
+}
+.selectInp {
+    width: 333px;
+    height: 33px;
+    border:1px solid #C1C1C1;
+}
+.selectList{
+    width: 74px;
+    height: 31px;
+    border: 0;
+    border-right: 1px solid #C1C1C1;
+    margin-top: 1px;
+    outline: 0;
+}
+.seaCon{
+    width: 245px;
+    height: 33px;
+    border: 0;
+    outline: 0;
+    padding-left: 13px;
+}
+
+
+.seaBtn{
+    width: 66px;
+    height: 35px;
+    background: url(https://i0.sinaimg.cn/home/main/index2013/0719/bg2.png);
+    border: 0;
+}
+
+
+
+.logoRigPic{
+    width: 241px;
+    height: 50px;
+    margin-top: 15px;
+    /* background: lime; */
+}
+.hxjzg{
+    width: 103px;
+    height: 50px;
+    background: url(https://i0.sinaimg.cn/home/2014/1030/hxjzg103.jpg);
+}
+
+
+.jbzq{
+    width: 133px;
+    height: 50px;
+    background: url(https://k.sinaimg.cn/n/default/740cdb5d/20210924/netservice_new.png/h50l50t1q80450.jpg);
+}
+
+
+
+
+.nav{
+    width: 1000px;
+    height: 86px;
+    margin:0 auto;
+    /* background: seagreen; */
+}
+
+.nav ul{
+    float: left;
+    height: 86px;
+    /* 献给每一个ul[4个]全部设置右侧边框1px */
+    /* border-right: 1px solid red; */
+    /* #F1E5C5 */
+}
+/* 找到父元素nav 下的最后一个子元素ul 在将右边框取消 */
+/* .nav ul:last-child{
+    border: 0;
+} */
+
+/* 即  言外之意就是  父元素nav 下除了最后一个ul 都有一个有边框 */
+    /* :not(选择器) 除了某个元素之外的所有元素 */
+.nav ul:not(:last-child){
+    border-right: 1px solid #F1E5C5;
+    margin-right: 13px;
+}
+
+.nav ul li{
+    height: 22px;
+    line-height: 22px;
+    /* 22 * 3 = 66 - 86 = 20 / 2 = 10 */
+}
+/* 给每一组列表下的第二行li[中间的] 设置上下间距 把他们撑开 上在上  下在下 */
+.nav ul li:nth-child(2){
+    margin: 10px 0;
+}
+
+.nav ul li a{
+    font-size: 14px;
+    font-family: "微软雅黑";
+    margin-right: 31px;
+}
+/* 找到最后一组ul下的最后一个a 将右侧外间距取消 */
+.nav ul:last-child li a:last-child{
+    margin-right: 0;
+}
+/* 给每组列表ul下的li下的第一个a设置加粗 */
+.nav ul li a:first-child{
+    font-weight: 900;
+}
+/* 给每一个内容超链接a设置鼠标滑过 变色 和 添加修饰下划线 */
+.nav ul li a:hover{
+    color: #E66100;
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+.adImgTextShow{
+    width: 1000px;
+    height: 96px;
+    margin: 12px auto 25px;
+    background:#F6F8F9
+}
+
+.adImgTextCon{
+    height: 88px;
+    border:1px solid #CCCCCC;
+    background: #FFF;
+}
+
+.adImgTextCon a{
+    float: left;
+    width: 101px;
+    margin: 2px 0 0 8px;
+}
+.adImgTextCon a img{
+    width: 99px;
+    height: 66px;
+    border:1px solid #CCC
+}
+.adImgTextCon a p{
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+}
+.adImgTextCon a:hover img{
+    border-color: red;
+}
+.adImgTextCon a:hover p{
+    color: red;
+}
+
+
+
+.content1{
+    width: 1000px;
+    height: 914px;
+    margin: 0 auto 300px;
+}
+
+.c1_left{
+    width: 240px;
+    height: 914px;
+    /* background: pink; */
+}
+
+/* 主体1 轮播区 */
+.c1_l_banner{
+    height: 350px;
+    /* background: skyblue; */
+    position: relative;
+}
+
+/* 给装图片的父元素设置高度 且溢出隐藏 从而达到显示一张图的效果 */
+.pics{
+    height: 350px;
+    overflow: hidden;
+}
+.pics li{
+    position: relative;
+}
+.pics li p{
+    position: absolute;
+    height: 36px;
+    background: rgba(255,255,255,.5);
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    font-size: 14px;
+    line-height: 36px;
+    text-align: center;
+}
+.pics li img{
+    width: 240px;
+    height: 350px;
+}
+
+.tabs{
+    width: 70px;
+    height: 10px;
+    position: absolute;
+    bottom: 45px;
+    left: 85px;
+    /* background: lime; */
+}
+.tabs a{
+    float: left;
+    width: 10px;
+    height: 10px;
+    background: #EEE;
+}
+.tabs a:not(:last-child){
+    margin-right: 10px;
+}
+
+.btn{
+    position: absolute;
+    bottom: 0;
+    line-height: 36px;
+}
+.prev{
+    left: 5px;
+}
+.next{
+    right: 5px;
+}
+
+
+
+
+/* 主体1 新浪产品 */
+.c1_l_sinaPro{
+    height: 244px;
+    margin: 25px 0;
+    border: 1px solid #D9E0EE;
+    border-top: 3px solid #FF8400;
+    box-sizing: border-box;
+    position: relative;
+}
+.blackCat{
+    position: absolute;
+    top: 0;
+    left:-69px;
+}
+.blackCat a img{
+    width: 70px;
+}
+
+.sinaProTit{
+    height: 35px;
+    border-bottom: 1px solid #D9E0EE;
+}
+
+.proTit{
+    line-height: 35px;
+    margin-left: 11px;
+}
+
+/* cursor 属性  设置光标的形状
+        default 默认值  箭头
+        pointer 手型
+        move    拖拽移动 【十字架】
+        wait    等待【转圈加载】
+        help    帮助【?+箭头】
+
+*/
+.pageBtn span{
+    width: 17px;
+    height: 17px;
+    border:1px solid #D3D3D3;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 17px;
+    margin: 7px 5px 0;
+    color: #666;
+    cursor: pointer;
+}
+.pageBtn span:hover{
+    color: #FF8500;
+}
+
+.sinaProCon{
+    height: 204px;
+    background: pink;
+}
+
+/* 预留后期js可操作的样式结构 */
+.sinaProCon > div{
+    display: none;
+}
+.show{
+    display: block!important;
+}
+
+
+/* 黑猫投诉 */
+.complaintCon{
+    padding: 0 12px;
+    font-family: "微软雅黑";
+}
+.com_con_item{
+    border-bottom: 1px #B9B5A8 dashed;
+    padding: 14px 0 7px;
+}
+.p1{
+    line-height: 30px;
+}
+.p1 a strong{
+    font-size: 16px;
+    color: #3484DF;
+}
+
+.p1 a span{
+    font-size: 13px;
+    color: #FF8400;
+}
+.p2 , .p3{
+    line-height: 20px;
+}
+.p2 a{
+    font-size: 14px;
+    color: #666;
+    font-weight: 900;
+}
+.p3 a{
+    font-size: 12px;
+    color:#666
+}
+.item2Pt{
+    padding-top: 8px;
+}
+
+.comBtn{
+    display: block;
+    width: 180px;
+    height: 32px;
+    background: #3484DF;
+    color: #FFF;
+    border-radius: 8px;
+    margin: 13px auto 0;
+    font-size: 13px;
+    line-height: 32px;
+    text-align: center;
+}
+
+
+/* 主体1 选项卡 */
+.c1_l_tabsCon{
+    height: 240px;
+    background: brown;
+}
+
+
+
+.c1_middle{
+    width: 361px;
+    height: 914px;
+    margin: 0 19px;
+    /* background: gold; */
+}
+
+/* 专栏 */
+.c1_m_columns{
+    height: 282px;
+    /* background: seagreen; */
+}
+
+.column_imgText{
+    height: 90px;
+    /* background: gold; */
+    margin-top: 26px;
+}
+.column_imgText a{
+    float: left;
+    width: 105px;
+    height: 90px;
+}
+.column_imgText a:first-child{
+    margin-left: 2px;
+}
+.column_imgText a:nth-child(2){
+    margin: 0 21px;
+}
+.column_imgText a img{
+    width: 105px;
+    height: 70px;
+}
+.column_imgText a p{
+    height: 20px;
+    background: #000;
+    color: #FFF;
+    font-size: 12px;
+    line-height: 20px;
+    text-align: center;
+    font-family: "SimSun";
+}
+.columnsList{
+    margin-top: 8px!important;
+}
+
+
+
+/* 视频 */
+.c1_m_videos{
+    height: 279px;
+    /* background: palegreen; */
+}
+
+.videos_con{
+    height: 228px;
+    /* background: yellow; */
+    margin-top: 15px;
+}
+.video_con_item{
+    height: 105px;
+    /* background: hotpink; */
+}
+.video_img{
+    float: left;
+}
+
+
+.videoList{
+    float: left;
+    width: 241px;
+    margin-left: 14px;
+    margin-top: -4px!important;
+}
+
+.video_con_item .videoList li{
+    background: url(../img/square.png) no-repeat 0 center , url(../img/video.png) no-repeat 10px center;
+    padding-left: 33px;
+}
+
+
+/* 猜你喜欢 */
+.c1_m_likes{
+    height: 353px;
+    /* background: slateblue; */
+}
+.likesList{
+    margin-top: 10px!important;
+}
+
+
+/* 右侧 新闻列表 */
+.c1_right{
+    width: 361px;
+    height: 914px;
+    /* background: #EEE; */
+}
+.smTit{
+    height: 34px;
+    border: 1px solid #DBDEE1;
+    border-left: 0;
+    background:#F7F7F7;
+}
+.smTit p{
+    float: left;
+    border-top: 3px solid #FF8400;
+    background: #FFF;
+    margin-top: -1px;
+    border-right: 1px solid #DBDEE1;
+    height: 33px;
+    padding: 0 12px;
+    line-height: 30px;
+}
+.smTit p a:hover{
+    color: #FF8400;
+}
+
+
+.smTit span{
+    float: right;
+    margin-right: 10px;
+    font-size: 12px;
+    color: #333;
+    line-height: 34px;
+}
+.newsList{
+    margin-top: 20px;
+}
+.newsList li{
+    height: 26px;
+    line-height: 26px;
+    font-size: 14px;
+    font-family: "SimSun";
+    padding-left: 11px;
+    background: url(../img/square.png) no-repeat 1px center;
+}
+
+.newsList li a{
+    color: #122E67;
+}
+
+.weight{
+    font-weight: 900;
+}
+
+.newsList .color1 a{
+    color: #52687E;
+}
+
+.newsList li a:hover{
+    color: #FF8400;
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 返回顶部 */
+    /* box-sizing 设置或检索盒模型的尺寸大小 【C3新增的属性】
+            content-box 标准盒模型      padding 和 border 不被包含在width height 之内  【默认值】
+            border-box  怪异/IE盒模型   padding 和 border 被包含在width height 之内
+    */
+
+.backTop{
+    width: 50px;
+    height: 50px;
+    box-sizing: border-box;
+    background: #000;
+    color: #FFF;
+    position: fixed;
+    right: 50px;
+    bottom: 15px;
+    line-height: 20px;
+    font-size: 14px;
+    padding: 5px 11px 0;
+}

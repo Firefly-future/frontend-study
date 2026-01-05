@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 字符串的方法:
+
+        // 注意: 没有任何⽅法可以修改原字符串
+
+        // 1 indexOf('val' , index) 从指定的位置开始向后查找val,找到返回下标，找不到-1
+                // 'val' 查找的值
+                // 'index' 开始查找的位置下标 ， 默认是0
+
+                // var str = "我是中国人,我爱中国和中国红";
+                // //         0 1 2 3 4 56 7 8 9 0 1 2 3
+                // var index = str.indexOf("我" , 10);   // -1
+                // console.log( index )
+
+        // 2 lastIndexOf('val' , index) 从指定位置开始向前查找val,找到返回下标 ，找不到-1
+
+                // var str = "我是中国人,我爱中国和中国红";
+                // //         0 1 2 3 4 56 7 8 9 0 1 2 3
+                // var index = str.lastIndexOf("我");   // 6
+                // console.log( index )
+                // var index1 = str.lastIndexOf("我" , 0);   // 0
+                // console.log( index1 )
+                // var index2 = str.lastIndexOf("人" , 3);   // -1s
+                // console.log( index2 )
+
+        // 3 concat(str1,str2...)  合并字符串 返回合并后的新字符串
+                // var str1 = "I love ";
+                // var str2 = "China";
+                // var str3 = " forever";
+                // var nStr = str1.concat( str2 , str3);
+                // console.log( nStr )
+
+        // 4 slice( sI , eI ) 截取字符串   返回截取后的新字符串
+                // sI 表示开始截取位置
+                // eI 表示结束截取位置  注意: 含头不含尾
+                // 注意; 支持负数 表示倒数开始 和 结束
+
+                // var str = "我是中国人,我爱中国和中国红";
+                // //         0 1 2 3 4 56 7 8 9 0 1 2 3
+                // console.log( str.slice() )   // 截取全部  "我是中国人,我爱中国和中国红"
+                // console.log( str.slice(6) )  // 从下标6开始截取到最后   "我爱中国和中国红"
+                // console.log( str.slice(6,10) ) // 从下标6开始截取 到下标10-1结束  "我爱中国"
+                // console.log( str.slice(-3) ) // 从倒数第三个开始 截取到最后   "中国红"
+                // console.log( str.slice(-3,-1) ) // 从倒数第三个开始，到倒数第一个结束  "中国"
+                
+        // -----------分割线---------以上四个方法与数组方法共享---------
+
+        // 5 substr(sI , count)  // 按照个数截取字符串  返回截取后的新字符串
+                // sI 表示开始截取位置  , 支持负数
+                // count 截取的个数  
+
+                // var str = "我是中国人,我爱中国和中国红";
+                // //         0 1 2 3 4 56 7 8 9 0 1 2 3
+                // console.log( str.substr() )   // 截取全部  "我是中国人,我爱中国和中国红"
+                // console.log( str.substr(6) )  // 从下标6开始截取到最后   "我爱中国和中国红"
+                // console.log( str.substr(6,6) ) // 从下标6开始截取 截取6个  "我爱中国和中"
+                // console.log( str.substr(-3) ) // 从倒数第三个开始 截取到最后   "中国红"
+
+
+        // 6 substring(sI ,  eI)   按照区间截取字符串   返回截取后的新字符串
+                // sI 表示开始截取位置
+                // eI 表示结束截取位置  注意: 含头不含尾
+                // 注意; 不支持负数 
+
+                // var str = "我是中国人,我爱中国和中国红";
+                // //         0 1 2 3 4 56 7 8 9 0 1 2 3
+                // console.log( str.substring() )   // 截取全部  "我是中国人,我爱中国和中国红"
+                // console.log( str.substring(6) )  // 从下标6开始截取到最后   "我爱中国和中国红"
+                // console.log( str.substring(6,10) ) // 从下标6开始截取 到下标10-1结束  "我爱中国"
+
+
+        // 7 includes('val') 检测是否包含指定的值  返回布尔值
+                // true 包含   
+                // false不包含
+
+                // var str = "yugj";
+                // console.log( str.includes("ug") ) // true
+                // console.log( str.includes("uga") ) // false
+
+        // 8 toUpperCase()  转大写  
+        // 9 toLowerCase()  转小写
+                // var str1 = "no1 i Love beiJing";
+                // var str2 = "no2 CHina Speed";
+                // console.log( str1.toUpperCase() )
+                // console.log( str2.toLowerCase() )
+
+        // 10 trim()  去除前后导空格  返回去除空格后的新字符串
+                // var str = "       "
+                // console.log( str.length )   // 7
+
+                // var str = "       I Love China    ,    I am Chinese    ";
+                // //         01234567890123456789012345678901234567890123
+                // console.log( str.length )
+                // var nStr = str.trim();
+                // console.log( nStr , nStr.length )
+
+        // 11 split()  按照指定的字符拆分数组  返回数组
+                // var str = "我是中国人,我爱中国和中国红";
+                // //         0 1 2 3 4 56 7 8 9 0 1 2 3
+                // var arr1 = str.split();   // 数组一项
+                // console.log( arr1 )
+                // var arr2 = str.split("");   // 按照空字符拆分  - 每个字符一项
+                // console.log( arr2 )
+                // var arr3 = str.split("中国");   //按照中国拆分 
+                // console.log( arr3 )
+
+
+        // 12 replace(oldStr , newStr) 替换字符串     返回替换后的新字符串
+                // var str = "我是中国人,我爱中国和中国红";
+                // //         0 1 2 3 4 56 7 8 9 0 1 2 3
+                // var nStr = str.replace( "中国" , "China" )   // 默认只替换第一项
+                // console.log( nStr )
+
+
+        // 13 at(index)  返回字符串中指定索引位置的字符。
+                // ● 特点：支持负数索引，表示从字符串末尾开始计算
+
+                // var str = "我是中国人,我爱中国和中国红";
+                // //         0 1 2 3 4 56 7 8 9 0 1 2 3
+                // var nStr = str.at( 13 )   // "红"
+                // console.losg( nStr )
+
+                // var nStr1 = str.at(-13)  // 倒数第十三个
+                // console.log( nStr1 )  // "是"
+
+        // 14 charAt(index) 返回字符串中指定索引位置的字符。
+                // ● 特点：不支持负数，负数返回空字符串
+
+                // var str = "我是中国人,我爱中国和中国红";
+                // //         0 1 2 3 4 56 7 8 9 0 1 2 3
+                // var nStr = str.charAt( 13 )   // "红"
+                // console.log( nStr )
+
+                // var nStr1 = str.charAt(-13)  // 不支持负数
+                // console.log( nStr1 )  // ''
+
+
+        // 15 charCodeAt(index) 返回字符串中指定索引位置字符串的Unicode编码(十进制)。
+                // ● 特点：不支持负数，负数会返回NaN；
+                // 实际应用于处理字符编码相关逻辑(如加密)，兼容性更佳。
+                // var str = "0aA";
+                // //         012
+                // var code1 = str.charCodeAt(0) // '0' -> 48
+                // console.log( code1 )
+                // var code2 = str.charCodeAt(1) // 'a' -> 97 122
+                // console.log( code2 )
+                // var code3 = str.charCodeAt(2) // 'A' -> 65 90
+                // console.log( code3 )
+                // var code4 = str.charCodeAt(-1) // NaN
+                // console.log( code4 )
+
+        // 16 String.fromCharCode(Unicode) 返回该Unicode编码对应的字符。
+                // console.log( String.fromCharCode(122) )  // "z"
+                // console.log( String.fromCharCode(57))    // '9'
+
+    </script>
+</body>
+</html>

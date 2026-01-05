@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{ padding:0; margin: 0; list-style: none; box-sizing: border-box; }
+        .list{ width: 85px; font-size: 14px; margin: 30px auto 0; 
+                border:1px solid #CCC; border-bottom: 0;}
+        .list li{height: 40px; border-bottom: 1px solid #CCC; line-height: 39px;
+                text-align: center;}
+
+        .active{ font-weight: 700; color: #FFF; background: #FF8500; }
+    </style>
+</head>
+<body>
+    <ul class="list">
+        <li class="active">度假旅游</li>
+        <li>机票</li>
+        <li>火车</li>
+        <li>自驾游</li>
+        <li>跟团万人游</li>
+    </ul>
+
+    <script>
+        // 1 获取所有的lis
+        var lis = Array.from( document.querySelectorAll(".list li") );
+        // console.log( lis )
+        // 2 循环遍历 给每个li绑定点击事件
+        lis.forEach( function(li){
+            // click 点击   mouseover 滑过
+            li.onmouseover = function(){
+                // 排他思想   干掉别人   保留自己
+                // 即 把之前存在的高亮的元素取消高亮   给正在触发事件点击的添加高亮
+                // 即 在页面中获取 active的元素 删除类
+                var active = document.querySelector(".active");
+                active.classList.remove("active")
+
+                // 当前
+                this.classList.add("active")
+            }
+        } )
+    </script>
+</body>
+</html>

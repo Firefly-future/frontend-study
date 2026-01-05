@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // const arr = [1,2,3];
+        // 将数组的每一项存入变量
+        // let a = arr[0] ,
+        //     b = arr[1] ,
+        //     c = arr[2] ;
+        // console.log( a , b , c )
+
+
+        // 解构; 模式一致
+        // 数组解构   一一对应
+        // 完全解构
+        // let [ a , b , c ] = ["hello" , 123 , "script"]
+        // console.log( a,b,c )
+
+        // 将a存入x    d存入y
+        // 不完全解构
+        // let [x,,,y] = ["a","b","c","d","e","f"]
+        // console.log( x , y )
+
+        // 不完全解构  允许默认值
+        // let [ x , y = 2] = ["a"];
+        // console.log( x )
+
+        // 两个变量互换
+        // let a = 15 , b = 59 ;
+            // let empty = a ; // 借助第三方变量
+            // a = b;
+            // b = empty;
+            // console.log( a , b )
+
+            // a += b;  // a = a + b => 15 + 59 = 74
+            // b = a - b;  // 74 - 59 => 15
+            // a = a - b;  // 74 - 15 = 59
+            // console.log( a , b )
+
+            // [b , a] = [ a , b ]
+            // console.log( a , b )
+
+
+        // let [,,[a,,[,b]]] = [ 1,5,[9,3,[2,1],5],4,5,6 ]
+        // console.log( a , b )
+
+        // 允许使用默认值undefined
+            // let [a = 1 , b = 2] = [ undefined , "hello"]
+            // console.log( a , b )
+
+        // ... 剩余数组项  返回剩余项组成的数组 [注意;只能末尾 否则报错]
+            let = [ x, y , ...z ] = [1,3,52,6,4,515,15,48,18,985];
+            console.log( x, y , z )
+    </script>
+</body>
+</html>

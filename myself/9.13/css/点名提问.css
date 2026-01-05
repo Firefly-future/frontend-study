@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding:0;
+    list-style: none;
+    box-sizing: border-box;
+    /* overflow: hidden; */
+}
+.box{
+    height: 300px;
+    width: 500px;
+    text-align: center;
+    margin: 100px auto 0;
+    border:solid 1px grey;
+}
+.tit{
+    width: 500px;
+    height: 60px;
+    line-height: 60px;
+    border: 1px solid grey;
+    /* float: left; */
+}
+.user>div,
+.user>button{
+    width: 122px;
+    height:76px;
+    line-height: 68px;
+    /* border: 1px solid gray; */
+    float:left;
+    margin: 1px;
+}
+.user>div{
+    background-color: beige;
+    font-size: 20px;
+}
+.user button{
+    border: 0;
+    background-color: aquamarine;
+    color: white;
+    font-size: 30px;
+    width: 244px;
+}

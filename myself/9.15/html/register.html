@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{padding: 0;margin: 0;box-sizing: border-box;}
+        #huan:hover{color: red;cursor: pointer;}
+    </style>
+</head>
+<body>
+    <div class="zc">
+        <h1>欢迎来到注册页面</h1>
+        <p>
+            <label for="">用户名</label>
+            <input type="text" id="user">
+        </p>
+        <p>
+            <label for="">密码</label>
+            <input type="password" id="psd">
+        </p>
+        <p>
+            <label for="">邮箱</label>
+            <input type="email" id="email">
+        </p>
+        <p>
+            <label for="">验证码</label>
+            <input type="text" id="yz">
+            <strong id="yzm">da3i</strong>
+            <span id="huan">换一换</span>
+        </p>
+        <button id="btn">上一步</button>
+        <button id="zcxx">注册</button>
+    </div>
+    <script src="../js/获取元素函数.js"></script>
+    <script>
+        // 给上一步绑定点击事件
+        $('btn').onclick=function(){
+            history.go(-1)
+        }
+        // 验证码函数封装
+        var str='0123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM'
+        function yan(str){
+            var res=''
+            for(var i=0;i<4;i++){
+                var index=Math.floor(Math.random()*str.length)
+                res+=str[index]
+            }return res
+        }
+        // 刷新页面验证码也需要刷新
+        $('yzm').innerHTML=yan(str)
+        // 给换一换绑定点击事件
+        $('huan').onclick=function (){
+            $('yzm').innerHTML=yan(str)
+        }
+       
+        
+        // 给注册绑定点击事件
+        $('zcxx').onclick=function(){
+        var user=$('user').value.trim()
+        var psd=$('psd').value.trim()
+        var email=$('email').value.trim()
+        var yz=$('yz').value.trim().toUpperCase()
+        var yzm=$('yzm').innerHTML.toUpperCase()
+
+         // 分别判断用户名、密码、邮箱、验证码
+        if(!user)return alert('用户名内容不能为空')
+        if(!psd)return alert('密码内容不能为空')
+        else if(psd.length<6||psd.length>8){
+        return alert('密码长度应为6-8')}
+        else if(!isNaN(psd)){
+        return alert('密码不能为纯数字')}
+        if(!email) return alert('邮箱内容不能为空')
+        var pop=email.indexOf('@')
+        var pit=email.indexOf('.')
+        
+     if(pop===-1){
+    return alert('邮箱需含有@')}
+    else if(pop===0){
+        return alert('@不能在第一位')
+    }else if(pit===-1){
+        return alert('邮箱需要包含.')
+    }else if(pit<pop){
+        return alert('.应该在@后面')
+    }else if(pit<pop+3){
+        return alert('@后至少有俩字符再接.')
+    }else if(pit===email.length-1){
+        return alert('.不能在最后一位')
+    }
+    // 判断验证码是否与右侧一致
+    if(yz!==yzm)return alert('验证码有误')
+
+    alert('输入正确，将在点击确定后三秒跳转至注册成功页面')
+    setTimeout(function(){
+        location.href=`succecc.html?user:${user}&psd:${psd}&email:${email}`
+    },3000)
+}
+
+    </script>
+</body>
+</html>

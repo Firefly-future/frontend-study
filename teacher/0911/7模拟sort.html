@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = [15,56,12,23,54,32,15,13]  // 
+       // 模拟sort  冒泡排序  面试题
+            // sort()  数组排序  
+        function mySort( arr ){
+            // 核心: 排序 肯定需要比较操作   而比较最少需要两个数
+            // 1 循环遍历拿到每一项数字
+            for( var i = 0 ; i < arr.length; i++ ){  // 15
+                // console.log( arr[i] )
+                for( var j = 0 ; j < arr.length; j++ ){ //15>15  15>56   15>12  12> 23
+                    if( arr[i] < arr[j] ){  // > 降序   < 升序
+                        // 借助第三方变量
+                        var empty = arr[i]
+                        arr[i] = arr[j]
+                        arr[j] = empty
+                    }
+                }
+            }
+            return arr
+        }
+        console.log( mySort( arr ) )
+    </script>
+</body>
+</html>

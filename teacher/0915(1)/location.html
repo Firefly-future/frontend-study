@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // location  获取当前页面 url 地址信息
+        // 一个完整有效的url包含: 协议 域名 和 端口
+            // https://hotel.tuniu.com/list/2500p0s0b0?checkindate=2025-09-15&checkoutdate=2025-09-16&cityName=上海&poi=东方明珠#home
+            // http://10.55.6.65:52330/0915/location.html
+
+            // https / http 协议
+            // hotel.tuniu.com / 10.55.6.65  域名->域名的背后其实是一个ip 即 服务器名称
+            // 52330  端口号-> 默认是80   取值是0-65535之间的整数
+            // 0915/location.html  资源路径
+            // ?a=1&b=2   用户查询部分
+            // #home   锚点部分
+        // 主要属性
+            // 1. href：完整的URL。
+            // 2. protocol：URL的协议部分，如'http:'、'https:'。
+            // 3. host：服务器名称(域名)和端口号（如果有）。
+            // 4. hostname：服务器名称。
+            // 5. port：URL的端口号。
+            // 6. pathname：URL的路径部分。
+            // 7. search：URL的查询字符串部分，包括开头的?。
+            // 8. hash：URL的锚部分，包括开头的#。
+
+
+        // 主要方法
+            // 1. assign(url)：跳转页面（有历史记录）。
+            // 2. reload(forceGet)：重新加载当前页面。
+            // 3. replace(url)：用新的URL替换当前的页面(不会产生历史记录)。
+            // 4. href 可以获取当前url完整地址， href = “值" 可以设置url地址
+            // 5. search 获取当前地址的用户信息部分(查询信息)，返回？及后面的信息
+            // 6. hash获取#锚的部分 
+
+            // search的实战面试
+            // 给定一个网址 "https://hotel.tuniu.com/list/2500p0s0b0?checkindate=2025-09-15&checkoutdate=2025-09-16&cityName=上海&poi=东方明珠#home",指定查询的key是cityName,返回上海; 如果查找的key是cityId,将返回没有此内容  
+
+
+        
+    </script>
+</body>
+</html>

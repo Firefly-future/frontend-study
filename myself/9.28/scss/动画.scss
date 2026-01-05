@@ -1,0 +1,20 @@
+@import './common.scss';
+
+.box{
+    width: 200px;
+    height: 200px;
+    background: red;
+    animation:moveBox 5s linear  alternate infinite paused ;
+}
+input{
+    width: 100px;
+    height: 60px;
+    &:checked+.box{
+    animation-play-state: running;}
+}
+@keyframes moveBox{
+    25%{transform: translateX(600px) scale(0); background: green;}
+    50%{transform: translate(600px ,500px);border-radius: 50%; background: rgb(38, 50, 14);}
+    75%{transform:translateY(500px);border-radius: 100%; background: gold;}
+    100%{transform: translate(0,0) scale(1.5);background:purple}
+}

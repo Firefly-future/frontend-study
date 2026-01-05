@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{box-sizing: border-box; padding: 0; margin:0 }
+        .box{margin: 50px 100px 0;}
+        .btns button{ border:0; color: #FFF; }
+        .addBtn { background: #106CC8; }
+        .delAllBtn { background: #FF5722; }
+        .tagCon div{ width: 280px; height: 40px; background: #009688; float: left; 
+                    margin: 10px; padding: 0 10px; border-radius: 7px; }
+        .tagCon div p , .tagCon div  span{ float: left; line-height: 40px;}
+        .tagCon div p{ width: 235px;  margin-right: 8px; 
+                        /* 单行文本省略号 */
+                        /* 1 强制文本一行显示 */
+                        white-space: nowrap;
+                        /* 2 超出内容隐藏 */
+                        overflow: hidden;
+                        /* 3 显示省略号 */
+                        text-overflow:ellipsis;
+                     }
+        .tagConp span{ font-size: 14px; color: red; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h3>待办事项便签</h3>
+        <div class="btns">
+            <input type="text" placeholder="请输入代办事项" class="inpCon">
+            <button class="addBtn">添加</button>
+            <button class="delAllBtn">删除所有</button>
+        </div>
+        <div class="tagCon">
+            <!-- <div><p>待办内容信息待办内容信息待办内容信息待办内容信息</p><span class="del">&times;</span></div> -->
+        </div>
+    </div>
+
+   
+
+    <script src="./js/2.js"></script>
+</body>
+</html>

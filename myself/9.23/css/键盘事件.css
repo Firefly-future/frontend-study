@@ -1,0 +1,72 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-boxs;
+}
+
+.box {
+    width: 600px;
+    margin: 50px auto 0;
+}
+
+.box1 {
+    width: 600px;
+    background-color: black;
+    opacity: .7;
+    margin-bottom: 5px;
+}
+.in,.en {
+    width: 600px;
+    background-color: black;
+    opacity: .5;
+    margin-bottom: 5px;
+}
+
+.tit {
+    float: left;
+    width: 400px;
+    color: white;
+}
+
+.inp {
+    width: 180px;
+    margin: 5px;
+}
+.ing{
+    width: 600px;
+    /* height: 40px; */
+    line-height: 40px;
+    color: white;
+}
+.ingNum{
+    float: right;
+    color: red;
+    margin-right: 30px;
+}
+.end{
+    width: 600px;
+    /* height: 40px; */
+    line-height: 40px;
+    color: white;
+}
+.endNum{
+    float: right;
+    color: red;
+    margin-right: 30px;
+}
+ul li{
+    width: 600px;
+    height: 40px;
+    border: 1px solid rgb(190, 184, 184);
+    background-color: rgb(254, 251, 251);
+    color: black;
+}
+li span{
+    float: right;
+    margin-right: 20px;
+}
+li span:hover{
+    cursor: pointer;
+    background: red;
+}

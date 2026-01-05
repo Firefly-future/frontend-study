@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{padding:0;margin: 0; box-sizing: border-box;}
+        div{ padding-top: 50px; margin: 0 auto; border-radius: 50%; }
+        .red{ width: 400px; height: 400px; background: red; margin-top: 80px;}
+        .yellow{ width: 300px; height: 300px; background: yellow; }
+        .blue{ width: 200px; height: 200px; background: blue; }
+        .green{ width: 100px; height: 100px; background: green; }
+    </style>
+</head>
+<body>
+    <div class="red">
+        <div class="yellow">
+            <div class="blue">
+                <div class="green">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <a href="http://www.baidu.com">百度</a>
+    
+    
+    <script>
+        // 事件流:
+        //     描述的是从页面中接收事件的顺序。
+        //     HTML事件流有两种主要模型：事件冒泡和事件捕获。
+
+
+        // DOM事件流
+            // ● DOM级事件流包括三个阶段：事件捕获阶段、处于目标阶段和事件冒泡阶段。
+
+
+        // 事件模型
+            // 事件捕获:
+                // 不太具体的节点应该更早接收到事件，而最具体的节点应该最后接收到事件。
+                
+            // 事件冒泡
+                // 由最具体的元素接收，然后逐级向上传播到较为不具体的节点。
+        
+
+        $(".red").addEventListener("click" , function(e){ 
+            e.stopPropagation()
+            alert(1) 
+        } )
+        $(".yellow").addEventListener("click" , function(e){ 
+            e.stopPropagation()
+            alert(2) 
+        } )
+        $(".blue").addEventListener("click" , function(e){ 
+            alert(3) 
+        } , true)
+        $(".green").addEventListener("click" , function(e){ 
+            // 阻止冒泡
+            e.stopPropagation()
+            alert(4) 
+        } )
+
+        
+        $("a").addEventListener("click" , function(e){
+            e.preventDefault()  // 取消事件默认行为
+            location.href = "http://www.sina.com.cn"
+        })        
+
+
+
+        function $(el){
+            return document.querySelector(el)
+        }
+    </script>
+</body>
+</html>

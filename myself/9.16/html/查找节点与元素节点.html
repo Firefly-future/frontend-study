@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div></div>
+    <div class="box">'a'
+        <p>hh</p>'b'
+        <a href="">baidu</a>'c'
+        <div class="kong">小</div>'d'
+        <h1 id="tit">biaoti</h1>'e'
+        <ul name="list">'f'
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <script>
+        var box=document.querySelector('.box')
+        // 1查找所有子节点
+        console.log(box.firstChild) //第一个子节点
+        console.log(box.lastChild) //最后一个子节点
+        console.log(box.childNodes)// 所有的子节点
+        console.log(box.attributes)//某个元素的所有属性
+        console.log(box.nextSibling)//下一个兄弟子节点
+        console.log(box.previousSibling)//上一个兄弟子节点
+        // 2.查找所有元素子节点
+        console.log(box.firstElementChild)//第一个元素子节点
+        console.log(box.nextElementSibling)//下一个兄弟元素子节点
+        console.log(box.parentNode)//父节点 最上面是#document 再上就是null
+        console.log(box.children)//所有的元素子节点
+        console.log(box.lastElementChild)//最后一个元素子节点
+        console.log(box.previousElementSibling)//上一个兄弟元素子节点
+    </script>
+</body>
+</html>

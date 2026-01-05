@@ -1,0 +1,36 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.home {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.home main {
+  flex: 1;
+  overflow: auto;
+}
+
+.home footer {
+  height: 50px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  border-top: 1px solid #ccc;
+}
+
+.home footer a {
+  flex: 1;
+  text-decoration: none;
+  padding: 12px 0;
+}
+
+.home footer a.active {
+  background-color: tomato;
+  border-bottom: 1px solid tomato;
+}

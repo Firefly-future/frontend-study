@@ -1,0 +1,119 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #333;
+}
+li {
+  list-style-type: none;
+}
+html {
+  scroll-behavior: smooth;
+}
+main {
+  max-width: 1920px;
+  margin: 0 auto;
+  h3 {
+    background: #eee;
+    padding: 10px 20px;
+  }
+}
+.questions {
+  padding: 20px;
+}
+.question-item {
+  margin-bottom: 20px;
+  h4 {
+    margin-bottom: 10px;
+  }
+  li {
+    padding: 5px 10px;
+    border-radius: 3px;
+    &:hover {
+      background: #eee;
+    }
+  }
+  .answer {
+    display: none;
+    color: green;
+    padding-top: 10px;
+    span {
+      color: green;
+    }
+    &.show {
+      display: block;
+    }
+  }
+}
+.card {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background: #fff;
+  .card-header {
+    display: flex;
+    height: 60px;
+    border-bottom: 1px solid #ddd;
+    p {
+      flex: 1;
+      line-height: 60px;
+      text-align: center;
+    }
+  }
+  .btns {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    button {
+      margin-right: 8px;
+      margin-bottom: 8px;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 5px;
+      width: 30px;
+      height: 30px;
+      text-align: center;
+      &:nth-child(7n) {
+        margin-right: 0;
+      }
+      &:hover {
+        border-color: #2196f3;
+        color: #2196f3;
+      }
+      &.active {
+        background: #2196f3;
+        color: #fff;
+        border-color: #2196f3;
+        &:hover {
+          background: #0577d3;
+        }
+      }
+      &.err {
+        background: red !important;
+      }
+    }
+  }
+  .card-footer {
+    border-top: 1px solid #ddd;
+    height: 60px;
+    padding: 10px 20px;
+    button {
+      height: 40px;
+      width: 100%;
+      background: #2196f3;
+      border: none;
+      color: #fff;
+      border-radius: 5px;
+      &:hover {
+        background: #0577d3;
+      }
+      &:disabled {
+        background: #ddd !important;
+      }
+    }
+  }
+}

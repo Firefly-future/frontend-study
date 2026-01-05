@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/3.css">
+</head>
+<body>
+    <table border="1">
+        <thead>
+            <tr>
+                <th class="w1"><input type="checkbox" class="all"> 全选</th>
+                <th>商品信息</th>
+                <th class="w1">单价(元)</th>
+                <th class="w2">数量</th>
+                <th class="w1">金额(元)</th>
+                <th class="w3">操作</th>
+            </tr>
+            <tr>
+                <th colspan="6" align="left"><input type="checkbox" class="all"> 当当自营</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <!-- <tr>
+                <td><input type="checkbox"></td>
+                <td class="proInfo">
+                    <img src="http://img3x9.ddimg.cn/61/23/29908159-1_m_1751874725.jpg" alt="">
+                    <div class="proDes">
+                        <a href="https://product.dangdang.com/29908159.html" target="_blank">万物制造局 章球球的新家</a>
+                    </div>
+                </td>
+                <td>
+                    &yen;<span class="price">26.00</span>
+                </td>
+                <td class="countFn">
+                    <span class="min">-</span>
+                    <input type="text" class="count" value="1">
+                    <span class="max">+</span>
+                </td>
+                <td>&yen;<span class="money">0.00</span></td>
+                <td class="lastTd"><span>移入收藏</span><span class="del">删除</span></td>
+            </tr> -->
+        </tbody>
+
+        <tfoot>
+            <tr height="40">
+                <th colspan="2" align="left">店铺合计</th>
+                <th colspan="4" align="right">&yen;<span class="totalPrice">0.00</span></th>
+            </tr>
+            <tr>
+                <th><input type="checkbox" class="checkall"> 全选</th>
+                <td><span class="dels">批量删除</span>已选择<span class="chooseCount">0</span>个商品</td>
+                <th colspan="2">总计(不含运费): <p>&yen;<span class="totalMoney">rrf</span></p></th>
+                <th colspan="2"><button>结算</button></th>
+            </tr>
+        </tfoot>
+    </table>
+
+    <script src="./js/data.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+</html>

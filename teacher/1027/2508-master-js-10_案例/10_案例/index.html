@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/index.css">
+  <script src="./axios.min.js"></script>
+</head>
+<body>
+  <div class="wrap">
+    <div class="keyboard"></div>
+    <div class="contrallor">
+      <div class="switch power">
+        <b>power</b>
+        <p class="active">
+          <span></span>
+        </p>
+      </div>
+      <div class="title"></div>
+      <div class="volume">
+        <i></i>
+      </div>
+      <div class="switch bank">
+        <b>bank</b>
+        <p>
+          <span></span>
+        </p></div>
+    </div>
+  </div>
+  <audio src=""></audio>
+  <script>
+    const $ = el => document.querySelector(el)
+    const $all = el => [...document.querySelectorAll(el)]
+    const audioEk = $('audio')
+    let musicData = []
+    let power = true
+    let bank = false
+
+    // 获取数据
+    async function getData() {
+      try {
+        const res = await axios.get('http://39.96.210.90:3000/api/music')
+        musicData = res.data
+        render(res.data)
+      } catch(e) {
+        console.log(e)
+      }
+    }
+    getData()
+    // 渲染键盘
+    function render(list) {
+      console.log(list)
+      $('.keyboard').innerHTML = list.map(item => {
+        return `<div class="item" data-code="${item.keyCode}">${item.keyTrigger}</div>`
+      }).join('')
+    }
+    // 播放音乐
+    function play(code) {
+      // 根据code去列表中查找数据下标
+      const index = musicData.findIndex(v => v.keyCode === Number(code))
+      if (index > -1) {
+        // 找到对应的音乐，清除按钮的阴影
+        $all('.item')[index].classList.add('isDown')
+        if (power) {
+          // 如果 power 打开就播放音乐并添加高亮
+          audioEk.src = bank ? musicData[index].bankUrl : musicData[index].url
+          audioEk.autoplay = true
+          $all('.item')[index].classList.add('active')
+          $('.title').textContent = musicData[index].id
+        }
+      }
+    }
+    // 鼠标按下键盘
+    $('.keyboard').addEventListener('mousedown', e => {
+      const { target } = e
+      if (target.classList.contains('item')) {
+        const code = target.getAttribute('data-code')
+        // 根据按下的 code 查找对应的音乐
+        play(code)
+      }
+    })
+    $('.keyboard').addEventListener('mouseup', e => {
+      $('.isDown')?.classList.remove('active')
+      $('.isDown')?.classList.remove('isDown')
+    })
+
+    // 键盘按下
+    document.addEventListener('keydown', e => {
+      play(e.keyCode)
+    })
+    document.addEventListener('keyup', e => {
+      $('.isDown')?.classList.remove('active')
+      $('.isDown')?.classList.remove('isDown')
+    })
+
+    // 开关
+    $('.power').addEventListener('click', () => {
+      power = !power
+      $('.power p').classList.toggle('active')
+      if (!power) {
+        $('.title').textContent = ''
+      }
+    })
+    // 切换歌曲类型的开关
+    $('.bank').addEventListener('click', () => {
+      bank = !bank
+      $('.bank p').classList.toggle('active')
+    })
+
+
+
+    // 音量
+    let volumeIsDown = false
+    let volumeLeft = 0
+    let maxLeft = $('.volume').clientWidth - $('.volume i').clientWidth
+    $('.volume i').addEventListener('mousedown', e => {
+      volumeIsDown = true
+      volumeLeft = $('.volume').getBoundingClientRect().left
+    })
+    document.addEventListener('mouseup', e => {
+      volumeIsDown = false
+    })
+    document.addEventListener('mousemove', e => {
+      if (volumeIsDown) {
+        let left = e.clientX - volumeLeft
+        if (left < 0) left = 0
+        if (left > maxLeft) left = maxLeft
+        $('.volume i').style.left = left + 'px'
+        // 设置音量
+        audioEk.volume = left / maxLeft
+        console.log(audioEk.volume)
+      }
+    })
+
+  </script>
+</body>
+</html>

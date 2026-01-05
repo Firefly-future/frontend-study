@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const obj = {
+      name: '小明',
+      age: 22
+    }
+    const arr = ['a', 'b', 'c', 'd', 'c', 'b', 'c']
+    // for (let key in arr) {
+    //   console.log(key, arr[key])
+    // }
+    
+    // const str = 'ABCDEFG'
+    // 特点：数据不会重复，会自动去重
+    // console.log([...new Set(arr)])
+    // const setObj = new Set([0,1,2,3,4,5,6,7])
+    // setObj.add(1)
+    // setObj.add(2)
+    // setObj.add(1)
+    // console.log(setObj)
+
+    // 以 key => val 的形式存储数据，key可以是任意类型
+    // const map = new Map()
+    // map.set('aaa', 'AAAAA')
+    // map.set(arr, '这是一个数组')
+    // console.log(map)
+
+    // for...of 只能遍历可迭代对象，例如：数组、字符串、set对象、map对象
+    // 不能遍历普通对象
+    for (let val of arr) {
+      console.log(val)
+    }
+
+  </script>
+</body>
+</html>

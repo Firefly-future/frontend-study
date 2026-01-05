@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/banner.css">
+</head>
+<body>
+    <!-- 后期可以使用swiper插件的结构 -->
+    <!-- 装整个内容的大盒子swiper-container -->
+    <div class="swiper-container banner2">
+        <!-- 图片swiper-wrapper -->
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="./img/ban2.webp" alt=""></div>
+            <div class="swiper-slide"><img src="./img/ban4.webp" alt=""></div>
+            <div class="swiper-slide"><img src="./img/ban6.webp" alt=""></div>
+        </div>
+        <!-- 上下按钮 -->
+        <div class="swiper-button-prev"><</div>
+        <div class="swiper-button-next">></div>
+    </div>
+
+    <script src="./js/banner.js"></script>
+    <script>
+        // 3 实例化对象 即 构建的实例 
+        // 如淘宝的轮播 还是京东的轮播 还是苏宁的轮播等
+        new Swiper({
+            el : ".banner2" ,  // 轮播的大盒子
+            defaultIndex : 1 , // 默认初始展示的下标
+            speed : 2000 , // 动画淡入淡出的时间
+            wait : 5000 , // 切换等待时间
+            autoplay : true // 是否开启自动轮播
+        })
+    </script>
+</body>
+</html>

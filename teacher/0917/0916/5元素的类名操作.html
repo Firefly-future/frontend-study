@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{ color: red; }
+        .size { font-size: 50px;}
+        .weight { font-weight: 900; }
+        .family { font-family: "SimSun"; }
+    </style>
+</head>
+<body>
+    <div class="box">中国</div>
+    <script>
+        var div = document.querySelector(".box");
+        // className属性  获取或设置元素的class属性。 
+        //     ○ 获取类名：element.className
+                    // console.log( div.className )
+        //     ○ 设置类名：element.className = 'new-class-name'
+                    // div.className = "box size weight"
+
+        // classList属性 操作元素类名，返回所有类名组成的类数组
+            // ○ add(class1, class2, ...)：添加一个或多个类名。
+                div.classList.add("weight" , "size")
+            // ○ remove(class1, class2, ...)：移除一个或多个类名。
+                div.classList.remove( "box" )
+            // ○ toggle(className)：切换类名（如果类名存在则移除，不存在则添加）。
+            // ○ contains(className)：检查元素是否包含指定的类名。
+            // ○ replace(oldName ， newName)：替换类名
+                div.classList.replace("weight" , "family")
+                div.classList.replace("size" , "box")
+
+                // 点击 检测box是否含有size类  包含删除  不包含添加
+                div.onclick = function(){
+                    console.log( div.classList.contains("size") )
+                    // if( div.classList.contains("size") ){
+                    //     div.classList.remove("size")
+                    // } else {
+                    //     div.classList.add("size")
+                    // }
+
+                    div.classList.toggle("size")
+                }
+
+            
+    </script>
+</body>
+</html>

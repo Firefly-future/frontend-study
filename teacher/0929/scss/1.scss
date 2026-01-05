@@ -1,0 +1,135 @@
+@import "./common.scss";
+
+
+// 弹性盒
+// 1 给需要并行元素的父元素开启弹性盒 display:flex;
+
+// 父->6个
+    // flex-direction 设置主轴的方向 -> 子元素的排列方向
+            // row 默认值  水平
+            // column 垂直
+
+    // justify-content 设置主轴的对齐方式
+            // flex-start 起点对齐
+            // flex-end
+            // center
+            // space-between
+            // space-around
+
+    // align-items 设置侧轴的对齐方式
+
+    // flex-wrap 设置子元素超出父元素时 是否换行显示
+            // nowrap 不换行  默认值
+            // wrap 换行
+
+    // align-content 设置多根轴线的对齐方式 [注意; 一根轴线该属性失效]
+            // stretch 默认值   拉伸   即 多轴 平均分配占满整个轴线
+            // flex-start 起点对齐
+            // flex-end
+            // center
+            // space-between
+            // space-around
+
+    // flex-flow 是flex-direction 和 flex-wrap 的简写  
+            // row nowrap 默认值
+
+.box{
+    background: #eee;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.left{
+    width: 100px;
+    height: 50px;
+    background: red;
+}
+
+
+
+.center{
+    width: 80px;
+    height: 120px;
+    background: lime;
+}
+
+
+
+.right{
+    height: 90px;
+    width: 120px;
+    background: purple;
+}
+
+
+
+
+.nav{
+    background: #EEE;
+    margin: 20px;
+    ul{
+        display: flex;
+        flex-wrap: wrap;
+        // flex-flow:row wrap;
+        align-content: space-around;
+        height: 300px;
+        background: pink;
+        
+        li{
+            width:20%;
+            text-align: center;
+            font-size: 14px;
+            img{
+                width: 50px;
+                margin: 0 auto;
+            }
+        }
+    }
+}
+
+// 子 ->  6个
+        // flex-grow 定义项目的放大比例   即 分配剩余空间  默认值0
+        // flex-shrink 定义项目的缩比例   即 空间不足时 会等比例缩小  默认值1   
+        // flex-basis
+        // flex 是flex-grow 和 flex-shrink 和 flex-basis 的简写  
+            // 默认值 0 1 auto , flex-grow 是必须的  
+
+        // order 控制子元素的排列顺序 值越小越靠前 默认值0
+
+        // align-self 子元素自身的对齐方式 会覆盖父元素的align-items值
+            // 默认值  auto  
+        
+.navText{
+    height: 100px;
+    background: #EEE;
+    ul{
+        display: flex;
+        height: 100%;
+        align-items: center;
+        font-size: 18px;
+        // li{
+        //     flex-grow: 1;  // 1 : 1 : 1 : 1 : 1 : 1   等价于: flex:1;
+        //     text-align: center;
+        //     border-right: 1px solid red;
+        //     &:nth-child(even){ 
+        //         flex-grow: 3;
+        //     }
+        // }
+        li{
+            width: 100px;
+            flex-shrink: 0;
+            &:nth-child(3){
+                order: -1;
+                align-self: flex-end;
+            }
+            &:nth-child(6){
+                order: 1;
+            }
+            &:nth-child(1){
+                align-self: flex-start;
+            }
+        }
+    }
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 给定一个字符串  统计某个字符出现的次数
+            // function getChartNum( str , who ){
+            //     var count = 0;
+            //     // 1 循环遍历拿到每个字符
+            //     for( var i = 0 ; i < str.length ; i++ ){
+            //         // 2 判断当前字符  与查找的who一致  计数一次
+            //         if( str[i] === who ){
+            //             count++
+            //         }
+            //     }
+            //     return count
+            // }
+            // console.log( getChartNum( "bhgdchh" , "h" ) )
+
+
+        // 给定一个字符串  统计每个字符串出现的次数，【用一个对象存储，字符作为属性 次数作为值】
+            function getEveryChartCount(str){
+                var resObj = {} ;  // 存储每个字符次数的结果对象  { c : 2 , g : 1... }
+                // 1 循环遍历拿到每个字符
+                for( var i = 0 ; i < str.length ; i++ ){
+                    // 2 核心: 在对象中查找当前字符key 是否在对象中出现过 出现次数++  否则赋值一次
+                    if( resObj[ str[i] ] ){  // obj.c  ->  obj.c => 1  -> obj.g
+                        resObj[ str[i] ]++
+                    }else {
+                        resObj[ str[i] ] = 1  // obj.c = 1   obj.g = 1
+                    }
+                }
+                return resObj
+            }
+            // console.log( getEveryChartCount( "ccgydgchhhhhhhhjdcgdjc" ) )
+
+
+        // 给定一个字符串   找出出现次数最多的字符
+        function getBigNum( obj ){
+            var count = 0 , res = null ; 
+            // 遍历对象  for ( var key in obj ) {  }
+            for( var key in obj ){
+                // console.log( key , obj[key] )
+                if( obj[key] > count ){
+                    count = obj[key]
+                    res = { [key] : obj[key] }
+                }
+            }
+            return  res
+        }
+        console.log( getBigNum( getEveryChartCount( "ccgydgchhhhhhhhjdcgdjc" ) ) )
+
+        // 面试题
+            // [1,2,3] => [ { 0 : 1} , {1 : 2} ]
+
+
+        // 面试题:
+            // 1000000 ->  1,000,000
+
+
+        //  面试题: 
+            var data = [ 
+                { key : "牛奶" , val : [10,54,92] },
+                { key : "烟草" , val : [1000,55,91] },
+                { key : "出行" , val : [12,53,90] }
+            ]
+
+            // 求 每个信息的val的和   找出最大值
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // ... 扩展运算符
+            // 可以展开一层对象  或  数组
+            // 扩展运算符是ES6（ECMAScript 2015）中引入的一个新特性，用三个点（...）表示。
+            // 它允许一个表达式在某处展开为多个元素，这种语法主要用于数组和对象字面量，
+            // 但也可以用于函数调用。
+
+        // 找数组中的最大值
+        // const arr = [48,15,10,'150',4,51,51,54,5,89,true,undefined]
+        // 最原始 循环比较  替换
+        // 借助数组方法 排序 降序  [0]
+        // 借助数学对象 Math.max() 在一系列值中找最大值
+        // console.log( Math.min( ...arr ) )
+
+
+        // 伪数组 转真数组
+        
+
+        // 合并数组
+        // 原始 循环push
+        // 借助 concat
+        // const arr1 = [1,2,3] , arr2 = ["a","b","c"];
+        // console.log( [...arr1 , ...arr2] )
+
+        // 改造; 将上面两个数组中的2 和 c 存入一个数组 结果为:[2,"c"];
+        // let [,a] = arr1 , [,,b] = arr2;
+        // console.log( [a , b] )
+
+        // 合并对象
+        // const obj1 = {a : 1} , obj2 = { b : 2 , c : 3 };
+        // console.log( { ...obj1 , ...obj2 , ...{abc : 123} } )
+    </script>
+</body>
+</html>

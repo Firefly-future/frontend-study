@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.parent {
+  font-size: 20px;
+  overflow: hidden;
+}
+
+.box {
+  width: 80vw;
+  height: 80vw;
+  background: red;
+  font-size: 10px;
+  float: left;
+}
+
+.right {
+  float: right;
+  width: 20vw;
+  height: 20vw;
+  background: green;
+}

@@ -1,0 +1,117 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wrap {
+  width: 800px;
+  height: 400px;
+  background: #b5b5b5;
+  margin: 0 auto;
+  border: 6px solid #ffae00;
+  display: flex;
+}
+
+.keyboard {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.keyboard .item {
+  background: #717171;
+  width: calc((100% - 16px) / 3);
+  height: calc((100% - 16px) / 3);
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 8px;
+  user-select: none;
+  cursor: pointer;
+  box-shadow: 3px 3px 4px 0px;
+}
+
+.keyboard .item:nth-child(3n) {
+  margin-right: 0;
+}
+
+.keyboard .item.isDown {
+  box-shadow: none;
+}
+
+.keyboard .item.active {
+  background: #ffae00;
+  color: #fff;
+}
+
+.contrallor {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.switch {
+  width: 80px;
+  text-align: center;
+}
+
+.switch p {
+  height: 30px;
+  background: #222;
+  margin-top: 6px;
+  border-radius: 30px;
+  padding: 5px;
+}
+
+.switch p span {
+  display: block;
+  height: 20px;
+  width: 20px;
+  background: #ddd;
+  border-radius: 50%;
+  transition: all 0.3s linear;
+}
+
+.switch p.active {
+  background: #007bdb;
+}
+
+.switch p.active span {
+  transform: translateX(50px);
+}
+
+.title {
+  width: 120px;
+  height: 40px;
+  background: #ccc;
+  margin: 15px 0;
+  text-align: center;
+  line-height: 40px;
+}
+
+.volume {
+  width: 200px;
+  height: 6px;
+  background: #333;
+  margin: 15px 0;
+  position: relative;
+}
+
+.volume i {
+  position: absolute;
+  left: 190px;
+  top: -9px;
+  width: 10px;
+  height: 24px;
+  background: #007bdb;
+  cursor: grab;
+}
+
+.volume i:active {
+  cursor: grabbing;
+}

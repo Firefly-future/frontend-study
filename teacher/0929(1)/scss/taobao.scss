@@ -1,0 +1,272 @@
+@import "./common.scss";
+
+
+html,
+body,
+.app {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-size: 14px;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    background: #F4F4F4;
+}
+
+header {
+    height: .5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0.08rem 0 0.14rem;
+}
+
+.logo img {
+    height: 0.22rem;
+}
+
+.signIn img {
+    height: 0.33rem;
+}
+
+.search {
+    height: 0.36rem;
+    border: 0.01rem solid #FB5800;
+    border-radius: .18rem;
+    flex: 1;
+    margin: 0 0.13rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    p {
+        font-size: .14rem;
+        color: #666;
+        margin-left: .15rem;
+    }
+
+    span {
+        width: .64rem;
+        height: .3rem;
+        background: #FF8500;
+        color: #FFF;
+        border-radius: .15rem;
+        margin-right: 0.02rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: .14rem;
+    }
+}
+
+main {
+    flex: 1;
+    overflow: hidden;
+    overflow-y: scroll;
+    padding: 0 .1rem;
+}
+
+nav {
+    background: #FFF;
+    border-radius: 0.08rem;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0.04rem 0 .12rem;
+
+    a {
+        width: 20%;
+
+        img {
+            width: 90%;
+            margin: 0 auto
+        }
+
+        p {
+            font-size: .13rem;
+            color: #666;
+            margin-top: .04rem;
+            text-align: center;
+        }
+    }
+}
+
+
+section {
+    margin: .08rem 0 .1rem;
+    display: flex;
+    justify-content: space-between;
+
+    >div {
+        // calc() 函数 可以动态的设置宽和高
+        // 注意: 减法 需要空格隔开 
+        width: calc(50% - 4px);
+        background: url("https://gw.alicdn.com/imgextra/i2/O1CN01sVZ5HO1iFvNodRHz8_!!6000000004384-2-tps-527-405.png");
+        background-size: cover;
+        padding-top: .04rem;
+        border-radius: .07rem;
+    }
+}
+
+
+.liveTit {
+    height: .26rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 .09rem;
+}
+
+
+.titName {
+    font-size: .15rem;
+    font-weight: 600;
+}
+
+.titDes {
+    display: flex;
+    align-items: center;
+
+    img {
+        width: .14rem;
+        margin-right: .03rem;
+    }
+
+    span {
+        font-size: .12rem;
+        color: #FF8500;
+    }
+}
+
+.liveProduct {
+    display: flex;
+    padding: 0 .06rem;
+    justify-content: space-between;
+
+    >div {
+        width: calc(50% - 0.02rem);
+
+        img {
+            width: 100%;
+            border-radius: .05rem;
+        }
+
+        p {
+            line-height: .25rem;
+            font-size: .12rem;
+            color: #FF3E6F;
+            text-align: center;
+        }
+    }
+}
+
+
+
+
+
+footer {
+    height: 50px;
+    background: #FFF;
+    border-top: 1px solid #E9E9E9;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    span {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: #FB5800 url("https://img.alicdn.com/imgextra/i1/O1CN01oAxBQ81qF1EZtn4Rq_!!6000000005465-2-tps-108-108.png");
+        background-size: cover;
+    }
+
+    a {
+        font-size: 12px;
+        color: #666;
+        transform: scale(.89);
+
+        img {
+            width: 20px;
+            margin: 0 auto 2px;
+        }
+    }
+}
+
+
+.allProList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 .02rem;
+}
+
+.proItem {
+    background: #FFF;
+    border-radius: .08rem;
+    overflow: hidden;
+    width: calc(50% - .045rem);
+    margin-bottom: .09rem;
+
+    img {
+        width: 100%;
+    }
+}
+
+.textDes {
+    padding: .15rem .08rem .1rem;
+}
+
+.proName {
+    height: .37rem;
+    overflow: hidden;
+    line-height: .185rem;
+    font-size: .13rem;
+    color: #666;
+    margin-bottom: .1rem;
+}
+
+.priceSaleCount {
+    display: flex;
+    align-items: baseline;
+}
+
+.chart {
+    font-size: .12rem;
+    color: #FB5800;
+}
+
+.money {
+    font-size: .14rem;
+    color: #FB5800;
+    margin: 0 .03rem 0 -.01rem;
+}
+
+.payed {
+    font-size: .11rem;
+    color: #999;
+}
+
+// px 绝对单位
+// em 相对单位 相对父元素
+// rem 相对单位  相对根元素html
+// 1rem : 16px ----> 1rem : 100px
+
+// 375              750
+// header 20px      header 40px
+//     1em              1em
+//     2em
+//     3em
+// // 浏览器默认 16px = 1em = 1rem
+// // 14px = ?rem  0.875    0.14rem
+// // 12px = ?rem  0.75     0.12rem   0.05rem
+// html  16px              32px
+// header h:3rem;->48      96
+//     1rem-16             32
+//     2rem-32
+// section h:5rem->80
+//     1.5rem ->24
+//     3rem->48

@@ -1,0 +1,92 @@
+*{
+    padding:0;
+    margin: 0;
+}
+
+/* .relative{
+    width: 300px;
+    height: 200px;
+    background: red;
+    margin: 0 auto;
+
+    相对定位  特点:占位  参照:自身
+    position: relative;
+    left: 300px;
+    top: 100px;
+} */
+
+
+/* .absolute{
+    width: 300px;
+    height: 200px;
+    background: red;
+    margin: 0 auto;
+    绝对定位  
+        特点: 脱离文档流不占位,且行内元素变成块元素 支持宽高 
+        参照: 默认参照body 或 参照加了定位属性的父元素[非 静态]
+   
+    position: absolute;
+    right: 300px;
+    top: 200px;
+} */
+
+
+/* .parent{
+    width: 300px;
+    height: 200px;
+    background: red;
+    margin: 50px auto 0;
+    position: relative;
+}
+.son{
+    width: 150px;
+    height: 100px;
+    background: purple;
+    margin: 0 auto;
+    position: absolute;
+    left: 0;
+    top:0
+} */
+
+
+
+
+
+.fixed{
+    width: 300px;
+    height: 200px;
+    background: red;
+    margin: 0 auto;
+    /* 固定定位 
+        特点: 脱离文档流不占位,且行内元素变成块元素 支持宽高 
+        参照: 浏览器窗口
+    */
+    position: fixed;
+    right: 0;
+    bottom: 0;
+}
+
+
+.parent1{
+    width: 300px;
+    height: 200px;
+    background: red;
+    margin: 50px auto 0;
+    position: relative;
+}
+.son1{
+    width: 150px;
+    height: 100px;
+    background: purple;
+    margin: 0 auto;
+    position: fixed;
+    left:0;
+    top: 0;
+}
+
+h1{
+    background: black;
+    color: #FFF;
+    text-align: center;
+    line-height: 40px;
+}

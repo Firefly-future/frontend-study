@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 数组常用方法
+            // 1 前查:  indexOf()
+            // 2 后查:  lastIndexOf()
+            //   从指定位置开始查找值 ， 找到 返回下标  找不到-1
+
+            // 3 前添:  unshift(v1,v2...)  在数组前面添加一项或多项值   会     返回改变后的数组长度
+            // 4 后添:  push(v1,v2...)     在数组后面添加一项或多项值   会     返回改变后的数组长度
+            
+                    // var arr = ["a","b","c"];    // 在数组的前面添加1，2，3
+                    // var back = arr.unshift(1,2,3);
+                    // console.log( back )    // 6
+                    // console.log( arr )     //  [1, 2, 3, 'a', 'b', 'c']
+
+            // 5 前删:  shift()   删除数组的第一项        会      返回删除项
+            // 6 后删:  pop()     删除数组的最后一项      会      返回删除项
+                  
+                    // var arr = ["hello" , 1 , true];
+                    // var back = arr.shift();
+                    // console.log( back )
+                    // console.log( arr )
+
+            // 7 concat(v1,v1..,.) 合并数组  不会     返回合并后的新数组
+                    // var arr1 = [1,2] ,,,
+                    //     arr2 = ["a","b"],;,
+                    // var back = arr1.concat(arr2 , 8 , true);
+                    // console.log( back )
+                    // console.log( arr1 )
+
+
+            // 8 slice(sI,eI)  截取 从sI开始截取，到eI - 1结束   不会     返回截取项组成的新数组
+
+            // 9 includes(v)    检测是否包含指定的值    不会    返回布尔值   
+
+
+            // 10 reverse()    翻转数组     会     返回翻转后的数组
+                    // var arr = [1,"a",2,"b"];
+                    // var back = arr.reverse();
+                    // console.log( back )
+                    // console.log( arr )
+                    // console.log( back === arr )   // true
+
+
+            // 11 sort(function(a,b){ return a-b })  排序     会    返回排序后的数组
+            //            a - b 升序处理     b - a 降序处理
+                    // var arr = [15,26,1,23,45,26];
+                    // var back = arr.sort(function(a,b){ return b - a })
+                    // console.log( back )
+                    // console.log( arr )
+
+
+            // 12 join()  转字符串   按照指定的字符拼接字符串    不会     返回字符串
+                    // var arr = [15,26,1,23,45,26];
+                    // var back = arr.join("/");
+                    // console.log( back )
+                    // console.log( arr )
+
+            // 13 at(index)  返回指定位置的数组项，负数表示倒数，出界返回undefined    不会  
+
+            
+</script> 
+</body>
+</html>

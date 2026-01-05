@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 需求  弹出一个输入框要求用户输入数字
+        // 之前； 需要通过if条件 去判断取消，然后再刷新才会弹出输入框再次输入
+
+        // 现在要求 只要不是数字  就会一直弹出输入框 要求用户输入【注意: 这里不是刷新】
+        //          直到输入数字后   停止弹出
+
+        // 思考: 这里是未知循环
+        // var bol = true ; 
+        // while( bol ){
+        //     var num = prompt("请输入数字")
+        //     // 注意: 直接检测是不是数字 会造成一些不正确性
+        //     // 因为 isNaN 具有隐式转换 即 先走Numbr再去判断是不是数字
+        //     // 即 若用户取消null Number(null) -> 0
+        //     //          未输入'' Number('') -> 0
+        //     // 所以 这里需要排除 取消 和 未输入
+        //     if(  num !== null && num !== "" && !isNaN(num) ) {
+        //         alert("您终于输入了数字 结束" + num)
+        //         bol = false;
+        //     }
+        // }
+
+
+        // 需求  猜数字游戏【一人最多有五次机会】
+        // 声明一个变量存储一个目标值   45
+        // 弹出一个输入框 要求用户输入数字 
+        // 若用户输入的值 与 目标值一致  提示用户:"恭喜您用了n次猜对了数字"，继而输入框不再弹出
+        // 若用户输入的值 大于目标值 提示大了
+        // 若用户输入的值 小于目标值 提示小了
+        // 若五次都没猜对 提示用户您的机会已用完
+    </script>
+</body>
+</html>

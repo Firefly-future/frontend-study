@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // console.log() 在控制台打印
+        // console.dir(类/对象) 可查看该类上的所有属性和方法 【包含静态属性方法 和 实例属性方法】
+
+        // var arr = new Array(1,5,9,4,3,6);
+        // arr 就是[1,5,9,4,3,6]这个数组实例   arr就是实例  ,prototype属性是原型对象，实例属性方法
+        // arr 是通过Array这个构造函数new出来的 Array就是对象 , 供该对象本身访问的属性和方法 就是静态属性方法
+        // console.dir( Array )
+
+        // Array.isArray()  检测某个内容 是不是 数组对象  返回布尔值
+            // console.log( Array.isArray( arr ) )
+
+            // var date = new Date()
+            // console.log( Array.isArray( date ) )
+
+
+        // Array.from(伪数组) 将伪数组对象转成真数组   es6新增
+        // Array.prototype.slice.call(伪数组)         es5
+
+        // function getNum(){
+        //     console.log(arguments)
+        //     // console.log(arguments.pop())
+        //     console.log( Array.from( arguments ).pop() )
+        // }
+        // getNum(1,2,3,6,5,4,1,2)
+
+    </script>
+</body>
+</html>

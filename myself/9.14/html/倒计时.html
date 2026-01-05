@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- （二）第二题：倒计时效果
+1．点击开始按钮获取三个输入框的值，正确计算要倒计时的总时长（10分）
+2．正确实现倒计时功能（10分）
+3．实现暂停倒计时和继续倒计时功能（10分）
+4．倒计时为0时自动停止（10分）
+5．实现重置倒计时功能（5分）
+6．点击开始按钮清除上一次倒计时，重新开始倒计时（5分） -->
+    <input type="text" name="" id="hour" placeholder="输入小时" value="">
+    <input type="text" name="" id="minute" placeholder="输入分钟" value="">
+    <input type="text" name="" id="second" placeholder="输入秒钟" value="">
+    <button id="btn1">开始倒计时</button>
+    <button id="btn2">暂停</button>
+    <button id="btn3">继续</button>
+    <input type="reset" value="重置" id="reset">
+    <div>倒计时:00:00:00</div>
+    
+    <script>
+        // var data=[
+        //     {hour},
+        //     {minute},
+        //     {second}
+        // ]
+        // data.map(function(value){
+        //     return `<div>+'倒计时'+${hour}:${minute}:${second}</div>`
+        // }).join('')
+        function $(el){
+            return document.getElementById(el)
+        }
+        var hour=$('hour')
+        var minute=$('minute')
+        var second=$('second')
+        $('btn1').onclick=function(){
+            var time1=setInterval(function(){
+                hour.innerHTML=document.writeln
+                minute.innerHTML=document.writeln
+                second.innerHTML=document.writeln
+                document.write('<div>'+hour+':'+minute+':'+second+'</div>')
+            },1000)
+        }
+        $('btn2').onclick=function(){
+        var time2=clearInterval("time1")
+        }
+        $('btn3').onclick=function(){
+            var time3=setInterval(function(){
+                document.write()
+            },1000)
+        }
+        $('reset').disabled=false
+
+        function zero(n){
+            return n>10?n:'0'+n
+        }
+    </script>
+</body>
+</html>
