@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // (6)声明一个变量str = “border left width”;
+        // 灵活运用字符串split（）方法以及for循环得到小驼峰命名 “borderLeftWidth”
+        function changeFn( str , mark1 , mark2 ){
+            // 按照指定的mark1（如 空格 下划线等） 拆分数组  确保拿到每个单词
+            str = str.split(mark1);
+            console.log( str )
+            // 根据结果显示 观察得出 第一个单词不变 所以先存储第一个单词
+            var resStr = str[0];
+            // 循环遍历拿到下标1 及之后的每个单词
+            for( var i = 1 ; i < str.length; i++ ){
+                // console.log( str[i] )   // 每个单词
+                // 给每个单词的第一个字符转大写 且拼接 截取下标1及之后的字符
+                resStr += mark2 + str[i][0].toUpperCase() + str[i].slice(1) 
+            }
+            return resStr
+        }
+        console.log( changeFn( "border left width" , " " , "" ) )  //borderLeftWidth
+        console.log( changeFn( "get-elements-by-tag-name" , "-" , "" ) )   // getElementsByTagName
+        console.log( changeFn( "I'm a little tea pot" , " " , " " ) )  // I'm A Little Tea Pot
+        console.log( changeFn( "get_element_by_id" , "_" , "/" ) )  // get/Element/By/Id
+    </script>
+</body>
+</html>

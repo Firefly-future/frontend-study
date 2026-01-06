@@ -1,0 +1,3 @@
+<!--pages/cinema/cinema.wxml-->
+<text>pages/cinema/cinema.wxml</text>
+<navigator open-type="switchTab" url="/pages/mine/mine">我的页面</navigator>

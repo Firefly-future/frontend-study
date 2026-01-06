@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span class="el">嘿嘿</span>
+    <script>
+        
+        // this指向  即 执行上下文环境的对象【出现在函数中才有意义】
+        // 在JavaScript中，this 关键字是一个非常重要的概念，其指向取决于函数的调用方式。
+            // 1. 全局作用域：this => window 对象
+            // 2. 函数上下文：this的值取决于函数的调用方式
+            //      -> 直接调用：函数直接调用时 this 指向 window 对象。
+            //      -> 方法调用：当函数作为对象的方法被调用时，this指向该对象。
+            //      -> 事件处理函数中：在DOM事件处理函数中，this指向绑定事件的元素。
+            //      -> 构造函数：在使用new关键字调用构造函数时，this 指向实例化对象。
+
+            // 全局环境 -> window
+                // console.log( this )   // window
+
+                // var a = "hello"; // 全局环境  变量挂靠window 成了window的属性 window.a = "hello"
+                // console.log( window.a )
+
+                // function b(){   // 全局边境    函数挂靠window  成了window的方法  window.b = function(){}
+                //     console.log( "china" )
+                //     console.log( this )    // window
+                // }
+                // window.b()
+
+            // 在对象中 作为方法调用  ->  谁调用指向谁
+                // var user = "张三";  // 全局
+                // var age = 40;
+                // var obj = {
+                //     user :  "李华",
+                //     age : 18 ,
+                //     say : function(){
+                //         console.log(this) 
+                //         console.log(this.user + "今年" + this.age + "岁") 
+                //     }
+                // }
+                // obj.say() // obj -> 李华 18
+                // var fn = obj.say;
+                // window.fn() // window -> 张三 40
+
+
+            // 在事件处理程序中 -> 绑定事件的元素 即 事件源
+                const el = document.querySelector(".el");
+                // 巩固 事件三要素:
+            // 事件源               事件类型    事件处理函数
+                el.addEventListener("click" , function(){
+                    console.log(this)
+                })
+
+            // 在构造函数中 -> 实例化对象
+    </script>
+</body>
+</html>

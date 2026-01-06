@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 递归：函数调用自己本身，必须要有停止条件
+
+    // const arr = [
+    //   [1, [2, [3, [4, [5, [6]], 7], 8], 9], 10],
+    //   11
+    // ]
+    // 遍历多维数组
+    // function fn(array) {
+    //   array.forEach(val => {
+    //     if (Array.isArray(val)) {
+    //       fn(val)
+    //     } else {
+    //       console.log(val)
+    //     }
+    //   })
+    // }
+    // fn(arr)
+
+    // arr.forEach(item => {
+    //   console.log(item)
+    // })
+
+    // const xm = {
+    //   name: '小明',
+    //   child: {
+    //     name: '小明2',
+    //     child: {
+    //       name: '小明3',
+    //       child: {
+    //         name: '小明4',
+    //         child: {
+    //           name: '小明5'
+    //         }
+    //       }
+    //     },
+    //   }
+    // }
+    // 深度遍历对象
+    // function fn2(obj) {
+    //   Object.keys(xm).forEach(key => {
+    //     if (obj[key] && typeof obj[key] === 'object') {
+    //       fn2(obj[key])
+    //     } else {
+    //       console.log(key, obj[key])
+    //     }
+    //   })
+    // }
+    // fn2(xm)
+    // console.log(Object.keys(xm))
+
+
+
+    const array = [
+      [1, [2, [3, [4, [5, [6]], 7], 8], 9], 10],
+      11
+    ]
+    // 数组扁平化：[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+    function flat(arr) {
+      let res = []
+      arr.forEach(item => {
+        if (Array.isArray(item)) {
+          // 如果这一项是数组，就展开再添加到res中
+          const childArr = flat(item)
+          res.push(...childArr)
+        } else {
+          res.push(item)
+        }
+      })
+      return res
+    }
+    console.log(flat(array))
+    // console.log(arr.flat(Infinity))
+
+
+
+
+
+
+
+
+
+
+
+  </script>
+</body>
+</html>

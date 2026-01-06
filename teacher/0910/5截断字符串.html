@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 9、封装函数实现截断字符串，要求传入两个参数，
+        // 第一个参数str是截断的字符串，第二个是指定的长度num，
+        // 如果字符串的长度比指定的参数num小，原路返回
+        // 如果字符串的长度比指定的参数num长，则把多余的部分用...来表示。
+        // 切记，插入到字符串尾部的三个点号也会计入字符串的长度; 
+        // 但是，如果指定的参数num小于或等于3，则添加的三个点号不会计入字符串的长度。
+        // 例如：truncate(“hello 1801A”,20) // “hello 1801A”
+        //       truncate(“hello 1801A”,8) // “hello...”
+        //       truncate("hello 1801A",3) // "hel..."
+        // 思路：利用substr来实现，注意，当字符串长度大于指定num是，需要注意截取的长度
+
+        function truncate( str , num ){
+            // 如果字符串的长度比指定的参数num小，原路返回
+            if( str.length < num ) return str;
+            // 如果指定的参数num小于或等于3，则添加的三个点号不会计入字符串的长度。
+            if( num <= 3 ) return str.substr(0,num) + "..."
+            // 按照指定的num进行阶段
+            return str.substr(0 , num - 3) + "..."
+        }
+
+        console.log( truncate( "hello 1801A" , 20 ) )   // hello 1801A
+        console.log( truncate( "hello 1801A" , 8 ) )    // hello...
+        console.log( truncate( "hello 1801A" , 3 ) )     // hel...
+        console.log( truncate( "at" , 1 ) )              // a...
+        console.log( truncate( "charCode" , -5 ) )       // ...
+
+    </script>
+</body>
+</html>

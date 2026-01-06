@@ -1,0 +1,124 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    background-color: antiquewhite;
+}
+
+body {
+    padding-top: 50px;
+}
+
+img {
+    display: block;
+}
+
+
+
+.box {
+    width: 410px;
+    height: 215px;
+    margin: 0 auto;
+    border: 1px solid grey;
+    position: relative;
+    border-radius: 10px;
+}
+
+.showPic {
+    width: 390px;
+    height: 175px;
+    margin: 10px;
+    border: 1px solid gainsboro;
+    position: absolute;
+    border-radius: 8px;
+}
+
+.pic {
+    width: 390px;
+    height: 175px;
+    position: absolute;
+    background-size: 390px 175px;
+}
+
+.moveBox,
+.targetBox {
+    width: 50px;
+    height: 50px;
+    box-shadow: 0 0 8px 2px wheat;
+    border: 1px solid gray;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    border-radius: 8px;
+}
+
+.showPic .moveBox {
+    z-index: 15;
+}
+
+.targetBox {
+    left: 80px;
+    top: 10px;
+    background: rgba(255, 255, 255, .3);
+}
+
+.bar {
+    width: 390px;
+    height: 50px;
+    border: 1px solid goldenrod;
+    margin: 10px auto 0;
+    border-radius: 25px;
+    text-align: center;
+    line-height: 50px;
+    position: relative;
+}
+
+.moveBtn {
+    width: 50px;
+    height: 50px;
+    border: 1px solid mediumseagreen;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 50%;
+    user-select: none;
+    color: green;
+    background-color: aliceblue;
+}
+
+.box span {
+    position: absolute;
+    bottom: 5px;
+    left: 10px;
+}
+
+.tip {
+    width: 100%;
+    height: 20px;
+    font-size: 15px;
+    line-height: 15px;
+    bottom: 5px;
+    text-align: center;
+    overflow: hidden;
+    opacity: 0;
+    position: absolute;
+}
+
+.show {
+    opacity: 1;
+    transition: 2.5s linear;
+}
+
+.success {
+    color: green
+}
+
+.fail {
+    color: red
+}

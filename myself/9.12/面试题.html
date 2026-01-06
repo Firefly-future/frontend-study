@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+          // 面试题
+            // [1,2,3] => [ { 0 : 1} , {1 : 2} ]
+            var arr=[1,2,3]
+            function szToDx(arr){
+                var res=[];
+                for(var i=0;i<arr.length;i++){
+                    res.push('{'+i+':'+arr[i]+'}')
+                }return '['+res+']'
+            }
+            console.log(szToDx(arr))
+        // 面试题:
+            // 1000000 ->  1,000,000
+            var num1=100000
+            var num2=100000000000
+            var num3=1231354616159
+            var num4=-123545879
+            function san(num){
+                
+                num=num.toString()
+                
+                n=parseInt(num.length/3);
+                if(parseInt(num.length/3)===num.length/3)
+                n=n-1;
+                var Num='';
+                for(var i=n-1;i>=1;i--){
+                    Num+=','+num.slice(-3*(i+1),-3*i);
+                }return num.substr(0,num.length-3*n)+Num+','+num.slice(-3)
+            }
+            console.log(san(num1))
+            console.log(san(num2))
+            console.log(san(num3))
+            console.log(san(num4))
+            
+        //  面试题: 
+            var data = [ 
+                { key : "牛奶" , val : [10,54,92] },
+                { key : "烟草" , val : [1000,55,91] },
+                { key : "出行" , val : [12,53,90] }
+            ]
+            function add(arr){
+                for(var i=0;i<arr.length;i++)
+                console.log(arr[i])
+            }
+            
+            // 求 每个信息的val的和   找出最大值
+    </script>
+</body>
+</html>

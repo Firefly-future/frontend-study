@@ -1,0 +1,151 @@
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+    background: rgb(167,171,140);
+}
+
+body{
+    padding-top: 50px;
+}
+
+.box{
+    width: 600px;
+    margin: 0 auto;
+    padding: 10px;
+    background: #FFF;
+    border-radius: 8px;
+    /* resize 属性  设置元素的自由缩放 即 用户可以控制元素的尺寸大小
+            none 禁止缩放
+            both 可双向缩放
+            horizontal 水平缩放
+            vertical 垂直缩放
+        注意: 该属性与overflow 属性配合才会生效
+    */
+    
+}
+
+.tit{
+    line-height: 40px;
+    font-size: 18px;
+}
+
+.header{
+    height: 60px;
+    padding: 10px  0;
+}
+.header input , .header img{
+    float: left;
+    margin: 0 5px;
+    height: 40px;
+}
+.header input{
+    border:1px solid #CCC;
+    outline: 0;
+    padding-left: 10px;
+    font-size: 16px;
+    width: 270px;
+    border-radius: 8px;
+}
+
+.header img{
+    opacity: .5;
+    border-radius: 50%;
+}
+.opacity{
+    opacity: 1!important;
+}
+
+.sayCon{
+    width: 100%;
+    height: 70px;
+    margin: 10px 0 ;
+    border:1px soid #CCC;
+    border-radius: 10px;
+    padding: 10px;
+    resize: none;
+    outline: none;
+}
+
+
+.totalPrintCount{
+    text-align: right;
+    line-height: 35px;
+    font-size: 14px;
+    color: #666;
+}
+
+.count , .people{
+    font-size: 20px;
+    color: red;
+    font-weight: 600;
+}
+
+.publish{
+    padding: 8px 15px;
+    margin-left: 15px;
+    background: #8BC71A;
+    color: #FFF;
+    border: 0;
+}
+
+
+.sayTit{
+    height: 40px;
+    background: skyblue;
+    margin-top: 15px;
+    padding-top: 10px;
+}
+.sayTit > span{
+    float: left;
+    margin-left: 10px;
+    padding: 0 10px;
+    background: #FFF;
+    line-height: 30px;
+    font-size: 14pxs;
+}
+.sayTit p {
+    float: right;
+}
+
+.sayItem{
+    height: 90px;
+    padding: 10px;
+    border-bottom: 1px  dashed  #CCC;
+}
+
+.sayItem:hover{
+    background: #EEE;
+}
+
+.sayItem > img{
+    float: left;
+    width: 70px;
+    margin-right: 15px;
+}
+.sayInfo{
+    width: 455px;
+    float: left;
+}
+.sayInfo h4{
+    font-size: 18px;
+    line-height: 40px;
+}
+.sayInfo h4 a{
+    margin-right: 10px;
+}
+.sayInfo p{
+    font-size: 16px;
+    color: #666;
+}
+.sayInfo p span{
+    float: right;
+    color: red;
+}

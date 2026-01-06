@@ -1,0 +1,139 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  min-width: 1000px;
+  background: #eee;
+}
+header {
+  background: #343a40;
+  color: white;
+  padding: 16px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  font-size: 26px;
+}
+.info button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  background: #dc3545;
+  color: #fff;
+  margin-left: 16px;
+}
+.info {
+  display: flex;
+  align-items: center;
+}
+nav {
+  background: #4e555c;
+  padding: 10px 30px;
+  display: flex;
+  font-size: 14px;
+}
+nav span {
+  padding: 10px 16px;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+nav .active, nav span:hover {
+  background: #03a9f4;
+}
+main {
+  width: 1000px;
+  margin: 0 auto;
+  padding: 30px;
+  font-size: 14px;
+}
+.tab-content {
+  display: none;
+}
+.show {
+  display: block !important;
+}
+.publish h4 {
+  font-size: 16px;
+  font-weight: normal;
+  padding: 10px 0;
+}
+
+.publish input, .publish textarea {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  outline: none;
+  background: #f9f9f9;
+}
+.publish textarea {
+  resize: none;
+  height: 300px;
+}
+.publish button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  background: #007bff;
+  color: #fff;
+  margin-top: 16px;
+}
+.empty {
+  display: none;
+  text-align: center;
+  height: 300px;
+  color: #666;
+  line-height: 300px;
+}
+
+.acticle-card {
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background: #fff;
+}
+.acticle-info {
+  display: flex;
+}
+.acticle-info span {
+  margin-right: 20px;
+  color: #666;
+  padding: 10px 0;
+}
+.acticle-card p {
+  word-wrap: break-word;
+}
+.acticle-action {
+  display: flex;
+}
+.acticle-action button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  background: #007bff;
+  color: #fff;
+  margin-top: 16px;
+  margin-right: 10px;
+}

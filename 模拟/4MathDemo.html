@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">戳我变身</button>
+    <div id="box">值</div>
+    <script>
+        // 需求
+        // 点击按钮 对id为box的元素做如下操作:
+        // 1 要求box的宽度 和 高度随机  w:300 - 1000    h:200-550
+        // 2          里面的字体大小随机   30 - 60
+        // 3 字体颜色随机
+        // 5 背景颜色随机   red  yellow  rgb(0-255)   #CCC  #666   #65ff4a
+        // 3 生成的内容 随机
+
+        // 准备:
+        var conStr = "无畏是青春的态度热AI是时代的脉搏乘风破浪勇往直前未来百度将与你一起创造无限可能" ; //内容字符串
+        var colorStr1 = "0123456789" ; // #666 #631 #492  八进制
+        var colorStr2 = "ABCDEFabcdef" ; // #abDeFa   #aef
+        var colorStr3 = "abcdefABCDEF023654789";  // #FF8400
+
+        // 1 获取元素
+        var btn = document.getElementById("btn") ,
+            box = document.getElementById("box") ;
+
+        // 2 给按钮绑定点击事件
+        btn.onclick = function(){
+            // 设置宽度300-1000
+            box.style.width = randomNum( 300 , 1000 ) + "px"
+            // 设置高度200-550
+            box.style.height = randomNum( 200 , 550 ) + "px"
+            // 设置字体大小 30 - 60
+            box.style.fontSize = randomNum( 30 , 100 ) + "px"
+            // 设置随机内容  即 再conStr中随机生成一个下标 根据下标找到对应的字符 作为该元素的内容
+            box.innerHTML = conStr[ randomNum( 0 , conStr.length - 1 ) ]
+            // 设置背景颜色  16进制
+            box.style.backgroundColor = colorFn( colorStr3 , 6 );
+            // 设置字体颜色   8进制
+            box.style.color = colorFn( colorStr3 , 6 )
+        }
+
+        // 封装随机数函数
+        function randomNum( min , max ){
+            return Math.floor( Math.random() * (max - min + 1) + min )
+        }
+
+        // 封装颜色函数
+        function colorFn( str , n ){
+            var color = "#";
+            // 按照指定的进制n循环位位数
+            for( var i = 0; i < n ; i++ ){
+                // 循环一次 生成一个随机下标
+                var index = randomNum( 0 , str.length - 1 );
+                // 根据下标找到对应的字符
+                color += str[index]
+            }
+            return color
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,217 @@
+@charset "UTF-8";
+:root {
+  --music-theme: #d43c33;
+  --default-font-color: #333333;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style-type: none;
+}
+
+img {
+  vertical-align: middle;
+}
+
+body {
+  font-size: 14px;
+  color: var(--default-font-color);
+}
+
+/* 0.5px边框通用工具类 */
+.border-0_5px,
+.border-t-0_5px,
+.border-r-0_5px,
+.border-b-0_5px,
+.border-l-0_5px {
+  position: relative;
+  /* 防止内容被边框遮挡 */
+  box-sizing: border-box;
+  --border-color: #e5e5e5;
+}
+
+/* 清除默认边框影响 */
+.border-0_5px {
+  border: none !important;
+}
+
+/* 全边框实现 */
+.border-0_5px::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  border: 1px solid var(--border-color);
+  border-radius: inherit;
+  /* 继承父元素圆角 */
+  transform: scale(0.5);
+  transform-origin: 0 0;
+  pointer-events: none;
+  box-sizing: border-box;
+}
+
+/* 上边框 */
+.border-t-0_5px::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--border-color);
+  transform: scaleY(0.5);
+  transform-origin: top center;
+  pointer-events: none;
+}
+
+/* 右边框 */
+.border-r-0_5px::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1px;
+  height: 100%;
+  background-color: var(--border-color);
+  transform: scaleX(0.5);
+  transform-origin: right center;
+  pointer-events: none;
+}
+
+/* 下边框 */
+.border-b-0_5px::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--border-color);
+  transform: scaleY(0.5);
+  transform-origin: bottom center;
+  pointer-events: none;
+}
+
+/* 左边框 */
+.border-l-0_5px::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 100%;
+  background-color: var(--border-color);
+  transform: scaleX(0.5);
+  transform-origin: left center;
+  pointer-events: none;
+}
+
+.bg {
+  z-index: -1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(#5c634f, #1a1c17);
+}
+
+.page {
+  position: relative;
+  z-index: 1;
+}
+
+.song-wrap {
+  padding: 21.33333vw 0 10.66667vw;
+}
+
+.song-wrap .song-disc-wrap {
+  width: 64vw;
+  height: 64vw;
+  margin: 0 auto;
+  position: relative;
+}
+
+.song-wrap .song-disc-wrap::after {
+  content: '';
+  background: url(https://p5.music.126.net/obj/wonDlsKUwrLClGjCm8Kx/28513977227/139b/06a3/e1e3/929b3b4b49bf5c6ef05c795e9e1f2516.png) no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: -13.33333vw;
+  right: 18.66667vw;
+  width: 29.06667vw;
+  height: 26.13333vw;
+}
+
+.song-wrap .song-disc {
+  width: 100%;
+  height: 100%;
+  background: url(https://p6.music.126.net/obj/wonDlsKUwrLClGjCm8Kx/28513831157/e8e9/beeb/912c/468bcb523668065ccf6f853c4a084e31.png) no-repeat;
+  background-size: contain;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.song-wrap .song-disc img {
+  width: 40.26667vw;
+  height: 40.26667vw;
+  border-radius: 50%;
+}
+
+.song-wrap .song-disc::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(https://s3.music.126.net/mobile-new/img/disc_light.png?2bb24f3fd11569809b817b4988f12bc7=) no-repeat;
+  background-size: contain;
+}
+
+.song-wrap .play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40.26667vw;
+  height: 40.26667vw;
+  background: rgba(0, 0, 0, 0.2);
+  text-align: center;
+  line-height: 40.26667vw;
+}
+
+.song-wrap .play-icon img {
+  width: 9.6vw;
+  height: 9.6vw;
+}
+
+.song-info {
+  color: #ffffff;
+}
+
+.song-info-box {
+  display: flex;
+  padding: 0 20px;
+  align-items: center;
+}
+
+.song-info-box .song-title-box {
+  flex: 1;
+}
+
+.song-info-box .song-title-box .song-name {
+  font-size: 20px;
+}
+
+.song-info-box .song-title-box .song-singer {
+  color: #ddd;
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 页面弹出框
+            // 1 prompt()  弹出输入框
+                // 取消->返回 null
+                // 确定->返回 字符串类型
+                //     -> 未输入 返回 ''
+                //     -> 输入   返回 输入的内容
+
+                // 需求 弹出一个输入框  要求用户输入年龄
+                    // var age = prompt("请输入年龄");
+                    // console.log( age , typeof age )
+
+            // 2 comfirm()  弹出确认框   返回布尔值
+                //  确定 -> true
+                //  取消 -> false
+
+                // 需求: 弹出一个确认框, 提示 确定删除该联系人吗?
+                //       根据三元判断 确定删除 弹出拜拜了您内    取消 三思而后行
+                var bol = confirm("确定删除该联系人吗?")
+                // console.log( bol )
+                bol ? alert("拜拜了您内") : alert("三思而后行")
+    </script>
+</body>
+</html>

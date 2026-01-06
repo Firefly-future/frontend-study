@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{ height: 1500px; }
+    </style>
+</head>
+<body>
+
+    <script>
+        // UI / window 事件
+            // load 页面加载完毕触发    
+                // 页面加载完毕 给页面添加一个大标题 且赋值 页面加载完毕
+                window.onload = function(){
+                    var h1 = document.createElement("h1")
+                    h1.innerText = "页面加载完毕😊 请下一步~"
+                    document.body.appendChild( h1 )
+                }
+
+            // scroll  页面滚动时触发   
+                // 页面滚动时  给h1元素设置随机背景色
+                window.onscroll = function(){
+                    var h1 = document.querySelector("h1")
+                    h1.style.background = "#" + Math.random().toString(16).slice(2,8);
+                }
+
+            // resize  窗口大小发生改变时触发
+                // 窗口大小改变时  给h1元素的内容设置随机色
+                window.onresize = function(){
+                    var h1 = document.querySelector("h1")
+                    h1.style.color = "#" + Math.random().toString(16).slice(2,8);
+                    h1.style.fontSize = Math.floor( Math.random() * (50 - 16 + 1) + 16) + "px"
+                }
+    </script>
+</body>
+</html>

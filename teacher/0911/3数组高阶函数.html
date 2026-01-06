@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // arr.方法(function( item ,index , arr ){
+        //     item 数组的每一项
+        //     index 下标
+        //     arr   原数组
+        // })
+
+
+        // map() 对数组的每一项 进行指定操作  返回操作后的新数组
+
+        // forEach() 代替for循环
+        // var arr = ["a9","a5","a1","a3","a5","a7"];
+            // for( var i = 0; i < arr.length ; i++ ){
+            //     console.log( i )
+            //     console.log( arr[i] )
+            // }
+
+            // arr.forEach( function( item , index , arr ) {
+            //     console.log( item , index )
+            //     console.log( arr )
+            // })
+
+
+        // filter()  过滤/筛选匹配  返回匹配条件的项组成的新数组
+            // var arr = ["a9","a5","a1","a3","a5","a7"];
+            // // 筛选 数组项中每个字符数字大于 5的项
+            // var back = arr.filter( function(item){
+            //     return item[1] > 5
+            // } )
+            // console.log( back )
+            // console.log( arr )
+
+
+        // some()  一些 判断数组的项是否满足条件 一真为真 全假为假   返回布尔值
+        //     var arr = ["a9","a5","a1","a3","a5","a7"];
+        //     // 判断数组项中每个字符数字大于 8的项
+        //     var back = arr.some( function(item){
+        //         return item[1] > 8
+        //     } )
+        //     console.log( back )
+        
+
+        // every()  每一个 判断数组的项是否全部满足条件 全真为真 一假为假   返回布尔值
+            // var arr = ["a9","a5","a1","a3","a5","a7"];
+            // // 判断数组项中每个字符数字大于等于 1的项
+            // var back = arr.every( function(item){
+            //     return item[1] >= 1
+            // } )
+            // console.log( back )
+    </script>
+</body>
+</html>

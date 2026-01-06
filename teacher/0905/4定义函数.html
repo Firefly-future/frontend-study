@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box"></div>
+    <script>
+        // 函数创建
+            // 1 函数表达式  var 函数名 = function() { 执行代码 }
+                // 只能在函数表达式定义之后调用，否则报错，必须先定义后使用【这里是变量】
+                // fn1()   // 报错 TypeError: fn1 is not a function 类型错: fn1不是一个函数
+                var fn1 = function(){
+                    console.log(123)
+                }
+                fn1()  // 调用
+
+            // 2 函数声明式 function 函数名(){ 执行代码 }
+                // 函数声明会被提升，在函数声明的前后调用都可以
+                fn2()
+                function fn2(){
+                    console.log("hello china")
+                }
+                // fn2()
+                // fn2()
+                // fn2()
+                // fn2()
+        
+
+        // 函数的调用
+            // 函数名()  调用一次执行一次
+
+        // 函数的类型
+            // function
+            // 注意: 再万物皆对象中,只有函数返回function 其他均返回object
+            // console.log( typeof fn1 )
+            // console.log( typeof fn2 )
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="请输入打字时间间隔" id="time" value="1000">
+    <input type="text" placeholder="请输入打字内容" id="str">
+    <button id="start">开始打字</button>
+    <button id="pause">暂停</button>
+    <div id="text"></div>
+    <script>
+        // 获取元素
+        function $(el,parent=document){
+            return parent.getElementById(el)
+        }
+        //绑定点击事件
+        var time1=null;//预留定时器
+        var index=0;//打印的开始下标
+        $('start').onclick=function(){
+            // 获取输入的内容
+            var str=$('str').value.trim();
+            if(!str)return alert('输入的内容不能为空')
+            var time=$('time').value;
+        // 若下标等于字符串 长度减一，index归零 文本字符串转空字符串
+            if(index===str.length-1){
+            index=0;
+            $('text').innerHTML=''
+        }
+        // this在事件程序中指向绑定事件的元素
+        this.disabled=true;
+        $('text').innerHTML+=index>0? '':str[index];
+            time1=setInterval(function(){  
+                index++
+                // 判断已经是最后一个字符，将停止打印，同时开始可用
+                if(index>=str.length-1){
+                    clearInterval(time1)
+                    $('start').disabled=false
+                }
+                $('text').innerHTML+=str[index];
+            },time)
+        }
+        $('pause').onclick=function(){
+            clearInterval(time1)
+            $('start').disabled=false
+        }
+    </script>
+</body>
+</html>

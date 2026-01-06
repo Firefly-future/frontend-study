@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/productPage.css">
+</head>
+<body>
+    <div class="box">
+        <!-- 顶部搜索区域 -->
+        <div class="header">
+            <select name="" id="pageSize">
+                <option value="4">每页4条</option>
+                <option value="8">每页8条</option>
+                <option value="15">每页15条</option>
+                <option value="24">每页24条</option>
+            </select>
+            <input type="text" placeholder="请输入商品名称" class="inp">
+            <button class="searchBtn">搜索</button>
+            <button class="priceBtn">按照价格排序</button>
+            <button class="nameBtn">按照商品名称排序</button>
+        </div>
+
+        <!-- 商品信息 -->
+        <div class="con">
+            <!-- <dl>
+                <dt><img src="./img/1.webp" alt=""></dt>
+                <dd class="name">成功的很聪明v的应该更合适县委书记和</dd>
+                <dd class="price"><span class="yen">&yen;</span><span class="money">89.00</span></dd>
+                <dd class="des"><span>大额补贴</span><span>国家补贴</span></dd>
+            </dl> -->
+        </div>
+
+        <!-- 底部页码值 -->
+        <div class="footer">
+            <button class="first">首页</button>
+            <button class="prev">上一页</button>
+            <div class="page">
+                <!-- <span>3</span> -->
+            </div>
+            <button class="next">下一页</button>
+            <button class="last">尾页</button>
+        </div>
+    </div>
+
+    <script src="./js/productData.js"></script>
+    <script src="./js/productPage.js"></script>
+</body>
+</html>

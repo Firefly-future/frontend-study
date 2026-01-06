@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/图片移动.css">
+</head>
+
+<body>
+    <div class="box">
+        <h3>小猴子</h3>
+        <div><img src="./img/孙大圣.png" alt=""></div>
+    </div>
+    <script>
+        function $(el, parent = document) {
+            return parent.querySelector(el)
+        }
+        var box = $('.box')
+        // 拖拽三步走 按住 移动 抬起
+        var flag = false; //判断开关   true为按住 才能移动
+        var pose = null;//记录鼠标按下时的坐标位置信息
+        box.addEventListener('mousedown', function (e) {
+
+            flag = true;//打开开关，标记移动
+            pose = {
+                x: e.offsetX, y: e.offsetY+ $('h3').offsetHeight
+            }
+        })
+        box.addEventListener('mousemove', function (e) {
+            if (flag) {
+                var l = e.pageX - pose.x
+                var t = e.pageY - pose.y
+                var maxl = document.documentElement.clientWidth - box.offsetWidth
+                var maxt = document.documentElement.clientHeight - box.offsetHeight
+                // console.log(maxl)
+                // console.log(maxt)
+                if (l <= 0) l = 0
+                if (t <= 0) t = 0
+                if (l >= maxl) l = maxl
+                if (t >= maxt) t = maxt
+                box.style.marginLeft = l + 'px';
+                box.style.marginTop = t + 'px'
+            }
+        })
+        box.addEventListener('mouseup', function (e) {
+
+            flag = false;
+
+        })
+    </script>
+</body>
+
+</html>

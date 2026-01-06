@@ -1,0 +1,87 @@
+ <!-- （二）第二题：倒计时效果
+1．点击开始按钮获取三个输入框的值，正确计算要倒计时的总时长（10分）
+2．正确实现倒计时功能（10分）
+3．实现暂停倒计时和继续倒计时功能（10分）
+4．倒计时为0时自动停止（10分）
+5．实现重置倒计时功能（5分）
+6．点击开始按钮清除上一次倒计时，重新开始倒计时（5分） -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="请输入倒计时小时" id="time1">
+    <input type="text" placeholder="请输入倒计时分钟" id="time2">
+    <input type="text" placeholder="请输入倒计时秒数" id="time3">
+    <button id="start">开始倒计时</button>
+    <button id="pause">暂停倒计时</button>
+    <button id="reset">重置倒计时</button>
+    <div id="text">倒计时:00:00:00</div>
+    <script>
+        //获取元素
+        function $(el){
+            return document.getElementById(el)
+        }
+        // 补零操作
+        function addZero(n){
+            return n<10?'0'+n:n
+        }
+        // 给开始按钮绑定点击事件
+        $('start').onclick=function(){
+            
+            var time1=$('time1').value.trim()
+            var time2=$('time2').value.trim()
+            var time3=$('time3').value.trim()
+            if(!time1&&!time2&&!time3)return alert('请输入倒计时时间')
+            if(!isNaN(time1)){
+                time1=time1*3600
+            }else{alert('请输入纯数字')}
+            if(!isNaN(time2)){
+                time2=time2*60
+            }else{alert('请输入纯数字')}
+            if(!isNaN(time3)){
+                time3=time3*1
+            }else{alert('请输入纯数字')}
+            var time=time1+time2+time3
+            if(time<=0)return alert('请输入正确的倒计时时间')
+            // 点击开始按钮判断是否有倒计时在进行，如果有则清除上一次倒计时，重新开始倒计时
+        
+            if(timer){
+                clearInterval(timer)
+            }
+            // 倒计时
+            this.disabled=true
+            var timer=setInterval(function(){
+                time--
+                if(time<=0){
+                    clearInterval(timer)
+                    $('text').innerHTML='倒计时:00:00:00'
+                }
+                var h=addZero(parseInt(time/3600))
+                // h=addZero(h)
+                var m=addZero(parseInt(time%3600/60))
+                // m=addZero(m)
+                var s=addZero(parseInt(time%60))
+                // s=addZero(s)
+                $('text').innerHTML='倒计时:'+h+':'+m+':'+s
+            },1000)
+            // 暂停倒计时   
+            $('pause').onclick=function(){
+                clearInterval(timer)
+                $('start').disabled=false
+            }
+            // 重置倒计时
+            $('reset').onclick=function(){
+                clearInterval(timer)
+                $('time1').value='';
+                $('time2').value='';
+                $('time3').value='';
+                $('text').innerHTML='倒计时:00:00:00'
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function formatNum(num){
+            var num=(num||0).toString()
+            var res=''
+            var n=''
+            while(num.length>3){
+                res=','+num.slice(-3)+res
+                num=num.slice(0,num.length-3)
+            }
+            if(num)res=num+res
+            return res
+        }
+        var num1=-123
+        var num2=-12345667
+        var num3=-111111
+        console.log(formatNum(num1))
+        console.log(formatNum(num2))
+        console.log(formatNum(num3))
+    </script>
+</body>
+</html>

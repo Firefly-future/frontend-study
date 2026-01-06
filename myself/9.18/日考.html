@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <main></main>
+    <div class="box">
+        <p>欢迎<span>admin</span></p>
+        <div>注册/登录</div>
+    </div>
+    <ul></ul>
+    <script>
+        // function getInfo(member,year){
+        //     member.name='lily',
+        //     Year="1998"
+        // }
+        // var person={name:"sarah"}
+        // var birthyear="1997"
+        // getInfo(person,birthyear)
+        // console.log(person,birthyear)
+        // function compare(person1, person2 = person) {
+        //     if (person1 !== person2) {
+        //         console.log("not the same")
+        //     } else {6
+        //         console.log("they are the same")
+        //     }
+        // }
+        // var person = { name:"Lydia" }
+        // compare(person)
+        // var emojis = ['⭐','♦','♥'];
+        // console.log(emojis.map(function (x) { return x + '●' }))
+        // console.log(emojis.filter(function (x) { return x !== '♦' }))
+        // console.log(emojis.find(function (x) { return x !== '♦' }))
+        // console.log(emojis.reduce(function (acc, cur) { return acc + cur }))
+        // console.log(emojis.slice(1,2))
+        // console.log(emojis.splice(1,2,'⭐'))
+        // 三 程序题
+
+        var box = document.querySelector(".box");
+        // 针对以上结构做以下操作（不允许私自修改HTML结构，如加class、id等）：
+        // 操作：
+        // 1、查找box下的所有节点，并逐一进行判断，如果是文本节点则将其删除，即最后box中只保留是元素节点的子节点。
+        // 2、在”注册 / 登录“所在的div前插入一个新创建的节点nav, 内容为：< a href="http://www.mqq.com">回到首页</ a>
+        // 3、克隆box下的第一个元素节点(包含其子节点)，将它加入到box的上一个节点main中。
+        box.childNodes
+        console.log(box.childNodes)
+        box.childNodes.forEach(function (item) {
+            if ((item).nodeType === 3) {
+                box.removeChild(item)
+            } return box
+        })
+        var nav = document.createElement('nav')
+        nav.innerHTML = `<a href='http//www.mqq.com'>回到首页</a>`
+        console.log(nav)
+        box.insertBefore(nav, box.lastChild)
+        var p = box.firstElementChild.cloneNode(true)
+        console.log(p)
+        // var body = document.querySelector('body')
+        box.previousElementSibling.innerHTML = p
+        // <div class="box">
+        //     <p class="title">标题</p>
+        //     <ul class="list">
+        //         <li id="item" class="item on">娱乐-yl</li>
+        //         <li>体育-ty</li>
+        //         <li>金融-jr</li>
+        //     </ul>
+        //     <nav class="title goback">返回</nav>
+        // </div>
+        // 针对以上结构做如下操作：
+        // 1、console.log(document.getElementById("item").className)打印结果是什么？
+
+        // 2、给class为title的元素绑定点击事件，点击时做以下操作：如果该元素上有goback这样一个类，则将其隐藏。
+
+        // 3、为class为list下的所有li定义data - type属性, 值为 - 后面的字符，如：
+        // <li data-type=“ yl”>娱乐</li>
+    </script>
+</body>
+
+</html>

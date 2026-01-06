@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 作用域[以函数为界,分为全局作用域 和 函数作用域(局部作用域名)]
+            // 变量的生命周期和生效范围
+            // 全局 -> 页面关闭后被销毁 函数内部和外部都可以访问
+            // 局部 -> 函数被调用后     只作用域当前函数[注意: 需要var声明,否则直接挂靠window]
+
+
+        // 注意; 函数声明的优先级 高于 变量声明  同样也高于参数
+        // 1 声明提前 把用var声明的变量 和 function 声明的函数 进行提升在当前作用域的最顶部
+                // 变量 > 函数
+        // 2 赋值  函数声明式先执行  赋值留在原地等待执行
+                // 函数 > 变量
+        // 总结: 当函数执行时,首先会形成一个新的私有作用域   然后依次执行
+                // (1) 如果有参数 先给参数赋值
+                // (2) 进行私有作用域与解析时,函数声明优先级比变量声明高,同样比形参高;
+                //     最后前者被后者所覆盖,但是可以重新赋值
+                //     赋值之后引用变量时,变量中存的就是后赋的值,而不是函数
+                // (3) 私有作用域中的代码从上向下执行
+                 
+
+        // var a = 45 ; 
+        // function c ( v ){s
+        //     console.log( v )   // 45 ? v->fn
+        //     var v = 50 ; 
+        //     console.log( v )   // 50
+        //     function v(){
+        //         console.log("value")
+        //     }
+        //     console.log(v)     // v->fn   50
+        //     var v = "china"
+        //     console.log(v)      // "china"
+        // }
+        // c( a )
+
+        // 解析:
+        // var a = 45 ; 
+        // function c ( v ){
+        //     var v;  // 提升在当前作用域的最顶部
+        //     // 先赋值函数
+        //     v = function(){
+        //         console.log("value")
+        //     }
+        //     console.log( v )   // v->fn
+        //     v = 50 ;  // 变量留在原地
+        //     console.log( v )   // 50
+            
+        //     console.log(v)     // 50
+        //     v = "china"   // 变量留在原地
+        //     console.log(v)      // "china"
+        // }
+        // c( a )
+
+       
+        // var a = 45 ; 
+        // function c ( v ){
+        //     console.log( v )   // 45
+        //     var v = 50 ; 
+        //     console.log( v )   // 50
+        //     console.log(v)     // 50
+        //     var v = "china"
+        //     console.log(v)      // "china"
+        // }
+        // c( a )
+
+
+
+        // function test( num ){ // num -> 15
+        //     console.log(num) // 15 
+        //     var num ;
+        //     console.log(num)  // 15
+        //     num = function(){
+        //         console.log("num")
+        //     }
+        //     console.log(num)  // num->fn
+        //     var num = 45;
+        //     console.log( num ) // 45
+        // }
+        // test( 15 )
+
+
+
+        // console.log(f)    // f->fn
+        // var f = function(){
+        //     console.log("f")
+        // }
+        // console.log(f) // f  
+        // function f(){
+        //     console.log("f->fn")
+        // }
+        // console.log(f)  // f 
+        // var f = 10;
+        // console.log(f)  // 10
+
+
+        // 解析
+        // var f ;
+
+        // f = function (){
+        //     console.log("f->fn")
+        // }
+
+        // console.log(f)    // f->fn
+        // f = function(){
+        //     console.log("f")
+        // }
+        // console.log(f) // f  
+        
+        // console.log(f)  // f 
+        // f = 10;
+        // console.log(f)  // 10
+
+        
+    </script>
+</body>
+</html>

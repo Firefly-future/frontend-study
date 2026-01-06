@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 封装一个函数getWeek(n)，获取几天后是星期几，并在页面中输出：n天后是星期x
+        // 思路：
+        // （1）利用new Date()时间日期对象获取和修改时间
+        // （2）获取修改后时间的星期数
+        // （3）switch判断获取的0-6的星期数，最终把对应的结果输出到页面上
+        function getWeek (n){
+            // 大写星期数组
+            var weekArr = ["日","一","二","三","四","五","六"]
+            // 1 创建日期对象  
+            var date = new Date();
+            // console.log( date.getDay() )
+            // console.log( date.getDate() )
+            // 设置未来n日
+            date.setDate( date.getDate() + n )
+            // console.log( date.getDay() )
+            return n + "天后是星期" + weekArr[date.getDay()]
+        }
+        console.log( getWeek( 50 ) )   // 4
+        console.log( getWeek( 2 ) )   // 5
+        console.log( getWeek( 4 ) )   // 0
+    </script>
+</body>
+</html>

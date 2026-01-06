@@ -1,0 +1,29 @@
+
+// 375px === 100vw
+// 1px === 100vw / 375
+// 300px === 100vw / 375 * 300vw
+@function px2vw($px) {
+  @return 100vw / 375 * $px
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+.parent {
+  font-size: 20px;
+  overflow: hidden;
+}
+.box {
+  width: px2vw(300);
+  height: px2vw(300);
+  background: red;
+  font-size: 10px;
+  float: left;
+}
+.right {
+  float: right;
+  width: px2vw(75);
+  height: px2vw(75);
+  background: green;
+}

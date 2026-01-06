@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    
+    const obj1 = {
+      name: '小明',
+      age: 22,
+      info: {
+        gender: '男',
+      },
+      hobby: ['吃饭'],
+      reg: /a/,
+      setObj: new Set(),
+      date: new Date(),
+      say() {}
+    }
+
+    // console.log(obj1.toString()) // '[object Object]'
+    
+    // 转成 json 字符串
+    const jsonStr = JSON.stringify(obj1, null, 2)
+    console.log(jsonStr) // {"name":"小明","age":22,"info":{"gender":"男"},"hobby":["吃饭"]}
+
+
+    // 根据 json 字符串生成对象
+    const obj2 = JSON.parse(jsonStr)
+    obj2.info.gender = '女'
+    console.log(obj1)
+    console.log(obj2)
+
+
+
+
+    // json: 一种字符串数据格式
+    // 规则：
+    // 1. 字符串必须是双引号
+    // 2. 对象的 key 必须写引号
+    // 3. 支持数据类型：字符串、数字、布尔值、数组、对象 
+  </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+*{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+}
+em{
+    font-style:normal;
+}
+a{
+    text-decoration: none; color: #212121;
+}
+a:hover{text-decoration: underline;}
+
+table{
+    width: 1000px;
+    border-collapse: collapse;
+    margin:20px auto 0;
+}
+
+thead{
+    height: 90px;
+    background: #EEE;
+}
+thead tr {height: 45px;}
+.w1{width: 80px;}
+.w2{width: 150px;}
+.w3{width: 100px;}
+
+tbody{text-align: center;}
+.proInfo{padding: 10px;}
+.proInfo img , .proDes{
+    float: left;
+}
+.proInfo img{
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+}
+.proDes{width: 410px; text-align: left;}
+
+.min , .max , .count{
+    float: left;
+}
+.min , .max{
+    width: 22px; height: 22px;border:1px solid #CCC;
+    font-size: 17px; line-height: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+.count{ width: 50px; height: 22px; border: 1px solid #CCC; outline: 0; text-align: center; }
+.min{margin-left: 28px;}
+.money , .totalMoney,.totalPrice,.chooseCount{color: red; }
+
+.lastTd span{display: block; text-align: center;line-height: 30px;cursor: pointer;}
+
+.dels{
+    margin: 0 50px ;
+}

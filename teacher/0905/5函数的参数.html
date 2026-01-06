@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>重点-函数的参数</title>
+    <style>
+        *{padding:0;margin: 0; list-style: none; box-sizing: border-box;}
+        ul{ margin: 30px 0 0 50px; }
+        ul li{height: 40px;}
+        ul li span{ float: left; height: 40px; border:1px solid #CCC; width: 80px; padding-left: 8px; line-height: 38px;}
+    </style>
+</head>
+<body>
+    <script>
+        // 函数: 执行特性功能的代码块
+        //       特定功能: 求和 并且求的是 30 - 70
+        // function getAddNum(){
+        //     var res = 0 ; // 求和结果
+        //     // 求 30 - 70 之家所有数字的和
+        //     for( var i = 30 ; i <= 70 ; i++ ){
+        //         res += i
+        //     }
+        //     console.log( res )
+        // }
+
+        // getAddNum()
+        // getAddNum()
+        // getAddNum()
+        // getAddNum()
+        // getAddNum()
+        // getAddNum()
+        // 总结: 以上功能太过于特定  永远是30-70  如果 求的是1-5  8-15  80-120的和呢？
+        // 得出: 无论求的是1-5 还是8-15 甚者是80-120的和  他们都需要循环拿到每个值 
+        //       只是起始值 和 结束条件值在变化   引出参数
+
+        // 函数的参数
+            // 将 不确定的值 提取为参数  
+            // 形参: 定义函数时的() , 只是一个形式参数 即 一个变量
+            // 实参: 调用函数时的() , 是确切的值
+            // 注意: 参数之间 逗号 隔开 ， 且参数一一对应
+
+            // function getAddNum( sNum , eNum ){
+            //     var res = 0 ; // 求和结果
+            //     // 求 30 - 70 之家所有数字的和
+            //     //     1-5
+            //     //     8 - 15
+            //     for( var i = sNum ; i <= eNum ; i++ ){
+            //         res += i
+            //     }
+            //     console.log( res )
+            // }
+            // getAddNum( 30 , 70 )
+            // getAddNum( 1 , 5 )
+            // getAddNum( 8 , 15 )
+            // getAddNum( 80 , 120 )
+
+        // 需求: 求任意两数之间能被某数整除的平均数
+        // 如: 求 101 到 500 之间能被9整除的数 的平均值
+                // function meanFn( s , e , n ){
+                //     var add = 0 , count = 0;
+                //     // 循环s - e之间的所有数
+                //     for( var i = s ; i <= e ; i++ ){
+                //         // 判断当前数 是不是 n的倍数
+                //         if( i % n === 0 ){
+                //             add += i  // 求能被n整除的数的和
+                //             count++   // 记录被n整除的个数
+                //         }
+                //     }
+                //     console.log(s + "-" + e + "之间能被" + n + "整除的数的和是" + add + ",共计有" + count + "个,它们的平均值是" + add / count)
+                // }
+                // meanFn( 101 , 500 , 9 )
+                // meanFn( 1 , 10 , 3 )
+
+        // 需求: 打印九九乘法表， 传入布尔值决定是倒叙false 还是正序true
+        //                       根据传入的参数 确定从哪开始 到哪结束
+        function printCon( bol , s , e ){
+            document.write("<ul>")
+            // 判断当前是 正序打印 还是 倒序打印
+            if( bol ){
+                // 循环生成行数 li
+                for( var r = s ; r <= e ; r++ ){
+                    // document.write("<li>")
+                    // // 循环生成列数 span  规律: 列再跟随行r变
+                    // for( var c = 1 ; c <= r ; c++ ){
+                    //     document.write("<span>" + c +  " * " + r + " = " + r * c + "</span>")
+                    // }
+                    // document.write("</li>")
+                    createColspan( r )
+                }
+            }else {
+                for( var r = s ; r >= e ; r-- ){
+                    // document.write("<li>")
+                    // // 循环生成列数 span  规律: 列再跟随行r变
+                    // for( var c = 1 ; c <= r ; c++ ){
+                    //     document.write("<span>" + c +  " * " + r + " = " + r * c + "</span>")
+                    // }
+                    // document.write("</li>")
+                    createColspan( r )
+                }
+            }
+            document.write("</ul>")
+        }
+        printCon( true , 3 , 5 )
+        printCon( false , 6 , 1 )
+        // printCon( false , 7 , 9 )
+
+        function createColspan( r ){
+            document.write("<li>")
+            // 循环生成列数 span  规律: 列再跟随行r变
+            for( var c = 1 ; c <= r ; c++ ){
+                document.write("<span>" + c +  " * " + r + " = " + r * c + "</span>")
+            }
+            document.write("</li>")
+        }
+    </script>
+</body>
+</html>

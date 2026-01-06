@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>重中之重: 数据类型转换</title>
+</head>
+<body>
+    <script>
+        // 其他类型转字符串
+            // String(val)      强制转换, 所有内容原路返回加引号  即 -> 任何类型都可以使用String转字符串，结果是字符串
+                var num = 100 , 
+                    bol = true ,
+                    und = undefined , 
+                    n = null ;
+                // console.log( String( num ) , typeof( String(num) ) )
+                // console.log( String( bol ) , typeof( String(bol) ) )
+                // console.log( String( und ) , typeof( String(und) ) )
+                // console.log( String( n ) , typeof( String(n) ) )
+
+            // val.toString()  undefined 和 null 使用该方法报错，其他都将原路返回加引号
+                // console.log( num.toString() )
+                // console.log( bol.toString() )
+                // console.log( und.toString() )  报错
+                // console.log( n.toString() )    报错
+
+
+            // val + ""       字符串拼接   所有内容原路返回加引号
+
+
+        // 其他类型转数字
+            // Number(val)    强转  要么返回数字  要么直接NaN
+                //   特殊:  true -> 1
+                //          ''   null    false -> 0
+                //          undefined -> NaN
+                        // console.log( Number("123") )   // 123
+                        // console.log( Number("9.9") )    // 9.9
+                        // console.log( Number("abc") )    // NaN
+                        // console.log( Number("123abc") ) // NaN
+                        // console.log( Number(true) )     // 1
+                        // console.log( Number(false) )    // 0
+                        // console.log( Number('') )       // 0
+                        // console.log( Number(undefined) ) // NaN
+                        // console.log( Number(null) )     // 0
+                        // console.log( Number("9.9.9") )  // NaN  
+
+            // parseInt(val)    整型  遇第一个非数字止，将前面能返回的返回，否则直接NaN
+                        // console.log( parseInt("abc123") )   // NaN
+                        // console.log( parseInt("123abc") )   // 123
+                        // console.log( parseInt("9.9") )      // 9
+                        // console.log( parseInt('') )         // NaN
+                        // console.log( parseInt(0) )          // 0
+                        // console.log( parseInt(NaN) )        // NaN
+                        // console.log( parseInt(1000) )       // 1000
+                        // console.log( parseInt(9.9) )        // 9
+                        // console.log( parseInt(undefined) )  // NaN
+                        // console.log( parseInt(null) )       // NaN
+                        // console.log( parseInt(true) )       // NaN
+                        // console.log( parseInt(false) )      // NaN
+                        
+
+            // parseFloat(val)  浮点型  在parseInt的基础上 多识别一个小数点
+                        // console.log( parseFloat("abc123") )   // NaN
+                        // console.log( parseFloat("123abc") )   // 123
+                        // console.log( parseFloat("9.9") )      // 9.9
+                        // console.log( parseFloat("9.9.9") )    // 9.9
+                        // console.log( parseFloat('') )         // NaN
+                        // console.log( parseFloat(0) )          // 0
+                        // console.log( parseFloat(NaN) )        // NaN
+                        // console.log( parseFloat(1000) )       // 1000
+                        // console.log( parseFloat(9.9) )        // 9.9
+                        // console.log( parseFloat(undefined) )  // NaN
+                        // console.log( parseFloat(null) )       // NaN
+                        // console.log( parseFloat(true) )s       // NaN
+                        // console.log( parseFloat(false) )      // NaN
+
+
+        // 其他类型转布尔
+            // Boolean(val)
+            // 假值: false  0  NaN  ''  undefined   null
+
+        // 2、声明一个变量name;再给变量name赋值为"I Love you!";
+        // （1）要求声明
+        var name , I ;
+        // 赋值分开写;
+        name = I ;
+        // （2）把这个变量打印在控制台
+        console.log(name)
+        // （3）要求每句话都要有注释
+        
+    </script>
+</body>
+</html>

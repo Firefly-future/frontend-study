@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+li {
+  list-style-type: none;
+}
+.home {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  main {
+    flex: 1;
+    overflow: hidden;
+  }
+  footer {
+    height: 50px;
+    border-top: 1px solid #ccc;
+    display: flex;
+    a {
+      flex: 1;
+      text-align: center;
+      line-height: 50px;
+    }
+    .active {
+      background: tomato;
+    }
+  }
+}

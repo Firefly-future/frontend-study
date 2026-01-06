@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Map对象
+            // ●  Map 对象以 key、value 的形式存数据
+            // ● 普通对象的key只能是字符串，map对象的key可以是任意值
+
+        const obj = new Map() ; // {}
+
+            // 设置 set( key , val )
+        let fnKey = function(){};
+        let objKey = {};
+        obj.set( objKey , [1,2,5] )
+        obj.set( "str" , 50 )
+        obj.set( 10 , "string" )
+        obj.set( fnKey , 123 )
+        console.log( obj )
+            // 获取 get( key )
+        console.log( obj.get( fnKey ) )
+        console.log( obj.get( objKey ) )
+            // 检测键是否存在  has
+        console.log( obj.has( fnKey ) )
+        console.log( obj.has( true ) )
+            // 遍历对象  forEach
+        obj.forEach( (val , key) => {
+            console.log( key , val )
+        })
+
+        console.log( obj.size )
+
+        
+    </script>
+</body>
+</html>

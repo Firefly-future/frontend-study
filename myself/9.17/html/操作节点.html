@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        <h1>tain</h1>
+        <p>hh</p>
+        <a href="">超链接</a>
+        <ul>
+            <li>我是列表项</li>
+            <li>我是列表项</li>
+            <li>我是列表项</li>
+        </ul>
+    </div>
+    <script>
+        // 创建元素 创建文本
+        var div=document.createElement('div')
+        var text=document.createTextNode('我是创建的文本')
+        // 添加文本进入刚刚创建的div元素中
+        // console.log(div)
+        // console.log(text)
+        div.appendChild(text)
+        // 将创建好的元素与文本添加在box的末尾或者添加在h1的后面
+        var box=document.querySelector('#box')
+        // console.log(box)
+        // console.log(box.appendChild(div))
+        console.log(box.insertBefore(div,box.firstElementChild.nextElementSibling))
+        // 克隆box
+        console.log(box.cloneNode())//最外面一层
+        console.log(box.cloneNode(true))//从内到外包括样式在内都克隆
+        document.body.appendChild(box.cloneNode(true))
+        // 删除  删除节点
+        box.removeChild(box.firstElementChild.nextElementSibling)
+        // 替换
+        box.replaceChild(div,box.firstElementChild.nextElementSibling.nextElementSibling)
+    </script>
+</body>
+</html>

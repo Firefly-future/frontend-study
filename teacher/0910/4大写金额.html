@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 封装一个formatNum函数，输入一个五位的正整数可输入对应的大写，
+        // 如，输入数字 45319时侯可通过变量接收到  字符串   肆万伍仟叁佰壹拾玖元整
+        // 思路：
+        // 数字转成字符串(便于循环);
+        // 定义一个对象，用于拼接4--》肆  5--》伍
+        // 再定义一个数组用于拼接 万，千，百;
+        // 循环，判断，比较，拼接，返回值;
+        function formatNum( num ){
+            num = num.toString();
+            var res = "";
+            // 核心: 定义一个大写数组 每个数字字符作为数组的下标访问即可
+            var bigLetter = ["零","壹","贰","叁","肆","伍","陆","柒","捌","玖"];
+            var logoArr = ["万","仟","佰","拾","元"];
+            for(var i = 0 ; i < num.length ; i++){
+                res += bigLetter[num[i]] + logoArr[i] 
+            }
+            return res + "整"
+        }
+        console.log( formatNum( 45319 ) )
+    </script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // window 表示浏览器的一个窗口或框架，是BOM的核心对象，包含了文档对象（DOM）
+            // 所有在全局声明的变量和函数，自动成为 window 对象的属性和方法
+            // 注意：无需显式使用 window 前缀调用全局变量和全局方法
+            // var aa = 10 ;  // 全局变量a  挂靠window 成了属性   window.a = 10   -> window.a
+            // function bb () {   // 挂靠window 成了方法      window.b = function(){}   -> window.b()
+            //     console.log("bb")
+            // }
+            // console.log(window)
+
+
+
+        // window 常用方法
+            // alert()
+                // ● 功能：显示带有一段消息和一个确认按钮的警告框。
+                // ● 语法：window.alert(message) 
+
+
+            // confirm()
+                // ● 功能：显示带有一段消息以及确认和取消按钮的对话框。
+                // ● 语法：window.confirm(message)
+
+            // prompt()
+                // ● 功能：显示带有一段消息以及一个文本框和确认/取消按钮的对话框。
+                // ● 语法：window.prompt(text, defaultText)
+
+
+            // open()
+                // ● 功能：打开新窗口或查找已命名的窗口。
+                // ● 语法：window.open(URL, name[打开方式->_blank空白页新窗口-默认值;  _self 自身原窗口])
+                // window.open( "http://www.baidu.com" , "_self" )
+
+            //  close()
+                // ● 功能：关闭当前窗口。
+                // ● 语法：window.close()
+
+            // setInterval()
+                // ● 功能：定时器，重复调用一个函数，每隔一定时间间隔执行一次。
+                // ● 语法：window.setInterval(function, milliseconds)
+                //   返回值: 数值型的唯一id
+                // 需求: 要求1s在控制台 打印1次当前时间日期
+                    // var timer1 = setInterval(function(){
+                    //     console.log( new Date() )
+                    // } , 1000 )
+                    // console.log( timer1 , typeof timer1 )
+                    // // 需求: 要求3s在控制台 打印1次随机小数
+                    // var timer2 = setInterval(function(){
+                    //     console.log( Math.random() )
+                    // } , 3000 )
+                    // console.log( timer2 )
+
+            // clearInterval()
+                // ● 功能：取消由 setInterval() 设置的定时器。
+                // ● 语法：window.clearInterval(intervalID)
+
+                // clearInterval( timer1 )
+
+            // setTimeout()
+                // ● 功能：延时器，在指定的毫秒数后调用函数。
+                // ● 语法：window.setTimeout(function, milliseconds)
+                //   返回值: 数值型的唯一id
+                // 5s后 打印stop print
+                    // var ids = setTimeout( function(){
+                    //     console.log( "stop print" )
+                    //     clearInterval( timer1 )
+                    //     clearInterval( timer2 )
+                    // } , 5000 )
+                    // console.log( ids )
+                
+                // clearTimeout()
+                    // ● 功能：取消由 setTimeout() 设置的延时器。
+                    // ● 语法：window.clearTimeout(timeoutID)
+                
+                    // clearTimeout( ids )
+
+            
+    </script>
+</body>
+</html>

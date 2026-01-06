@@ -1,0 +1,37 @@
+@import "./common.scss";
+
+
+.box{
+    width: 150px;
+    height: 120px;
+    margin: 50px auto;
+    text-align: center;
+    color: #FFF;
+    font:700 40px/120px "宋体";
+}
+
+.translate{
+    background: red;
+    transform: translate(100px,50px);
+}
+
+
+
+.scale{
+    background: green;
+    transform: scaleY(.5);
+}
+
+
+
+.rotate{
+    background: gold;
+    transform: rotateX(45deg);
+}
+
+
+
+.skew{
+    background: purple;
+    transform: skew(80deg);
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 什么是对象
+            // ● 对象是包含一组无序的键值对的数据集合。
+            // ● 键是字符串，而值可以是任意数据类型。
+
+        // 创建对象
+            // 1 字面量的方式   { 属性 : 值 }
+                // var obj1 = {} ;
+                // console.log( obj1 )  // 空对象
+
+                var boyFriend = {
+                    user : "小明" ,
+                    age : 18 , 
+                    sex : "男" ,
+                    address : "深圳" ,
+                    say : function(){
+                        console.log("情绪值拉满")
+                    },
+                    date : new Date('2020,5,1'),
+                    0 : "abc" ,
+                    "skin-color" : "yellow"
+                }
+                console.log( boyFriend )
+
+            // 2 new 构造函数的方式   // 对象.属性 = 值 ;
+                // var obj2 = new Object();
+                // console.log( obj2 )  // 空对象
+
+                var smDog = new Array();
+                smDog.user = "梨花";
+                smDog.age = 1 ;
+                smDog.address = "泰国" ;
+                smDog.say = function(){ console.log("我忘不忘，汪汪汪") }
+                smDog[0] = "abc"
+                console.log( smDog )
+
+        // 访问对象
+                // 可以是 .(点用于标准属性) 或 [](方括号用于不符合标识符) 的方式进行访问
+                // 即 对象.属性   or   对象["属性"]
+                // 注意: 访问对象中的属性不存在时返回undefind，不存在的方法 报错
+                // 注意: 对象中的属性相同时，后设覆盖先设
+                console.log( boyFriend.date , boyFriend[0] , boyFriend["skin-color"] )
+                console.log( smDog.address , smDog.abs )
+                boyFriend.say()
+                smDog.say()
+                // smDog.abc()   // 报错
+                smDog.address = "China"
+                console.log( smDog )
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./index.js"></script>
+</head>
+<body>
+  <h1>这是前端页面</h1>
+  <input type="text" placeholder="搜索音乐/歌手" >
+  <ul>
+  </ul>
+
+  <script>
+
+    document.querySelector('input').addEventListener('keydown', e => {
+      if (e.keyCode === 13) {
+        // 点击回车开始搜索
+        const xhr = new XMLHttpRequest()
+        // 请求方式：get/post/put/delete
+        xhr.open('post', `http://39.96.210.90:5001/search?time=` + Date.now())
+        xhr.onreadystatechange = () => {
+          if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+              const data = JSON.parse(xhr.responseText)
+              console.log(data.result.songs)
+              document.querySelector('ul').innerHTML = data.result.songs.map(item => {
+                return `
+                  <li>${item.name}</li>
+                `
+              }).join('')
+            } else {
+              alert('请稍后重试')
+            }
+          }
+        }
+        
+        // post 请求通过 request body 请求体传参数
+        // xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded')
+        // xhr.send(`keywords=${e.target.value}&limit=20`)
+
+        xhr.setRequestHeader('content-type', 'application/json')
+        xhr.send(JSON.stringify({
+          keywords: e.target.value,
+          limit: 30
+        }))
+
+        // formData格式，上传文件使用此格式
+        // const formData = new FormData()
+        // formData.append('file', xxxxxxx)
+        // xhr.send(formData)
+      }
+    })
+
+    
+  // GET 和 POST 是 HTTP 中最常用的两种请求方法，核心区别如下：
+
+  // 1. 用途
+    // GET：获取资源（如查询数据），请求参数仅用于指定获取的资源。
+    // POST：提交数据（如表单提交、创建/修改资源），请求会向服务器发送数据并可能改变服务器状态。
+  // 2. 参数位置
+    // GET：参数通过 URL 传递（?key1=value1&key2=value2），可见性高。
+    // POST：参数通过 请求体（Request Body） 传递，URL 中不可见（但可通过工具抓包查看）。
+  // 3. 安全性
+    // GET：参数暴露在 URL 中，易被缓存、记录在浏览器历史/日志中，不适合传输敏感数据（如密码）。
+    // POST：参数在请求体中，相对隐蔽，但本身不加密（需配合 HTTPS 确保安全），适合敏感数据。
+  // 4. 数据大小限制
+    // GET：受限于 URL 长度（不同浏览器/服务器限制不同，通常 2KB~8KB），不适合大量数据。
+    // POST：理论上无大小限制（实际由服务器配置决定），可传输大文件（如上传图片）。
+  // 5. 缓存与历史
+    // GET：可被浏览器缓存，参数会保留在浏览器历史记录中，可通过刷新重复请求。
+    // POST：默认不缓存，参数不保留在历史记录中，刷新时浏览器会提示“重新提交”。
+  // 总结
+    // GET：“查”，参数在 URL，轻量、可缓存，适合获取资源。
+    // POST：“改/增”，参数在请求体，安全、支持大数据，适合提交数据。
+    
+
+    
+  </script>
+</body>
+</html>

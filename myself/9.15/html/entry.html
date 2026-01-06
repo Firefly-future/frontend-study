@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;box-sizing: border-box;}
+        #cli{
+            margin: 50px auto 0;
+            font:bolder italic 30px/60px '微软雅黑';
+            color: blue;
+            text-align: center;
+            cursor: pointer;
+        }
+        #cli:hover{color:red;text-decoration: underline;}
+    </style>
+</head>
+<body>
+    <p id="cli">点击进入注册页</p>
+    <script src="../js/获取元素函数.js"></script>
+    <script>
+        // 绑定点击事件
+        $('cli').onclick=function(){
+            location.href='register.html'
+        }
+    </script>
+</body>
+</html>

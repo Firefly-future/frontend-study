@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // for 与 while 和 do...while的区别?
+            // for 循环用于 已知循环次数的循环体
+            // while  和 do...while 循环用于 未知循环次数的循环体; 但是知道循环的终止条件
+
+        
+        //  while 循环语法:  
+        //      表达式1 -> 循环的变量起始值;
+        //      while( 表达式2 -> 循环条件 ){
+        //          表达式3 -> 执行代码
+        //          表达式4 -> 更新起始表达式 
+        //      }
+
+
+        //  do...while 循环语法:
+        //      表达式1 -> 循环的变量起始值;
+        //      do{
+        //          表达式3 -> 执行代码
+        //          表达式4 -> 更新起始表达式 
+        //      }while( 表达式2 -> 循环条件 )
+
+
+        
+
+
+        // 套语法需求: 求8 - 15 之间的和
+            // var sNum = 8 , addNum = 0;
+            // while( sNum <= 15 ){
+            //     addNum += sNum ;
+            //     sNum++
+            // }
+            // console.log( addNum )
+
+        // 实际开发需求:  
+        // 用一张纸【0.003】，折出珠穆朗玛峰的高度【8848】，需要对折几次？
+        // var paper = 0.003 , count = 0;  // 次数
+        // while( paper < 8848 ){
+        //     paper *= 2
+        //     count++
+        // }
+        // console.log("用一张纸对折" + count + "次后可折出珠穆朗玛峰的高度")
+
+        var i = 10 ; 
+        while( i > 20 ){
+            console.log(i)   // 无结果 因为代码在执行时 先判断条件为假 导致没有进入循环体
+            i++
+        }
+
+
+        var y = 10 ; 
+        do{
+            console.log(y)  // 10 因为代码在执行时  先进入循环体做了一次  再去判断条件
+            y++
+        }while( y > 20 )
+
+        // while 和 do...while的区别?  【根据上述代码理解得出】
+            // while 循环 先判断再执行
+            // do while 是先执行，再判断；即使条件为假最少也会执行一次
+    </script>
+</body>
+</html>

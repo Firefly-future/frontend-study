@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.Javascript是运行在__________的脚本语言
+                // 浏览器
+        // 2.函数返回值使用_______、函数的数据类型是________、函数表达式式和声明式的区别________
+                // return
+                // function
+                // 表达式: 只能在函数表达式定义之后调用，否则报错，必须先定义后使用【这里是变量】
+                // 声明式: 函数声明会被提升，在函数声明的前后调用都可以
+
+        // 3.变量的概念是___________
+                // 存储单个可变信息的容器
+
+        // 4.undefined与null的区别是___________
+                // undefined 是针对变通类型而言
+                // null 是针对对象而言
+
+        // 5.var x = 10 ， b = x ， b = 20 ，x = b 问console.log(a)的结果是 ________
+                // 报错
+
+        // 6.console.log("b" + "a" + +"a" + "a")的结果是___________。 
+                // baNaNa
+
+        // 7.js数据类型分为基本数据类型和引用类型,基本数据类型有_______、______、_______、_______、_______。 
+                // string   boolean   undefined   number  null
+
+        // 8.var output = ([] && 'Im') + "possible! You should" +('' && `n't`) + " see a therapist after so much JavaScript lol"的结果是_________。
+                // Im possible;You should see a therapist after so much JavaScript lol
+        
+        // 9.undefined == null的结果是__________。
+                // true
+
+        // 10.分别写出"35" > "5" 与 "35" > 5的运行结果_____、______。
+                // false
+                // true
+
+        // 11.写出以下表达式的结果:
+        // console.log("hello" && 15 && null)            // null     
+        // console.log( 0 || 55 === "55" || "hello")     // 55 === "55"  类型不相等 直接false
+        // console.log(!null || undefined && !3 -'0')    // true
+            // true || undefined && false - '0'  ->  true || undefined && 0
+
+        // console.log(6 - 5 + +"2" || 4 > 2 && 3 *2)  。 // 3
+            // 1 + 2
+
+        // _____、_____、______、_______
+        // 12.var str = parseInt('abc123'); str++; alert(str)的结果是________。
+            //             NaN               NaN++               NaN
+            //          遇第一个非数字a止，将前面能返回的返回（这里a前面没有任何有效内容） 即 直接NaN
+            //          NaN++  等价于 NaN + 1   任何与NaN计算相关的结果都是NaN
+
+        // 13.var value = "B";
+        // switch(value) {
+        // case 'A':
+        // console.log('Case A');
+        // case 'B':
+        // console.log('Case B');
+        // case undefined:
+        // console.log('undefined');
+        // default:
+        // console.log('Do not know!');
+        // }的运行结果是____________
+            // Case B    undefined     Do not know!
+            // break缺失  将从满足条件开始依次向下执行
+            
+        // 14.不确定参数时使用____
+            // arguments
+
+        // 15.var num = parseInt("7*6",10);num的值是_____
+            // 7
+
+        // 16.+false + -!"Lydia"的结果是__________
+            // 0 + 0 -> 0
+
+        // 17.在switch语句中，当条件满足了某个case值时，使用____break______语句就可以结束switch的判断，即其他case子句将不再执行
+        // 18.break与continue的区别是________
+            // break 彻底退出循环体  即使条件为真 也不再执行
+            // continue 跳过当前循环 开启下一次迭代
+
+        // 二、简答题（共30分）
+        // 描述for循环与while与do while的区别？
+            // for 用于已知循环次数的循环体
+            // while 和 do while 用于未知循环次数的循环体 但是知道循环的终止条件
+            // while 循环 先判断 再执行 
+            // do while 循环 先执行 再判断 即使条件为假 最少也会执行一次
+
+
+        // 写出获取元素的方法有哪些？作用是什么？返回值是什么？
+            // document.getElementById("id名")
+            // 通过元素的id名来获取元素
+            // 元素对象
+
+            // document.getElementsByTagName("标签名")
+            // 通过标签名称获取元素
+            // 伪数组对象
+
+        // function getNum(a){
+        // return 
+        // a + 8
+        // }
+        // getNum(20)运行后的结果是什么？为什么？
+                // undefined
+                // return 后的代码将不再执行
+                // return 后面没有写值 默认返回undefined
+
+
+        // 写出元素基本操作有哪些？作用是什么？
+                // 获取元素的属性值
+                //     el.className 获取元素的class属性值
+                //     el.id 
+                //     el.innerHTML 
+
+                // 设置元素的属性值
+                //     el.className = "值"
+                //     el.id = "值"
+                //     el.innerHTML = "值"
+
+                // el.style.属性 = "值"
+                //   ....
+
+    </script>
+</body>
+</html>

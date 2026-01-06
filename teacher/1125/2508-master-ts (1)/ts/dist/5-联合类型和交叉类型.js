@@ -1,0 +1,22 @@
+"use strict";
+{
+    function fn(a) {
+        // 联合类型的变量只能使用所有类型共有的属性和方法
+        // 使用类型守卫缩小联合类型的范围
+        if (typeof a === 'string') {
+            console.log(a.slice(1));
+        }
+        else {
+            console.log(a.map(v => v));
+        }
+    }
+    fn('123');
+    const a = 'a';
+    const b = 1;
+    // 交叉类型
+    // type Test2 = { name: string } & { age: number; name: number }
+    // const obj: Test2 = {
+    //   age: 22,
+    //   name: 'sss'
+    // }
+}

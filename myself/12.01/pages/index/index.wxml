@@ -1,0 +1,55 @@
+<!--index.wxml-->
+<view>首页</view>
+<navigator open-type="switchTab" url="/pages/cinema/cinema">前往影院</navigator>
+<!-- 列表渲染 -->
+<view class="list">
+  <view wx:for="{{10}}" wx:key="index">{{index}}</view>
+</view>
+<!-- scroll-view  -->
+<scroll-view class="scroll-list" scroll-y>
+  <view wx:for="{{10}}" wx:key="index">{{index}}</view>
+</scroll-view>
+<!-- 普通渲染 列表渲染 -->
+<text>{{text}}</text>
+<view>标题：{{title}}</view>
+<input type="text" model:value="{{title}}" />
+<view>数组：{{arr}}</view>
+<view>对象：{{obj}}</view>
+<view>列表：{{list}}</view>
+<view class="person-list">
+<button bind:tap="push" size="mini" type="primary">添加数据</button>
+  <view wx:for="{{list}}" wx:for-item="val" wx:key="name">
+  <button bind:tap="del" size="mini" type="warn" data-index="{{index}}">删除</button>
+    {{index+1}} 姓名：{{val.name}},
+    年龄：{{val.age}}
+  </view>
+</view>
+<!-- model深入 -->
+<view class="obj">
+<input type="text" value="{{obj.desc}}" bind:input="changeDesc"  />
+<view>obj.desc:{{obj.desc}}</view>
+<button bind:tap="add">c+1</button>
+<view>obj.info.a.b.c:{{obj.info.a.b.c}}</view>
+</view>
+<!-- 事件 -->
+<view class="btns">
+  <button bind:tap="changeNum" data-num="{{-1}}" size="mini" type="warn">-</button>
+  <view>{{num}}</view>
+  <button bind:tap="changeNum" data-num="{{1}}" size="mini" type="primary">+</button>
+</view>
+<!-- 条件渲染 -->
+<view wx:if="{{num>=90}}">真厉害呢</view>
+<view wx:elif="{{ num>=60 && num<90 }}"> 勉勉强强吧 </view>
+<view wx:else> 还不行呢 再接再厉吧 </view>
+<!-- 模版 -->
+<!-- 先搞个for -->
+<view wx:for="{{list}}" wx:key="name" wx:for-index="index">
+<template is="msgItem" data="{{...item,index}}"></template>
+<!-- <template is="msgItem" data="{{name:item.name,age:item.age,index:item.index}}"></template> -->
+</view>
+<template name="msgItem">
+  <view class="item">
+  <text>{{index+1}}姓名：{{name}}；</text>
+  <text>年龄：{{age}}</text>
+  </view>
+</template>

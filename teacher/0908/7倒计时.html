@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="h1"></h1>
+    <script>
+        // 月份的英文为 ‌
+        //      January, February, March, April, May, June, July, August, September, October, November, December‌。
+        // 星期的英文为 ‌
+        //      Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday
+
+
+        // 倒计时 求距离 国庆节还有多久
+        // 1 设置未来时间
+        // var date = new Date();
+        // date.setFullYear(2026)
+        // date.setMonth(0)
+        // date.setDate(1)
+        // date.setHours(8)
+        // date.setMinutes(0)
+        // date.setSeconds(0)
+        // console.log( date )
+        // 设置2026年的1月1日 早上八点如上操作 太过繁琐
+
+        // 在创建日期对象的()内可以直接设置日期时间
+        // 注意: 
+            // 设置数字格式:
+                // 1 最少精确到月  否则回到默认1970年
+                // 2 想设置的月 - 1 
+                // 3 年月日 时分秒 之间 逗号隔开
+                // 4 具有容错功能 
+
+            // 设置字符串格式:
+                // 1 直接当前月
+                // 2 年分月 , / - 
+                //   时分秒 :
+        // var date = new Date( "2026-10-31,10:10:10" )
+        // console.log( date )
+
+
+        // 倒计时 求距离 国庆节还有多久
+        // 获取元素
+        var tit = document.getElementById("h1");
+        setInterval(function(){
+            // 1 设置未来时间  
+            var future = new Date("2026,1,1");
+            // console.log( future )
+            // 2 创建当前日期
+            var now = new Date();
+            // console.log( now )
+            // 3 计算时间差值 时间戳【毫秒数】 = 未来 - 当前
+            var rangeTime = parseInt( ( future - now ) / 1000 ) ;
+            // console.log( rangeTime )  // 秒数   1922792
+            // 4 换算天=24*60*60=86400 时=60*60=3600 分=60 秒
+            var day = addZero( parseInt( rangeTime / 86400 ) ) ,
+                hour = addZero( parseInt( rangeTime % 86400 / 3600 ) ) ,
+                minute = addZero( parseInt( rangeTime % 3600 / 60 ) ) ,
+                second = addZero( rangeTime % 60 ) ;
+            // console.log( day , hour , minute , second)
+            h1.innerHTML = `距离十月一国庆节还有:<br>` + day + "天" + hour + "时" + minute + "分" + second + "秒"
+        } , 1000 )
+
+
+        // 封装补零函数
+        function addZero( n ){
+            // return n < 10 ? '0' + n : n
+            // return String(n).length >= 2 ? n : '0' + n
+            return String(n)[1] ?  n :  '0' +n
+        }
+    </script>
+</body>
+</html>

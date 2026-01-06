@@ -1,0 +1,52 @@
+@import "./common.scss";
+
+.tabs{
+    width: 500px;
+    margin: 30px auto 0;
+    border:1px solid #CCC;
+}
+
+nav{
+    height: 45px;
+    border-bottom: 1px solid #CCC;
+    display: flex;
+    span{
+        flex:1;
+        text-align: center;
+        line-height: 44px;
+        font-size: 16px;
+        &:not(:last-child){
+            border-right: 1px solid #CCC;
+        }
+    }
+}
+
+.active{
+    background: orangered;
+    font-weight: 700;
+    font-family: "楷体";
+    color: #fff;
+}
+
+main{
+    min-height: 250px;
+    padding: 15px;
+    section{
+        display: none;
+        ul  > li{
+            line-height: 36px;
+            font-size: 14px;
+            color: #666;
+            span {
+                margin-right: 8px;
+            }
+            &:hover{
+                color: blue;
+            }
+        }
+    }
+}
+
+.show{
+    display: block;
+}

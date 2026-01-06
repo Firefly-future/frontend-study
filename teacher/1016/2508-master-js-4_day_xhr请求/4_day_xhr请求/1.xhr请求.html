@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>这是前端页面</h1>
+  <ul>
+  </ul>
+
+  <script>
+    // 前后端通过 url 传输数据
+    // https://www.baidu.com/xxx/api/userinfo
+
+
+
+
+    // 1. 创建发送请求的对象， xhr.readyState: 0
+    const xhr = new XMLHttpRequest()
+    // 2. 准备建立请求连接 xhr.open(请求方式, 请求url, 同步/异步), xhr.readyState: 1
+    xhr.open('get', 'http://39.96.210.90:5001/banner', false)
+    // 4. 等待数据请求成功
+    xhr.onreadystatechange = () => {
+      // xhr.readyState: 2 ：send() 已调用，服务器已接收请求并返回响应头
+      // xhr.readyState: 3 ：正在接收服务器响应体数据，但是不确定是否接受完成
+      // xhr.readyState: 4 ：请求完成，响应体数据接收完成
+      if (xhr.readyState === 4) { // 请求完成
+        if (xhr.status === 200) { // 请求成功
+          const data = JSON.parse(xhr.responseText) // 后端返回给前端的数据
+          console.log(data)
+          document.querySelector('ul').innerHTML = data.banners.map(item => `
+            <li>
+              <img src="${item.imageUrl}" width="300" />
+            </li>
+          `).join('')
+        } else {
+          // 请求失败
+          alert('请稍后重试')
+        }
+      }
+    }
+    // 3. 发送请求
+    xhr.send()
+    
+    
+    
+    
+    console.log(xhr)
+
+    // 常见状态码
+    // 200 OK：请求成功，服务器返回数据。
+    // 301 永久重定向
+    // 302 临时重定向
+    // 304 Not Modified：协商缓存
+    // 401 需要验证身份，登陆信息失效
+    // 403 没有权限访问
+    // 404 请求资源不存在
+    // 500 服务器内部错误
+    // 502 网关错误
+    
+  </script>
+
+
+
+  <!-- 
+    产品经理 PM：负责产品的设计，出需求文档
+    交互设计 UE：负责页面的交互，原型图
+    视觉设计 UI：负责页面的设计
+    前端开发 FE：开发页面，请求接口
+    后端开发 RD: 开发接口，处理数据，开发接口
+    测试开发 QA: 测试页面，测试接口
+  -->
+</body>
+</html>

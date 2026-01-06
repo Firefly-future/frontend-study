@@ -1,0 +1,77 @@
+@import "./common.scss";
+
+// :target 目标选择器  
+    // 当url包含hash（哈希），:target 选择器将匹配ID和标识符相匹配的元素
+.pic{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+.box{
+    position: absolute;
+    width: 600px;
+    height: 100px;
+    top: 260px;
+    left: 50%;
+    margin-left: -300px;
+    z-index: 9;
+    a{
+        float: left;
+        width: 100px;
+        height: 100px;
+        margin: 0 10px;
+        img{
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+    }
+}
+
+#img1:target{
+    z-index:1;
+    animation: sliderRight 3s;
+}
+@keyframes sliderRight{
+    from{ transform: translateX(-100%); }
+    to{ transform: translateX(0); }
+}
+
+#img2:target{
+    z-index:1;
+    animation: sliderBottom 3s;
+}
+@keyframes sliderBottom{
+    from{ transform: translateY(-100%); }
+    to{ transform: translateY(0); }
+}
+
+#img3:target{
+    z-index:1;
+    animation: rightBottomBig 3s;
+}
+@keyframes rightBottomBig{
+    from{ right:0;bottom: 0;width: 0;height: 0; }
+    to{ right:0;bottom: 0;width: 100%;height: 100%; }
+}
+
+#img4:target{
+    z-index:1;
+    animation: centerRotateBig 3s;
+}
+@keyframes centerRotateBig{
+    from{ transform: scale(0); }
+    to{ transform: scale(1) rotate(720deg); }
+}
+
+#img5:target{
+    z-index:1;
+    animation: fadeInOutShake 3s;
+}
+@keyframes fadeInOutShake{
+    from , 40% , 80%{ left: 0; bottom: 0; opacity: 0; transform: scale(.5);}
+    20% , 60% , 100%{ left: 10px; bottom:10px;opacity: 1; transform: scale(.8); }
+    40% , 80%{bottom: -10px;}
+    60% , 100% {bottom: 0; transform: scale(1);}
+}

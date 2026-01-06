@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // arr.方法(function( item ,index , arr ){
+        //     item 数组的每一项
+        //     index 下标
+        //     arr   原数组
+        // })
+
+        // find() 返回数组中满足条件的第一项,找不到返回undefined
+            // var arr = [15,9,5,23,56,15,32,88,45];
+
+            // // 查找当前大于50的第一项
+            // var backVal = arr.find( function(item) {
+            //     return item > 50
+            // })
+            // console.log( backVal )
+
+        // findIndex() 返回数组中满足条件第一项的下标,找不到返回-1
+            // var arr = [15,9,5,23,56,15,32,88,45];
+
+            // // 查找当前大于50的第一项的下标 
+            // var backVal = arr.findIndex( function(item) {
+            //     return item > 500
+            // })
+            // console.log( backVal )
+
+        // fill( val , start , end ) 数组从start开始到end进行填充，返回填充后的数组。  会
+                // val 填充的值
+                // start 开始填充的位置下标  默认值0
+                // end 结束填充的下标 [不含] 默认末尾
+                // 注意: 负数表示倒数开始
+            // var arr = [15,9,5,23,56,15,32,88,45];
+            // arr.fill( "hello" , 4 , 7 )
+            // console.log( arr )
+
+
+        // copyWithin(index,start,end)
+            // ● 功能：将数组指定位置【start-end】的内容，复制到其他位置【index】（会覆盖原有内容）
+            // ○ index  从该位置开始替换内容。如果是负数表示倒数（必须的）
+            // ○ start   从该位置开始读取数据，默认是0。负数表示从末尾开始计算
+            // ○ end     从该位置停止读取数据，默认是数组长度。负数表示从末尾开始计算
+            // ○ 注意：如果这三个参数不是数值，会自动转成数值。
+            // var arr = [15,9,5,23,56,15,32,88,45];
+            // //         0  1 2 3  4  5  6  7  8
+            // arr.copyWithin( true , '3' , '6' )  // 读取3-6的数据[23,56,15],将读取的数据粘贴在1的位置
+            // console.log( arr )
+
+
+        // with( index , value  通过指定的下标修改数组的项   返回修改后的新数组  不会
+            // var arr = [15,9,5,23,56,15,32,88,45];
+            // var backVal = arr.with( 7 , "hello" )
+            // console.log( arr )
+            // console.log( backVal )
+
+        // flat( deep )  根据deep深度 扁平化数组【默认扁平化一层】。  返回扁平化后的新数组   不会
+            // 即 按照指定的深度递归遍历数组,并将所有元素与遍历的子数组中的元素合并到一个新数组中返回。
+            // var arr = [15,"hello",["a",5],[5,[56,12,["javas",["cri"],"pt"]],"china"],8,56,12,95]
+            // //        [15,"hello","a",5,5,56,12,"javascript","china",8,56,12,95]
+            // var backVal = arr.flat(Infinity);
+            // //        [15,"hello","a",5,5,[56,12,["javascript"],"china",8,56,12,95]
+            // console.log( backVal )
+
+
+        // flatMap(callback(element, index, array)) 先map再flat,只能扁平化一层  返回操作扁平化后的新数组。
+            // var arr = [1,5,9,[3,[5],7],[1,[4,[7,[3],2],1]]]
+            // var backVal = arr.flatMap( function(item , index) {
+            //     return item + "abc"
+            // } )
+            // console.log( backVal )
+            // [1] + 1  -> [1].toStrig() -> "1" + 1 -> "11"
+
+    </script>
+</body>
+</html>

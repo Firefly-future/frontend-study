@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 要求用户输入月份
+        var month = prompt("请输入月份");
+        // 完整需求逻辑
+        // 1 判断用户取消 null  提示用户拒绝了您的请求
+        // 2 确定:
+        //    2.1  未输入 ''  提示 输入不能为空
+        //    2.2  输入了
+        //          2.2.1  判断输入的是非数字   提示 请输入数字
+        //          2.2.2  判断不再1-12范围内   提示 请输入1-12之间的有效月份
+        //          确定 且 输入 且是数字 且在范围内
+
+        // 判断用户取消 null  提示用户拒绝了您的请求
+        // if( month === null ){
+        if( typeof month === "object" ){
+            alert("⚠ 用户拒绝了您的请求")
+            // 确定
+            // 未输入
+        // }else if( month === '' ){
+        }else if( !month ){
+            alert("⚠ 输入不能为空")
+            // 确定 且输入
+            // isNaN(值)  检测非数字  true非数字   false数字
+        }else if( isNaN(month) ){
+            alert("❌ 请输入数字")
+            // 确定 且 是数字   
+        }else if( month < 1 || month > 12 ){
+            alert("❌ 请输入1-12之间的有效月份")
+        }else{
+            // 确定 且 输入 且 是数字 且在范围内
+            // alert( month )
+            // 判断输入的月份是 偶数月 弹出 月份 + 紫色   奇数月 弹出月份 + 黑色
+            // if( month % 2 === 0 ){
+            //     alert( month + "purple" )
+            // }else {
+            //     alert( month + "black" )
+            // }
+
+            // 等价于
+            // month % 2 === 0 ? alert( month + "purple" ) : alert( month + "black" )
+
+            // 等价于
+            alert( month + (month % 2 === 0 ? "red" : "pink") )
+
+        }
+
+    </script>
+</body>
+</html>

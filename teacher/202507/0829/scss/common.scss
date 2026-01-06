@@ -1,0 +1,29 @@
+// 公共css可以写在这里
+// 如 取消默认样式
+// 如 定义一些基类 或者 混合宏  哪里需要直接调用即可
+// 如 在做移动端页面时  首先得定义根元素 内容 app 和设备等大小
+//    页面常见的可能是上中下三栏布局 或者是 上中两栏布局
+//    不管是 三栏 还是两栏 都需要给app开启弹性盒  且设置主轴为垂直方向
+// 看需求  ....... 
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+ul , ol{
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: red;
+}
+
+img {
+    display: block;
+}
+
+

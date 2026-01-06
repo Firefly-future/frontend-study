@@ -1,0 +1,19 @@
+.counter_wrap {
+  border: 1px solid tomato;
+  padding: 20px;
+  // :global(.btn) {
+  //   background: red;
+  // }
+  :global {
+    // 在css module 内修改全局类名的样式
+    .btn {
+      background: red;
+    }
+  }
+}
+.test {
+  background: #ccc;
+}
+.large {
+  font-size: 50px;
+}

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{padding:0;margin: 0; list-style: none; box-sizing: border-box;}
+        ul{ margin: 30px 0 0 50px; }
+        ul li{height: 40px;}
+        ul li span{ float: left; height: 40px; border:1px solid #CCC; width: 80px; padding-left: 8px; line-height: 38px;}
+    </style>
+</head>
+
+<body>
+    <!-- <ul>
+        <li><span>1*1=1</span></li>
+        <li><span>1*2=2</span><span>2*2=4</span></li>
+        <li><span>1*3=3</span><span>2*3=6</span><span>3*3=9</span></li>
+    </ul> -->
+    <script>
+        // 输出九九乘法表
+        document.write("<ul>")
+        // 循环生成行数 li
+        for( var r = 1 ; r < 10 ; r++ ){
+            document.write("<li>")
+            // 循环生成列数 span  规律: 列再跟随行r变
+            for( var c = 1 ; c <= r ; c++ ){
+                document.write("<span>" + c +  " * " + r + " = " + r * c + "</span>")
+            }
+            document.write("</li>")
+        }
+        document.write("</ul>")
+
+
+        document.write("<ul>")
+        // 循环生成行数 li
+        for( var r = 9 ; r > 0 ; r-- ){
+            document.write("<li>")
+            // 循环生成列数 span  规律: 列再跟随行r变
+            for( var c = 1 ; c <= r ; c++ ){
+                document.write("<span>" + c +  " * " + r + " = " + r * c + "</span>")
+            }
+            document.write("</li>")
+        }
+        document.write("</ul>")
+
+
+        // 需求  在页面中输出5个p 并且每个p的里面有5个★
+        // 1 循环生成p
+        // for(var tag = 0 ; tag < 5 ; tag++){ // 0 - 4
+        //     document.write("<p>★★★★★</p>")  // <p>★★★★★</p>
+        // }
+
+        // 需求  再页面中生成五个p  
+        // 要求  第一个p有一个★ 
+        //       第一个p有一个★★
+        // 即
+        // ★
+        // ★★
+        // ★★★
+        // 规律: 列再跟随行变
+
+        // 注意 循环嵌套 外层一次 内层一圈
+        // 1 循环生成行数
+        // for(var r = 1 ; r <= 5 ; r++){
+        //     document.write("<p>") // <p>★</p> <p>★★<p>  <p>★★★</p>
+        //     // 2 内层循环生成内容的列数
+        //     for( var c = 1 ; c <= r ; c++ ){ // 1 2
+        //         document.write("★")
+        //     }
+        //     document.write("</p>")
+        // }
+
+
+        // 实现如下图像
+        // *****
+        // ****
+        // ***
+        // **
+        // *
+
+        // 1 循环生成行数
+        // for (var r = 5; r > 0; r--) {
+        //     document.write("<p>") // 
+        //     // 2 内层循环生成内容的列数
+        //     for (var c = 1; c <= r; c++) { 
+        //         document.write("★")
+        //     }
+        //     document.write("</p>")
+        // }
+
+        // 1 循环生成行数
+        // for(var r = 1 ; r <= 5 ; r++){
+        //     document.write("<p>") // <p>★★★★★</p> <p>★★★★</p>  <p>★★★</p>
+        //     // 2 内层循环生成内容的列数
+        //     for( var c = 5 - r ; c >= 0 ; c-- ){  // 4 3210 210
+        //         document.write("★")  
+        //     }
+        //     document.write("</p>")
+        // }
+
+
+        // 实现如下图像
+            // ★★★★★
+            // ★★★
+            // ★
+
+        // for (var r = 5; r > 0; r-=2) {
+        //     document.write("<p>") // 
+        //     // 2 内层循环生成内容的列数
+        //     for (var c = 1; c <= r; c++) { 
+        //         document.write("★")
+        //     }
+        //     document.write("</p>")
+        // }
+
+        
+        // 实现如下形状
+        // ★
+        // ★★★★
+        // ★★★★★★★
+        
+        // for(var r = 1 ; r <= 3 ; r++){
+        //     document.write("<p>") // 
+        //     // 2 内层循环生成内容的列数
+        //     for( var c = 1 ; c < r * 3 - 1 ; c++ ){  //3*1 - 1   1  3*2-1  1 2 3 4   3*3-1 8 1 2 3 4 5 6 7
+        //         document.write("★")  
+        //     }
+        //     document.write("</p>")
+        // }
+
+
+        // ★
+        // ★★★
+        // ★★★★★
+        // ★★★★★★★
+
+
+
+        
+
+    </script>
+</body>
+
+</html>

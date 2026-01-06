@@ -1,0 +1,92 @@
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #212121;
+}
+
+img {
+  display: block;
+}
+
+html, body, .app {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-size: 14px;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  background: #F4F4F4;
+}
+
+header {
+  height: .5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.08rem 0 0.14rem;
+}
+
+.logo img {
+  height: 0.22rem;
+}
+
+.signIn img {
+  height: 0.33rem;
+}
+
+.search {
+  height: 0.36rem;
+  border: 0.01rem solid #FB5800;
+  border-radius: .18rem;
+  flex: 1;
+  margin: 0 0.13rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search p {
+  font-size: .14rem;
+  color: #666;
+  margin-left: .15rem;
+}
+
+.search span {
+  width: .64rem;
+  height: .3rem;
+  background: #FF8500;
+  color: #FFF;
+  border-radius: .15rem;
+  margin-right: 0.02rem;
+  line-height: .3rem;
+  text-align: center;
+  font-size: .14rem;
+}
+
+main {
+  flex: 1;
+  background: pink;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+main li {
+  line-height: 80px;
+  border-bottom: 1px  solid #CCC;
+}
+
+footer {
+  height: 50px;
+  background: lime;
+}

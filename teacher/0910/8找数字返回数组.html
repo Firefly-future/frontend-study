@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 需求 在长字符串中找到所有的数组 存入一个数组
+        var str = "f4c653d1sc553d" ;   // [4,653,1,553] -> [1,4,553,653] -> [553,1,653,4]
+        function getNumArr ( str ){
+            var resArr = []; // 结果数组
+            var numStr = ""; // 存储数字
+            // 1 循环遍历拿到 每个字符
+            for( var i = 0 ; i < str.length; i++ ){
+                // 2 先找第一个数字  再找下一个非数字
+                // 即 出现的数字的位置 到下一个非数字前 都是数字
+                if( !isNaN( str[i] ) ){
+                    numStr += str[i]
+                    if( isNaN( str[ i+1 ] ) ){  // 找非数字
+                        resArr.push( numStr )
+                        numStr = ""
+                    }
+                }
+            }
+            // return resArr  //  [4,653,1,553]
+
+            // return  resArr.sort(function(a,b) { return a-b })  //  [1,4,553,653]
+
+            return resArr.reverse() // [553,1,653,4]
+        }
+
+        console.log( getNumArr( str ) )
+    </script>
+</body>
+</html>

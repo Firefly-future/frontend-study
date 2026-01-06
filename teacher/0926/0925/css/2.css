@@ -1,0 +1,80 @@
+
+
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+
+html, body{
+    width: 100%;
+    height: 100%;
+    background: #0D1117;
+}
+
+body{
+    padding-top: 20px;
+}
+
+.box{
+    width: 320px;
+    min-height: 300px;
+    border:1px solid #CCC;
+    margin: 0 auto;
+    border-radius: 10px;
+    padding: 14px;
+}
+.box h4 , .box p{
+    text-align: center;
+}
+
+.box h4{ font-size: 16px; color: #00AAFF; line-height: 30px;}
+.box p{ font-size: 14px; color: #EEE; line-height: 20px; }
+
+.question , .res{ height: 60px; border: 1px solid #00AAFF; padding: 10px;
+    line-height: 38px; text-align: center; margin: 20px 0; border-radius: 10px;
+    font-size: 26px; color: #FFF; font-family: "楷体"; font-weight: 700;
+}
+.res{
+    background: #000; height: 40px; line-height: 38px; padding: 0;
+}
+
+.box ul{
+    overflow: hidden;
+}
+.box ul li{
+    float: left;
+    width: 90px;
+    height: 40px;
+    background: #142939;
+    border:1px solid #00AAFF;
+    text-align: center;
+    margin-bottom: 10px;
+    font:700 20px/38px "楷体";
+    color: #00AAFF;
+    border-radius: 8px;
+}
+.box ul li:nth-child(3n-1){
+    margin: 0 10px;
+}
+.box ul li:hover{
+    background: #00AAFF;
+    color: #000;
+}
+.box ul li:nth-child(10){
+    border-color: red;
+    color: red;
+    background: #2D2026;
+}
+
+.box button{
+    height: 40px;
+    width: 100%;
+    background: #00AAFF;
+    color: #FFF;
+    border-radius: 8px;
+    border: 0;
+    font-weight: 600;
+}

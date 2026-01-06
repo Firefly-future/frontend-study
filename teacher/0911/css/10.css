@@ -1,0 +1,53 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+.box{
+    width: 900px;
+    height: 200px;
+    margin: 30px auto;
+    background: #eee;
+    padding-top: 50px;
+}
+
+.box ul{
+    float: left;
+}
+.box ol{
+    float: right;
+}
+
+.box li{
+    float: left;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    line-height: 50px;
+    text-align: center;
+    font-weight: 900;
+    font-size: 20px;
+    color: white;
+    margin: 0 15px 30px;
+}
+.box ul li{
+    background: red;
+}
+
+.box ol li{
+    background: blue;
+}
+
+.btn{
+    overflow: hidden;
+    text-align: center;
+    width: 100%;
+}
+.btn button{
+    padding: 10px  20px;
+    margin: 0 15px;
+}
+

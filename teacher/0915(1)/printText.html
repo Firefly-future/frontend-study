@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="打字速度" value="1000" id="time">
+    <input type="text" placeholder="请输入打印的内容" id="str">
+    <button id="btn">开始打字</button>
+    <button id="paused">暂停</button>
+    <div id="text"></div>
+
+    <script src="./js/getEl.js"></script>
+    <script>
+        // 1 定义要打的内容字符串
+        // var str = "无畏是青春的态度，热AI是时代的脉搏。各位新同学正以无畏的姿态奔赴通用人工智能的星辰大海！作为引领AI时代浪潮的主力军，广阔舞台，待你大展身手。乘风破浪，勇往直前，未来百度将与你一起，创造无限可能！";
+
+        // 2 给开始按钮绑定点击事件
+        // $("btn").onclick = function(){
+        //     // 循环遍历拿到每个字符
+        //     // for( var i = 0 ; i < str.length ; i++ ){
+        //     //     $("text").innerHTML += str[i]
+        //     // }
+        //     $("text").innerHTML = str
+        // }
+        // var res = "" , index = 0 ; 
+        // $("btn").onclick = function(){
+
+        //     var timer = setInterval(function(){
+        //         if( index < str.length ){
+        //             res += str[index]
+        //             index++
+        //             $("text").innerHTML = res
+        //         }else{
+        //             clearInterval( timer )
+        //         }
+        //     } , 50)
+        // }
+
+        var timer = null ; // 预留定时器
+        var index = 0; // 打印的开始下标
+        $("btn").onclick = function(){
+            // 获取打印的内容 和 事件
+            var str = $("str").value.trim() ,
+                time = $("time").value ;
+            if( !str ) return alert("打印的内容不能为空");
+
+            if( index === str.length - 1 ) {
+                index = 0;
+                $("text").innerHTML = ""
+            }
+            // this 在事件程序中 指向绑定事件的元素
+            // console.log(this)
+            this.disabled = true;
+            $("text").innerHTML += index > 0 ? '' : str[index];
+            // 开启定时器 按照指定的时间执行访问下一个字符
+            timer = setInterval(function(){
+                index++
+                // 判断已经是最后一个字符 将停止打印
+                if( index >= str.length - 1 ){ 
+                    clearInterval( timer ) 
+                    // console.log( this )  //window
+                    $("btn").disabled = false;
+                }
+                $("text").innerHTML += str[index];
+            },time)
+        }
+
+        $("paused").onclick = function(){
+            clearInterval( timer ) 
+            // console.log( this )  //window
+            $("btn").disabled = false
+        }
+    </script>
+</body>
+</html>

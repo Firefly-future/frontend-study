@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 编写函数isAng(str1,str2)用来检查两个字符串是否互为变位词。
+        // 变位词指不计顺序的情况下两个单词包含完全相同的字母，不多不少。
+        // 比如“silent”和“listen”互为变位词。
+
+        function isAng( str1 , str2 ){
+            // 判断长度不一致  直接false
+            if( str1.length !== str2.length ) return false;
+            // 判断str1 本身 就与 str2一致   直接true
+            if( str1 === str2 ) return true;
+            // 将字符串转数组 排序 在转回字符串 判断是否一致
+            str1 = str1.split("").sort().join("");
+            str2 = str2.split("").sort().join("")
+            return str1 === str2 ? true : false
+        }
+        console.log( isAng( "abc" , "abcd" ) ) // false
+        console.log( isAng( "hello" , "hello" ) ) // true
+        console.log( isAng( "hello" , "lhloe" ) ) // true
+        console.log( isAng( "eat" , "tea" ) )  // true
+        console.log( isAng( "eat" , "ten" ) )  // false
+
+    </script>
+</body>
+</html>

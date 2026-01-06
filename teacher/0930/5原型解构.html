@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const obj = { a : 1 , b : 2 };
+        let { a , toString } = obj;
+        console.log( a , toString)
+        console.log( obj )
+
+        const arr = [1,2,3]
+        let { pop : myPop } = arr;
+        console.log( myPop )
+        console.log( arr )
+        console.log( myPop === arr.__proto__.pop ) // true
+        console.log( myPop === Array.prototype.pop ) // true
+        console.log( arr.__proto__.pop === Array.prototype.pop ) // true
+        console.log( arr.__proto__ )
+        console.log( Array.prototype ) // 
+    </script>
+</body>
+</html>

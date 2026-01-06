@@ -1,0 +1,14 @@
+.page {
+  width: 1000px;
+  margin: 0 auto;
+  display: flex;
+}
+.left {
+  flex: 1;
+  overflow: hidden;
+  h3 {
+    padding: 20px 0;
+  }
+}
+.questions_wrap {
+}

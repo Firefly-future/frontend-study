@@ -1,0 +1,147 @@
+/* 1 借助 * 通配符选择器  匹配页面中所有的元素  即 将页面中所有元素的内外间距取消 */
+* {
+    /* margin 属性  设置盒子之间的距离  外间距 */
+    margin: 0;
+    /* padding 属性 设置内容距离盒子边界的距离  即 内间距 */
+    padding:0;
+}
+/* 2 借助标签选择器 将页面中超链接a元素的 修饰下划线取消 */
+a {
+    /* text-decoration 属性  设置文本的修饰     */
+    text-decoration: none;
+    color: #212121;
+}
+/* 3 借助群组选择器  将有序 无序列表的列表符号取消 */
+ol , ul {
+    /* list-style 属性  设置列表的样式风格   none取消  如123和黑点 */
+    list-style: none;
+}
+
+/* 4 注意: 图片本身具有3-5px的兼容问题 
+        解决: display:block 将图片的特性转换成块元素
+*/
+img {
+    display:block
+}
+
+
+
+.nav{
+    width: 500px;
+    height: 45px;
+    background: green;
+    margin: 50px auto 0;
+}
+
+/* 关系选择器
+    空格  包含选择器
+    > 直属选择器 只找儿子不找后代的孙子
+    + 相邻选择器
+    ~ 兄弟选择器 */
+
+
+.nav ul > li{
+    float: left;
+    line-height: 45px;
+    padding: 0 40px;
+    position: relative;
+}
+.nav ul > li > a{
+    color: #F00;
+}
+.nav ul > li:hover{
+    background: purple;
+}
+
+.secondList{
+    position: absolute;
+    left: 0;
+    z-index: 1;
+    background: saddlebrown;
+    width: 100%;
+    font-size: 14px;
+    /* diaplay 属性 转换元素之间的特性 或 隐藏显示元素
+            none 隐藏元素  不占位
+            block 块元素   显示元素 */
+
+    display: none;
+}
+.secondList li{
+    padding-left: 8px;
+}
+.secondList li:hover{
+    background: seagreen;
+}
+.secondList li a{
+    color: #FFF;
+}
+
+
+.nav ul > li:hover .secondList{
+    display: block;
+}
+
+
+
+
+
+.c1_l_banner{
+    height: 350px;
+    width: 240px;
+    margin: 50px auto;
+    position: relative;
+    box-shadow: 0 0 15px 2px red;
+}
+/* 给装图片的父元素设置高度 且溢出隐藏 从而达到显示一张图的效果 */
+.pics{
+    height: 350px;
+    overflow: hidden;
+}
+.pics li{
+    position: relative;
+}
+.pics li p{
+    position: absolute;
+    height: 36px;
+    background: rgba(255,255,255,.5);
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    font-size: 14px;
+    line-height: 36px;
+    text-align: center;
+}
+.pics li img{
+    width: 240px;
+    height: 350px;
+}
+
+.tabs{
+    width: 70px;
+    height: 10px;
+    position: absolute;
+    bottom: 45px;
+    left: 85px;
+    /* background: lime; */
+}
+.tabs a{
+    float: left;
+    width: 10px;
+    height: 10px;
+    background: #EEE;
+}
+.tabs a:not(:last-child){
+    margin-right: 10px;
+}
+
+.btn{
+    position: absolute;
+    bottom: 0;
+    line-height: 36px;
+}
+.prev{
+    left: 5px;
+}
+.next{
+    right: 5px;
+}

@@ -1,0 +1,39 @@
+<view>{{ title }}</view>
+<input type="text" model:value="{{title}}" />
+<view>数字：{{ num }}</view>
+<view>对象：{{ obj }}</view>
+<view>数组：{{ arr }}</view>
+<view>list：{{ list }}</view>
+<view class="{{text}}_1">aaa</view>
+<view>
+  <button type="primary" bind:tap="push">添加数据</button>
+  <view class="item-wrap" wx:for="{{list}}" wx:for-item="val" wx:for-index="ind" wx:key="name">
+    <!-- {{ind + 1}} 姓名：{{val.name}}  年龄：{{val.age}} -->
+    <button size="mini" type="warn" bind:tap="del" data-index="{{index}}">删除</button>
+    <template is="msgItem" data="{{ name: val.name, age: val.age, index: ind }}"/>
+  </view>
+</view>
+<view class="obj">
+  <input type="text" value="{{obj.desc}}" bind:input="changeDesc" />
+  <view>obj.desc:{{obj.desc}}</view>
+  <button bind:tap="add">c + 1</button>
+  <view>obj.info.a.b.c:{{obj.info.a.b.c}}</view>
+</view>
+<view class="btns">
+  <button size="mini" type="warn" bind:tap="changeNum" data-num="{{-1}}">-</button>
+  {{num}}
+  <button size="mini" type="primary" bind:tap="changeNum" data-num="{{1}}">+</button>
+</view>
+<view wx:if="{{num >= 90}}">真厉害</view>
+<view wx:elif="{{num >= 60 && num < 90}}">及格</view>
+<view wx:else>不及格</view>
+
+
+
+
+<template name="msgItem">
+  <view class="item">
+    <text> {{index}}: {{name}} </text>
+    <text> 年龄: {{age}} </text>
+  </view>
+</template>

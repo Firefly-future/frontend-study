@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 在es5中以函数为界 有函数作用域 和 全局作用域
+        // 全局变量挂靠window成了window的属性  
+        // var a = 10 ;      // 全局
+        // var b = "hello" ; // 全局
+
+        // function fn(){
+        //     // var a = "10"
+        //     function f(){
+        //         function ff(){
+        //             console.log(a)  // 10 形成了作用域链
+        //         }
+        //         ff()
+        //     }
+        //     f()
+        // }
+        // console.log( a )
+
+        // fn()
+        
+
+        // function fn(){
+        //     var a = "china";  // 局部 只能在函数内部访问
+        //     console.log(a)
+        // }
+        // fn()
+
+        // console.log( a )  // 报错 a is not defined
+
+
+
+        // var 特点:
+            // 具备声明提前 【将var声明的变量会提升在当前作用域的最顶端】
+            // 同一作用域中的同名变量 后设覆盖先设置
+            // 可以重新赋值
+            // 函数作用域 和 全局作用域
+
+        // let const 特点:
+            // 不具备声明提前 【在声明之前访问报错，ReferenceError 暂时性死区】
+            // 不能重复声明
+            // 块级作用域  {  }
+
+            // 区别; 
+                // let 允许先声明，再赋值; 也允许重新赋值
+                // const 声明的是常量,必须初始化【负责栈内存地址不变】。一旦创建无法修改
+                //       若存储的是一个引用类型，可以通过该对象的属性或方法修改
+            
+
+
+             
+        // console.log( date )   // undefined
+        // var date = "2025-10-01";
+        // console.log( date )   // 2025-10-01
+
+        // var date = "2025-10-02";
+        // console.log( date )
+        // date = 123;
+        // console.log( date )
+
+
+
+
+        // console.log( date )    // 报错
+        // let date = "2025-09-30";
+        // console.log( date )   // 2025-09-30
+        // let date = "2025-10-01";  //SyntaxError语法错误 
+        // console.log( date )     // Identifier[标识符] 'date' has[] already[已经] been[是] declared[声明]
+
+        // date = 10000;
+        // console.log( date )
+
+
+        // const a = "40";
+        // console.log( a )
+        // a = 40;   // 报错 TypeError类型错误   Assignment[分配] to constant[常数 固定的] variable.
+        // console.log( a )
+
+        // const o =  {
+        //     a : 1 , 
+        //     b  : 2, 
+        //     c : 3
+        // }
+        // o.a = "hello"
+        // o.c = "china"
+        // console.log( o )
+
+        // let a ;
+        // console.log( a )
+        // a = "456789";
+        // console.log( a )
+
+        // const a ;  // Missing丢失的 initializer初始化值 in const declaration声明
+        // console.log( a )
+        // a = "456789";
+        // console.log( a )
+        
+    </script>
+
+
+
+    <script>
+        // {
+        //     let a = 10 ;
+        //     function fn(){
+        //         console.log(a)  // 报错
+        //         let a = 20 ;
+        //     }
+        //     fn()
+        //     console.log(a)
+        // }
+
+        // {
+        //     let a = "china";
+        //     if(true){
+        //         console.log(a)   // 报错
+        //         let a = "script";
+        //         console.log(a)
+        //     }
+        // }
+
+        // for( var i = 1 ; i < 10 ; i++ ){
+        //     console.log("hello") // hello * 9
+        // }
+        // console.log( i ) // 10 因为for循环中var声明的变量是全局变量
+        //   接着i++执行了一元运算 会修改原值  所以i一定是i++条件为假的值
+
+
+        // for( let i = 1 ; i < 10 ; i++ ){
+        //     console.log( "china" )
+        // }
+        // console.log( i ) // i is not defined
+    </script>
+</body>
+</html>

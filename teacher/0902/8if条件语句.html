@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // if 条件语句
+            // 1 单分支  if( 条件表达式 ) { 真执行代码 }
+                    // 需求: 1 + 5 === 6 执行页面输出 666
+                    // if( 1 + 5 === 6 ) {
+                    //     document.write("666")
+                    // }
+
+            // 2 双分支  if( 条件表达式 ) { 真执行代码 } else { 假执行代码 }
+                    // 需求: 1 + 5 === 6 执行页面输出 666   否则执行 888
+                    // if( 1 + 5 === "6" ){
+                    //     document.write("666")
+                    // } else {
+                    //     document.write("888")
+                    // }
+
+            // 3 多分支  if( 条件表达式1 ) {
+            //                条件1 为真执行
+            //           } else if ( 条件表达式2 )  {
+            //                条件2 为真执行
+            //           } else if....(){ 
+            // 
+            //           } else {
+            //                 假执行  即 以上条件条件都不满足时 执行
+            //           }
+
+                    // 需求: 1 + true > 5 执行弹出黑色
+                    //       "hello" + "abc" === "abchello"  执行红色
+                    //       true && !null || "hello" 执行黄色
+                    //       以上条件都不满s足  执行绿色
+                    if( 1 + true > 5 ){  // 1 + 1 > 5 ? 
+                        alert("black")
+                    }else if( "hello" + "abc" === "abchello" ) {   // "helloabc" === "abchello" ?
+                        alert("red")
+                    }else if( true && !null || "hello" ) {  // true && true || "hello" => true || "hello" => true  ?
+                        alert("yellow")
+                    }else{
+                        alert("green")
+                    }
+    </script>
+</body>
+</html>

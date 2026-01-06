@@ -1,0 +1,65 @@
+@import "./common.scss";
+
+
+.bg{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    @for $i from 1 to 6{
+        &#bg#{$i}:target{
+            animation: img#{$i} 2s;
+            z-index:1;
+        }
+    }
+}
+// 180/5
+.wrap{
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    top: 250px;
+    background: rgba(255,255,255,.5);
+    display: flex;
+    justify-content: center;
+    z-index: 9;
+    a{
+        width: 100px;
+        height: 100px;
+        padding: 10px;
+        img{
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+        }
+    }
+}
+// :target 目标选择器
+
+@keyframes img1{
+    from{transform: translateX(-100%);}
+    to{transform: translateX(0);}
+}
+
+
+@keyframes img2{
+    from{transform: translateY(-100%);}
+    to{transform: translateY(0);}
+}
+
+@keyframes img3{
+    from{right: 0;bottom: 0; width: 0; height: 0;}
+    to{right: 0;bottom: 0; width: 100%; height: 100%;}
+}
+
+
+@keyframes img4{
+    from{transform: scale(.2) rotate(0deg);}
+    to{transform: scale(1) rotate(360deg);;}
+}
+
+
+@keyframes img5{
+    from, 50%{transform: scale(.2) skew(45deg);}
+    25% , 75%{transform: scale(.6) rotateX(145deg); border-radius: 50%;}
+    to{transform: scale(1) rotate(360deg);;}
+}

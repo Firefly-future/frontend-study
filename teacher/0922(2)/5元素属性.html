@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=s, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="wrap" class="box" abc="123">这是一个盒子元素啊</div>
+    <script>
+        // 标签属性 - 标准属性 -> 标签自带的
+            // el.属性  获取   
+            // el.属性 = "值"  设置
+                // class  id   
+                // a -> href target...
+                // img -> src title...
+
+        var box = document.querySelector(".box");
+            // console.log( box.id )
+            // console.log( box.className )
+            // box.id = "container"
+
+            // console.log( box.abc )
+            // box.abcdef = 123
+
+        // 标准属性 和 非标准(自定义) 【H5新增】
+            // el.getAttribute("属性名")   获取属性值
+            // el.removeAttribute("属性名") 删除属性
+            // el.setAttribute("属性名","属性值")  设置属性
+            console.log( box.getAttribute("id") )
+            console.log( box.getAttribute("abc") )
+
+            box.setAttribute( "class" , "wrap" )
+            box.setAttribute( "abcdefg" , "321" )
+
+            box.removeAttribute("abcdefg")
+            box.removeAttribute("id")
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: 0;
+        }
+
+        .xinzeng {
+            margin: 50px auto 0;
+            width: 200px;
+            height: 300px;
+            border: 1px solid grey;
+        }
+
+        span {
+            float: right;
+        }
+
+        div {
+            float: left;
+        }
+
+        span:hover {
+            cursor: pointer;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="xinzeng">
+        <div class="input"><span>&times;</span>
+            <div>收件人：<input type="text" class="in1"></div>
+            <div>邮编:<input type="text" class="in2"></div>
+            <div>所在地区：<input type="text" class="in3"></div>
+            <div>电话：<input type="text" class="in4"></div>
+            <div>详细地址：<input type="text" class="in5"></div>
+            <button class="btn1">取消</button>
+            <button class="btn2">提交</button>
+        </div>
+    </div>
+    <script>
+        function $(el,parent=document){
+            return parent.querySelector(el)
+        }
+        // 给x与取消与提交绑定点击事件
+        $('span').onclick=function(){
+            history.back()
+        }
+        $('.btn1').onclick=function(){
+            history.back()
+        }
+        $('.btn2').onclick=function(){
+            var in1=$('.in1').value.trim();
+            var in2=$('.in2').value.trim();
+            var in3=$('.in3').value.trim();
+            var in4=$('.in4').value.trim();
+            var in5=$('.in5').value.trim();
+            if(!in1)return alert('收货人不能为空')
+            if(!in2)return alert('邮编不能为空')
+            if(isNaN(in2))return alert('邮编必须为纯数字')
+            if(in2.toString().length!==6)return alert('邮编长度必须为6')
+            if(!in3)return alert('所在地区不能为空')
+            if(!in4)return alert('电话/手机不能为空')
+            if(isNaN(in4))return alert('电话/手机必须为纯数字')
+            if(in4.toString().length!==11)return alert('电话/手机长度必须为11')
+            if(!in5)return alert('详细地址不能为空')
+            location.href='增删改查.html'
+        // 同时输入的内容清空
+        $('.in1').value='';
+        $('.in2').value='';
+        $('.in3').value='';
+        $('.in4').value='';
+        $('.in5').value='';
+        }
+    </script>
+</body>
+
+</html>

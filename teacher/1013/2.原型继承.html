@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>标题</h1>
+
+  <script>
+    function Base(name, gender) {
+      this.typeName = name
+      this.gender = gender
+    }
+    Base.prototype.$ = function(el, parent = document) {
+      return parent.querySelector(el)
+    }
+    Base.prototype.$all = function(el, parent = document) {
+      return [...parent.querySelectorAll(el)]
+    }
+    // const b = new Base('我是一个公共类')
+    // console.log(b)
+  
+
+    function Person(name, age, gender) {
+      this.name = name
+      this.age = age
+    }
+    // 原型继承: 子类的原型指向父类的实例
+    // 缺点：不能在创建子类实例时给父类传参数
+    Person.prototype = new Base('我是一个Person类')
+    Person.prototype.constructor = Person
+    Person.prototype.getInfo = function() {
+      console.log(`用户信息: 姓名: ${this.name},年龄：${this.age}`)
+    }
+
+    // 实例对象
+    const xm = new Person('小明', 22, '男')
+
+    // 原型链：对象访问某个属性和方法的时候，先从对象本身查找，没有就一层一层往原型中查找，直到原型链的尽头
+    // 原型链的尽头是 Object.prototype.__proto__ === null
+
+    console.log(xm)
+    console.log(xm.$)
+
+
+
+
+  </script>
+</body>
+</html>

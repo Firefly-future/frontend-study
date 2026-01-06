@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">设置密码</button>
+    <h4 id="tip"></h4>
+    <script>
+        // 声明一个pwd的变量，保存用户输入的密码，当长度不是6位数的时候，弹出提示，“密码长度必须为6位数“，当长度为6位数的时候，进一步判断pwd是否为纯数字，不是纯数字，提示用户输入纯数字；如果为纯数字，提示用户密码设置成功！
+
+        // 改造之后需求
+        // 点击页面中的按钮  弹出设置密码输入框
+        // 判断 取消 和 未输入 提示用户 请常规操作
+        // 判断 输入的长度不是6  即 密码必须是六位
+        // 判断输入的不是数字  提示请输入6位数的数字密码
+        // 最后确定设置后
+        // 将设置密码成功文本写入页面的h4标签中,且样式为红色
+        // 否则 提示用户 取消设置
+
+
+        // 补充:  字符串的基本操作
+        //            length属性 可以获取字符串的长度
+        //            [下标]  通过下标可以访问字符,最小下标0,最大下标length-1
+        
+
+        // 1 获取元素
+        var btn = document.getElementById("btn") ,
+            tip = document.getElementById("tip") ;
+        // 2 按钮绑定点击事件
+        btn.onclick = function(){
+            // 3 弹出密码输入框
+            var pwd = prompt("请输入密码");
+            // 4  取消 和 未输入 提示用户 请常规操作
+            if( !pwd ){
+               alert( "请常规操作" )
+            // 5 输入了  判断长度不是6
+            } else if( pwd.length !== 6 ){
+                // console.log( pwd )
+                // console.log( pwd.length )
+                // console.log( pwd[0] )
+                // console.log( pwd[pwd.length - 1] )
+                alert("密码必须是六位")
+            // 6 输入了 且是六位   判断是不是数字
+            } else if ( isNaN(pwd) ){
+                alert("请输入数字密码")
+            } else {
+            // 7 输入了 且是数字
+                // 弹出确认框 问用户设置该密码吗?
+                var bol = confirm("尊敬的用户,您确定要设置该密码吗?😊")
+                tip.innerHTML = bol ? "🎉密码设置成功🎉" : "用户取消设置😭"
+                tip.style.color = "red"
+            }
+        }
+    </script>
+</body>
+</html>

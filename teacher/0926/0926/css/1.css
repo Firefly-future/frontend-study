@@ -1,0 +1,109 @@
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+img{
+    display: block;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+body{
+    padding-top: 100px;
+}
+/* 260*1.5 = 390
+   116*1.5 = 174 */
+.box{
+    width: 432px;
+    margin: 0 auto;
+}
+
+.mobile{
+    background: #F2ECE1;
+    border:1px solid #CCC;
+    border-radius: 12px;
+    padding: 20px;
+}
+.showPic{
+    position: relative;
+}
+.showPic img{
+    width: 390px;
+    height: 175px;
+}
+
+.moveBox , .targetBox{
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    position: absolute;
+    box-shadow: 0 0 8px 2px #FFF;
+}
+
+.showPic .moveBox{
+    left: 10px;
+    top: 80px;
+    /* background: url("https://www.jq22.com/demo/jshdyz202006191356/images/2.png") -150px -80px / 390px 175px; */
+    /* background:color image repeat posotion / size */
+    background-size: 390px 175px;
+    z-index: 9
+}
+.targetBox{  
+    top: 80px;
+    left: 150px;
+    background: rgba(0,0,0,.3);
+}
+
+.bar{
+    width: 390px;
+    height: 40px;
+    background: #ECE5DD;
+    border-radius: 20px;
+    border: 1px solid #CCC;
+    margin: 50px  auto 0;
+    text-align: center;
+    line-height: 38px;
+    color: #666;
+    font-size: 14px;
+    position: relative;
+}
+
+.moveBtn{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid grey;
+    background: rgb(245,240,233);
+    position: absolute;
+    left: 5px;
+    top: -5px;
+    line-height: 48px;
+    text-align: center;
+    user-select: none;
+    cursor: move;
+    font-size: 18px;
+    font-weight: 700;
+    color: green
+}
+
+.tip{
+    height: 35px;
+    background: rgba(255,255,255,.5);
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    line-height: 35px;
+    font-size: 14px;
+    padding-left: 10px;
+    display: none;
+}
+.tipShow{
+    display: block;
+}
+
+.fail { color: red; }
+.success { color: green; }

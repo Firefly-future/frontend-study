@@ -1,0 +1,7 @@
+/* pages/mine/mine.wxss */
+image {
+  width: 100%;
+}
+swiper {
+  height: 420rpx;
+}

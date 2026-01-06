@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/消息列表.css">
+</head>
+
+<body>
+    <div class="box">
+        <div class="list">
+            <ul>
+                <li>消息列表</li>
+                <li>发布列表</li>
+            </ul>
+        </div>
+        <div class="data">
+            <div class="nic">消息名称:
+                <input type="text">
+            </div>
+            <div>消息类型
+                <select name="" id="">
+                    <option value="2">全部消息</option>
+                    <option value="3">系统消息</option>
+                    <option value="4">活动消息</option>
+                </select>
+                <p><button>搜索</button></p>
+                <p><button>新增消息</button></p>
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>消息id</th>
+                            <th>消息名称</th>
+                            <th>消息类型</th>
+                            <th>保存时间</th>
+                            <th>发布时间</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>0</td>
+                            <td>消息1</td>
+                            <td>系统消息</td>
+                            <td>2021-4-19 12:44:10</td>
+                            <td>2021-4-19 12:44:10</td>
+                            <td><button>查看</button></td>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>消息1</td>
+                            <td>系统消息</td>
+                            <td>2021-4-19 12:44:10</td>
+                            <td>2021-4-19 12:44:10</td>
+                            <td><button>查看</button></td>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>消息1</td>
+                            <td>系统消息</td>
+                            <td>2021-4-19 12:44:10</td>
+                            <td>2021-4-19 12:44:10</td>
+                            <td><button>查看</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="message">
+            <h1>请输入具体消息</h1>
+            消息类型<select name="" id="">
+                <option value="0">系统消息</option>
+                <option value="1">活动消息</option>
+            </select>
+            <div>消息标题:
+                <input type="text">
+            </div>
+            <div>消息内容:
+                <textarea name="" id="" cols="20" rows="2"></textarea>
+            </div>
+            <button>发布</button>
+            <button>保存</button>
+        </div>
+    </div>
+    <div class="tip"><span>&times;</span></div>
+    <script src="./js/消息列表.js"></script>
+</body>
+
+</html>

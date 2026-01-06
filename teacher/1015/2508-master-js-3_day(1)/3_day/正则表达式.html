@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // const reg1 = /hbnbbnbnnnn/g
+    // const reg2 = new RegExp('aaaa', 'g')
+
+
+    // const reg = /^123(a|bc)d/
+    // const str = '123abdcd444aBwe'
+
+    // const reg = /^1[3-9]\d{9}$/
+    // const reg = /^\w+@\w{2,}\.[a-z]{2,}$/
+    // const str = 'asd_fasdf@xxx.com'
+
+    // 1. 检验字符串是否符合正则的规则
+    // console.log(reg.test(str))
+
+    // 2. 在字符串中执行匹配搜索，并返回匹配结果
+    // const reg = /(\d+)abc([A-Z]*)/g
+    // const str = '123abcC43332abcABC4342abcDadsfa13'
+    // // const res1 = reg.exec(str)
+    // // const res2 = reg.exec(str)
+    // // const res3 = reg.exec(str)
+    // // const res4 = reg.exec(str)
+    // // console.log(res1)
+    // // console.log(res2)
+    // // console.log(res3)
+    // // console.log(res4)
+    // let res
+    // while(res = reg.exec(str)) {
+    //   console.log(res)
+    // }
+    // console.log('结束')
+
+
+    // 字符串方法
+    // 1. match: 查找符合正则规范的字符串
+    // const str = "aaaaaa      150de1806    cd170cd0   njk130";
+    // const reg = /\d{3}/g;
+    // const res = str.match(reg);
+    // console.log(res)
+
+    // 2. search: 返回符合正则规范的下标
+    // console.log(str.search(reg))
+
+    // 3. split: 根据正则分割字符串
+    // console.log(str.split(/\s+/))
+
+    // 4. replace: 根据正则替换内容
+    // const str = 'get-element-by-id' // => getElementById
+    // const res = str.replace(/-([a-z])/g, ($0, $1) => {
+    //   return $1.toUpperCase()
+    // })
+    
+    const str = 'getElementById' // => get-element-by-id
+    const res = str.replace(/[A-Z]/g, (...rest) => {
+      console.log(rest)
+      return '-' + rest[0].toLowerCase()
+    })
+    console.log(res)
+
+
+
+
+  </script>
+</body>
+</html>

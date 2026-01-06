@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{ padding: 0 ; margin: 0; }
+        .box{
+            width: 300px; height: 1000px; background: red; margin: 100px auto 0;
+            border: 30px dashed gold; padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <script>
+        var box = document.querySelector(".box");
+
+        // 元素尺寸信息
+            // ● 元素.offsetWidth： 元素的外宽高 width + padding + border
+            // ● 元素.offsetHeight： 元素的外宽高 height + padding + border
+                console.log( `box元素的外宽是:${box.offsetWidth}` )
+
+            // ● 元素.clientWidth： 元素的内宽高 width + padding
+            // ● 元素.clientHeight： 元素的内宽高 height+ padding
+                console.log(`box元素的内宽是:${box.clientWidth}`)
+
+            // ● 元素.offsetLeft： 相对于定位父元素左则的距离
+            // ● 元素.offsetTop: 相对于定位父元素顶部的距离
+                console.log( `box元素距离定位父元素的左侧距离是:${box.offsetLeft}` )
+                console.log( `box元素距离定位父元素的顶部距离是:${box.offsetTop}` )
+
+            // ● window.innerWidth： 浏览器的宽高（包含滚动条）
+                console.log(`浏览器的宽度(含滚动条)是:${window.innerWidth}`)
+            // ● document.documentElement.clientWidth || document.body.clientWidth 浏览器的宽高（不包含滚动条）
+                console.log(`浏览器的宽度(不含滚动条)是:${document.documentElement.clientWidth}`)
+            // ● document.documentElement.scrollWidth || document.body.scrollWidth 页面实际宽高
+                console.log(`页面的实际宽度是:${document.documentElement.scrollWidth}`)
+            // ● document.documentElement.scrollTop || document.body.scrollTop 滚动条滚动距离
+                window.addEventListener("scroll" , function(){
+                    console.log(`页面滚出去了${document.documentElement.scrollTop}`)
+                })
+
+    </script>
+</body>
+</html>

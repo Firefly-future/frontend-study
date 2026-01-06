@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>重点-实参对象集合</title>
+</head>
+<body>
+    <script>
+        // 举例   
+            // 求 任意数 与 8 的和              -> 确定参数1个  如3, 8
+            // 求 任意两数的和                  -> 确定参数2个  如1 5 , 50 51
+            // 求 任意两数区间 除了 某数的和    -> 确定参数3个  如50-80  68
+            // 求 任意个数字的和                -> 不确定参数   
+
+        // 需求: 求 任意个数字的和
+        // 得出 不确定参数个数   引出 arguments 实参对象集合
+        function getNumAdd(){
+            // console.log( arguments ) // 实参对象集合 
+            // console.log( typeof arguments ) // "object"
+            // console.log( arguments[0] )  // 下标访问  最小下标0  最大下标length-1
+            // console.log( arguments.length )  // 访问长度
+            
+            var res = 0;
+            // 循环遍历 拿到实参对象中的每一个值
+            for( var i = 0 ; i < arguments.length ; i++ ) {
+                res += arguments[i]
+            }
+            console.log( res )
+        }
+        getNumAdd( 1,2,3,5,1,2,3,2,5,6 )
+        getNumAdd( 15,23,25,15,2,262,6,26,26,26,2,2,26,46 )
+        getNumAdd( 3,5,9,4 )
+
+
+    </script>
+</body>
+</html>

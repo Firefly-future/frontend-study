@@ -1,0 +1,55 @@
+.side {
+  width: 250px;
+  height: 100%;
+  background: #0b1d45;
+  display: flex;
+}
+.title_bar {
+  width: 100px;
+  background: #031133;
+  padding-top: 130px;
+}
+.title_bar_item {
+  height: 100px;
+  color: #747b7f;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 14px;
+  &.active {
+    background: #0b1d45;
+    color: #ffffff;
+    border-left: 2px solid #ffffff;
+    path {
+      fill: #ffffff;
+    }
+  }
+}
+.title_list {
+  width: 150px;
+  h3 {
+    height: 130px;
+    border-bottom: 1px solid #fff;
+    text-align: center;
+    color: #fff;
+    text-align: center;
+    line-height: 130px;
+  }
+  li {
+    line-height: 40px;
+    text-align: center;
+    a {
+      display: block;
+      text-decoration: none;
+      color: #747b7f;
+    }
+    :global {
+      a.active {
+        color: #fff;
+        border-right: 3px solid #4090f7;
+      }
+    }
+  }
+}

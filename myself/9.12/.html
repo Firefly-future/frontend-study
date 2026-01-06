@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span></span>
+    <script>
+        var a='abcdefghijklmnopq'
+        console.log(a.slice(-3,))
+        console.log(a.slice(-6,-3))
+// var str='0123456789abcdefABCDEF'
+// function Col(str){
+//     var color='#'
+//     for(var i=0;i<6;i++){
+//         var index=random(0,str.length-1)
+//         color+=str[index]
+//     }return color
+// }
+// console.log(Col(str))
+// // 随机颜色
+// var span=document.getElementsByTagName('span')
+// span.style.backgroundColor= Col(str)
+// function random(min,max){
+//     return Math.floor(Math.random()*(max-min+1)+min)
+// }
+            var num1=1000000
+            var num2=100000000000
+            var num3=1231354616159
+            var num4=-123
+            function san(num){
+                
+                if(num<0){
+                    num=String(num)
+                    num.length=num.length-1
+            }
+                else{num=num.toString()}
+                
+                n=parseInt(num.length/3);
+                if(parseInt(num.length/3)===num.length/3){
+                    n=n-1
+                }
+                var Num='';
+                for(var i=n-1;i>=1;i--){
+                    Num+=','+num.slice(-3*(i+1),-3*i);
+                }return num.substr(0,num.length-3*n)+Num+','+num.slice(-3)
+            }
+            console.log(san(num1))
+            console.log(san(num2))
+            console.log(san(num3))
+            console.log(san(num4))
+
+    </script>
+    
+</body>
+</html>

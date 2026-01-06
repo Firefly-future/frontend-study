@@ -1,0 +1,86 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: 0;
+    list-style: none;
+}
+
+.box {
+    width: 400px;
+    height: 300px;
+    border: 1px solid aqua;
+
+    ul {
+        width: 400px;
+        height: 300px;
+        border: 1px solid red;
+    }
+
+    li {
+        float: left;
+        height: 45px;
+        width: 40px;
+        font: bold italic 18px/45px '微软雅黑';
+
+        &:hover {
+            background: green;
+            color: white;
+        }
+    }
+}
+
+// 
+.common {
+    width: 800px;
+    margin: 10px auto;
+}
+
+%common {
+    width: 800px;
+    margin: 10px auto;
+}
+
+.header {
+    @extend .common;
+    height: 35px;
+    background: grey;
+
+    ul {
+        float: left;
+
+        li {
+            float: left;
+            height: 30px;
+
+            &:hover {
+                background: red;
+                color: blue;
+                cursor: pointer
+            }
+        }
+    }
+
+    ol {
+        @extend ul;
+        float: right;
+    }
+}
+
+.nov {
+    @extend %common;
+    height: 200px;
+    background: yellow;
+    font: bold italic 14px/30px '宋体';
+}
+
+@mixin common($h, $bg,$w: 800px,  $m: 0 auto) {
+    width: $w;
+    height: $h;
+    background: $bg;
+    margin: $m;
+}
+
+.content {
+    @include common( 30px, gold);
+    width:1000px
+}

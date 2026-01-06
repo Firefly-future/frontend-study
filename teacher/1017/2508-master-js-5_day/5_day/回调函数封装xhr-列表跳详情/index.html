@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  li .info {
+    pointer-events: none;
+  }
+</style>
+<body>
+  <h1>音乐首页</h1>
+  <ul></ul>
+  <ol></ol>
+  <script src="./request.js"></script>
+  <script>
+    request('http://39.96.210.90:5001/top/playlist', {
+      // 使用回调函数接收数据
+      onSuccess: res => {
+        console.log('成功后调用此函数', res)
+        res.playlists.sort(() => {
+          return Math.random() - 0.4
+        })
+        document.querySelector('ul').innerHTML = res.playlists.slice(0, 6).map(item => {
+          return `
+            <li data-id="${item.id}" data-name="${item.name}">
+              <div class="info">
+                <img src="${item.coverImgUrl}" width="100" />
+                <p>id: ${item.id}</p>
+                <p>${item.name}</p>  
+              </div>
+            </li>
+          `
+        }).join('')
+        document.querySelector('ul').addEventListener('click', (e) => {
+          if (e.target.nodeName === 'LI') {
+            const id = e.target.getAttribute('data-id')
+            const name = e.target.getAttribute('data-name')
+            // 列表跳转详情页传递id
+            // url 传参数时如果有特殊字符，例如中文，网址，都需要通过 encodeURIComponent 转译特殊字符
+            location.href = `./detail.html?id=${id}&a=100&b=200&name=${encodeURIComponent(name)}&from=${encodeURIComponent('https://baidu.com/api/list')}`
+          }
+        })
+      },
+      onFail: () => {
+        alert('请求错误，请稍后重试！')
+      }
+    })
+
+    request('http://39.96.210.90:5001/personalized/newsong?a=100&b=200', {
+      onSuccess: res => {
+        document.querySelector('ol').innerHTML = res.result.map(item => {
+          return `
+            <li>
+              <p>${item.name}</p>
+            </li>
+          `
+        }).join('')
+      },
+      onFail: () => {
+        alert('请求错误，请稍后重试！')
+      }
+    })
+
+
+    request('http://39.96.210.90:5001/search', {
+      method: 'POST',
+      data: JSON.stringify({ keywords: '刘德华', a: 200 }),
+      headers: {
+        'content-type': 'application/json;charset=utf-8'
+      },
+      onSuccess: res => {
+        console.log(res)
+      },
+      onFail: () => {
+        alert('请求错误，请稍后重试！')
+      }
+    })
+  </script>
+</body>
+</html>

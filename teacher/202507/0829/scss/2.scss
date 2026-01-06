@@ -1,0 +1,79 @@
+@import "./common.scss";
+
+
+@keyframes load1{
+    to{ transform: rotate(360deg); }
+}
+
+.loading1{
+    width: 10px;
+    height: 10px;
+    // background: red;
+    border-radius: 50%;
+    margin: 50px auto 0;
+    position: relative;
+    animation: load1 2s linear infinite;
+    p{
+        position: absolute;
+        background: #000;
+        border-radius: 50%;
+        @for $i from 1 to 13 {
+            &:nth-child(#{$i}){
+                width: 17px - $i;
+                height: 17px - $i;
+                transform: rotate(36deg * $i - $i ) ;
+                top: -40px + $i;
+                left: -3px + $i;
+                transform-origin: 8px - $i 45px - $i;
+                opacity: 1 - $i * 0.05;
+            }
+        }
+    }
+}
+
+
+@keyframes left{
+    to{ transform: translateX(130px); opacity: 1; }
+}
+@keyframes right{
+    to { transform: translateX(-130px); opacity: 1; }
+}
+
+.loading2{
+    width: 160px;
+    height: 30px;
+    margin: 100px auto;
+    display: flex;
+    justify-content: space-between;
+    span{
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        // 补充笔记
+        // list 值列表  将多个值存入一个变量，值之间逗号隔开
+        //  nth(list , index) 可以访问值列表的值【index下标从1开始】
+        $bg : red , black , green;
+        @for $i from 1 through 3 {
+            &:nth-child(#{$i}){
+                background: nth($bg, $i);
+                @if( $i == 1 ){
+                    animation: left .5s linear infinite;
+                    opacity: .6;
+                } @else if( $i == 3 ){
+                    animation: right .5s linear infinite;
+                    opacity: .6;
+                }
+            }
+        }
+    }
+}
+
+
+
+.loading3{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px -5px #000;
+    margin: 0 auto;
+}

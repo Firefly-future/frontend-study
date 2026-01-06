@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>12346</div>
+    <p class="box">15646</p>
+    <a href="">156661</a>
+    <div class="boxx" id="box" name="box">yaohaishi buyao</div>
+    <script>
+        // 1.通过id获取元素
+        console.log(document.getElementById('box'))
+        // 2.通过标签名获取元素
+        console.log(document.getElementsByTagName('p'))
+        // 3.通过类名获取元素
+        console.log(document.getElementsByClassName('box'))
+        console.log(document.getElementsByClassName('boxx'))
+        // 4.通过name属性获取元素
+        console.log(document.getElementsByName('box'))
+        // 5.通过选择器获取元素  注意返回第一个匹配项目 
+        console.log(document.querySelector('#box'))
+        console.log(document.querySelector('.box'))
+        // 6.通过选择器获取所有元素
+        // var selectorALL=document.querySelectorALL('.box')
+        // console.log(selectorALL)
+        console.log(document.querySelectorAll('div'))
+        console.log(document.querySelectorAll('.box'))
+        
+    </script>
+</body>
+</html>

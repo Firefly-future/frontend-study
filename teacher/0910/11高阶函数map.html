@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+        <h3>新闻</h3>
+
+        <ul id="list"></ul>
+    </div>
+    <script>
+        // arr.方法(function( item ,index , arr ){
+        //     item 数组的每一项
+        //     index 下标
+        //     arr   原数组
+        // })
+
+
+        // map() 对数组的每一项 进行指定操作  返回操作后的新数组
+        
+            // var arr = ["hello" , 23 , true , "chsina"];
+            // arr.map(function( item , index , arr ){
+            //     console.log( item , index )
+            //     console.log( arrs )
+            // })
+
+            // // 需求 对数组中的每一项 * 5 返回
+            // var arr = [5,9,6];
+            // var res = arr.map( function(item){
+            //     return item * 5
+            // } )
+            // console.log( res )
+
+
+            // 需求 对数组中的每一项 * 各自的下标  返回
+            // var arr = [5,9,6];
+            // var res = arr.map( function(item , index){
+            //     return item * index
+            // } )
+            // console.log( res )
+
+
+            // 实战开发基础
+            // 1 模拟数据
+            var data = [
+            "“全球南方媒体应发挥积极作用”",
+"新疆骆驼产业用上智能化生产线",
+"九三阅兵全球刷屏 国防部回应",
+"以色列空袭卡塔尔，特朗普当局罕见顾左右而言他",
+"石破茂将在联大发表二战演讲，有人竟急了：屈从中国",
+"前往白宫附近餐厅用餐 特朗普遭贴脸嘘声抗议",
+"横跨四省区！我国发现“亚洲锂腰带” 长达2800公里",
+"火箭军倒查9年揪出采购掮客 围标央企浮出水面",
+"那英老公孟桐回应“出轨”传闻称纯属谣言",
+"国防部：日本加速军事扩张意欲何为？",
+"民警张进军被网友“扒”出来了，而且还有后续"
+            ]
+            // 2 获取元素
+            var list = document.getElementById("list");
+            // 3 将数组的每一项 进行指定操作 -> 一项返回一个li的操作
+            list.innerHTML = data.map(function( item ){
+                return "<li>" + item + "</li>"
+            }).join("")
+
+    </script>
+</body>
+</html>

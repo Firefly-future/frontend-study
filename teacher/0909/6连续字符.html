@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 封装函数 实现字符串中是否有连续相同字符  返回布尔值
+        // hello  ->  true
+        // abcbc  ->  false
+        function repeatChart( str ){
+            // 核心: 当前字符 与 下一个字符一致  即视为连续
+            // 循环遍历拿到每个字符
+            for( var i = 0 ; i < str.length; i++ ){
+                if( str[i] === str[i + 1] ) return true
+            }
+            return false
+        }
+        console.log( repeatChart("hello") )  // true
+        console.log( repeatChart("abcbc") )  // false
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- （一）第一题：打字机效果
+1．点击打字获取输入框的文字，文字为空时弹出提示（10分）
+2．获取到输入框的文字开始自动打印（10分）
+3．点击暂停按钮可以暂停打印（10分）
+4．点击继续按钮继续打印（10分）
+5．打字速度输入框可以控制打字速度，输入的值不为数字时弹出提示（10分） -->
+    <div>打字速度：<input type="text" placeholder="默认1000毫秒" id="time">毫秒</div>
+    <div>输入文字：<input type="text" placeholder="请输入文字" id="text2"></div>
+    <div><button id="btn1">开始打字</button><button id="btn2">暂停</button>
+        <button id="btn3">继续打字</button></div>
+    <script>
+function $(el){
+    return document.getElementById(el)
+}
+// 模拟数据
+// var time=$('time')
+// var text2=$('text2')
+
+// var data=[
+//     {time:''},
+//     {text2:''}
+// ]
+// // 渲染数据
+// data.map(function(){
+//     return `${time}   
+//             ${text2}`
+// })
+    // value(text2).trim()
+    var text2=$('text2')
+    var time=$('time')
+$("btn1").onclick = function(){
+    var speed=time.value.trim()||1000
+    if(isNaN(time.value)){
+        alert('请输入数字')
+    }
+    if(text2.value.trim().length===0){
+        alert('输入的内容不能为空')
+    }else{var time1=setInterval(function(){
+        var res=''
+        // 获取输入框的值开始自动打印 逐个打印
+    for(var i=0;i<text2.value.length;i++){
+        res+=text2.value[i]
+        res++
+    }return document.write(res)},speed)
+    // 在本页面打印
+    }
+}
+$("btn2").onclick=function(){
+    clearInterval('time1')
+}
+$("btn3").onclick=function(){
+    return document.write(text2.value)
+}</script>
+</body>
+</html>

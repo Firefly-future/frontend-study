@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>列表</li>
+        <li>列表</li>
+        <li>列表</li>
+        <li>列表</li>
+        <li>列表</li>
+    </ul>
+    <div class="box" name="box">盒子板块1</div>
+    <div class="box">盒子板块2</div>
+    <div class="box" name="box">盒子板块3</div>
+    <script>
+        // 元素.getElementById(id) 根据元素的ID获取单个元素 ; 返回DOM元素对象
+        // 元素.getElementsByTagName(tagName) 根据元素的标签名获取一组元素; 返回类数组(HTMLCollection)
+            var lis = document.getElementsByTagName("li");
+            console.log( lis )
+        // 元素.getElementsByClassName(className) 根据元素的类名获取一组元素 ; 返回类数组(HTMLCollection)
+            var box = document.getElementsByClassName("box");
+            console.log( box )
+
+        // 元素.querySelector(selector) 根据CSS选择器获取第一个匹配的元素; 返回DOM元素
+            var wrap = document.querySelector(".box");
+            console.log( wrap )
+
+        // 元素.querySelectorAll(selector) 根据CSS选择器获取所有匹配的元素; 返回类数组(NodeList),支持forEach
+            var list = document.querySelectorAll("ul li");
+            console.log( list )
+
+        // 元素.getElementsByName(name) 根据元素的name属性获取一组元素 ; 返回类数组(NodeList),支持forEach
+            var div = document.getElementsByName("box")
+            console.log( div )
+
+        // 总结:
+        // ● getElementById返回单个元素，而其他方法如getElementsByTagName、getElementsByClassName和querySelectorAll返回的是元素集合。
+        // ● 使用querySelector和querySelectorAll时，可以使用任何有效的CSS选择器。
+        // ● 返回的HTMLCollection和NodeList是类数组对象，可以使用索引访问其元素，也可以用for循环或forEach（仅限NodeList）遍历
+    </script>
+</body>
+</html>

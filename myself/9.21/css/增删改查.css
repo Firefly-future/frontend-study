@@ -1,0 +1,128 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.box {
+    width: 1200px;
+    margin: 100px auto 0;
+    border: 1px solid gainsboro;
+}
+
+h3 {
+    color: red;
+    float: left;
+}
+
+h3:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.box1 {
+    width: 1200px;
+    height: 40px;
+    float: left;
+}
+
+.box2 ul li {
+    width: 170px;
+    height: 50px;
+    text-align: center;
+    line-height: 30px;
+    border: 1px solid gainsboro;
+    float: left;
+}
+
+.xinxi ul li {
+    width: 170px;
+    height: 80px;
+    text-align: center;
+    border: 1px solid gainsboro;
+    float: left;
+    font: normal 10px/80px '微软雅黑';
+}
+
+.xinxi ul li span {
+    font-size: 16px;
+}
+
+.xinxi ul li span:hover {
+    text-decoration: underline;
+    color: red;
+    cursor: pointer;
+}
+
+.xinxi ul li button {
+    background: #FFD6CC;
+    color: #F380D2;
+    cursor: pointer;
+    padding: 5px;
+}
+
+ul>li:hover {
+    background: #EBECF0;
+}
+
+.box ul:hover {
+    background: #EBECF0!important;
+}
+
+.xinzeng {
+    width: 1200px;
+    height: 100px;
+    display: none;
+    font-size: 18px;
+}
+
+.xinzeng div {
+    float: left;
+}
+
+.show {
+    display: block;
+}
+
+.xinzeng span:hover {
+    cursor: pointer;
+    background-color: red;
+}
+.btn1{margin-left: 40%;
+margin-top: 20px;
+width: 50px;
+float: left;}
+.btn2{
+margin-right: 40%;
+margin-top: 20px;
+width: 50px;
+float: right;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .box::after{
+display: block;
+content: '';
+width: 0;
+height: 0;
+overflow: hidden;
+clear: both;} */
+/* .input{display: block;} */

@@ -1,0 +1,29 @@
+/* 给div设置一个green的阴影 */
+div{
+    width: 300px;
+    height: 300px;
+    /* background: -webkit-linear-gradient(left top , red 50%, green 80%); */
+    /* background: -webkit-radial-gradient(red,yellow,blue,green,purple,brown); */
+    margin: 50px auto 0;
+    /* box-shadow: 10px  10px 30px -10px lime , -10px -10px 20px red ; */
+
+    font-size: 50px;
+    color: red;
+    text-shadow: 3px 3px 5px green;
+}
+
+/* 初始化在div的前面添加一个5px的红色方块 */
+div::before{
+    content:"";
+    width: 5px;
+    height: 5px;
+    background: red;
+    float: left;
+    margin: 10px 5px 0 0;
+}
+
+/* 鼠标滑过时在div的后面添加123 */
+div:hover::after{
+    content:"123";
+    color: gold;
+}

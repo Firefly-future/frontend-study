@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{color:red}
+        .size{font-size: 30px;}
+        .weight{font-weight: bolder;}
+        .family{font-family: '宋体';}
+    </style>
+</head>
+<body>
+    <div class="box">
+        丹恒
+        <p class="duan"></p>
+    </div>
+    <script>
+        // 添加 移除 检测时候含有  替换   检测时候含有某个特定的属性 若没有 添加  有则删除
+        // console.log(document.querySelector('.box'))
+        var box=document.querySelector('.box')
+        box.classList.add('family','size','weight')
+        // box.classList.remove('box','size')
+        // box.classList.replace('family','box')
+        console.log(box.classList.contains('box'))
+        // box.onclick=function(){
+        //     console.log(box.classList.contains('box'))
+        //     if(box.classList.contains('box')){
+        //         box.classList.remove('box')
+        //     }else{
+        //         box.classList.add('box')
+        //     }
+        // }
+
+        box.onclick=function(){
+            
+            box.classList.toggle('box')
+            // console.log(box.classList.toggle('box'))
+        }
+    </script>
+</body>
+</html>

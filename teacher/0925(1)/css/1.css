@@ -1,0 +1,70 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+    background: #eee;
+}
+body{
+    padding-top: 100px;
+}
+
+.box{
+    width: 800px;
+    height: 45px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.text{
+    height: 45px;
+    background: #CCC;
+    text-align: center;
+    line-height: 45px;
+    color: #666;
+}
+
+.moveBar{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 45px;
+    background: green;
+    line-height: 45px;
+    text-align: center;
+    color: #FFF;
+}
+
+.btn{
+    width: 45px;
+    height: 45px;
+    background: #FFF;
+    text-align: center;
+    line-height: 45px;
+    color: #333;
+    position: absolute;
+    left: 0;
+    top: 0;
+    box-shadow: 0 0 7px grey;
+    /* 禁止用户选择 */
+    user-select: none;
+}
+
+.tip{
+    position: fixed;
+    width: 150px;
+    height: 150px;
+    background: rgba(0,0,0,.5);
+    padding: 15px;
+    left: 50%;
+    margin-left: -75px;
+    top: 50%;
+    margin-top: -75px;
+}

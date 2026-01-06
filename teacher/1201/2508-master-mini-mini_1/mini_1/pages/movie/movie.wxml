@@ -1,0 +1,17 @@
+<view>我是电影页面</view>
+<view class="list">
+  <view wx:for="{{10}}">{{index}}</view>
+</view>
+<scroll-view class="scroll-list" scroll-y>
+  <view wx:for="{{10}}">{{index}}</view>
+</scroll-view>
+<text>我是行内标签</text>
+<view class="box"></view>
+<swiper>
+  <swiper-item>1111</swiper-item>
+  <swiper-item>2222</swiper-item>
+  <swiper-item>333233</swiper-item>
+</swiper>
+<navigator open-type="switchTab" url="/pages/mine/mine">我的页面</navigator>
+<navigator open-type="navigate" url="/pages/detail/detail">navigate 详情页面</navigator>
+<navigator open-type="redirect" url="/pages/detail/detail">redirect 详情页面</navigator>

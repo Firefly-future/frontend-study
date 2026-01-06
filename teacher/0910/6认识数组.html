@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 认识数组
+            // ● 数组是有序的数据集合。  【因为可以c】
+            // ● 数组中的值可以是任意类型。
+            // ● 每一个元素在数组中所处的位置，称之为索引。是数字来表示，从0开始。
+
+        // 创建数组
+            // 1 字面量的方式
+                // var arr1 = [];   // 创建空数组  
+                // console.log( arr1 ) // []
+                
+                // var arr1 = [5];   // 创建数组 且有一项 数字5
+                // console.log( arr1 )  // [5]
+
+            // 2 new构造函数的方式
+            // 注意: 若只有一个数字参数 表示数组的长度 内容有empty补齐  ，s项
+                // var arr2 = new Array()  // 创建空数组 
+                // console.log( arr2 )     // []
+
+                // var arr2 = new Array(5)  // 表示数组长度
+                // console.log( arr2 )     // [empty * 5]
+
+                // var arr2 = new Array('5')  // 数组一项  字符串5
+                // console.log( arr2 )     // ['5']
+
+                // var arr2 = new Array(5,8)  // 数组2项 数字5和8
+                // console.log( arr2 )     // [empty * 5]
+
+        // 数组中的项可以是任意类型的数据
+            var arr = ["hello" , 123 , true , undefined , null , function(){} , new Date() , [1,2,3] ];
+            console.log( arr )
+
+        // arr.length 获取数组长度
+            console.log( arr.length )
+        // arr.length = 值  设置数组长度，当值为0时，可以清空数组
+            arr.length = 50
+            console.log( arr )
+
+        // 数组可以通过下标访问数组项， 最小0 , 最大length - 1,下标出界 undefined
+        // 也可以通过下标修改数组项
+            console.log( arr[6] )
+            console.log( arr[8] ) // undefined
+
+            arr[99] = 99
+            console.log( arr ) //
+
+            arr[0] = "China"
+            console.log( arr )
+
+        // 数组的数据类型是: "object"
+            console.log( typeof arr )
+
+        // 注意: 对象存储的是栈内存地址不变 ， 即 对象只有引用为真 否则一律为假
+        // 注意: 引用对象 一变都变
+        var arr1 = [1,2,3];
+        var arr2 = [1,2,3];
+        console.log( arr1 === arr2 ) // false
+
+        var arr3 = arr1 ;
+        console.log( arr1 === arr3 ) // true
+        console.log( arr3 === arr2 ) // false
+
+        arr1[1] = "hello";
+        console.log( arr3 )   // [1,"hello",3]
+
+    </script>
+</body>
+</html>

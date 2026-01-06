@@ -1,0 +1,252 @@
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #212121;
+}
+
+img {
+  display: block;
+}
+
+html, body, .app {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-size: 14px;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  background: #F4F4F4;
+}
+
+header {
+  height: .5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.08rem 0 0.14rem;
+}
+
+.logo img {
+  height: 0.22rem;
+}
+
+.signIn img {
+  height: 0.33rem;
+}
+
+.search {
+  height: 0.36rem;
+  border: 0.01rem solid #FB5800;
+  border-radius: .18rem;
+  flex: 1;
+  margin: 0 0.13rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search p {
+  font-size: .14rem;
+  color: #666;
+  margin-left: .15rem;
+}
+
+.search span {
+  width: .64rem;
+  height: .3rem;
+  background: #FF8500;
+  color: #FFF;
+  border-radius: .15rem;
+  margin-right: 0.02rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .14rem;
+}
+
+main {
+  flex: 1;
+  overflow: hidden;
+  overflow-y: scroll;
+  padding: 0 .1rem;
+}
+
+nav {
+  background: #FFF;
+  border-radius: 0.08rem;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0.04rem 0 .12rem;
+}
+
+nav a {
+  width: 20%;
+}
+
+nav a img {
+  width: 90%;
+  margin: 0 auto;
+}
+
+nav a p {
+  font-size: .13rem;
+  color: #666;
+  margin-top: .04rem;
+  text-align: center;
+}
+
+section {
+  margin: .08rem 0 .1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+section > div {
+  width: calc(50% - 4px);
+  background: url("https://gw.alicdn.com/imgextra/i2/O1CN01sVZ5HO1iFvNodRHz8_!!6000000004384-2-tps-527-405.png");
+  background-size: cover;
+  padding-top: .04rem;
+  border-radius: .07rem;
+}
+
+.liveTit {
+  height: .26rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 .09rem;
+}
+
+.titName {
+  font-size: .15rem;
+  font-weight: 600;
+}
+
+.titDes {
+  display: flex;
+  align-items: center;
+}
+
+.titDes img {
+  width: .14rem;
+  margin-right: .03rem;
+}
+
+.titDes span {
+  font-size: .12rem;
+  color: #FF8500;
+}
+
+.liveProduct {
+  display: flex;
+  padding: 0 .06rem;
+  justify-content: space-between;
+}
+
+.liveProduct > div {
+  width: calc(50% - 0.02rem);
+}
+
+.liveProduct > div img {
+  width: 100%;
+  border-radius: .05rem;
+}
+
+.liveProduct > div p {
+  line-height: .25rem;
+  font-size: .12rem;
+  color: #FF3E6F;
+  text-align: center;
+}
+
+footer {
+  height: 50px;
+  background: #FFF;
+  border-top: 1px solid #E9E9E9;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+footer span {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #FB5800 url("https://img.alicdn.com/imgextra/i1/O1CN01oAxBQ81qF1EZtn4Rq_!!6000000005465-2-tps-108-108.png");
+  background-size: cover;
+}
+
+footer a {
+  font-size: 12px;
+  color: #666;
+  transform: scale(0.89);
+}
+
+footer a img {
+  width: 20px;
+  margin: 0 auto 2px;
+}
+
+.allProList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 .02rem;
+}
+
+.proItem {
+  background: #FFF;
+  border-radius: .08rem;
+  overflow: hidden;
+  width: calc(50% - .045rem);
+  margin-bottom: .09rem;
+}
+
+.proItem img {
+  width: 100%;
+}
+
+.textDes {
+  padding: .15rem .08rem .1rem;
+}
+
+.proName {
+  height: .37rem;
+  overflow: hidden;
+  line-height: .185rem;
+  font-size: .13rem;
+  color: #666;
+  margin-bottom: .1rem;
+}
+
+.priceSaleCount {
+  display: flex;
+  align-items: baseline;
+}
+
+.chart {
+  font-size: .12rem;
+  color: #FB5800;
+}
+
+.money {
+  font-size: .14rem;
+  color: #FB5800;
+  margin: 0 .03rem 0 -.01rem;
+}
+
+.payed {
+  font-size: .11rem;
+  color: #999;
+}

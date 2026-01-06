@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "button-counter":"/components/button-counter/button-counter"
+  }
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>成功页</title>
+    <style>
+        * {padding:0; margin: 0; box-sizing: border-box;}
+
+        h1{margin: 50px; font:900 30px/40px "楷体";}
+        #user{font-size: 40px; color: red;}
+        
+    </style>
+</head>
+<body>
+   <h1>尊敬的的<span id="user">XXX</span>用户注册成功;<br>快去登录吧👉<a href="./login.html">登录</a></h1>
+
+   <script src="./js/getEl.js"></script>
+   <script>
+        // decodeURIComponent("解密")  
+        // encodeURIComponent("加密")
+
+        // 获取地址栏?后的参数
+        var url = decodeURIComponent(location.search).slice(1);
+        // console.log( url )s
+        $("user").innerHTML = getUserInfo( url , 'userName' )
+        function getUserInfo( str , key ){
+            var res = ""; //存储结果
+            // 将str信息字符串 按照& 拆分每一组信息
+            str = str.split("&");
+            console.log( str )
+            // 循环遍历拿到每一组信息
+            str.forEach(function( everyInfo ){
+                // 将每一组信息 按照=拆分成数组
+                // [0]是要查找的key   [1]是要返回的值
+                everyInfo = everyInfo.split("=")
+                // 判断查找的key 与 当前循环的信息[0] 一致
+                if( key === everyInfo[0] ) res = everyInfo[1]
+            })
+            return res
+        }
+
+   </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="list">
+        <li>快递-衬衫</li>
+        <li>快递-西装外套</li>
+        <li>快递-老爹弯刀裤</li>
+        <li>快递-加绒卫衣</li>
+        <li>快递-辣条</li>
+        <li>快递-跺脚泡面</li>
+    </ul>
+    <script>
+        // 事件委托  【面试题】
+            // 原理:  事件冒泡 
+            // 给父元素绑定事件，来集中管理子元素的某一类型事件。
+            // 好处: 减少dom操作，减少事件处理，减少内存消耗，提高性能
+            //       随时动态添加子元素，都会有相应的事件处理
+        
+        var data = [1,2,3,4,5,6];
+        var lis = document.querySelectorAll(".list li");
+        console.log( lis )
+
+        $(".list").innerHTML += data.map(function(item , index){
+            return index%2 === 0 ? `<p>${item}</p>` : `<li>${item}</li>`
+        }).join("")
+
+        console.log( lis )
+        // 点击li弹出对应的内容
+        $(".list").addEventListener("click" , function(e){
+            // console.log( e.target )
+            // console.log( e.currentTarget )
+            // 判断事件源 li
+            if( e.target.nodeName === "LI" ){
+                alert( e.target.innerText )
+            }
+            if( e.target.nodeName === "P" ){
+                console.log(e.target.innerText + "hello")
+            }
+        })
+
+        function $(el){
+            return document.querySelector(el)
+        }
+    </script>
+</body>
+</html>

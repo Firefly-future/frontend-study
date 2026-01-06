@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <button onclick="alert('searchBtn')">搜索</button> -->
+
+    <button id="btn">戳我</button>
+<script>
+        var btn = document.getElementById("btn");
+
+        // 1 内联事件  直接写在标签上  [不推荐]
+
+        // 2 DOM0级事件  [不推荐]
+            // 绑定:  el.on + 事件类型  = function(){}
+            // 取消:  el.on + 事件类型 = null;
+            // 缺点: 同一元素的同类型事件 后设覆盖先设
+                // btn.onclick = function(){
+                //     btn.style.background = "red"
+                // }
+
+                // btn.onmouseover = function(){
+                //     btn.style.color = "white"
+                // }
+
+                // btn.onclick = function(){
+                //     btn.style.fontSize = "50px"
+                // }
+
+                // btn.onmousesover = null;
+
+        // 3 DOM2级事件  【推荐】
+            // 绑定: el.addEventListener("事件类型" , 事件处理 , 事件流-布尔值)
+            // 取消: el.removeEventListener()
+            // 好处: 同一元素同类型事件 会依次执行
+            // 缺点: 匿名函数无法移除; 即在定义时需要定义为有名函数
+            btn.addEventListener("click" , size)
+            btn.addEventListener("click" , bg)
+            btn.addEventListener("click" , color)
+
+
+            btn.removeEventListener("click" , bg)
+
+            function size(e){
+                console.log(e)
+                btn.style.fontSize = "50px"
+            }
+
+            function bg(){
+                btn.style.background = "gold"
+            }
+
+            function color(){
+                btn.style.color = "red"
+            }
+    </script>
+</body>
+</html>

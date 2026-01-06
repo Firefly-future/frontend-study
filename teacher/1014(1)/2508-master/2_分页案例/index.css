@@ -1,0 +1,76 @@
+.edit-dialog {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.edit-dialog.show {
+  display: block;
+}
+
+.edit-dialog-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ffffff;
+  width: 500px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.edit-dialog-header {
+  height: 40px;
+  border-bottom: 1px solid #ccc;
+  line-height: 40px;
+  padding-left: 20px;
+  display: flex;
+}
+
+.edit-dialog-header b {
+  flex: 1;
+}
+
+.edit-dialog-header span {
+  width: 40px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.edit-dialog-form {
+  min-height: 200px;
+  padding: 15px 0;
+}
+
+.edit-dialog-form .row {
+  padding: 5px 20px;
+  height: 40px;
+}
+
+.edit-dialog-form .row span {
+  margin-right: 10px;
+}
+
+.edit-dialog-form .row input, .edit-dialog-form .row select {
+  height: 30px;
+  width: 250px;
+}
+
+.edit-dialog-footer {
+  height: 50px;
+  border-top: 1px solid #ccc;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.edit-dialog-footer button {
+  height: 30px;
+  margin: 0 5px;
+}

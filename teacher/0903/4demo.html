@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">查询成绩分数评价</button>
+    <script>
+        // 需求:
+            // 点击页面中的 查询成绩分数评价 按钮
+            // 弹出输入框 要求用户输入成绩
+            // 如果用户取消 提示 用户拒绝了此操作
+            // 如果用户没有输入  提示内容不能为空
+            // 如果用户输入的不是数字  提示 请输入数字
+            // 如果输入的数字超出1-100的范围 提示成绩无效
+            // 判断用户输入的成绩 属于 那个区间  根据不同的区间 进行评价
+            // 1-59   小趴菜 干啥啥不行
+            // 60-69  完美擦肩 跨过及格线
+            // 70-79  一般 中不溜秋
+            // 80-89  良好 像90看齐
+            // 90-99  优秀 怕自己太完美
+            // 100    小小100拿下 天花板
+
+        // 1 获取按钮
+        var btn = document.getElementById("btn");
+        // console.log( btn )
+        // 2 给按钮绑定点击事件
+        // 绑定事件的语法:
+            // el.on+事件类型 = function(){ 执行代码 }
+            // click 点击事件 
+        btn.onclick = function(){
+            // 弹出输入框 要求用户输入成绩
+            var score = prompt("请输入成绩");
+            // 如果用户取消 提示 用户拒绝了此操作
+            if( typeof score === "object" ){
+                alert("用户拒绝了此操作")
+            // 如果用户没有输入  提示内容不能为空
+            }else if( score === "" ){
+                alert("提示内容不能为空")
+            // 如果用户输入的不是数字  提示 请输入数字
+            }else if( isNaN( score ) ){
+                alert("请输入数字")
+            // 如果输入的数字超出1-100的范围 提示成绩无效
+            }else if( score < 1 || score > 100 ){
+                alert("提示成绩无效")
+            }else{
+                // 判断用户输入的成绩 属于 那个区间  根据不同的区间 进行评价
+                // 1-59   小趴菜 干啥啥不行
+                if( score >= 1 && score <= 59 ){
+                    alert("小趴菜 干啥啥不行")
+                // 60-69  完美擦肩 跨过及格线
+                } else if( score >= 60 && score <= 69 ){
+                    alert("完美擦肩 跨过及格线")
+                // 70-79  一般 中不溜秋
+                } else if( score >= 70 && score <= 79 ){
+                    alert("一般 中不溜秋")
+                // 80-89  良好 像90看齐
+                } else if( score >= 80 && score <= 89 ){
+                    alert("良好 像90看齐")
+                // 90-99  优秀 怕自己太完美
+                } else if( score >= 90 && score <= 99 ){
+                    alert("优秀 怕自己太完美")
+                // 100    小小100拿下 天花板
+                } else {
+                    alert("小小100拿下 天花板")
+                }
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 弹出两个输入框 要求用户输入重复的字符  和 重复的次数
+        // 拓展 将拼接好的字符串 大小写反转 即 大->小   小->大
+        // 拓展 大小写反转之后  判断该字符串中是否 包含指定的字符"y"  弹出success  否则fail
+        // 拓展 弹出后  继续弹出下标
+        var nStr = ""; // 重复后的新字符串
+        var str = prompt("请输入字符")
+        // 去重前后导空格  空白字符认定为无效字符
+        str = str.trim()
+        // 判断未输入
+        if( !str ){
+            alert("请输入非空白字符")
+        }else{
+            // 输入了内容
+            var num = prompt("请输入重复次数");
+            // 这里没必要判断 未输入 因为未输入是空字符  再判断大小时
+            
+            if( isNaN(num) ){
+                alert("请输入数字")
+            }else if( num < 1 ){  // 会隐式转换数字  即 '' -> 0
+                alert("请输入大于等于1的有效数字")
+            }else{
+                // 按照指定的次数循环 拼接字符串
+                for( var i = 0 ; i < num ; i++ ){
+                   nStr += str
+                }
+
+                var revserStr = reverseStrFn( nStr );
+                console.log( revserStr )
+                // 判断是否包含指定的‘y’
+                if( revserStr.includes('y') ) {
+                    alert('success') 
+                    var index = revserStr.indexOf("y");
+                    alert( index )
+                    // 拓展  将该字符替换
+                }else{
+                    alert( 'fail' )
+                }
+            }
+        }
+
+        // 封装一个大小写反转的函数
+        // var str = "hEllO"; // -> HeLLo
+        function reverseStrFn( s ){
+            var nStr = "";
+            // 循环遍历拿到每个字符
+            for( var i = 0 ; i < s.length ; i++ ){
+                // console.log( s[i] )
+                // 方法一: 判断每个字符编码再那个范围内 决定大小写
+                // var code = s.charCodeAt(i)
+                // if( code >= 97 && code <= 122 ){  // 小写
+                //     nStr += s[i].toUpperCase()
+                // }else if( code >= 65 && code <= 90 ){  // 大写
+                //     nStr += s[i].toLowerCase()
+                // }
+
+                // 方法二: 若当前字符转大写 与自身一致 即大写  否则小写
+                // if( s[i].toUpperCase() === s[i] ){  // 大写
+                //     nStr += s[i].toLowerCase()
+                // }else{
+                //     nStr += s[i].toUpperCase()
+                // }
+
+                // 简单的双分支 可以直接写成三元
+                nStr += s[i].toUpperCase() === s[i] ? s[i].toLowerCase() : s[i].toUpperCase()
+            }
+            // console.log( nStr )
+            return nStr
+        }
+        // reverseStrFn( str )
+    </script>
+</body>
+</html>

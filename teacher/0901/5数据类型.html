@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>重点: 数据类型</title>
+</head>
+<body>
+    <script>
+        // 数据类型
+            // 基本数据类型:  string字符串型  number数值型    boolean布尔型     undefined未定义型     null空
+            // 引用数据类型:  object对象  ->  {}   function  []等
+            // 注意: 声明变量赋值时，数据类型一定要正确。否则都会当作变量处理。
+            //       而变量必须是先声明再访问 否则报错
+
+            // 基本数据类型
+                // string 字符串型 -> 写在引号【" or ',需要成对儿出现】内的任意文本，用于描述性的内容
+                // 如; 描述我的小奶狗
+                    // var dog = "在2025年的9月1日我领养了一只比熊,奶奶糯糯,白白胖胖";
+                    // var address = '来自上海';
+                    // var str = "vycgijlkl48952wcd,./";
+                    // console.log( dog )
+                    // alert(address)
+                    // document.write(str)
+
+                // number 数值型 
+                    // 整型     -> 描述年龄  年份   月份等
+                    // 浮点型   -> 描述 价格等
+                    // NaN      -> Not a Number(不是一个数 即 非数字)
+                    //          -> 本意是给你返回一个数字，但是由于某种操作无法正确返回数字时，返回NaN
+                    //          -> 5 * 8 = 40   5 * "abc" = NaN
+                    //          -> 注意; NaN 连自身都不相等    即 NaN == NaN  -> false
+                    //          -> 注意; 任何与NaN计算相关的结果 总是NaN   即 NaN + 5  -> NaN
+                        // var year = 2025 ,
+                        //     month = 9 ,
+                        //     price = 9.99 ,
+                        //     result1 = year * month ,
+                        //     result2 = year * 'abc' ; 
+                        // console.log( year , month , price , result1 , result2 )
+                        // console.log( NaN == NaN )
+                        // console.log( NaN + 5 )
+
+                // boolean 布尔值 -> 用于标记性别  或 判断条件  或 标记一个开关等
+                    // true   真
+                    // fasle  假
+                    // console.log( true )
+
+                // undefined 未定义 -> 它只有一个值  就是自己
+                //                  -> 是针对基本数据类型
+                    // var und = undefined;
+                    // console.log( und )
+
+                // null 空 -> 空是特殊的空对象
+                //         -> 注意: 需要显示赋值null
+                //         -> 注意: null 是给对象预留的
+
+    </script>
+</body>
+</html>

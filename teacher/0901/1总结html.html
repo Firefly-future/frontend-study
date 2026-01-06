@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div{width: 200px; height: 200px; background: purple;}
+    </style>
+    <link rel="stylesheet" href="./css/1.css">
+</head>
+<body>
+    <!-- 跳转连接的标签是________，设置跳转地址的属性是______;
+                <a   href="">
+    2.插入图片的标签是_______，设置图片地址的属性是_____
+                <img   src="">
+
+    3.如何设置内边距_______,设置外边距__________;
+                padding        margin
+
+    4.有序列表的标签________无序列表的标签___________;
+                ol           ul
+
+    5.列举5个常用的表单元素并描述其功能___________
+                text   password    radio    checkbox
+                submit   button    reset
+                file    image
+                tel   email   number    date   url   
+
+    6.设置浮动的属性___________，元素浮动后产生的问题_________,清除浮动的方式__________
+                float                高度塌陷                
+                注意: 清除浮动 的言外之意指的是: 清除浮动造成的影响，而不是取消浮动
+                clear:both;   // 清除双向浮动
+
+    7.“<p>p1</p><p>p2</p>” p1和p2这两个元素的样式“margin: 50px”，这两个元素的垂直方向的间距为___________px，原因是___________
+                50    上下间距合并
+                    
+    8. 让元素隐藏的两种方式________, __________, 区别是_____________
+                隐藏元素: display:none;[不占位]    visibility:hidden;[占位]     opacity:0;[占位，设置透明度]
+                溢出隐藏: overflow:hidden
+
+    9. 设置文本的字体大小的属性_________
+    10. 设置文本水平居中垂直居中的样式________,________
+                text-align:center  文本水平居中
+                line-height:?px    文本垂直居中
+
+    11. 设置单选框和复选框的默认选中使用________属性
+                checked
+
+    12. 设置鼠标滑过的状态使用_______选择器
+                :hover  
+
+    13. 插入一张背景图使用_________属性，__________属性修改背景图的大小
+                background-image
+                background-size
+
+    14. 给元素设置圆角边框使用_______属性
+                border-radius
+
+
+    - - - - - - - - - 分割线条 - - - - - - - - - 
+    9. flex: 1 0 auto; 作用是什么_____________,flex是三个属性组成的复合属性，这三个属性分别是___________，_________,___________
+    10.transform的四种效果分别是_________,________,________,________
+
+    二、简答题：（每题10分，共5*10=50分）
+    1.如何让一个元素水平垂直居中，写出结构和样式
+                元素、盒子水平垂直居中
+                文本水平垂直居中
+                图片水平垂直居中
+                    text-align:center;
+                    vertical-align: middle;
+                背景图水平垂直居中
+                    background-position:center center;  等价于50% 50%
+
+
+    2.行内元素、块级元素、行内块级元素这三类标签的特征有什么，分别列举几个常见的标签
+
+
+
+    3.盒模型有哪些组成部分，分别是什么，如何设置盒模型
+                content  内容大小 width height
+                padding  内填充  内容距离盒子边界的距离
+                border   边框
+                margin   外间距  盒子与盒子的距离
+
+                设置盒模型 border-sizing
+
+
+    4.position有哪些属性，作用是什么
+                
+
+
+    5.从高到底描述样式的优先级 
+                样式优先级   -> 遵循就近原则
+                             -> 行内样式[写在标签上] >  内嵌样式[写在style标签内] >  外部链接样式[link标签引入]  
+                             
+                选择器优先级
+                             !important      >1000
+                             id              100
+                             class/状态/属性 10
+                             标签/结构选择器 1
+                             全局            0
+
+                             群组            分别计算   ul , .box , #box     1 , 10 , 100
+                             包含            叠加       div h2 -> 2   .box h2 span -> 12
+
+
+-->
+
+    <!-- <div class="box">
+        <div class="wrap">我是内容文本</div>
+    </div> -->
+
+    <!-- <div class="pic">
+        <img src="C:\Users\Administrator\Desktop\202507\0722\img/close.png" alt="">
+    </div> -->
+
+    <div style="width:100px;height:100px;" class="div"></div>
+</body>
+</html>

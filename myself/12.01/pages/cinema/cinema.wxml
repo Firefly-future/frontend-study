@@ -1,0 +1,4 @@
+<!--pages/cinema/cinema.wxml-->
+<view>我是影院页面</view>
+<navigator open-type="switchTab" url="/pages/mine/mine">前往个人中心</navigator>
+<navigator open-type="redirect" url="/pages/movie/movie">前往电影页面</navigator>

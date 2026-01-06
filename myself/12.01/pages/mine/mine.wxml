@@ -1,0 +1,11 @@
+<!--pages/mine/mine.wxml-->
+<swiper style="height: 420rpx;">
+  <swiper-item wx:for="{{banners}}">
+    <image src="{{item.bigImageUrl}}" mode="widthFix" style="width:100vw" />
+  </swiper-item>
+</swiper>
+<view>
+  <view wx:for="{{list}}" bind:tap="goDetail" data-id="{{item.id}}">
+    {{item.name}}
+  </view>
+</view>

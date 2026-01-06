@@ -1,0 +1,92 @@
+@import "./common.scss";
+
+
+.bg {
+  z-index: -1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(rgb(92, 99, 79), rgb(26, 28, 23));
+}
+.page {
+  position: relative;
+  z-index: 1;
+}
+
+.song-wrap {
+  padding: px2vw(80) 0 px2vw(40);
+  .song-disc-wrap {
+    width: px2vw(240);
+    height: px2vw(240);
+    margin: 0 auto;
+    position: relative;
+    &::after {
+      content: '';
+      background: url(https://p5.music.126.net/obj/wonDlsKUwrLClGjCm8Kx/28513977227/139b/06a3/e1e3/929b3b4b49bf5c6ef05c795e9e1f2516.png) no-repeat;
+      background-size: contain;
+      position: absolute;
+      top: px2vw(-50);
+      right: px2vw(70);
+      width: px2vw(109);
+      height: px2vw(98);
+    }
+  }
+  .song-disc {
+    width: 100%;
+    height: 100%;
+    background: url(https://p6.music.126.net/obj/wonDlsKUwrLClGjCm8Kx/28513831157/e8e9/beeb/912c/468bcb523668065ccf6f853c4a084e31.png) no-repeat;
+    background-size: contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      width: px2vw(151);
+      height: px2vw(151);
+      border-radius: 50%;
+    }
+    &::after {
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: url(https://s3.music.126.net/mobile-new/img/disc_light.png?2bb24f3fd11569809b817b4988f12bc7=) no-repeat;
+      background-size: contain;
+    }
+  }
+  .play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: px2vw(151);
+    height: px2vw(151);
+    background: rgba($color: #000000, $alpha: .2);
+    text-align: center;
+    line-height: px2vw(151);
+    img {
+      width: px2vw(36);
+      height: px2vw(36);
+    }
+  }
+}
+.song-info {
+  color: #ffffff;
+}
+.song-info-box {
+  display: flex;
+  padding: 0 20px;
+  align-items: center;
+  .song-title-box {
+    flex: 1;
+    .song-name {
+      font-size: 20px;
+    }
+    .song-singer {
+      color: #ddd;
+    }
+  }
+}

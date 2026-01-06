@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>switch针对else if的多分支</title>
+</head>
+<body>
+    <script>
+        // 语法:
+            // switch( val ){
+            //     case 条件1 :
+            //         条件1 真 执行代码
+            //     break ;
+
+            //     case 条件2 :
+            //         条件2 真 执行代码
+            //     break ;
+
+            //     .... 这里可以有好多条件
+
+            //     default :
+            //         以上条件都不满足执行
+            //     break
+            // }
+            // 注意: switch的()与case 做的是全等比较
+            // 注意: break 用于退出条件判断
+            //       若缺失break,它将从满足条件开始依次向下执行
+
+
+            // 需求:
+                // 弹出一个输入框  要求用户输入内容
+                var val = prompt("请输入内容");
+
+                switch( val ){
+                // 如果 输入的是 abc  弹出"hello"
+                    case "abc" :
+                        alert("hello")
+                    break;
+                    
+                // 如果 输入的是 1    弹出"no1"
+                    case "1" :
+                        alert("no1")
+                    break;
+                // 如果 输入的是 5    弹出"废物"
+                    case "5" :
+                        alert("废物")
+                    break;
+                // 如果 以上都不是    弹出"您好再见 下一位"
+                    default : 
+                        alert("您好再见 下一位")
+                    break;
+                }
+    </script>
+</body>
+</html>

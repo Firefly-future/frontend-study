@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        width: 300px;
+        height: 300px;
+      }
+      .red {
+        background-color: red;
+      }
+      .blue {
+        background-color: blue;
+      }
+      .green {
+        background-color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="#/home">首页</a>
+    <a href="#/detail">详情</a>
+    <a href="#/list">列表</a>
+    <div class="router-view"></div>
+
+    <script>
+      class Router {
+        constructor({ routerView, routes }) {
+          this.routerView = routerView
+          this.routes = routes
+          this.init()
+        }
+        init() {
+          this.render()
+          window.addEventListener('hashchange', ()=>{
+            console.log('路由改变了',location.hash)
+            this.render()
+          })
+        }
+        render() {
+          const hash = location.hash.slice(1)
+          console.log(hash)
+          const curRoute = this.routes.find((item)=>item.path === hash)
+          console.log(curRoute)
+          this.routerView.innerHTML = curRoute.element
+        }
+      }
+
+      const router = new Router({
+        routerView: document.querySelector('.router-view'),
+        routes: [
+          {
+            path: '/home',
+            element: '<div class="box red">首页</div>',
+          },
+          {
+            path: '/detail',
+            element: '<div class="box blue">详情</div>',
+          },
+          {
+            path: '/list',
+            element: '<div class="box green">列表</div>',
+          },
+        ],
+      })
+    </script>
+  </body>
+</html>

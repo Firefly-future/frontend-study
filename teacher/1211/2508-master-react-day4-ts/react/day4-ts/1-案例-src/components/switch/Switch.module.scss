@@ -1,0 +1,28 @@
+.switch_wrap {
+  margin: 10px 0;
+  p {
+    text-align: center;
+  }
+  .switch {
+    background: #333;
+    width: 60px;
+    height: 26px;
+    border-radius: 20px;
+    padding: 3px;
+    span {
+      display: block;
+      background: #999;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      transition: transform .3s linear;
+    }
+    &.on {
+      background: rgb(79, 79, 255);
+      span {
+        transform: translateX(34px);
+        background: #fff;
+      }
+    }
+  }
+}

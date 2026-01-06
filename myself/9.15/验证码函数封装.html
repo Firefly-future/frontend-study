@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str='0123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM'
+        function yanzhengma(str){
+            var code=''
+            for(var i=0;i<4;i++){
+                var index=Math.floor(Math.random()*str.length)
+                code+=str[index]
+            }return code
+        }
+        console.log(yanzhengma(str))
+    </script>
+</body>
+</html>

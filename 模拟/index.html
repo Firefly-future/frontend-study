@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简易音乐播放器</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>简易音乐播放器</h1>
+        
+        <div class="music-player">
+            <div class="player-header">
+                <div class="album-cover">
+                    <img src="https://picsum.photos/seed/music/300/300.jpg" alt="专辑封面" id="albumCover">
+                </div>
+                <div class="song-info">
+                    <h2 id="songTitle">选择一首歌曲</h2>
+                    <p id="artistName">未知艺术家</p>
+                </div>
+            </div>
+            
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar">
+                    <div class="progress" id="progress"></div>
+                </div>
+                <div class="time-container">
+                    <span id="currentTime">0:00</span>
+                    <span id="duration">0:00</span>
+                </div>
+            </div>
+            
+            <div class="controls">
+                <button id="prevBtn" class="control-btn"><i class="fas fa-step-backward"></i></button>
+                <button id="playBtn" class="play-btn"><i class="fas fa-play"></i></button>
+                <button id="nextBtn" class="control-btn"><i class="fas fa-step-forward"></i></button>
+            </div>
+            
+            <div class="volume-container">
+                <i class="fas fa-volume-up"></i>
+                <input type="range" id="volumeSlider" min="0" max="100" value="70">
+            </div>
+            
+            <div class="playlist">
+                <div class="playlist-header">
+                    <h3>播放列表</h3>
+                    <div class="search-container">
+                        <input type="text" id="searchInput" placeholder="搜索歌曲...">
+                        <button id="searchBtn"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+                <ul id="playlist">
+                    <li data-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3">示例歌曲 1</li>
+                    <li data-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3">示例歌曲 2</li>
+                    <li data-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3">示例歌曲 3</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="online-search-section">
+            <h3>在线搜索音乐</h3>
+            <div class="online-search-container">
+                <input type="text" id="onlineSearchInput" placeholder="输入歌曲名称或艺术家...">
+                <select id="searchSource">
+                    <option value="jamendo">Jamendo</option>
+                    <option value="soundcloud">SoundCloud</option>
+                    <option value="youtube">YouTube</option>
+                </select>
+                <button id="onlineSearchBtn">搜索</button>
+            </div>
+            <div id="searchResults" class="search-results"></div>
+        </div>
+        
+        <div class="upload-section">
+            <h3>上传本地音乐</h3>
+            <input type="file" id="fileInput" accept="audio/*" multiple>
+            <button id="uploadBtn">选择文件</button>
+        </div>
+    </div>
+    
+    <audio id="audioPlayer"></audio>
+    
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // // 回顾
+    //     // 对象
+    //         // 一组无序键值对的集合
+        
+    //     // 创建对象
+    //         // 1 字面量
+    //         const o1 = { a : 1 , b : 2 }
+    //         // 2 构造函数 new
+    //         const o2 = {
+    //             abc : 123 , 
+    //             say : function(){
+    //                 console.log(`say`)
+    //             },
+    //             talk : () => {
+    //                 console.log( `talk` )
+    //             }
+    //         } 
+
+    //     // 访问  . or []
+    //         o2.say()  // say
+    //         console.log( o1.b )
+
+    //     // 删除a 和 say  delete
+    //     delete o1.a
+    //     console.log( o1 )
+    //     delete o2.say
+    //     console.log( o2 )
+
+    //     // 检测有没有  in
+    //     console.log( 'a' in o1 )
+    //     console.log( 'b' in o1 )
+
+    //     // 遍历 for in
+    //     for( let key in o2 ){
+    //         console.log( key , o2[key] )
+    //     }
+
+
+        // function doTing(){
+        //     console.log( `doTing All` )
+        // }
+        // const people = {
+        //     user : "小明" , 
+        //     age : 18 , 
+        //     sex : "男" ,
+        //     say : () => { console.log("say hello") } ,
+        //     // 简写 当key 和值一致时
+        //     doTing ,
+        //     hello(){
+        //         console.log( "hello" )
+        //     }
+        // }
+        // console.log(  people )
+        // people.doTing()
+        // people.hello()
+
+
+        // 对象的静态方法
+            // Object.assign() 合并对象
+
+            //  Object.keys() 返回一个由对象的 属性 组成的数组
+            // console.log( Object.keys( people ) )
+
+            // Object.values() 返回一个由对象的 属性值 组成的数组
+            // console.log( Object.values( people ) )
+
+            // Object.entries() 返回由对象的键值对组成的二维数组
+            // console.log( Object.entries( people ) )  // [ [user , "小蘑菇"] , [ age , 18 ]...  ]
+
+
+        // 需求:找到对象中  所有key值为数字的 进行求和
+        // const obj = {
+        //     age : 18 , 
+        //     sex : "女",
+        //     user : "lily",
+        //     email : 10086 , 
+        //     tel : "15396459877"
+        // }
+        // // 10104
+        // // 1 先拿所有的key值  2 循环遍历拿到每一项  3 判断是不是数字【不能isNaN->隐式转换】
+        // let addNum = 0;
+        // Object.values( obj ).forEach(item => {
+        //     if( typeof item === "number" ){
+        //         addNum += item
+        //     }
+        // })
+        // console.log( addNum )
+
+        // 需求 找到对象中 所有key值为数组的 将每一项求和
+        const obj = {
+            age : 18 , 
+            sex : "女",
+            con : [1,5,9],
+            user : "lily",
+            email : 10086 ,
+            child : [35,47,12], 
+            tel : "15396459877",
+            son : [8],
+            s : {},
+            d : new Date()
+        }
+        // 117
+        // 1 先拿所有的key值 2 循环遍历每一项 3 判断是不是数组Array.isArray()
+        // 4 是数组 求和
+        //   4.1  直接循环遍历拿到每一项求和
+        //   4.2  先将小数组合并为一个大数组 在求和
+
+        // let bArr = [];
+        let addNum = 0;
+        Object.values( obj ).forEach(item => {
+            if( Array.isArray( item ) ){
+                // bArr = bArr.concat( item )  // concat合并
+                // bArr = [...bArr , ...item]  // ... 展开合并
+                // reduce 合并
+                // let num = item.reduce( (prev , cur) => {
+                //     console.log( prev , cur )
+                //     prev.push( cur )
+                //     return prev
+                // } , bArr )
+                console.log( addNum )
+                addNum = item.reduce( (num , n) => {
+                    return num + n
+                    //      0    1
+                    //      1    5
+                    //      6    9
+                    //      15
+
+                    //      15   35
+                    //      50   47
+                    //      97   12
+                    //      109
+
+                    //      109   8
+                    //      117
+                } , addNum )
+
+            }
+            
+        })
+        console.log( addNum )
+    </script>
+</body>
+</html>

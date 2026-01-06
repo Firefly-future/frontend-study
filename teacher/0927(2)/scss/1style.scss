@@ -1,0 +1,221 @@
+
+* {
+    padding:0;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+    color: #212121;
+}
+
+.nav{
+    height: 50px;
+    width: 1100px;
+    background: green;
+    margin: 50px auto 0;
+    // 选择器嵌套
+    li {
+        float: left;
+        /*line-height: 50px;
+        font-size: 18px;
+        font-weight: 700;
+        font-family: "楷体";
+        font-style: italic;*/
+        // 属性嵌套  提取公共前缀 - 变 :{}
+            // font : {
+            //     family : "宋体" ;
+            //     size : 20px ;
+            //     weight : bold ;
+            //     style : oblique;
+            // }
+
+            font : bolder oblique 14px/50px "黑体";
+        padding:0 20px;
+        // & 父选择器 / 当前选择器
+        &:hover{
+            background: red;
+            a{
+                color: green;
+            }
+        }
+        a{
+            color: red;
+            &:hover{
+                color: #fff;
+            }
+        }
+        
+    }
+}
+
+// 基类  继承
+// .common{
+//     width: 1000px;
+//     margin: 0 auto;
+// }
+
+
+// .header{
+//     @extend .common;
+//     height: 35px;
+//     background: red;
+//     // 当作 一个基类  让ul直接继承即可
+//     ol{
+//         float: left;
+//         li{
+//             float: left;
+//             line-height: 35px;
+//             font-size: 13px;
+//             padding: 0 12px;
+//             a{
+//                 color: #333;
+//             }
+//             &:hover{
+//                 background: #E5E5E5;
+//             }
+//         }
+//     }
+
+//     ul{
+//         float: right;
+//         @extend ol;
+//     }
+// }
+
+
+// .logoArea{
+//     @extend .common;
+//     height: 72px;
+//     background: lime;
+// }
+
+
+// .navArea{
+//     @extend .common;
+//     height: 34px;
+//     background: pink;
+// }
+
+
+// .content{
+//     @extend .common;
+//     height: 332px;
+//     background: gold;
+// }
+
+
+
+// 占位符  %
+// %common{
+//     width: 1200px;
+//     margin: 0 auto;
+// }
+// .header{
+//     @extend %common;
+//     height: 35px;
+//     background: red;
+//     // 当作 一个基类  让ul直接继承即可
+//     ol{
+//         float: left;
+//         li{
+//             float: left;
+//             line-height: 35px;
+//             font-size: 13px;
+//             padding: 0 12px;
+//             a{
+//                 color: #333;
+//             }
+//             &:hover{
+//                 background: #E5E5E5;
+//             }
+//         }
+//     }
+
+//     ul{
+//         @extend ol;
+//         float: right;
+//     }
+// }
+
+
+// .logoArea{
+//     @extend %common;
+//     height: 72px;
+//     background: lime;
+// }
+
+
+// .navArea{
+//     @extend %common;
+//     height: 34px;
+//     background: pink;
+// }
+
+
+// .content{
+//     @extend %common;
+//     height: 332px;
+//     background: gold;
+// }
+
+// 变量
+// $var : 值 ;
+
+// 混合宏
+// 最大特点 可以传参实现不同需求效果
+@mixin common($h : 35px , $bg : red ,$w : 1000px , $m : 0 auto ){
+    width: $w;
+    height: $h;
+    background: $bg;
+    margin: $m
+}
+.header{
+    @include common;
+    // 当作 一个基类  让ul直接继承即可
+    ol{
+        float: left;
+        li{
+            float: left;
+            line-height: 35px;
+            font-size: 13px;
+            padding: 0 12px;
+            a{
+                color: #333;
+            }
+            &:hover{
+                background: #E5E5E5;
+            }
+        }
+    }
+
+    ul{
+        @extend ol;
+        float: right;
+    }
+}
+
+
+.logoArea{
+    @include common(100px, gold , 800px , 10px auto )
+}
+
+.navArea{
+    @extend .header;
+    background: brown;
+    ul{
+        float: none;
+        li{
+            padding: 0 30px;
+            &:hover{
+                background: gold;
+            }
+        }
+    }
+}
+
+.content{
+    @include common(400px)
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 封装一个函数 实现 该字符串是否以指定字符末尾结束
+        // "hello"   "llo"     true
+        // "china"   "inese"   false
+        function lastEnding( str , target ){
+            // 核心: 借助slice方法截取【负数末尾截取】
+            //       截取target目标字符的长度 与 目标判断全等一致
+            return str.slice(-target.length) === target ? true : false 
+        }   
+        console.log( lastEnding("hello" , "llo") )  // true
+        console.log( lastEnding("china" ,  "inese") )  // false
+    </script>
+</body>
+</html>

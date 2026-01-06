@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 面向对象  简称OOP 是一种设计模式 即 编程思想
+
+        // 1 工厂模式 -> 批量生成 -> 挂靠一个函数 -> 解决了重复创建大量相似对象的问题
+            //  注意: 无法确定对象的类型  即 无法确定对象的来源
+            
+        // 制作布偶玩具工厂
+            // const pig = {
+            //     user : "佩奇",
+            //     year : "2025-10-09",
+            //     color : "pink",
+            //     size : "100cm",
+            //     fn : () => {
+            //         console.log(`帮你看小孩哥,靠枕,床搭子...`)
+            //     }
+            // }
+
+            // const bear = {
+            //     user : "草莓熊",
+            //     year : "2024-10-09",
+            //     color : "玫red",
+            //     size : "50cm",
+            //     fn : () => {
+            //         console.log(`帮你看小孩哥,靠枕,床搭子...`)
+            //     }
+            // }
+        function toyFactory(  user , age , color , year , fn  ){  // 周黑鸭   周黑丫
+
+        // function toyFactory( { user , age , color , year , fn } ){
+        // function toyFactory( [ user , age , color , year , fn ] ){
+            // 1 创建对象 
+            // const obj = {
+            //     user , 
+            //     age ,
+            //     color , 
+            //     year , 
+            //     fn
+            // }
+            // // 2 返回对象
+            // return obj
+
+            // 返回对象 
+            return {
+                user , 
+                age ,
+                color , 
+                year , 
+                fn
+            }
+        } 
+
+        const tom = toyFactory( "汤姆和杰瑞" , 5 , "#666" , 2025 , function(){console.log("hh")} )
+        const lpz = toyFactory( "蓝胖子" , 3 , "blue" , 2020 , function(){console.log("gg")} )
+        
+        // const tom = toyFactory( { 
+        //     user : "汤姆和杰瑞",
+        //     age : 5 ,
+        //     color : "#CCC",
+        //     year : "2025-10-09",
+        //     fn : () => {
+        //         console.log("cat 抓 🐀")
+        //     }
+        //  } ) ;
+        //  console.log( tom )
+
+        // const tom = toyFactory( ["汤姆和杰瑞" , 5 , "#666" , 2025 , function(){console.log("hh")}] )
+        console.log( tom )
+        console.log( lpz )
+
+        console.log( lpz instanceof toyFactory )
+    </script>
+</body>
+</html>

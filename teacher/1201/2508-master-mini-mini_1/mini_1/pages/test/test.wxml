@@ -1,0 +1,10 @@
+<view>标题</view>
+<button-counter
+  title="{{apple.name}}"
+  price="{{apple.price}}"
+  count="{{apple.count}}"
+  bind:changeCount="changeCount"
+>
+  <view slot="aa">aaaaa</view>
+  <view slot="bb">bbbbb</view>
+</button-counter>

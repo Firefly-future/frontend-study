@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">戳我</button>
+    <div id="box"></div>
+    <script>
+        // 点击按钮实现对id为box的元素进行如下操作(3分)
+        // 给div元素设置宽高为300px,且背景颜色是红色（3分）
+        // 将printFn函数的返回值作为该div的内容（3分）
+        // printFn函数将实现所有的字符拼接，数字求和，其他类型不操作
+        // 最终以字符串在前，数字再后返回（6分）
+
+        // 1 获取元素
+        var btn = document.getElementById("btn") ,
+            box = document.getElementById("box") ;
+        // console.log( btn )
+        // 2 给按钮绑定点击事件
+        btn.onclick = function(){
+            box.style.width = "300px"
+            box.style.height = "300px"
+            box.style.backgroundColor = "red"
+            box.innerHTML = printFn( 14 , true, 1, "hello" ,2000, null,"china" )
+        }
+
+
+        function printFn(  ){
+            var add = 0; // 求和
+            var str = ""; // 拼接
+            // 不确定参数 arguments
+            // 1 循环遍历拿到每一个实参内容
+            for( var i = 0 ; i < arguments.length; i++ ){
+                // console.log( arguments[i] )
+                // 判断数据类型 是数字 求和
+                if( typeof arguments[i] === "number" ){
+                    add += arguments[i]
+                }else if( typeof arguments[i] === "string" ){
+                    str += arguments[i]
+                }
+            }
+           return str + " - " + add 
+        }
+        //示例:  
+        // printFn( 14 , true, 1, "hello" ,2000, null,"china" )
+        // hellochina - 2025
+    </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+.table-wrap {
+  border: 1px solid;
+  border-collapse: collapse;
+}
+
+.table-wrap th {
+  background: skyblue;
+}
+
+.table-wrap th, .table-wrap td {
+  border: 1px solid;
+  padding: 0 10px;
+}
+
+.table-wrap tbody tr:hover {
+  background: #ddd;
+}

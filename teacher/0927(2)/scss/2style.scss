@@ -1,0 +1,47 @@
+@import "./common.scss";
+// sass中的数组值列表
+$colors : red , yellow , brown , blue , pink , purple;
+// 引用数组中的值 使用nth
+// eg: div{ background : nth($colors , 2) } -> 编译后yellow
+.box{
+    width: 84px;
+    height: 420px;
+    background: #38414C;
+    margin: 30px auto 0;
+    dl{
+        height: 70px;
+        border-bottom: 1px dotted #000;
+        text-align: center;
+        font-size: 14px;
+        padding-top: 14px;
+        color: #FFF;
+        dt{
+            width: 20px;
+            height: 20px;
+            background: url(../img/catalog_icon.png);
+            margin: 0 auto 5px;
+        }
+        // 这里的滑过是每个dl都是一致的
+        // 都是白色背景 绿色字
+        // &:hover{
+        //     background: #FFF;
+        //     color: green;
+        // }
+        @for $i from 1 to 7{
+            // 根据值列表 每个dl的背景颜色都不一样
+            &:nth-child(#{$i}):hover{
+                background: nth($colors , $i);
+            }
+            &:nth-child(#{$i}) dt{
+                @if( $i >= 2 ){
+                    background-position: $i * -20px -1px;
+                } @else {
+                    background-position: ($i - 1) * -20px -1px;
+                }
+            }
+            // &:nth-child(#{$i}):hover dt{
+            //     background-position: ($i - 1) * -20px -25px;
+            // }
+        }
+    }
+}

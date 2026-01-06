@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 自执行函数: 隔离作用域, 防止变量污染
+    // (function() {
+    //   var a = 100
+    //   console.log(a)
+    //   setInterval(() => {
+    //     console.log(a++)
+    //   }, 1000)
+    // })()
+
+    // {
+    //   const obj = {}
+    //   console.log(obj)
+    // }
+
+    // const obj = 11111
+    // console.log(obj)
+
+
+
+    // for (var i = 0; i < 5; i ++) {
+    //   (function(j) {
+    //     setTimeout(() => {
+    //       console.log(j)
+    //     }, 3000)
+    //   })(i)
+    // }
+    // console.log(i)
+
+    for (let i = 0; i < 5; i ++) {
+      setTimeout(() => {
+        console.log(j)
+      }, 3000)
+    }
+
+
+
+    
+
+
+
+
+
+
+
+
+    // setTimeout: 异步操作，会等待同步代码执行完后再执行
+    // setTimeout(() => {
+    //   console.log(0)
+    // })
+    // console.log(1)
+
+
+
+
+
+
+  </script>
+</body>
+</html>

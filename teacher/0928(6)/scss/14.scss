@@ -1,0 +1,40 @@
+@import "./common.scss";
+
+
+@keyframes RotateY {
+    to{ transform: rotateY(360deg); }
+}
+.box{
+    perspective: 1000px;
+    transform: rotate3d(1,1,0,30deg);
+}
+header{
+    text-align: center;
+    font:800 30px / 50px "楷体";
+    color:red 
+}
+
+section{
+    position: relative;
+    width: 300px;
+    height: 170px;
+    margin: 150px auto 0;
+    transform-style: preserve-3d;
+    animation: RotateY 10s linear infinite;
+    &:hover{
+        animation-play-state: paused;
+    }
+    div{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        @for $i from 1 to 9{
+            &:nth-child(#{$i}){
+                background: url(../img/g#{$i}.webp) no-repeat 0 0 / cover;
+                transform: rotateY($i * 45deg) translateZ(400px);
+            }
+        }
+    }
+}

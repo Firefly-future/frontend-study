@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="time" value="1000">
+    <input type="text" name="" id="str">
+    <button id="start">开始打印</button>
+    <button id="pause">暂停</button>
+    <div id="text"></div>
+    <script>
+        //获取元素
+        function $(el){
+            return document.getElementById(el)
+        }
+        // 预留计时器
+        var timer=null
+        // 开始打印时的下标
+        var index=0;
+        // 为开始打印赋予点击事件
+        $('start').onclick=function(){
+            var time=$('time').value
+            var str=$('str').value.trim()
+            if(!str)return alert('打印内容不能为空')
+            this.disabled=true
+        if(index===str.length-1){
+            index=0;
+            $('text').innerHTML=''
+        }
+            // 添加计时器
+            $('text').innerHTML+=index>0?'':str[index]
+            timer=setInterval(function(){
+                index++
+                if(index>=str.length-1){
+                    clearInterval(timer)
+                    // 同时开始打印按钮回复可用状态
+                    $('start').disabled=false
+                }
+                $('text').innerHTML+=str[index]
+            },time)
+        }
+        // 给暂停按钮添加点击事件
+        $('pause').onclick=function(){
+            clearInterval(timer)
+            $('start').disabled=false
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+import"./modulepreload-polyfill-B5Qt9EMX.js";document.body.style.background="red";console.log("import.meta.env.MODE","production");console.log("import.meta.env.PROD",!0);console.log("import.meta.env.DEV",!1);console.log("import.meta.env.VITE_QUEST_URL","https://zyx.mucis.com");console.log("import.meta.env.VITE_TEST_URL","https://zyx.testprod.com");

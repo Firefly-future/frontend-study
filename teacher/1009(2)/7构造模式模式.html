@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1 构造函数的 函数名首字母需要大写
+        // 2 构造函数 必须通过 new 关键字调用
+        // 3 可以方便地创建多个结构和行为相似的对象s
+        // 4 每个实例都有自己的方法副本，相同的方法不是共享的，这可能导致内存的浪费
+        function Facktoy( user , age , color , year ,  fn1 , fn2 ){
+            this.user = user
+            this.age =  age
+            this.color = color
+            this.year = year
+            this.fn1 = fn1
+            this.fn2 = fn2
+            console.log( this )
+        }
+        const tom = new Facktoy( "汤姆和杰瑞" , 5 , "#666" , 2025 , function(){console.log("hh")} , function(){console.log("sleep")} )
+        const lpz = new Facktoy( "蓝胖子" , 3 , "blue" , 2020 , function(){console.log("hh")} , function(){console.log("sleep")} )
+    
+        // 检查某个实例 是否来自于 某个构造函数   即 确定对象的类型 即来源
+        console.log( tom instanceof Facktoy )
+
+        const arr = new Array(123,456,789);
+        console.log( arr instanceof Array ) // true
+        console.log( lpz instanceof Array ) // false
+
+        const arr1 = new Array(1,2,3)
+        const arr2 = new Array(4,5,6)
+        const arr3 = new Array(7,8,9)
+        console.log( arr1 )
+        console.log( arr2 )
+        console.log( arr3 )
+    </script>
+</body>
+</html>

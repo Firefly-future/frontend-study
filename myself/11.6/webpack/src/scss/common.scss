@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+:root{
+    --music-theme: #d43c33;
+    --default-font-color: #333;
+}
+img{
+    vertical-align: middle;
+}
+
+
+
+body{
+    font-size: 14px;
+    color: var(--default-font-color);
+}
+
+a{
+    text-decoration: none;
+}
+span{
+    display: block;
+}
+
+
+@function px2vw($px){
+    @return  100vw/375*$px
+}

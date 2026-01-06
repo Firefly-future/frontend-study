@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>标题</h1>
+  <script>
+    class Animal {}
+
+
+
+    class Base {
+      constructor(gender) {
+        this.gender = gender
+      }
+      $(el) {
+        return document.querySelector(el)
+      }
+
+      $all(el) {
+        return document.querySelectorAll(el)
+      }
+    }
+
+    // 通过 extends 继承父类
+    class Person extends Base {
+      // 构造函数
+      constructor(name, age, gender) {
+        // super: 父类的构造函数
+        super(gender)
+        this.name = name
+        this.age = age
+      }
+
+      getInfo() {
+        console.log('我是一个原型方法')
+      }
+
+      // 静态方法：构造函数本身的方法
+      static isPerson(obj) {
+        return obj instanceof Person
+      }
+    }
+
+    class Doctor extends Person {
+      get [Symbol.toStringTag]() {
+        return 'Doctor'
+      }
+    }
+
+    const xm = new Doctor()
+
+    console.log(xm)
+    // typeof: 无法判断数组、对象、null
+    console.log(typeof xm)
+    // instanceof 缺点: 只要原型链上有此类都会返回 true 
+    console.log(xm instanceof Doctor)
+    console.log(xm instanceof Person)
+    console.log(xm instanceof Base)
+    console.log(xm instanceof Object)
+    console.log(xm instanceof Animal)
+
+
+
+    // 精确判断
+    console.log(Object.prototype.toString.call(xm)) // '[object Doctor]'
+    console.log(Object.prototype.toString.call([])) // '[object Array]'
+    console.log(Object.prototype.toString.call(null)) // '[object Null]'
+    console.log(Object.prototype.toString.call('1212')) // '[object String]'
+    console.log(Object.prototype.toString.call(123)) // '[object Number]'
+    console.log(Object.prototype.toString.call(true)) // '[object Boolean]'
+
+
+    // 总结：
+    // 原始类型/内置对象：Object.prototype.toString.call() 可直接准确判断。
+    // 自定义 class 实例：默认返回 [object Object]，但通过 Symbol.toStringTag 可自定义类型标识，实现“可判断”。
+
+  </script>
+</body>
+</html>

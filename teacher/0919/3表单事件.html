@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{width: 300px; height: 50px; outline: 0; font-size: 22px;}
+    </style>
+    <link rel="stylesheet" href="">
+</head>
+<body>
+    <input type="text" placeholder="请输入" id="inp">
+
+    <select name="" id="">
+        <option value="请选择">请选择</option>
+        <option value="语文">语文</option>
+        <option value="数学">数学</option>
+        <option value="英文">英文</option>
+    </select>
+
+    <input type="checkbox" id="checkbox">
+    <script>
+        var inp = document.querySelector("#inp");
+            select = document.querySelector("select");
+            box = document.querySelector("#checkbox");
+        // 表单事件
+            // focus    聚焦/激活事件  即 光标闪烁可输入时
+                // 聚焦时  设置外轮廓 5px 点线 橘色
+                inp.onfocus = function(){ this.style.outline = "5px dotted orange" }
+            // blur     失去焦点事件
+                // 失焦时  设置外轮廓 为实线
+                inp.onblur = function(){ this.style.outlineStyle = "solid" }
+            // input    边输入边触发
+                // 输入时  设置背景色随机
+                inp.oninput = function(){ this.style.background = "#" + Math.random().toString(16).slice(2,8) }
+            // change   内容发生改变时触发
+                inp.onchange = function(){ this.style.color = "white" }
+                select.onchange = function() { alert( this.value ) }
+                box.onchange = function() { console.log( this.checked ) }
+            
+    </script>
+</body>
+</html>

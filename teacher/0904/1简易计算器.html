@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{ padding: 0; margin: 0; box-sizing: border-box; }
+        .box  {margin: 50px 0 0 150px; font-size: 20px; font-weight: 900;}
+        .box span{float: left; width: 50px; height: 45px; line-height: 45px; text-align: center;}
+        .box .num{width: 85px; background: blue; color: #FFF;}
+        .box .result{ background: red; }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <span class="num1 num">1</span>
+        <span class="symbol">+</span>
+        <span class="num2 num">5</span>
+        <span class="chart">=</span>
+        <span class="result num">6</span>
+    </div>
+
+    <script>
+        
+        // 弹出第一个框输入第一个操作数，并输入到页面中一个框中
+        // （3）弹出第二个框输入第二个操作数，并输入到页面中第二个框中
+        // （4）弹出第三个框输入操作符，输入到两个框中间
+        // （5）要求每一步写注释，变量命名规范
+        // 获取元素
+        var spans = document.getElementsByTagName("span");
+        // console.log( spans )
+        // 1 弹出第一个操作数
+        var n1 = prompt("请输入第一个数字");
+        // 判断用户取消
+        if( n1 === null ){
+            alert("用户拒绝访问")
+        }else if( n1 === "" ){
+            alert("请输入内容")
+        }else if( isNaN(n1) ){
+            alert("请输入数字")
+        }else{
+            // 走到这里表示 第一个输入框输入正确  继而弹出第二个操作数
+            // 即 确定 且 不为空 且 是数字
+            var n2 = prompt("请输入第二个操作数")
+            if( n2 === null || !n2 || isNaN(n2) ){
+                alert("请输入数字")
+            }else{
+                // 走到这里表示 第二个输入框输入正确  继而弹出运算符
+                var res = 0;  // 求两数的计算结果
+                var s = prompt("请输入运算符")
+                switch( s ){
+                    case "+":
+                        res = +n1 + +n2;
+                    break;
+
+                    case "-" :
+                        res = n1 - n2;
+                    break;
+
+                    case "*" :
+                        res = n1 * n2;
+                    break;
+
+                    case "/" :
+                        res = n1 / n2;
+                    break;
+
+                    case "%" :
+                        res = n1 % n2;
+                    break;
+
+                    default :
+                        res = "无结果"
+                    break;
+                }
+                // 先将表达式弹出; eg: 1 + 5 = 6  在写入页面
+                // '1' + '+' + '5' + '=' + 6
+                alert(n1 + s + n2 + '=' + res);
+
+                spans[0].innerHTML = n1
+                spans[1].innerHTML = s
+                spans[2].innerHTML = n2
+                spans[4].innerHTML = res
+            }
+        }
+
+
+    </script>
+</body>
+</html>

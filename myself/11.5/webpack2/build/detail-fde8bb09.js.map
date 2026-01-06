@@ -1,0 +1,1 @@
+{"version":3,"file":"detail-fde8bb09.js","mappings":"mBAIAA,QAAQC,IAAI,a","sources":["webpack://webpack2/./src/detail/detail.js"],"sourcesContent":["\r\n\r\nimport './detail.scss'\r\n\r\nconsole.log('我是detail页面')\r\n"],"names":["console","log"],"sourceRoot":""}

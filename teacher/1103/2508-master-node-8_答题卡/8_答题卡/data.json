@@ -1,0 +1,134 @@
+[
+    {
+        "id": 1,
+        "title": "JavaScript中哪个关键字用于声明变量？",
+        "type": "single",
+        "options": [
+            { "id": "A", "text": "var" },
+            { "id": "B", "text": "let" },
+            { "id": "C", "text": "const" },
+            { "id": "D", "text": "以上都是" }
+        ],
+        "score": 10,
+        "answer": "D"
+    },
+    {
+        "id": 2,
+        "title": "以下哪些是JavaScript的数据类型？",
+        "type": "multiple",
+        "options": [
+            { "id": "A", "text": "String" },
+            { "id": "B", "text": "Number" },
+            { "id": "C", "text": "Boolean" },
+            { "id": "D", "text": "Array" },
+            { "id": "E", "text": "Object" }
+        ],
+        "score": 10,
+        "answer": ["A", "B", "C", "E"]
+    },
+    {
+        "id": 3,
+        "title": "Express.js是什么？",
+        "type": "single",
+        "options": [
+            { "id": "A", "text": "前端框架" },
+            { "id": "B", "text": "数据库" },
+            { "id": "C", "text": "Node.js Web应用框架" },
+            { "id": "D", "text": "编程语言" }
+        ],
+        "score": 10,
+        "answer": "C"
+    },
+    {
+        "id": 4,
+        "title": "以下哪些HTTP方法是RESTful API常用的？",
+        "type": "multiple",
+        "options": [
+            { "id": "A", "text": "GET" },
+            { "id": "B", "text": "POST" },
+            { "id": "C", "text": "PUT" },
+            { "id": "D", "text": "DELETE" },
+            { "id": "E", "text": "PATCH" }
+        ],
+        "score": 10,
+        "answer": ["A", "B", "C", "D"]
+    },
+    {
+        "id": 5,
+        "title": "Node.js的特点包括？",
+        "type": "multiple",
+        "options": [
+            { "id": "A", "text": "单线程" },
+            { "id": "B", "text": "事件驱动" },
+            { "id": "C", "text": "非阻塞I/O" },
+            { "id": "D", "text": "基于Chrome V8引擎" }
+        ],
+        "score": 10,
+        "answer": ["A", "B", "C", "D"]
+    },
+    {
+        "id": 6,
+        "title": "CSS中哪个属性用于设置元素的外边距？",
+        "type": "single",
+        "options": [
+            { "id": "A", "text": "padding" },
+            { "id": "B", "text": "margin" },
+            { "id": "C", "text": "border" },
+            { "id": "D", "text": "spacing" }
+        ],
+        "score": 10,
+        "answer": "B"
+    },
+    {
+        "id": 7,
+        "title": "以下哪些是HTML5的新特性？",
+        "type": "multiple",
+        "options": [
+            { "id": "A", "text": "Canvas" },
+            { "id": "B", "text": "Web Storage" },
+            { "id": "C", "text": "Geolocation" },
+            { "id": "D", "text": "Web Workers" }
+        ],
+        "score": 10,
+        "answer": ["A", "B", "C", "D"]
+    },
+    {
+        "id": 8,
+        "title": "React.js的主要特点是什么？",
+        "type": "single",
+        "options": [
+            { "id": "A", "text": "组件化开发" },
+            { "id": "B", "text": "双向数据绑定" },
+            { "id": "C", "text": "虚拟DOM" },
+            { "id": "D", "text": "A和C都是" }
+        ],
+        "score": 10,
+        "answer": "D"
+    },
+    {
+        "id": 9,
+        "title": "以下哪些是数据库类型？",
+        "type": "multiple",
+        "options": [
+            { "id": "A", "text": "MySQL" },
+            { "id": "B", "text": "MongoDB" },
+            { "id": "C", "text": "Redis" },
+            { "id": "D", "text": "Elasticsearch" }
+        ],
+        "score": 10,
+        "answer": ["A", "B", "C", "D"]
+    },
+    {
+        "id": 10,
+        "title": "Git中哪个命令用于创建新分支？",
+        "type": "single",
+        "options": [
+            { "id": "A", "text": "git branch" },
+            { "id": "B", "text": "git checkout -b" },
+            { "id": "C", "text": "git merge" },
+            { "id": "D", "text": "git clone" }
+        ],
+        "score": 10,
+        "answer": "B"
+    }
+]

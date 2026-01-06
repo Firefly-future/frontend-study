@@ -1,0 +1,106 @@
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+}
+
+body{
+    padding-top: 50px;
+    background: #D6B2FC;
+}
+
+.wrap{
+    width: 400px;
+    min-height: 200px;
+    margin: 0 auto;
+    border-radius: 10px;
+    padding: 10px;
+    background: #FFF;
+}
+
+.dayDate{
+    line-height: 40px;
+    font:700 22px/40px "楷体";
+}
+
+.taskCountTab{
+    height: 30px;
+    line-height: 30px;
+    padding: 0 10px;
+    color: #666;
+    font-size: 14px;
+}
+
+.taskCountTab p{
+    float: left;
+}
+
+.tabs{
+    float: right;
+}
+.tabs span{
+    margin: 0 4px;
+    padding: 3px 5px;
+    border-radius: 20px;
+}
+.active{
+    background: #7996A5;
+    color: #FFF;
+}
+
+.taskName{
+    width: 100%;
+    height: 35px;
+    border:0;
+    border-bottom: 1px solid #CCC;
+    outline: 0;
+    padding: 0 10px;
+}
+
+.taskCon p{
+    height: 35px;
+    line-height: 35px;
+    font-size: 14px;
+    border-bottom: 1px dashed #EEE;
+}
+.taskCon p:hover{
+    background: #F6FBFF;
+}
+/* appearance 属性   取消input元素类型为 radio 或 checkbox的默认样式 */
+.taskCon p input{
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #EEE;
+    border: 1px  solid #CCC;
+}
+.taskCon p input:checked{
+    background: green;
+}
+.taskCon p input:checked:after{
+    content:"√";
+    color: #FFF;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.taskCon p input:checked + strong{
+    text-decoration: line-through;
+    color: #666;
+}
+
+.taskCon p span{
+    float: right;
+    color: red;
+}
+
+.checked{
+    background:#D3E3FD!important;
+}

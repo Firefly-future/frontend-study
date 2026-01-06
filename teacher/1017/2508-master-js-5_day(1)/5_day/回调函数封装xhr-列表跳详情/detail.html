@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h2>详情页面</h2>
+  <div class="box"></div>
+  <ul></ul>
+  <script src="./request.js"></script>
+  <script>
+    // 获取 url 参数
+    function getQuery() {
+      return location.search.slice(1).split('&').reduce((prev, item) => {
+        const [key, val] = item.split('=')
+        prev[key] = decodeURIComponent(val)
+        return prev
+      }, {})
+    }
+    const query = getQuery()
+    console.log(query)
+
+    request(`http://39.96.210.90:5001/playlist/detail?id=${query.id}`, {
+      onSuccess: res => {
+        document.querySelector('.box').innerHTML = `
+          <h3>${res.playlist.name}</h3>
+          <p>${res.playlist.description}</p>
+          <img src="${res.playlist.coverImgUrl}" width="200" />
+        `
+        document.querySelector('ul').innerHTML = res.playlist.tracks.map(item => `
+          <li>${item.name}</li>
+        `).join('')
+        console.log(res.playlist)
+        console.log(res.playlist.tracks)
+      }
+    })
+
+
+
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 字符串
+            // 用于描述性的内容; 写在引号【" or '】内的任意文本
+
+        // 创建字符串
+            // 1 字面量的方式【常用】
+            var str1 = "javascript";
+            console.log( str1 , typeof str1)
+
+            // 2 new构造函数的方式【注意: new出来的一定是对象】
+            var str2 = new String("hello");
+            console.log( str2 , typeof str2 )
+
+        // length 属性 获取长度
+            console.log( str1.length , str2.length )
+
+        // 下标可以访问字符
+            // 最小下标0，  最大下标length - 1;  下标出界undefined
+            console.log( str1[0] ,  str2[0] )
+            console.log( str1[str1.length - 1] , str2[str2.length - 1] )
+            console.log( str1[100] , str2[100] )
+
+        
+
+            
+
+
+    </script>
+</body>
+</html>

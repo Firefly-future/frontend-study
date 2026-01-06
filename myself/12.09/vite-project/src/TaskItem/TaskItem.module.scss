@@ -1,0 +1,31 @@
+.tasksItem{
+  display: flex;
+  padding: 15px;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  &:hover{
+    background: #ddd;
+  }
+  &.done{
+    background-color: #ddd;
+    .title{
+      text-decoration: line-through;
+      color: #666;
+    }
+  }
+}
+.btns{
+  display: flex;
+  button{
+    min-width: 50px;
+    min-height: 30px;
+    margin-left:10px;
+  }
+}
+.title{
+  flex: 1;
+  margin: 0 10px;
+}
+.input{
+  flex: 1;
+}

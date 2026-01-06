@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{padding:0;margin: 0;box-sizing: border-box;}
+        .box{ width: 200px; height: 200px; background: purple; margin: 30px auto 0; }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+
+    <script>
+        var box = document.querySelector(".box");
+        box.addEventListener("click" , function(e){
+            // 事件对象e 是事件发生时 浏览器创建的一个对象
+            // 该对象涵盖了此次事件的所有相关信息  如:事件源  事件类型  等
+            // console.log( e )
+            console.log( `鼠标摁下距离自身的左侧距离是:${e.offsetX};顶部距离是${e.offsetY}` )
+            console.log( `鼠标摁下距离页面的左侧距离是:${e.pageX};顶部距离是${e.pageY}` )
+            console.log( `鼠标摁下距离视窗的左侧距离是:${e.clientX};顶部距离是${e.clientY}` )
+        })
+    </script>
+</body>
+</html>

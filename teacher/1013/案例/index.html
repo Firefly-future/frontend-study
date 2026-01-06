@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./popup.css">
+</head>
+<body>
+  <h3>popup.alert</h3>
+  <button class="alert-btn1">按钮1</button>
+  <button class="alert-btn2">按钮2</button>
+  <hr />
+  <h3>popup.confirm</h3>
+  <button class="confirm-btn1">按钮1</button>
+  <button class="confirm-btn2">按钮2</button>
+
+  <hr />
+  <h3>popup.message</h3>
+  <button class="message-btn1">默认2s关闭</button>
+  <button class="message-btn2">设置图标</button>
+  <button class="message-btn3">设置关闭时间</button>
+
+  <h3>popup.loading</h3>
+  <button class="loading-btn1">展示loading</button>
+
+  <script src="./popup.js"></script>
+  <script>
+    const $ = el => document.querySelector(el)
+
+    // 初始化实例 
+    const popup = new Popup()
+    console.log(popup)
+
+    $('.alert-btn1').addEventListener('click', () => {
+      popup.alert('我是内容')
+    })
+
+    $('.alert-btn2').addEventListener('click', () => {
+      popup.alert({
+        title: '自己设置标题自己设置标题自己设置标题自己设置标题自己设置标题自己设置标题自己设置标题自己设置标题自己设置标题自己设置标题自己设置标题',
+        content: '弹窗内容弹窗内容弹窗内容弹窗内容弹窗内容弹窗内容'
+      })
+    })
+
+    $('.confirm-btn1').addEventListener('click', () => {
+      popup.confirm('操作成功111111')
+    })
+
+    $('.confirm-btn2').addEventListener('click', () => {
+        popup.confirm({
+          title: '标题',
+          content: '操作成功22222222',
+          btns: [
+            {
+              text: '确定',
+              onClick: function () {
+                // 第一个函数，表示点击了ok按钮要执行的代码
+                alert('点击了ok')
+              }, 
+            },
+            {
+              text: '取消',
+              onClick: function () {
+                // 第二个函数，表示点击了cancel按钮要执行的代码
+                alert('点击了cancel')
+              }
+            }
+          ]
+        })
+    })
+
+    $('.message-btn1').addEventListener('click', () => {
+      popup.message('操作成功111111')
+    })
+    $('.message-btn2').addEventListener('click', () => {
+      popup.message('操作失败22222222', {
+        icon: 0
+      })
+    })
+    $('.message-btn3').addEventListener('click', () => {
+      popup.message('操作成功33333333', {
+        icon: 1,
+        time: 10000
+      })
+    })
+
+    $('.loading-btn1').addEventListener('click', () => {
+      const closeLoading = popup.loading()
+
+      setTimeout(() => {
+        // closeLoading()
+        popup.close(closeLoading)
+      }, 5000)
+    })
+
+  </script>
+</body>
+</html>

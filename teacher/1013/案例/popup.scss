@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// 100vw === 可视区域的宽度
+// 100vh === 可视区域的高度
+
+.alert-dialog, .toast-dialog, .loading-dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba($color: #000000, $alpha: .6);
+}
+.alert-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  background: #fff;
+}
+.alert-header {
+  padding: 10px 10px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  .alert-title {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .alert-close {
+    width: 30px;
+    cursor: pointer;
+    text-align: center;
+  }
+}
+.alert-section {
+  display: flex;
+  flex-direction: column;
+  .alert-section-content {
+    padding: 15px;
+    flex: 1;
+  }
+  .alert-btns {
+    height: 40px;
+    text-align: right;
+    padding: 10px;
+    button {
+      margin-left: 10px;
+      padding: 3px 6px;
+    }
+  }
+}
+
+
+.toast-dialog {
+  background: rgba($color: #000000, $alpha: .3);
+}
+.toast {
+  background: rgba($color: #000000, $alpha: .7);
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+.toast-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px 20px;
+  border-radius: 5px;
+  background: #fff;
+  border: 1px solid #eee;
+}
+
+.loading-dialog {
+  .loading-icon {
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{width: 280px; display: block; }
+    </style>
+</head>
+<body>
+    <button id="btn">点击按钮</button>
+    <img id="pic" src="" alt="">
+    <script>
+        // 点击<button>点击按钮</button> <img src=””>
+        // （1）点击按钮，输入姓名，点击确定，设置img图片的路径
+        // （2）通过id获取按钮和图片，当点击按钮的时候，弹出输入框，
+        // （3）如果输入张三，那么给img设置张三的图片，输入李四，设置img路径是李四的照片;
+        // 1 获取元素
+        var btn = document.getElementById("btn") ,
+            pic = document.getElementById("pic") ;
+        // 2 给按钮绑定点击事件
+        btn.onclick = function(){
+            // 弹出输入框
+            var userName = prompt("请输入姓名");
+            // 判断取消 
+            if( userName === null ){
+                pic.src = "./img/jj.webp"
+            // 确定 未输入
+            } else if ( !userName ) {
+                pic.src = "./img/empty.webp"
+            // 确定 张三
+            } else if ( userName === "张三" ){
+                pic.src = "./img/zs.webp"
+            // 确定 李四
+            } else if ( userName === "李四" ){
+                pic.src = "./img/ls.webp"
+            // 确定 非张三 非李四
+            } else {
+                pic.src = "./img/default.webp"
+            }
+        }
+    </script>
+</body>
+</html>

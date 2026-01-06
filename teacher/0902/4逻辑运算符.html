@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 逻辑运算符:  !非  >  &&与 >  ||或
+            // !非 : 
+                // 非取反 , 非真即假  非假即真 ; 返回布尔值 。
+                // 注意: 先确定取反的这个值 是真还是假 再取反。
+                // 假值: ''  0  NaN  null  undefined  false
+                    // console.log( !true )   // false
+                    // console.log( !3 )      // false
+                    // console.log( !undefined ) // true
+
+            // &&与 :
+                // 与找假，遇假返假(值)，全真返回最后一个真(值)
+                    // console.log( "hello" && undefined && null ) // undefined
+                    // console.log( true && 123 && "abc" )         // "abc"
+
+            // ||或 :
+                // 或找真，遇真返真(值)，全假返回最后一个假(值)
+                    // console.log( "hello" || undefined || null ) // "hello"
+                    // console.log( true || 123 || "abc" )         // true
+                    // console.log( undefined || null || NaN )     // NaN
+                    // console.log( false || '45' || true || undefined ) // '45'
+
+
+            // 混合运算: ! > && > ||
+            // console.log( true && 'abc' || !"true" && !null || undefined && false || NaN )
+            // //           true && 'abc' || false && true || undefined && false || NaN
+            // //                'abc'    ||       false   ||       undefined    || NaN
+            // // 
+
+            // sconsole.log( !5 - null && true + undefined || "hello" && !"hello" && null + true || !123 )
+            //           false - null &s& true + undefined || "hello" && false && null + true || false
+            //            0    -  0   && 1    + NaN       || "hello" && false && 0    + 1    || false
+            //                 0      &&    NaN           || "hello" && false && 1           || false
+            //                         0                  ||         false                   || false
+            // 
+            // false 
+            
+            //注意:在混合运算中，若第一个表达式就可以确定整个表达式的最终结果时，后续代码将不再执行，称之为短路运算。
+            console.log( "china" || !null + 45 && 5 - '3' + true || "hello" && null || undefined && NaN )
+
+
+
+
+    </script>
+</body>
+</html>

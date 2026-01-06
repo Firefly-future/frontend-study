@@ -1,0 +1,27 @@
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+.box{
+    width: 1000px;
+    height: 500px;
+    margin:60px auto 0;
+    background: grey;
+    text-align: center;
+}
+#tit{
+    width:100%;
+    height: 80px;
+    text-align: center;
+    line-height: 200px;
+    float: left;
+    border: 1px solid green;
+}
+#lis{
+    width:100%;
+    height: 370px;
+    float:left;
+    border: 1px solid red;
+}

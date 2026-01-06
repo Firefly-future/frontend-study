@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // this 是执行上下文环境的对象[在函数内部才有意义]
+        //   注意: 箭头函数没有this  如果出现了this  将指向父级所挂靠的环境对象this  
+
+            // 1 全局环境    ->   window
+            var a = 10;  // 全局变量   自动挂靠window成了window的属性
+            // 2 普通函数    ->   window  即 不在事件程序中 等
+            function b(){
+                console.log(this)
+            }
+            b()
+            
+            console.log( this )  // window
+            console.log( this.a , window.a , a )
+            // 3 事件程序中   -> 事件源  即 绑定事件的元素
+
+            // 4 在对象中     -> 调用的对象
+            var names = "李四"
+            var obj = {
+                names : this.name,
+                age  : 18,
+                say  : function(){
+                    console.log( this , this.names )  // obj    张三
+                }
+            }
+            obj.say()
+
+
+            // 5 在构造函数中     ->   实例化对象
+
+
+            // 总结: 如何确定this指向?
+                // 1 是否修改了this  ->  写谁是写 
+                // 2 是否是箭头函数  ->  箭头函数没有this 看父级环境挂靠
+                // 3 谁调用
+    </script>
+</body>
+</html>

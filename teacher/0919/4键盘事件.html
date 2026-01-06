@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 键盘事件
+            // keydown   键盘摁下
+            // keyup     键盘抬起
+            // keypress  键盘摁下抬起的瞬间
+
+        document.onkeydown = function( e ){
+            // 事件对象event -> e -> ev 
+            // 涵盖了此次事件所有相关的信息  如 谁触发事件  触发了什么事件等
+            console.log( e.key )
+        }
+        document.onkeypress = function(){
+            console.log( "瞬间" )
+        }
+
+        document.onkeyup = function(){
+            console.log("抬起")
+        }
+    </script>
+</body>
+</html>

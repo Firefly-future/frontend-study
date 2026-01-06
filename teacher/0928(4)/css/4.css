@@ -1,0 +1,45 @@
+@charset "UTF-8";
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #212121;
+}
+
+img {
+  display: block;
+}
+
+.box {
+  width: 150px;
+  height: 120px;
+  margin: 50px auto;
+  text-align: center;
+  color: #FFF;
+  font: 700 40px/120px "宋体";
+}
+
+.translate {
+  background: red;
+  transform: translate(100px, 50px);
+}
+
+.scale {
+  background: green;
+  transform: scaleY(0.5);
+}
+
+.rotate {
+  background: gold;
+  transform: rotate(45deg);
+}
+
+.skew {
+  background: purple;
+  transform: skew(80deg);
+}

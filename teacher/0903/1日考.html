@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 填空题
+        // 1  Javascript是运行在（）的 脚本语言
+                // 浏览器客户端
+
+        // 2  引入外部js使用（）标签
+                // script
+
+        // 3  Javascript声明变量使用（）关键字
+                // var 
+
+        // 4  变量的概念是（）  存储单个可变信息的容器  
+        // 5  javascript的数据类型有（）和（）两种，其中（）数据类型有 （）（）（）（）（）
+                // 基本数据类型  和  引用数据类型
+                // 基本 : number数值   string字符串  boolean布尔值   undefined未定义    null空
+
+        // 6  typeof null的结果是（）   'object'
+        // 7  true + “123” 的结果是（）  'true123'
+        // 8  isNaN()方法的作用是（），返回值是（）
+                // 检测非数字      布尔值
+
+        // 9  js中的三种输出方式分别是（）（）（）
+                // 
+
+        // 10 其他类型转字符串的方法有（）（）（）区别是（）
+                // String()   +"" 强转 全部原路返回加引号
+                // toString()      undefined 和 null 报错
+
+        // 11 Javascript中的运算符有（）（）（）（）（）
+                // 算数....
+
+        // 12 前增和后增的区别是（）
+                // 前置: 直接+1
+                // 后置: 先返回原值 再+1  
+                // 都会修改原值
+
+        // 13 页面弹出一个输入框使用（）    prompt()
+        // 14 !null 的结果是（）  true
+        // 15 js中的假值有（）（）（）（）（）（）  false   0    NaN    ''   undefined   null
+
+        // 16 var a = “45” ; console.log(++a)的结果是（）为什么（）
+                    // 46
+                    // ++ 一元运算符会隐式转换 即Number("45") => 45
+                    // 前置 直接+1  即 45 + 1
+
+        // 17 var a = “45abc”; console.log(a++)的结果是（）为什么（）
+                    // NaN
+                    // 在隐式转换过程中  Number("45abc")   结果是NaN
+                    // NaN++  任何与NaN计算相关的结果都是NaN
+
+        // 18 !”hello” || 5 > 2 && “hello” 的结果是（）
+                    // "hello"
+
+        // 19 typeof(Boolean(“hello”))的结果是（）
+                    // "boolean"
+
+        // 20 “china” && !0 || 0 的结果是（）
+                    // true
+
+        // 21 !(typeof “hello”) || “china” && !undefined的结果是（）
+                    // true
+
+        // 22 var age = 15；使用三元写出大于等于18，弹出成年，否则控制台打印未成年（）
+                    // age >= 18 ? alert("成年") : console.log("未成年")
+
+        // 23 “undefined” == null的结果是（）
+                    // false
+
+        // 24 = 和 == 和 === 的区别（）
+                    // = 赋值
+                    // == 判断值相等   若类型不相等时   会隐式转换相同类型在比较
+                    // === 全等  即 值和类型都相等  若类型不同直接false
+
+        // 25 true + undefined的结果是（）
+                    // NaN  -> 1 + NaN   任何与NaN计算相关的结果都是NaN
+
+        // 26 undefined >= 15 的结果是（）
+                    // Number(undefined) -> NaN
+                    // NaN >= 15
+                    
+
+        // 27 null <= true的结果是（）
+                    // true
+                    // 0 <= 1
+
+        // 28 “45” > “5”的结果是（） 
+                    // false
+                    // 两端都是字符串  不会隐式转换 
+                    // 二者将按照ASCII码依次比较
+
+        // 29 45 > “5”的结果是（）
+                    // true
+                    // 45 > 5 ====> Number("5")
+
+        // 30 var x = 5; x *= 2 等价于（），console.log(x)的结果是（）
+                    // x = x * 2
+                    // 10
+
+        // 程序题
+        // var num = 100;
+        // console.log(typeof ("" + num))    "string"
+        // console.log(num.toString())     "100"  
+        // console.log(String(num))         "100"
+        // console.log(null+"")              "100"
+        // console.log(String(null))          "null"
+        // console.log(null.toString())        报错
+
+        // console.log(parseInt("3.14"))    3
+        // console.log(parseInt("3.1.2"))   3
+        // console.log(parseInt("3a45"))    3
+        // console.log(parseInt("a45"))     NaN
+
+        // console.log(parseFloat("3.1.2"))   3.1
+        // console.log(parseFloat("3.a.2"))   3
+        // console.log(parseFloat("a3.212"))   NaN
+
+        // console.log(Number("3.1.2"))   NaN
+        // console.log(Number("a45"))     NaN
+        // console.log(Number(''))      0
+        // console.log(Number(true))    1
+        // console.log(Number(undefined))   NaN
+        // console.log(Number(null))     0
+
+        // console.log(isNaN("123a"))  true => Number("123a") => NaN
+        // console.log(isNaN("000"))   false => Number("000") => 0
+        // console.log(isNaN("45"))    false => Number("45") =>45
+
+        // console.log(Boolean(''))   false
+        // console.log(Boolean(' '))   true
+        // console.log(Boolean('true')) true
+        // console.log(Boolean(NaN))   false
+
+        // var a,b,c,d,e;
+        // a=3;   // 2
+        // b=10; // 11 -> 10
+
+        // c = (--a) + (b++)
+        //     // --a 前置 直接 -1 => 2
+        //     // b++ 后置 先返原值 =>  10
+        //     // 2 + 10 => 12
+        // d = (--b) -a
+        //     // --b 前置 直接-1 由于上步操作后b变成了11  即--11  -> 10
+        //     // 10 - 2 => 8
+        // e = b/a+3-2%4
+        //     // 10/2+3-2%4
+        //     // 5 + 3 - 2
+        //     // 6
+        // // 问 c d e 三个变量的值是多少？
+        // console.log( a , b , c , d , e )
+
+
+        // console.log(1+"2"+"2")   // "122"
+        // console.log(1+ +"2"+"2") // "32"---------------------
+        // console.log(1+-"1"+"2")  // "02" ------------
+        // console.log(+"1"+"1"+"2") // "112"----------------
+        // console.log("A"-"B"+"2")  // "NaN2"
+        // console.log("A"- "B"+2) // NaN
+
+
+        // var obj={};   
+        // console.log(obj && null);   // null
+        // console.log(NaN && obj);   // NaN
+    </script>
+</body>
+</html>

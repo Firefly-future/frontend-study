@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span>戳我</span>
+    <script>
+        // 回顾
+            // 函数
+                // 执行特定功能的代码块  
+
+            // 函数的创建
+                // 1 字面量的方式
+                    // const fnName = function(){}
+
+                // 2 new构造函数的方式
+                    // function fnName(){}
+
+        
+        // const say = function( str ){
+        //     console.log( str )
+        // }
+        // say( `字面量` )
+
+        // 箭头函数
+        // const talk = ( str ) => {
+        //     console.log( str )
+        // }
+        // talk( `箭头` )
+
+        // 求两数之和
+            // let add = ( a , b ) => {
+            //     return a + b
+            // }
+            // console.log( add( 5,8 ) )
+            // alert( add( 14 , 16 ) )
+
+
+        // 若函数内部只有一句执行语句  可以省略{} 和 return
+            // 即 以上求和函数 等价于
+            // let add = ( a , b ) => a + b;
+            // alert( add( 14 , 16 ) )
+
+        // 求任意数 与 88 的和
+            // let addFn = ( num ) => num + 88;
+            // console.log( addFn( 88 ) )
+
+        // 若 只有一个参数  可以省略()
+            // 即 以上求与 88的和  的函数等价于
+            // let addFn = num => num + 88;
+            // console.log( addFn( 12 ) )
+            
+
+        // 求任意个数数字的和 3 ？ 8？ 15 ？
+        // const getNumAdd = function(){
+        //     console.log( arguments )
+        // }
+        // getNumAdd( 1,5,9,6,3,2,1,4,6,8,6 )
+        // getNumAdd( 15,23,48,7,66 )
+        
+        // 注意 箭头函数没有arguments ; 解决: ...rest 剩余参数
+        //      箭头函数没有this,若出现了this,指向父级挂靠的环境对象
+        //      不能作为构造函数
+        // 
+        // const getNumAdd = (...rest) => {
+        //     console.log( rest )
+        //     let addNum = 0;
+        //     rest.forEach( function(item){
+        //         addNum += item
+        //     } )
+        //     return addNum
+        // }
+
+
+        // const getNumAdd = (...rest) => {
+        //     console.log( rest )
+        //     let addNum = 0;
+            // rest.forEach( item => addNum += item)
+        //     return addNum
+        // }
+        // console.log( getNumAdd( 1,5,9,6,3,2,1,4,6,8,6 ) )
+        // console.log( getNumAdd( 15,23,48,7,66 ) )
+
+
+        // const getNumAdd = (...rest) => rest.reduce((prev , cur) => prev += cur , 0 )
+        // console.log( getNumAdd( 1,5,9,6,3,2,1,4,6,8,6 ) )
+        // console.log( getNumAdd( 15,23,48,7,66 ) )
+
+
+
+
+        // let addNum = a => b => c => a + b + c;
+        // console.log( addNum(10)(20)(30) )
+            // 展开如下
+            // let addNum = (a) => {
+            //     return (b) => {
+            //         return (c) => {
+            //             return a + b + c
+            //         }
+            //     }
+            // }
+            // console.log( addNum(1)(5)(4) )
+
+        // 在一个数组中 找到所有 当前项 大于10的数  且作出 升序处理
+        // const arr = [1,6,3,15,6,23,54,9,8,26,15,2,3];
+        // filter() 返回匹配条件的项组成的新数组
+        // const result = arr.filter(item => item > 10)
+        // sort() 排序 返回排序后的数组
+        // result.sort( (a,b) =>  a - b )
+
+        // 数组方法可以直接连写  以上等价于
+        // const result = arr.filter(item => item > 10).sort( (a,b) =>  a - b )
+        // console.log( result )
+
+        // 需求 每间隔1秒 在控制台打印hello  8秒后停止打印
+            // let timeId = setInterval(() => console.log( "hello" ) , 1000 )
+            // setTimeout( () => clearInterval( timeId ) , 8000 )
+
+        // 对页面中的span元素进行点击事件 操作如下;
+                // 让span的字体大小为50
+                //         颜色变红
+                //         加粗
+                // const spanEl = document.querySelector("span");
+                // spanEl.addEventListener("click" , () => {
+                //     spanEl.style.fontSize = "50px" 
+                //     spanEl.style.fontWeight = "900"
+                //     spanEl.style.color = "red"
+                // })
+
+            // spanEl.addEventListener("click" , () =>  Object.assign( spanEl.style , { fontSize:"50px" , fontWeight:700 , color : "green" }) )
+
+            // spanEl.addEventListener("click" , () => spanEl.style.cssText = `color:green; 
+                                                                            // font-size:100px; 
+                                                                            // font-weight:700` )
+            
+            
+    </script>
+</body>
+</html>
